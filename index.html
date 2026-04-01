@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joseph G Media — Motion, Light & Lens</title>
+  <title>Joseph G Media - Motion, Light & Lens</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,12 +14,6 @@
   <link rel="stylesheet" href="src/style.css" />
 </head>
 <body>
-
-  <!-- LOADER -->
-  <div id="loader">
-    <img id="loader-logo" src="src/assets/JGM_Logo_-_2021_-_Transparent_White.png" alt="Joseph G Media" />
-    <div id="loader-bar-wrap"><div id="loader-bar"></div></div>
-  </div>
 
   <!-- CURSOR -->
   <div id="cursor-dot"></div>
@@ -42,17 +36,15 @@
     <div class="hero-ambient">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
     </div>
     <div class="hero-body">
-      <p class="hero-greeting" id="greeting"></p>
       <div class="hero-logo">
         <img src="src/assets/JGM_Logo_-_2021_-_Transparent_White.png" alt="Joseph G Media" id="hero-logo-img" />
       </div>
       <div class="hero-bottom" id="hero-bottom">
         <p class="hero-desc">
-          A passionate creative combining skills across
-          <strong>motion design, photography, videography and music production</strong>
-          — with an eye for detail at every scale.
+          Combining motion design, photography, videography and music production with an eye for detail at every scale.
         </p>
         <a href="#work" class="hero-cta">View Work <span class="arr">→</span></a>
       </div>
@@ -60,29 +52,31 @@
     <div class="hero-foot" id="hero-foot">
       <span class="foot-bar"></span>
       <span class="foot-label">Scroll to explore</span>
-      <span class="foot-right">Sydney, AU — 2026</span>
+      <span class="foot-right">Sydney, AU - 2026</span>
     </div>
   </section>
 
-  <!-- DISCIPLINES TIMELINE -->
+  <!-- CAPABILITIES TIMELINE -->
   <section class="tl-section" id="tl-section">
-    <div class="tl-header">
-      <div class="tl-label">
-        <span class="tl-label-num">00</span>
-        <span class="tl-label-text">Disciplines</span>
-      </div>
-      <div class="tl-timecode" id="tl-timecode">00:00:00:00</div>
+    <div class="sec-label">
+      <span class="sec-label-num">01</span>
+      <span class="sec-label-text">Capabilities</span>
+      <div class="sec-label-line"></div>
     </div>
+    <!-- CAPABILITIES MONITOR (drawer) -->
     <div class="tl-monitor" id="tl-monitor">
       <div class="tl-monitor-bar">
         <span class="tl-monitor-label">Program Monitor</span>
+        <div class="tl-timecode" id="tl-timecode">00:00:00:00</div>
       </div>
       <div class="tl-monitor-body">
-        <video id="tl-monitor-vid-a" class="tl-monitor-video" muted autoplay loop preload="none" playsinline>
-          <source src="src/assets/video/Mograph-Snipet.webm" type="video/webm">
-        </video>
-        <video id="tl-monitor-vid-b" class="tl-monitor-video" muted loop preload="none" playsinline></video>
-        <div class="tl-monitor-overlay"></div>
+        <div class="tl-monitor-video-wrap">
+          <video id="tl-monitor-vid-a" class="tl-monitor-video" muted autoplay loop preload="none" playsinline>
+            <source src="src/assets/video/Mograph-Snipet.webm" type="video/webm">
+          </video>
+          <video id="tl-monitor-vid-b" class="tl-monitor-video" muted loop preload="none" playsinline></video>
+        </div>
+        <div class="tl-monitor-duotone"></div>
         <div class="tl-monitor-name" id="tl-monitor-name">Motion Design</div>
         <div class="tl-monitor-desc" id="tl-monitor-desc">After Effects, expressions, rigging, complex comp structures</div>
         <a href="work.html" class="tl-monitor-btn">View Work <span class="arr">→</span></a>
@@ -98,40 +92,56 @@
         <div class="tl-clip" style="--w:130;--bg:#7c4ddb"><span class="tl-clip-name">Videography</span></div>
         <div class="tl-clip" style="--w:140;--bg:#4d5cc4"><span class="tl-clip-name">Video Editing</span></div>
         <div class="tl-clip" style="--w:150;--bg:#5548b8"><span class="tl-clip-name">Colour Grading</span></div>
-        <div class="tl-clip" style="--w:140;--bg:#6a5af0"><span class="tl-clip-name">Graphic Design</span></div>
-        <div class="tl-clip" style="--w:120;--bg:#4e4aaa"><span class="tl-clip-name">Retouching</span></div>
-        <div class="tl-clip" style="--w:160;--bg:#5f52cc"><span class="tl-clip-name">Music Production</span></div>
-        <div class="tl-clip" style="--w:130;--bg:#6357e0"><span class="tl-clip-name">AI Integration</span></div>
+        <div class="tl-clip" style="--w:140;--bg:#6a5af0"><span class="tl-clip-name">Design & Illustration</span></div>
+        <div class="tl-clip" style="--w:160;--bg:#4e4aaa"><span class="tl-clip-name">Music Composition & Sound Design</span></div>
+        <div class="tl-clip" style="--w:120;--bg:#5f52cc"><span class="tl-clip-name">Web Design</span></div>
+        <div class="tl-clip" style="--w:140;--bg:#6357e0"><span class="tl-clip-name">AI & Generative Design</span></div>
       </div>
       <div class="tl-playhead" id="tl-playhead"><div class="tl-ph-handle"></div></div>
     </div>
   </section>
 
   <!-- WORK -->
-  <section class="section" id="work">
-    <div class="work-grid">
-      <div class="work-card" id="wc1">
-        <div class="card-bg card-bg-1"></div>
-        <span class="card-empty-label">Motion showreel thumbnail</span>
-        <div class="card-info">
-          <p class="card-tag">Motion Design</p>
-          <p class="card-title">Motion Showreel</p>
-        </div>
+  <section class="section featured-work-section" id="work">
+    <div class="sec-label">
+      <span class="sec-label-num">02</span>
+      <span class="sec-label-text">Featured Work</span>
+      <div class="sec-label-line"></div>
+    </div>
+    <div class="fw-inner">
+      <div class="fw-left">
+        <h2 class="fw-headline" style="font-family:'Monument',sans-serif;font-weight:800;font-size:clamp(2.8rem,5.5vw,5.5rem);text-transform:uppercase;letter-spacing:.02em;line-height:.9;color:var(--white);margin:0;">A Small<br/><em style="font-style:normal;color:var(--accent);">Selection.</em></h2>
+        <a href="work.html" class="fw-link">View All Work →</a>
       </div>
-      <div class="work-card" id="wc2">
-        <div class="card-bg card-bg-2"></div>
-        <span class="card-empty-label">Videography showreel thumbnail</span>
-        <div class="card-info">
-          <p class="card-tag">Videography</p>
-          <p class="card-title">Videography Showreel</p>
-        </div>
-      </div>
-      <div class="work-card" id="wc3">
-        <div class="card-bg card-bg-3"></div>
-        <span class="card-empty-label">Featured project thumbnail</span>
-        <div class="card-info">
-          <p class="card-tag">Featured Project</p>
-          <p class="card-title">TBC</p>
+      <div class="fw-right">
+        <div class="fw-rotunda-wrap">
+          <div class="fw-rotunda" id="fw-rotunda">
+            <div class="fw-card" data-index="0">
+              <div class="fw-card-img" style="background-image: url('src/assets/images/nla-thumb.jpg')"></div>
+              <div class="fw-card-info">
+                <p class="fw-card-tag">Projection Mapping</p>
+                <p class="fw-card-title"><span class="fw-card-title-inner">NLA Enlighten</span></p>
+                <p class="fw-card-role">Design Lead — The Electric Canvas x Beautiful and Useful Studio</p>
+              </div>
+            </div>
+            <div class="fw-card" data-index="1">
+              <div class="fw-card-img" style="background-image: url('src/assets/images/rams-thumb.jpg')"></div>
+              <div class="fw-card-info">
+                <p class="fw-card-tag">3D Animation</p>
+                <p class="fw-card-title"><span class="fw-card-title-inner">RAMS Construction</span></p>
+                <p class="fw-card-role">Art Direction, 3D Animation, VFX — Tonic Films</p>
+              </div>
+            </div>
+            <div class="fw-card" data-index="2">
+              <div class="fw-card-img" style="background-image: url('src/assets/images/wrinkles-thumb.jpg')"></div>
+              <div class="fw-card-info">
+                <p class="fw-card-tag">FOOH</p>
+                <p class="fw-card-title"><span class="fw-card-title-inner">Wrinkles Schminkles</span></p>
+                <p class="fw-card-role">3D Animation — Global Campaign</p>
+              </div>
+            </div>
+            <p class="fw-drag-hint">Drag to explore</p>
+          </div>
         </div>
       </div>
     </div>
@@ -139,32 +149,26 @@
 
   <!-- ABOUT -->
   <section class="about-section" id="about">
+    <div class="sec-label">
+      <span class="sec-label-num">03</span>
+      <span class="sec-label-text">About</span>
+      <div class="sec-label-line"></div>
+    </div>
     <div class="about-left">
       <div class="about-drum-block">
         <div class="about-drum-line1">I make</div>
-        <div class="about-drum-wrap">
-          <div class="about-drum" id="about-drum">
-            <div class="about-drum-word">projection shows</div>
-            <div class="about-drum-word">music videos</div>
-            <div class="about-drum-word">children's books</div>
-            <div class="about-drum-word">motion graphics</div>
-            <div class="about-drum-word">photography</div>
-            <div class="about-drum-word">album art</div>
-            <div class="about-drum-word">press shots</div>
-            <div class="about-drum-word">3D renders</div>
-            <div class="about-drum-word">web tools</div>
-            <div class="about-drum-word">brand assets</div>
-          </div>
+        <div class="slide-txt-wrap" id="slide-txt-wrap">
+          <!-- items injected by JS -->
         </div>
         <div class="about-drum-line3">Depending on the week.</div>
       </div>
     </div>
     <div class="about-right" id="about-right">
       <p id="about-p1">
-        I don't compartmentalise well — which means I bring music thinking to motion problems, illustration thinking to code problems, and parenting thinking to client communication.
+        I don't compartmentalise well - which means I bring music thinking to motion problems, illustration thinking to code problems, and parenting thinking to client communication.
       </p>
       <p id="about-p2">
-        I'm a Senior Motion Designer at The Electric Canvas, a Sydney-based architectural projection company. Before that: Tonic Films, OMD, Saatchi &amp; Saatchi — press packages, advertising, large-scale media conferences, cinema formats, OOH.
+        I'm a Senior Motion Designer at The Electric Canvas, a Sydney-based architectural projection company. Before that: Tonic Films, OMD, Saatchi &amp; Saatchi - press packages, advertising, large-scale media conferences, cinema formats, OOH.
       </p>
       <p id="about-p3">
         Outside of that I'm a freelance creative, self-published children's book author and illustrator, a recording musician, and a dad of two boys. I started opening Photoshop before I knew what I was doing. That instinct hasn't gone away.
@@ -175,12 +179,80 @@
           <div class="stat-label">Years in<br/>Motion</div>
         </div>
         <div class="stat">
-          <div class="stat-num" data-text="SYD">—</div>
+          <div class="stat-num" data-text="SYD">-</div>
           <div class="stat-label">Based</div>
         </div>
         <div class="stat">
-          <div class="stat-num" data-count="11">0</div>
-          <div class="stat-label">Creative<br/>Disciplines</div>
+          <div class="stat-num" data-count="2">0</div>
+          <div class="stat-label">Kids</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDITS -->
+  <section class="credits-section" id="credits">
+    <div class="sec-label">
+      <span class="sec-label-num">05</span>
+      <span class="sec-label-text">Credits</span>
+      <div class="sec-label-line"></div>
+    </div>
+    <div class="credits-inner">
+      <div class="credits-left">
+        <h2 class="credits-headline">Brands I've<br/><em>Made For.</em></h2>
+      </div>
+      <div class="credits-right" id="credits-right">
+        <div class="marquee-row marquee-row-1">
+          <div class="marquee-track marquee-left">
+            <span class="marquee-item">Hyundai</span>
+            <span class="marquee-item">Kia</span>
+            <span class="marquee-item">Toyota</span>
+            <span class="marquee-item">Lexus</span>
+            <span class="marquee-item">Coles</span>
+            <span class="marquee-item">Heineken</span>
+            <span class="marquee-item">Ampol</span>
+            <span class="marquee-item">Visa</span>
+            <span class="marquee-item">Estée Lauder</span>
+            <span class="marquee-item">L'Oréal</span>
+            <span class="marquee-item">Nivea</span>
+            <span class="marquee-item">Hyundai</span>
+            <span class="marquee-item">Kia</span>
+            <span class="marquee-item">Toyota</span>
+            <span class="marquee-item">Lexus</span>
+            <span class="marquee-item">Coles</span>
+            <span class="marquee-item">Heineken</span>
+            <span class="marquee-item">Ampol</span>
+            <span class="marquee-item">Visa</span>
+            <span class="marquee-item">Estée Lauder</span>
+            <span class="marquee-item">L'Oréal</span>
+            <span class="marquee-item">Nivea</span>
+          </div>
+        </div>
+        <div class="marquee-row marquee-row-2">
+          <div class="marquee-track marquee-right">
+            <span class="marquee-item">Pepsi</span>
+            <span class="marquee-item">Qantas</span>
+            <span class="marquee-item">Cottees</span>
+            <span class="marquee-item">Bombay Sapphire</span>
+            <span class="marquee-item">Dulux</span>
+            <span class="marquee-item">RAMS</span>
+            <span class="marquee-item">Superloop</span>
+            <span class="marquee-item">Campbell Arnott's</span>
+            <span class="marquee-item">St.George</span>
+            <span class="marquee-item">NSW Government</span>
+            <span class="marquee-item">VEC</span>
+            <span class="marquee-item">Pepsi</span>
+            <span class="marquee-item">Qantas</span>
+            <span class="marquee-item">Cottees</span>
+            <span class="marquee-item">Bombay Sapphire</span>
+            <span class="marquee-item">Dulux</span>
+            <span class="marquee-item">RAMS</span>
+            <span class="marquee-item">Superloop</span>
+            <span class="marquee-item">Campbell Arnott's</span>
+            <span class="marquee-item">St.George</span>
+            <span class="marquee-item">NSW Government</span>
+            <span class="marquee-item">VEC</span>
+          </div>
         </div>
       </div>
     </div>
@@ -188,6 +260,11 @@
 
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
+    <div class="sec-label">
+      <span class="sec-label-num">06</span>
+      <span class="sec-label-text">Contact</span>
+      <div class="sec-label-line"></div>
+    </div>
     <div class="contact-bg-text">CONTACT</div>
     <div class="contact-inner">
       <h2 class="contact-headline" id="contact-headline">
@@ -195,10 +272,10 @@
         <span class="word-wrap"><span class="word-inner"><em>Work.</em></span></span>
       </h2>
       <div class="contact-right" id="contact-right">
-        <a href="mailto:hello@josephgmedia.com" class="contact-email">hello@josephgmedia.com</a>
-        <a href="#" class="contact-link"><span class="arr">→</span> Instagram</a>
-        <a href="#" class="contact-link"><span class="arr">→</span> Vimeo</a>
-        <a href="#" class="contact-link"><span class="arr">→</span> LinkedIn</a>
+        <a href="mailto:info@josephgmedia.com" class="contact-link">info@josephgmedia.com</a>
+        <a href="https://www.instagram.com/josephgmedia" class="contact-link"><span class="arr">→</span> Instagram</a>
+        <a href="https://www.youtube.com/@josephgmedia" class="contact-link"><span class="arr">→</span> Youtube</a>
+        <a href="https://www.linkedin.com/in/jgiuffrida93/" class="contact-link"><span class="arr">→</span> LinkedIn</a>
       </div>
     </div>
   </section>
@@ -206,10 +283,10 @@
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Joseph G Media</p>
-    <p>josephgmedia.com — Sydney, Australia</p>
+    <p>josephgmedia.com - Sydney, Australia</p>
   </footer>
 
-  <!-- CDN Scripts -->
+<!-- CDN Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
