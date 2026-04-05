@@ -53,6 +53,18 @@ window.addEventListener('scroll', () => {
   nav?.classList.toggle('scrolled', scrollY > 60);
 }, { passive: true });
 
+// ── MOBILE NAV ──
+const hamburger = document.getElementById('nav-hamburger');
+const navClose = document.getElementById('nav-close');
+const navOverlay = document.getElementById('nav-overlay');
+if (hamburger && navOverlay) {
+  hamburger.addEventListener('click', () => document.body.classList.add('nav-open'));
+  navClose?.addEventListener('click', () => document.body.classList.remove('nav-open'));
+  navOverlay.querySelectorAll('.nav-overlay-link').forEach(link => {
+    link.addEventListener('click', () => document.body.classList.remove('nav-open'));
+  });
+}
+
 // ── MAIN ANIMATIONS (called after loader exits) ──
 function initAnimations() {
 
@@ -262,6 +274,60 @@ function initAnimations() {
       mouseClientX = e.clientX;
     }, { passive: true });
 
+    // Touch events for mobile timeline scrub
+    tlSection?.addEventListener('touchstart', e => {
+      scrubActive = true;
+      mouseOverClip = true;
+      mouseClientX = e.touches[0].clientX;
+      cacheRects();
+    }, { passive: true });
+    tlSection?.addEventListener('touchmove', e => {
+      mouseClientX = e.touches[0].clientX;
+    }, { passive: true });
+    tlSection?.addEventListener('touchend', () => {
+      scrubActive = false;
+      mouseOverClip = false;
+    });
+
+    // Mobile scroll-based clip detection and monitor switching
+    const scrollProgressFill = document.getElementById('tl-scroll-progress-fill');
+    if (tlTrack && window.innerWidth < 1024) {
+      // Track scroll progress bar
+      tlTrack.addEventListener('scroll', () => {
+        const maxScroll = tlTrack.scrollWidth - tlTrack.clientWidth;
+        if (maxScroll <= 0) return;
+        const pct = tlTrack.scrollLeft / maxScroll;
+        if (scrollProgressFill) scrollProgressFill.style.width = (pct * 100) + '%';
+      }, { passive: true });
+
+      // IntersectionObserver to detect centred clip
+      const clipObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const idx = tlClips.indexOf(entry.target);
+          if (idx < 0) return;
+          tlClips.forEach(cl => cl.classList.remove('is-active'));
+          entry.target.classList.add('is-active');
+          // Sync playhead to clip position
+          cacheRects();
+          const b = clipRects[idx];
+          if (b) targetX = (b.left + b.right) / 2;
+          scrubActive = true;
+          // Update monitor
+          openDrawer();
+          if (idx !== monitorIdx) {
+            monitorIdx = idx;
+            crossfadeContent(idx);
+            switchMonitorMedia(TL_DATA[idx].name);
+          }
+        });
+      }, {
+        root: tlTrack,
+        threshold: 0.6,
+      });
+      tlClips.forEach(cl => clipObserver.observe(cl));
+    }
+
     function pad(n) { return String(n).padStart(2, '0'); }
     function toTimecode(f) {
       const ff = f % 25;
@@ -329,11 +395,16 @@ function initAnimations() {
     const wrap = document.getElementById('slide-txt-wrap');
     if (!wrap) return;
 
-    const WORDS = [
+    const DESKTOP_WORDS = [
       'projection shows', 'music videos', "children's books", 'motion graphics',
       'documentaries', 'album art', 'press shots', '3D renders', 'animations', 'brand assets'
     ];
-    const COLOURS = ['#4427d7','#3b3fe8','#2e45d9','#4f5cf2','#4427d7','#3b3fe8','#2e45d9','#4f5cf2','#4427d7','#3b3fe8'];
+    const MOBILE_WORDS = [
+      'soundtracks', 'storybooks', 'pictures', 'videos',
+      'animations', '3D renders', 'websites'
+    ];
+    const WORDS = window.innerWidth < 768 ? MOBILE_WORDS : DESKTOP_WORDS;
+    const COLOURS = WORDS.map((_, i) => ['#4427d7','#3b3fe8','#2e45d9','#4f5cf2'][i % 4]);
     const N       = WORDS.length;
     const DUR     = 2.5;
     const EASE    = 'expo.inOut';
@@ -420,75 +491,15 @@ function initAnimations() {
     tl.play();
   })();
 
-  // ── FEATURED WORK ROTUNDA ──
-  const rotunda = document.getElementById('fw-rotunda');
-  if (rotunda) {
-    const cards = Array.from(rotunda.querySelectorAll('.fw-card'));
-    const count = cards.length;
-    const radius = 320;
-    let currentAngle = 0;
-    let targetAngle = 0;
-    let isDragging = false;
-    let startX = 0;
-    let startAngle = 0;
-
-    function getAngleForIndex(i) {
-      return (360 / count) * i;
-    }
-
-    function updateRotunda() {
-      currentAngle += (targetAngle - currentAngle) * 0.08;
-
-      cards.forEach((card, i) => {
-        const cardAngle = (getAngleForIndex(i) + currentAngle) * (Math.PI / 180);
-        const x = Math.sin(cardAngle) * radius;
-        const z = Math.cos(cardAngle) * radius;
-        const scale = (z + radius) / (radius * 2);
-        const mappedScale = 1.05 + scale * 0.1;
-
-        card.style.transform = `translate3d(${x}px, 0, ${z}px) scale(${mappedScale})`;
-        card.style.zIndex = Math.round(scale * 100);
-
-        const isActive = z > radius * 0.7;
-        card.classList.toggle('active', isActive);
+  // ── FEATURED WORK GRID — tap to reveal on mobile ──
+  if ('ontouchstart' in window) {
+    document.querySelectorAll('.fw-grid .fw-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const wasActive = card.classList.contains('is-tapped');
+        document.querySelectorAll('.fw-grid .fw-card.is-tapped').forEach(c => c.classList.remove('is-tapped'));
+        if (!wasActive) card.classList.add('is-tapped');
       });
-
-      requestAnimationFrame(updateRotunda);
-    }
-
-    rotunda.addEventListener('mousedown', e => {
-      isDragging = true;
-      startX = e.clientX;
-      startAngle = targetAngle;
-      rotunda.style.cursor = 'grabbing';
     });
-    window.addEventListener('mousemove', e => {
-      if (!isDragging) return;
-      const delta = (e.clientX - startX) * 0.4;
-      targetAngle = startAngle + delta;
-    });
-    window.addEventListener('mouseup', () => {
-      if (!isDragging) return;
-      isDragging = false;
-      rotunda.style.cursor = 'grab';
-      const snap = 360 / count;
-      targetAngle = Math.round(targetAngle / snap) * snap;
-    });
-
-    rotunda.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-      startAngle = targetAngle;
-    }, { passive: true });
-    rotunda.addEventListener('touchmove', e => {
-      const delta = (e.touches[0].clientX - startX) * 0.4;
-      targetAngle = startAngle + delta;
-    }, { passive: true });
-    rotunda.addEventListener('touchend', () => {
-      const snap = 360 / count;
-      targetAngle = Math.round(targetAngle / snap) * snap;
-    });
-
-    updateRotunda();
   }
 
   // ── ABOUT — word-by-word colour sweep ──
@@ -506,32 +517,57 @@ function initAnimations() {
     });
   });
 
-  // ── STATS block slide in ──
-  gsap.from('#about-stats .stat', {
-    opacity: 0, y: 30, duration: .8, ease: 'power3.out', stagger: .1,
-    scrollTrigger: { trigger: '#about-stats', start: 'top 80%' }
-  });
+  // ── STATS block slide in (desktop only) ──
+  if (window.innerWidth >= 768) {
+    gsap.from('#about-stats .stat', {
+      opacity: 0, y: 30, duration: .8, ease: 'power3.out', stagger: .1,
+      scrollTrigger: { trigger: '#about-stats', start: 'top 80%' }
+    });
+  }
 
   // ── STATS — one-at-a-time flip (staggered) ──
   const statCards = document.querySelectorAll('#about-stats .stat');
   let statDelay = null;
 
+  const isMobileStat = window.innerWidth < 768;
   statCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      clearTimeout(statDelay);
-      const flipped = document.querySelector('#about-stats .stat.is-flipped');
-      if (flipped && flipped !== card) {
-        flipped.classList.remove('is-flipped');
-        statDelay = setTimeout(() => card.classList.add('is-flipped'), 1);
-      } else if (!flipped) {
-        card.classList.add('is-flipped');
-      }
-    });
-    card.addEventListener('mouseleave', () => {
-      clearTimeout(statDelay);
-      card.classList.remove('is-flipped');
-    });
+    if (!isMobileStat) {
+      // Desktop: hover flip
+      card.addEventListener('mouseenter', () => {
+        clearTimeout(statDelay);
+        const flipped = document.querySelector('#about-stats .stat.is-flipped');
+        if (flipped && flipped !== card) {
+          flipped.classList.remove('is-flipped');
+          statDelay = setTimeout(() => card.classList.add('is-flipped'), 1);
+        } else if (!flipped) {
+          card.classList.add('is-flipped');
+        }
+      });
+      card.addEventListener('mouseleave', () => {
+        clearTimeout(statDelay);
+        card.classList.remove('is-flipped');
+      });
+    } else {
+      // Mobile: tap to toggle flip
+      card.addEventListener('click', () => {
+        card.classList.toggle('is-flipped');
+        const hint = document.getElementById('stat-tap-hint');
+        if (hint) hint.classList.add('is-hidden');
+      });
+    }
   });
+
+  // Add tap hint below stats on mobile
+  if (window.innerWidth < 768) {
+    const statsEl = document.getElementById('about-stats');
+    if (statsEl) {
+      const hint = document.createElement('span');
+      hint.className = 'stat-tap-hint';
+      hint.id = 'stat-tap-hint';
+      hint.textContent = 'Tap to reveal';
+      statsEl.insertAdjacentElement('afterend', hint);
+    }
+  }
 
   // ── CONTACT ──
   gsap.to('#contact-right', {
@@ -562,6 +598,7 @@ function initAnimations() {
     [[1742,633],[1851,538]],
   ];
 
+  const isTouchDevice = 'ontouchstart' in window;
   let engine, runner, world, mouseBody, cables = [];
   let neonOn = false;
   let animFrame = null;
@@ -576,6 +613,31 @@ function initAnimations() {
   }
 
   function scale(x, y) {
+    // On mobile, sign images use object-fit: contain so we must compute
+    // the contained image bounds within the canvas to position anchors correctly
+    if (window.innerWidth < 1024) {
+      const cw = canvas.width, ch = canvas.height;
+      const imgRatio = REF_W / REF_H;
+      const canvasRatio = cw / ch;
+      let renderW, renderH, offsetX, offsetY;
+      if (canvasRatio > imgRatio) {
+        // Canvas is wider — image height-limited
+        renderH = ch;
+        renderW = ch * imgRatio;
+        offsetX = (cw - renderW) / 2;
+        offsetY = 0;
+      } else {
+        // Canvas is taller — image width-limited
+        renderW = cw;
+        renderH = cw / imgRatio;
+        offsetX = 0;
+        offsetY = (ch - renderH) / 2;
+      }
+      return {
+        x: offsetX + (x / REF_W) * renderW,
+        y: offsetY + (y / REF_H) * renderH,
+      };
+    }
     return { x: x * (canvas.width / REF_W), y: y * (canvas.height / REF_H) };
   }
 
@@ -586,12 +648,14 @@ function initAnimations() {
     world = engine.world;
     runner = Runner.create();
 
-    // Mouse interaction body
-    mouseBody = Bodies.circle(0, 0, 25, {
-      isStatic: true,
-      collisionFilter: { category: 0x0002, mask: 0x0001 },
-    });
-    Composite.add(world, mouseBody);
+    // Mouse interaction body — skip on touch devices
+    if (!isTouchDevice) {
+      mouseBody = Bodies.circle(0, 0, 25, {
+        isStatic: true,
+        collisionFilter: { category: 0x0002, mask: 0x0001 },
+      });
+      Composite.add(world, mouseBody);
+    }
 
     cables = ANCHORS.map(([a, b]) => {
       const pa = scale(a[0], a[1]);
@@ -710,15 +774,18 @@ function initAnimations() {
       }
 
       // Three-pass rendering: glow (blurred) → body (sharp) → highlight (blurred)
+      // Scale thickness proportionally with canvas size
+      const wireScale = canvas.width / REF_W;
+      const wt = WIRE_THICKNESS * wireScale;
       const passes = neonOn
         ? [
-            { width: WIRE_THICKNESS * 2.8, alpha: 0.15, glow: true },
-            { width: WIRE_THICKNESS,        alpha: 1,    body: true },
-            { width: WIRE_THICKNESS * 0.18, alpha: 0.5,  highlight: true },
+            { width: wt * 2.8, alpha: 0.15, glow: true },
+            { width: wt,       alpha: 1,    body: true },
+            { width: wt * 0.18, alpha: 0.5, highlight: true },
           ]
         : [
-            { width: WIRE_THICKNESS,        alpha: 1,    off: true },
-            { width: WIRE_THICKNESS * 0.18, alpha: 0.25, off: true, highlight: true },
+            { width: wt,       alpha: 1,    off: true },
+            { width: wt * 0.18, alpha: 0.25, off: true, highlight: true },
           ];
 
       // Cable shadow — applied before all passes

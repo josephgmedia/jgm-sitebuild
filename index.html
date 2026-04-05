@@ -37,11 +37,20 @@
       <a href="index.html" class="nav-logo">
         <img src="src/assets/images/logos/JGMedia_Logo.svg" alt="Joseph G Media" />
       </a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="nav-overlay" id="nav-overlay">
+        <button class="nav-close" id="nav-close" aria-label="Close menu">✕</button>
+        <a href="#work" class="nav-overlay-link">Work</a>
+        <a href="#about" class="nav-overlay-link">About</a>
+        <a href="#contact" class="nav-overlay-link">Contact</a>
+      </div>
     </nav>
     <div class="hero-ui">
       <span class="neon-tagline">Inspiration doesn't keep business hours.</span>
@@ -133,6 +142,9 @@
       </div>
       <div class="tl-playhead" id="tl-playhead"><div class="tl-ph-handle"></div></div>
     </div>
+    <div class="tl-scroll-progress" id="tl-scroll-progress">
+      <div class="tl-scroll-progress-fill" id="tl-scroll-progress-fill"></div>
+    </div>
   </section>
 
   <!-- WORK -->
@@ -141,44 +153,58 @@
       <span class="sec-label-num">02</span>
       <span class="sec-label-text">Featured Work</span>
       <div class="sec-label-line"></div>
+      <a href="work.html" class="sec-label-cta">View All <span class="arr">→</span></a>
     </div>
-    <div class="fw-inner">
-      <div class="fw-left">
-        <h2 class="fw-headline" style="font-family:'Monument',sans-serif;font-weight:800;font-size:clamp(2.8rem,5.5vw,5.5rem);text-transform:uppercase;letter-spacing:.02em;line-height:.9;color:var(--white);margin:0;">A Small<br/><em style="font-style:normal;color:var(--accent);">Selection.</em></h2>
-        <a href="work.html" class="fw-link">View All Work →</a>
+    <div class="fw-grid">
+      <div class="fw-card">
+        <div class="fw-card-img" style="background-image: url('src/assets/images/work/nla-thumb.jpg')"></div>
+        <div class="fw-card-info">
+          <p class="fw-card-tag">Projection</p>
+          <p class="fw-card-title">NLA Enlighten</p>
+          <p class="fw-card-role">Design Lead</p>
+          <p class="fw-card-agency">The Electric Canvas</p>
+        </div>
       </div>
-      <div class="fw-right">
-        <div class="fw-rotunda-wrap">
-          <div class="fw-rotunda" id="fw-rotunda">
-            <div class="fw-card" data-index="0">
-              <div class="fw-card-img" style="background-image: url('src/assets/images/work/nla-thumb.jpg')"></div>
-              <div class="fw-card-info">
-                <p class="fw-card-tag">Projection Mapping</p>
-                <p class="fw-card-title"><span class="fw-card-title-inner">NLA Enlighten</span></p>
-                <p class="fw-card-role">Design Lead</p>
-                <p class="fw-card-agency">The Electric Canvas x Beautiful and Useful Studio</p>
-              </div>
-            </div>
-            <div class="fw-card" data-index="1">
-              <div class="fw-card-img" style="background-image: url('src/assets/images/work/rams-thumb.jpg')"></div>
-              <div class="fw-card-info">
-                <p class="fw-card-tag">3D Animation</p>
-                <p class="fw-card-title"><span class="fw-card-title-inner">RAMS Construction</span></p>
-                <p class="fw-card-role">Art Direction, 3D Animation, VFX Supervisor</p>
-                <p class="fw-card-agency">Saatchi & Saatchi</p>
-              </div>
-            </div>
-            <div class="fw-card" data-index="2">
-              <div class="fw-card-img" style="background-image: url('src/assets/images/work/bundywedding.jpg')"></div>
-              <div class="fw-card-info">
-                <p class="fw-card-tag">Videography</p>
-                <p class="fw-card-title"><span class="fw-card-title-inner">Bundaberg Ce<span style="font-size:140%">rum</span>ony</span></p>
-                <p class="fw-card-role">Videography, Video Editing, Colour Grading</p>
-                <p class="fw-card-agency">Leo Burnett</p>
-              </div>
-            </div>
-            <p class="fw-drag-hint">Drag to explore</p>
-          </div>
+      <div class="fw-card">
+        <div class="fw-card-img" style="background-image: url('src/assets/images/work/rams-thumb.jpg')"></div>
+        <div class="fw-card-info">
+          <p class="fw-card-tag">Campaign</p>
+          <p class="fw-card-title">RAMS Construction</p>
+          <p class="fw-card-role">Art Direction, 3D Animation, VFX Supervisor</p>
+          <p class="fw-card-agency">Saatchi &amp; Saatchi</p>
+        </div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card-img" style="background-image: url('src/assets/images/work/drjack-thumb.jpg')"></div>
+        <div class="fw-card-info">
+          <p class="fw-card-tag">VFX</p>
+          <p class="fw-card-title">Porsche x Dr Jack</p>
+          <p class="fw-card-role">3D Animation, Composite, Colour Grade</p>
+        </div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card-img" style="background-image: url('src/assets/images/work/autolink-thumb.jpg')"></div>
+        <div class="fw-card-info">
+          <p class="fw-card-tag">2D Animation</p>
+          <p class="fw-card-title">Hyundai Auto Link</p>
+          <p class="fw-card-role">Character Animation, Music Composition &amp; Sound Design</p>
+        </div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card-img" style="background-image: url('src/assets/images/work/bundy-thumb.jpg')"></div>
+        <div class="fw-card-info">
+          <p class="fw-card-tag" style="margin-bottom:-2px">Videography</p>
+          <p class="fw-card-title">Bundaberg Ce<span class="fw-rum">rum</span>ony</p>
+          <p class="fw-card-role">Videography, Video Editing, Colour Grade</p>
+          <p class="fw-card-agency">Leo Burnett</p>
+        </div>
+      </div>
+      <div class="fw-card">
+        <div class="fw-card-img" style="background-image: url('src/assets/images/work/gryff-thumb.jpg')"></div>
+        <div class="fw-card-info">
+          <p class="fw-card-tag">Videography</p>
+          <p class="fw-card-title">Gryff</p>
+          <p class="fw-card-role">Videography, Video Editing, Colour Grade</p>
         </div>
       </div>
     </div>
@@ -197,7 +223,7 @@
         <div class="slide-txt-wrap" id="slide-txt-wrap">
           <!-- items injected by JS -->
         </div>
-        <div class="about-drum-line3">Depending on the week.</div>
+        <div class="about-drum-line3">Depending on<br class="mobile-br"/> the week.</div>
       </div>
     </div>
     <div class="about-right" id="about-right">
@@ -219,7 +245,7 @@
             </div>
             <div class="stat-face stat-back">
               <div class="stat-num">10+</div>
-              <div class="stat-label">Years too long.</div>
+              <div class="stat-label">Years too long</div>
             </div>
           </div>
         </div>
@@ -231,7 +257,7 @@
             </div>
             <div class="stat-face stat-back">
               <div class="stat-num">SYD</div>
-              <div class="stat-label">Still here.</div>
+              <div class="stat-label">Still here</div>
             </div>
           </div>
         </div>
@@ -243,7 +269,7 @@
             </div>
             <div class="stat-face stat-back">
               <div class="stat-num">2</div>
-              <div class="stat-label">Reasons to<br/>keep working.</div>
+              <div class="stat-label">Reasons to<br/>keep working</div>
             </div>
           </div>
         </div>
@@ -254,7 +280,7 @@
   <!-- CREDITS -->
   <section class="credits-section" id="credits">
     <div class="sec-label">
-      <span class="sec-label-num">05</span>
+      <span class="sec-label-num">04</span>
       <span class="sec-label-text">Credits</span>
       <div class="sec-label-line"></div>
     </div>
@@ -330,7 +356,7 @@
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="sec-label">
-      <span class="sec-label-num">06</span>
+      <span class="sec-label-num">05</span>
       <span class="sec-label-text">Contact</span>
       <div class="sec-label-line"></div>
     </div>
@@ -338,7 +364,7 @@
     <div class="contact-inner">
       <h2 class="contact-headline" id="contact-headline">
         <span class="word-wrap"><span class="word-inner">Let's</span></span>
-        <span class="word-wrap"><span class="word-inner"><em>Work.</em></span></span>
+        <span class="word-wrap"><span class="word-inner"><em style="color:var(--accent)">Work.</em></span></span>
       </h2>
       <div class="contact-right" id="contact-right">
         <a href="mailto:info@josephgmedia.com" class="contact-link">info@josephgmedia.com</a>
@@ -351,7 +377,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Joseph G Media - Sydney, Australia</p>
+    <p>© 2026 Joseph G Media<br class="mobile-br"/> Sydney, Australia</p>
   </footer>
 
 <!-- CDN Scripts -->
