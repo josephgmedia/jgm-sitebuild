@@ -14,49 +14,51 @@
   <link rel="stylesheet" href="src/style.css" />
 </head>
 <body>
+  <a href="#work" class="skip-link">Skip to content</a>
 
   <!-- CURSOR -->
-  <div id="cursor-dot"></div>
-  <div id="cursor-ring"></div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
 
+  <header>
   <!-- HERO -->
-  <section class="hero-neon" id="hero">
-    <!-- Layer 1: Brick backgrounds -->
-    <img class="hero-layer hero-brick-off" src="src/assets/images/hero-sign/hero-brick-bg-off.webp" alt="" />
-    <img class="hero-layer hero-brick-on"  src="src/assets/images/hero-sign/hero-brick-bg-on.webp"  alt="" />
+  <section class="hero-neon" id="hero" aria-label="Hero">
+    <!-- Layer 1: Brick background (single image, CSS handles on/off state) -->
+    <img class="hero-layer hero-brick" src="src/assets/images/hero-sign/hero-brick-bg.webp" alt="" />
+    <div class="hero-brick-glow"></div>
 
     <!-- Layer 2: Cable canvas -->
-    <canvas id="cable-canvas" class="hero-layer"></canvas>
+    <canvas id="cable-canvas" class="hero-layer" aria-hidden="true"></canvas>
 
-    <!-- Layer 3: Sign foregrounds -->
-    <img class="hero-layer hero-sign-off" src="src/assets/images/hero-sign/hero-sign-fg-off.webp" alt="" />
-    <img class="hero-layer hero-sign-on"  src="src/assets/images/hero-sign/hero-sign-fg-on.webp"  alt="" />
+    <!-- Layer 3: Sign foregrounds (tight crop, transparent bg) -->
+    <img class="hero-sign hero-sign-off" src="src/assets/images/hero-sign/hero-sign-fg-off.webp" alt="" />
+    <img class="hero-sign hero-sign-on"  src="src/assets/images/hero-sign/hero-sign-fg-on.webp"  alt="" />
 
     <!-- Layer 4: UI -->
     <nav id="nav">
       <a href="index.html" class="nav-logo">
         <img src="src/assets/images/logos/JGMedia_Logo.svg" alt="Joseph G Media" />
       </a>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-overlay">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
       <ul class="nav-links">
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="nav-overlay" id="nav-overlay">
+      <nav class="nav-overlay" id="nav-overlay" role="dialog" aria-label="Navigation menu" aria-hidden="true">
         <button class="nav-close" id="nav-close" aria-label="Close menu">✕</button>
         <a href="#work" class="nav-overlay-link">Work</a>
         <a href="#about" class="nav-overlay-link">About</a>
         <a href="#contact" class="nav-overlay-link">Contact</a>
-      </div>
+      </nav>
     </nav>
     <div class="hero-ui">
       <span class="neon-tagline">Inspiration doesn't keep business hours.</span>
       <label class="neon-toggle-wrap">
-        <input type="checkbox" id="neon-toggle" />
-        <span class="neon-toggle-track">
+        <input type="checkbox" id="neon-toggle" role="switch" aria-label="Toggle neon sign on and off" />
+        <span class="neon-toggle-track" aria-hidden="true">
           <span class="neon-toggle-thumb"></span>
         </span>
         <span class="neon-toggle-label">AFTER HOURS</span>
@@ -69,12 +71,15 @@
         </div>
         <span class="foot-label">Scroll to<br/>explore</span>
       </div>
-      <span class="foot-right">Sydney, AU — 2026</span>
+      <span class="foot-right">Sydney, AU - 2026</span>
     </div>
   </section>
 
+  </header>
+
+  <main id="main-content">
   <!-- CAPABILITIES TIMELINE -->
-  <section class="tl-section" id="tl-section">
+  <section class="tl-section" id="tl-section" aria-label="Capabilities">
     <div class="sec-label">
       <span class="sec-label-num">01</span>
       <span class="sec-label-text">Capabilities</span>
@@ -106,112 +111,112 @@
           </video>
           <!-- Static image disciplines (Ken Burns) -->
           <div id="tl-media-design" class="tl-monitor-video tl-media-layer tl-kb-wrap">
-            <img class="tl-kb-img" src="src/assets/images/monitor-vids/design.webp" alt="" />
+            <img class="tl-kb-img" loading="lazy" src="src/assets/images/monitor-vids/design.webp" alt="Design and illustration work sample" />
           </div>
           <div id="tl-media-web" class="tl-monitor-video tl-media-layer tl-kb-wrap">
-            <img class="tl-kb-img" src="src/assets/images/monitor-vids/web.webp" alt="" />
+            <img class="tl-kb-img" loading="lazy" src="src/assets/images/monitor-vids/web.webp" alt="Web design work sample" />
           </div>
           <div id="tl-media-genai" class="tl-monitor-video tl-media-layer tl-kb-wrap">
-            <img class="tl-kb-img" src="src/assets/images/monitor-vids/genai.webp" alt="" />
+            <img class="tl-kb-img" loading="lazy" src="src/assets/images/monitor-vids/genai.webp" alt="AI and generative design work sample" />
           </div>
           <!-- Photography slideshow (Ken Burns per image) -->
           <div id="tl-media-photo" class="tl-monitor-video tl-media-layer tl-kb-wrap">
-            <img class="tl-photo-slide tl-kb-img" src="src/assets/images/monitor-vids/photo-1.webp" alt="" />
-            <img class="tl-photo-slide tl-kb-img" src="src/assets/images/monitor-vids/photo-2.webp" alt="" />
-            <img class="tl-photo-slide tl-kb-img" src="src/assets/images/monitor-vids/photo-3.webp" alt="" />
+            <img class="tl-photo-slide tl-kb-img" loading="lazy" src="src/assets/images/monitor-vids/photo-1.webp" alt="Photography work sample" />
+            <img class="tl-photo-slide tl-kb-img" loading="lazy" src="src/assets/images/monitor-vids/photo-2.webp" alt="Photography work sample" />
+            <img class="tl-photo-slide tl-kb-img" loading="lazy" src="src/assets/images/monitor-vids/photo-3.webp" alt="Photography work sample" />
           </div>
         </div>
         <div class="tl-monitor-duotone"></div>
-        <div class="tl-monitor-name" id="tl-monitor-name">Motion Design &amp; 2D Animation</div>
-        <div class="tl-monitor-desc" id="tl-monitor-desc">After Effects, character rigging, expressions, Duik, Limber</div>
+        <h3 class="tl-monitor-name" id="tl-monitor-name" aria-live="polite">Motion Design &amp; 2D Animation</h3>
+        <p class="tl-monitor-desc" id="tl-monitor-desc" aria-live="polite">After Effects, character rigging, expressions, Duik, Limber</p>
         <a href="work.html" class="tl-monitor-btn">View Work <span class="arr">→</span></a>
       </div>
     </div>
     <div class="tl-body" id="tl-body">
       <div class="tl-ruler"></div>
-      <div class="tl-track" id="tl-track">
-        <div class="tl-clip" style="--w:200;--bg:#3642d4"><span class="tl-clip-name">Motion Design & 2D Animation</span></div>
-        <div class="tl-clip" style="--w:130;--bg:#4455e8"><span class="tl-clip-name">3D Animation</span></div>
-        <div class="tl-clip" style="--w:140;--bg:#3a4ed9"><span class="tl-clip-name">Photography</span></div>
-        <div class="tl-clip" style="--w:130;--bg:#2d3abf"><span class="tl-clip-name">Videography</span></div>
-        <div class="tl-clip" style="--w:200;--bg:#3f50cc"><span class="tl-clip-name">Video Editing & Colour Grading</span></div>
-        <div class="tl-clip" style="--w:140;--bg:#4a5ef0"><span class="tl-clip-name">Design & Illustration</span></div>
-        <div class="tl-clip" style="--w:160;--bg:#3340b0"><span class="tl-clip-name">Music Composition & Sound Design</span></div>
-        <div class="tl-clip" style="--w:120;--bg:#3c4fd6"><span class="tl-clip-name">Web Design</span></div>
-        <div class="tl-clip" style="--w:140;--bg:#4558e2"><span class="tl-clip-name">AI & Generative Design</span></div>
+      <div class="tl-track" id="tl-track" role="tablist" aria-label="Capabilities timeline">
+        <div class="tl-clip" role="tab" tabindex="0" style="--w:200;--bg:#3642d4"><span class="tl-clip-name">Motion Design & 2D Animation</span></div>
+        <div class="tl-clip" role="tab" tabindex="0" style="--w:130;--bg:#4455e8"><span class="tl-clip-name">3D Animation</span></div>
+        <div class="tl-clip" role="tab" tabindex="0" style="--w:140;--bg:#3a4ed9"><span class="tl-clip-name">Photography</span></div>
+        <div class="tl-clip" role="tab" tabindex="0" style="--w:130;--bg:#2d3abf"><span class="tl-clip-name">Videography</span></div>
+        <div class="tl-clip" role="tab" tabindex="0" style="--w:200;--bg:#3f50cc"><span class="tl-clip-name">Video Editing & Colour Grading</span></div>
+        <div class="tl-clip" role="tab" tabindex="0" style="--w:140;--bg:#4a5ef0"><span class="tl-clip-name">Design & Illustration</span></div>
+        <div class="tl-clip" role="tab" tabindex="0" style="--w:160;--bg:#3340b0"><span class="tl-clip-name">Music Composition & Sound Design</span></div>
+        <div class="tl-clip" role="tab" tabindex="0" style="--w:120;--bg:#3c4fd6"><span class="tl-clip-name">Web Design</span></div>
+        <div class="tl-clip" role="tab" tabindex="0" style="--w:140;--bg:#4558e2"><span class="tl-clip-name">AI & Generative Design</span></div>
       </div>
-      <div class="tl-playhead" id="tl-playhead"><div class="tl-ph-handle"></div></div>
+      <div class="tl-playhead" id="tl-playhead" aria-hidden="true"><div class="tl-ph-handle"></div></div>
     </div>
-    <div class="tl-scroll-progress" id="tl-scroll-progress">
+    <div class="tl-scroll-progress" id="tl-scroll-progress" aria-hidden="true">
       <div class="tl-scroll-progress-fill" id="tl-scroll-progress-fill"></div>
     </div>
   </section>
 
   <!-- WORK -->
-  <section class="section featured-work-section" id="work">
+  <section class="section featured-work-section" id="work" aria-label="Featured Work">
     <div class="sec-label">
       <span class="sec-label-num">02</span>
       <span class="sec-label-text">Featured Work</span>
       <div class="sec-label-line"></div>
       <a href="work.html" class="sec-label-cta">View All <span class="arr">→</span></a>
     </div>
-    <div class="fw-grid">
-      <div class="fw-card">
-        <div class="fw-card-img" style="background-image: url('src/assets/images/work/nla-thumb.jpg')"></div>
+    <div class="fw-grid" role="list">
+      <article class="fw-card" role="listitem" aria-label="NLA Enlighten - Projection">
+        <div class="fw-card-img" role="img" aria-label="NLA Enlighten project thumbnail" style="background-image: url('src/assets/images/work/nla-thumb.jpg')"></div>
         <div class="fw-card-info">
           <p class="fw-card-tag">Projection</p>
-          <p class="fw-card-title">NLA Enlighten</p>
+          <h3 class="fw-card-title">NLA Enlighten</h3>
           <p class="fw-card-role">Design Lead</p>
           <p class="fw-card-agency">The Electric Canvas</p>
         </div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-card-img" style="background-image: url('src/assets/images/work/rams-thumb.jpg')"></div>
+      </article>
+      <article class="fw-card" role="listitem" aria-label="RAMS Construction - Campaign">
+        <div class="fw-card-img" role="img" aria-label="RAMS Construction project thumbnail" style="background-image: url('src/assets/images/work/rams-thumb.jpg')"></div>
         <div class="fw-card-info">
           <p class="fw-card-tag">Campaign</p>
-          <p class="fw-card-title">RAMS Construction</p>
+          <h3 class="fw-card-title">RAMS Construction</h3>
           <p class="fw-card-role">Art Direction, 3D Animation, VFX Supervisor</p>
           <p class="fw-card-agency">Saatchi &amp; Saatchi</p>
         </div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-card-img" style="background-image: url('src/assets/images/work/drjack-thumb.jpg')"></div>
+      </article>
+      <article class="fw-card" role="listitem" aria-label="Porsche x Dr Jack - VFX">
+        <div class="fw-card-img" role="img" aria-label="Porsche x Dr Jack project thumbnail" style="background-image: url('src/assets/images/work/drjack-thumb.jpg')"></div>
         <div class="fw-card-info">
           <p class="fw-card-tag">VFX</p>
-          <p class="fw-card-title">Porsche x Dr Jack</p>
+          <h3 class="fw-card-title">Porsche x Dr Jack</h3>
           <p class="fw-card-role">3D Animation, Composite, Colour Grade</p>
         </div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-card-img" style="background-image: url('src/assets/images/work/autolink-thumb.jpg')"></div>
+      </article>
+      <article class="fw-card" role="listitem" aria-label="Hyundai Auto Link - 2D Animation">
+        <div class="fw-card-img" role="img" aria-label="Hyundai Auto Link project thumbnail" style="background-image: url('src/assets/images/work/autolink-thumb.jpg')"></div>
         <div class="fw-card-info">
           <p class="fw-card-tag">2D Animation</p>
-          <p class="fw-card-title">Hyundai Auto Link</p>
+          <h3 class="fw-card-title">Hyundai Auto Link</h3>
           <p class="fw-card-role">Character Animation, Music Composition &amp; Sound Design</p>
         </div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-card-img" style="background-image: url('src/assets/images/work/bundy-thumb.jpg')"></div>
+      </article>
+      <article class="fw-card" role="listitem" aria-label="Bundaberg CeRUMony - Videography">
+        <div class="fw-card-img" role="img" aria-label="Bundaberg CeRUMony project thumbnail" style="background-image: url('src/assets/images/work/bundy-thumb.jpg')"></div>
         <div class="fw-card-info">
           <p class="fw-card-tag" style="margin-bottom:-2px">Videography</p>
-          <p class="fw-card-title">Bundaberg Ce<span class="fw-rum">rum</span>ony</p>
+          <h3 class="fw-card-title">Bundaberg Ce<span class="fw-rum">rum</span>ony</h3>
           <p class="fw-card-role">Videography, Video Editing, Colour Grade</p>
           <p class="fw-card-agency">Leo Burnett</p>
         </div>
-      </div>
-      <div class="fw-card">
-        <div class="fw-card-img" style="background-image: url('src/assets/images/work/gryff-thumb.jpg')"></div>
+      </article>
+      <article class="fw-card" role="listitem" aria-label="Gryff - Videography">
+        <div class="fw-card-img" role="img" aria-label="Gryff project thumbnail" style="background-image: url('src/assets/images/work/gryff-thumb.jpg')"></div>
         <div class="fw-card-info">
           <p class="fw-card-tag">Videography</p>
-          <p class="fw-card-title">Gryff</p>
+          <h3 class="fw-card-title">Gryff</h3>
           <p class="fw-card-role">Videography, Video Editing, Colour Grade</p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about-section" id="about">
+  <section class="about-section" id="about" aria-label="About">
     <div class="sec-label">
       <span class="sec-label-num">03</span>
       <span class="sec-label-text">About</span>
@@ -237,7 +242,7 @@
         Outside of that I'm a freelance creative, a self-published children's book author and illustrator, a recording musician, and a dad of two boys. I started opening Photoshop before I knew what I was doing. That instinct hasn't gone away.
       </p>
       <div class="about-stats" id="about-stats">
-        <div class="stat">
+        <div class="stat" tabindex="0" role="button" aria-label="Flip stat card">
           <div class="stat-flip">
             <div class="stat-face stat-front">
               <div class="stat-num">10+</div>
@@ -249,7 +254,7 @@
             </div>
           </div>
         </div>
-        <div class="stat">
+        <div class="stat" tabindex="0" role="button" aria-label="Flip stat card">
           <div class="stat-flip">
             <div class="stat-face stat-front">
               <div class="stat-num">SYD</div>
@@ -261,7 +266,7 @@
             </div>
           </div>
         </div>
-        <div class="stat">
+        <div class="stat" tabindex="0" role="button" aria-label="Flip stat card">
           <div class="stat-flip">
             <div class="stat-face stat-front">
               <div class="stat-num">2</div>
@@ -278,7 +283,7 @@
   </section>
 
   <!-- CREDITS -->
-  <section class="credits-section" id="credits">
+  <section class="credits-section" id="credits" aria-label="Credits">
     <div class="sec-label">
       <span class="sec-label-num">04</span>
       <span class="sec-label-text">Credits</span>
@@ -291,62 +296,62 @@
       <div class="credits-right" id="credits-right">
         <div class="marquee-row marquee-row-1">
           <div class="marquee-track marquee-left">
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Ampol-Logo.svg" alt="Ampol"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Arnotts-Logo.svg" alt="Arnott's"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/BombaySapphire-Logo.svg" alt="Bombay Sapphire"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Codral-Logo.svg" alt="Codral"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Coles-Logo.svg" alt="Coles"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Cottees-Logo.svg" alt="Cottee's"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Dulux-Logo.svg" alt="Dulux"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Elastoplast-Logo.svg" alt="Elastoplast"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/EsteeLauder-Logo.svg" alt="Estée Lauder"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Heineken-Logo.svg" alt="Heineken"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Hyundai-Logo.svg" alt="Hyundai"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Kia-Logo.svg" alt="Kia"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/L'Oréal-Logo.svg" alt="L'Oréal"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Ampol-Logo.svg" alt="Ampol"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Arnotts-Logo.svg" alt="Arnott's"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/BombaySapphire-Logo.svg" alt="Bombay Sapphire"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Codral-Logo.svg" alt="Codral"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Coles-Logo.svg" alt="Coles"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Cottees-Logo.svg" alt="Cottee's"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Dulux-Logo.svg" alt="Dulux"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Elastoplast-Logo.svg" alt="Elastoplast"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/EsteeLauder-Logo.svg" alt="Estée Lauder"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Heineken-Logo.svg" alt="Heineken"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Hyundai-Logo.svg" alt="Hyundai"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Kia-Logo.svg" alt="Kia"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/L'Oréal-Logo.svg" alt="L'Oréal"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Ampol-Logo.svg" alt="Ampol"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Arnotts-Logo.svg" alt="Arnott's"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/BombaySapphire-Logo.svg" alt="Bombay Sapphire"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Codral-Logo.svg" alt="Codral"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Coles-Logo.svg" alt="Coles"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Cottees-Logo.svg" alt="Cottee's"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Dulux-Logo.svg" alt="Dulux"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Elastoplast-Logo.svg" alt="Elastoplast"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/EsteeLauder-Logo.svg" alt="Estée Lauder"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Heineken-Logo.svg" alt="Heineken"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Hyundai-Logo.svg" alt="Hyundai"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Kia-Logo.svg" alt="Kia"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/L'Oréal-Logo.svg" alt="L'Oréal"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Ampol-Logo.svg" alt="Ampol"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Arnotts-Logo.svg" alt="Arnott's"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/BombaySapphire-Logo.svg" alt="Bombay Sapphire"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Codral-Logo.svg" alt="Codral"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Coles-Logo.svg" alt="Coles"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Cottees-Logo.svg" alt="Cottee's"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Dulux-Logo.svg" alt="Dulux"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Elastoplast-Logo.svg" alt="Elastoplast"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/EsteeLauder-Logo.svg" alt="Estée Lauder"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Heineken-Logo.svg" alt="Heineken"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Hyundai-Logo.svg" alt="Hyundai"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Kia-Logo.svg" alt="Kia"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/L'Oréal-Logo.svg" alt="L'Oréal"></span>
           </div>
         </div>
         <div class="marquee-row marquee-row-2">
           <div class="marquee-track marquee-right">
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Lexus-Logo.svg" alt="Lexus"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Listerine-Logo.svg" alt="Listerine"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Nescafe-Logo.svg" alt="Nescafé"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Nivea-Logo.svg" alt="Nivea"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/NSWGov-Logo.svg" alt="NSW Government"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Pepsi-Logo.svg" alt="Pepsi"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Qantas-Logo.svg" alt="Qantas"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Rams-Logo.svg" alt="RAMS"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/STG-Logo.svg" alt="St.George"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Superloop-Logo.svg" alt="Superloop"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Toyota-Logo.svg" alt="Toyota"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/VicGov-Logo.svg" alt="Victorian Government"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Visa-Logo.svg" alt="Visa"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Lexus-Logo.svg" alt="Lexus"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Listerine-Logo.svg" alt="Listerine"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Nescafe-Logo.svg" alt="Nescafé"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Nivea-Logo.svg" alt="Nivea"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/NSWGov-Logo.svg" alt="NSW Government"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Pepsi-Logo.svg" alt="Pepsi"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Qantas-Logo.svg" alt="Qantas"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Rams-Logo.svg" alt="RAMS"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/STG-Logo.svg" alt="St.George"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Superloop-Logo.svg" alt="Superloop"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Toyota-Logo.svg" alt="Toyota"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/VicGov-Logo.svg" alt="Victorian Government"></span>
-            <span class="marquee-item"><img class="brand-logo" src="src/assets/images/logos/Visa-Logo.svg" alt="Visa"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Lexus-Logo.svg" alt="Lexus"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Listerine-Logo.svg" alt="Listerine"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Nescafe-Logo.svg" alt="Nescafé"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Nivea-Logo.svg" alt="Nivea"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/NSWGov-Logo.svg" alt="NSW Government"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Pepsi-Logo.svg" alt="Pepsi"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Qantas-Logo.svg" alt="Qantas"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Rams-Logo.svg" alt="RAMS"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/STG-Logo.svg" alt="St.George"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Superloop-Logo.svg" alt="Superloop"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Toyota-Logo.svg" alt="Toyota"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/VicGov-Logo.svg" alt="Victorian Government"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Visa-Logo.svg" alt="Visa"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Lexus-Logo.svg" alt="Lexus"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Listerine-Logo.svg" alt="Listerine"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Nescafe-Logo.svg" alt="Nescafé"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Nivea-Logo.svg" alt="Nivea"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/NSWGov-Logo.svg" alt="NSW Government"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Pepsi-Logo.svg" alt="Pepsi"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Qantas-Logo.svg" alt="Qantas"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Rams-Logo.svg" alt="RAMS"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/STG-Logo.svg" alt="St.George"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Superloop-Logo.svg" alt="Superloop"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Toyota-Logo.svg" alt="Toyota"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/VicGov-Logo.svg" alt="Victorian Government"></span>
+            <span class="marquee-item"><img class="brand-logo" loading="lazy" src="src/assets/images/logos/Visa-Logo.svg" alt="Visa"></span>
           </div>
         </div>
       </div>
@@ -354,13 +359,13 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact-section" id="contact">
+  <section class="contact-section" id="contact" aria-label="Contact">
     <div class="sec-label">
       <span class="sec-label-num">05</span>
       <span class="sec-label-text">Contact</span>
       <div class="sec-label-line"></div>
     </div>
-    <div class="contact-bg-text">CONTACT</div>
+    <div class="contact-bg-text" aria-hidden="true">CONTACT</div>
     <div class="contact-inner">
       <h2 class="contact-headline" id="contact-headline">
         <span class="word-wrap"><span class="word-inner">Let's</span></span>
@@ -375,6 +380,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Joseph G Media<br class="mobile-br"/> Sydney, Australia</p>
@@ -385,6 +392,14 @@
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- CDN Fallback Checks -->
+  <script>
+    window.Matter || document.write('<script src="src/vendor/matter.min.js"><\/script>');
+    window.Lenis || document.write('<script src="src/vendor/lenis.min.js"><\/script>');
+    window.gsap || document.write('<script src="src/vendor/gsap.min.js"><\/script>');
+    window.ScrollTrigger || (window.gsap && gsap.registerPlugin) || document.write('<script src="src/vendor/ScrollTrigger.min.js"><\/script>');
+  </script>
 
   <!-- Main JS -->
   <script src="src/main.js"></script>

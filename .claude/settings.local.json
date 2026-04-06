@@ -5,7 +5,13 @@
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(t['public_url']\\) for t in d.get\\('tunnels',[]\\)]\")",
       "Bash(ngrok version:*)",
       "Bash(ngrok config:*)",
-      "mcp__21st-dev__21st_magic_component_inspiration"
+      "mcp__21st-dev__21st_magic_component_inspiration",
+      "Bash(python3 src/ui-ux-pro-max/scripts/search.py \"mobile first responsive design spacing\" --domain ux -n 10)",
+      "Bash(python src/ui-ux-pro-max/scripts/search.py \"mobile first responsive design spacing\" --domain ux -n 10)",
+      "Bash(where python3:*)",
+      "Bash(where python:*)",
+      "Bash(where py:*)",
+      "Bash(\"C:\\\\Users\\\\Joe\\\\miniconda3\\\\python.exe\" src/ui-ux-pro-max/scripts/search.py \"mobile first responsive spacing layout\" --domain ux -n 10)"
     ]
   }
 }

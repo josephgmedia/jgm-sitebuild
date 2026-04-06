@@ -7,6 +7,18 @@
    - ScrollTrigger @3.12.5
    ============================================================ */
 
+// ── CONSTANTS ──
+const CURSOR_LERP = 0.12;
+const SCROLL_LERP = 0.08;
+const NAV_SCROLL_THRESHOLD = 60;
+const TL_TOTAL_FRAMES = 750;
+const PLAYHEAD_LERP = 0.08;
+const DRAWER_HEIGHT_DESKTOP = 280;
+const DRAWER_HEIGHT_MOBILE_MAX = 200;
+const DRAWER_HEIGHT_MOBILE_VH = 0.4;
+const MOBILE_BREAKPOINT = 768;
+const TABLET_BREAKPOINT = 1024;
+
 // ── GREETING ──
 (function () {
   const h = new Date().getHours();
@@ -30,8 +42,8 @@ document.addEventListener('mousemove', e => {
 }, { passive: true });
 
 (function cursorLoop() {
-  rx += (mx - rx) * .12;
-  ry += (my - ry) * .12;
+  rx += (mx - rx) * CURSOR_LERP;
+  ry += (my - ry) * CURSOR_LERP;
   if (ring) { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
   requestAnimationFrame(cursorLoop);
 })();
@@ -50,7 +62,7 @@ document.querySelectorAll('a, .work-card, .tl-clip, .stat, .marquee-item').forEa
 // ── NAV SCROLL ──
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav?.classList.toggle('scrolled', scrollY > 60);
+  nav?.classList.toggle('scrolled', scrollY > NAV_SCROLL_THRESHOLD);
 }, { passive: true });
 
 // ── MOBILE NAV ──
@@ -58,10 +70,26 @@ const hamburger = document.getElementById('nav-hamburger');
 const navClose = document.getElementById('nav-close');
 const navOverlay = document.getElementById('nav-overlay');
 if (hamburger && navOverlay) {
-  hamburger.addEventListener('click', () => document.body.classList.add('nav-open'));
-  navClose?.addEventListener('click', () => document.body.classList.remove('nav-open'));
+  function openNav() {
+    document.body.classList.add('nav-open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    navOverlay.setAttribute('aria-hidden', 'false');
+    navClose?.focus();
+  }
+  function closeNav() {
+    document.body.classList.remove('nav-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    navOverlay.setAttribute('aria-hidden', 'true');
+    hamburger.focus();
+  }
+  hamburger.addEventListener('click', openNav);
+  navClose?.addEventListener('click', closeNav);
   navOverlay.querySelectorAll('.nav-overlay-link').forEach(link => {
-    link.addEventListener('click', () => document.body.classList.remove('nav-open'));
+    link.addEventListener('click', closeNav);
+  });
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && document.body.classList.contains('nav-open')) closeNav();
   });
 }
 
@@ -69,7 +97,7 @@ if (hamburger && navOverlay) {
 function initAnimations() {
 
   // Lenis smooth scroll
-  const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
+  const lenis = new Lenis({ lerp: SCROLL_LERP, smoothWheel: true });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(time => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
@@ -109,15 +137,23 @@ function initAnimations() {
   let mouseOverMonitor = false;
   let scrubActive     = false;
 
+  function getDrawerHeight() {
+    return window.innerWidth < MOBILE_BREAKPOINT
+      ? Math.min(DRAWER_HEIGHT_MOBILE_MAX, window.innerHeight * DRAWER_HEIGHT_MOBILE_VH) + 'px'
+      : DRAWER_HEIGHT_DESKTOP + 'px';
+  }
+
   function openDrawer() {
     if (!tlMonitor || drawerOpen) return;
-    tlMonitor.style.height = '280px';
+    tlMonitor.style.height = getDrawerHeight();
     tlMonitor.classList.add('is-open');
     drawerOpen = true;
   }
 
   function closeDrawer() {
     if (!tlMonitor || !drawerOpen) return;
+    // On mobile, keep monitor permanently open
+    if (window.innerWidth < TABLET_BREAKPOINT) return;
     tlMonitor.style.height = '0';
     tlMonitor.classList.remove('is-open');
     drawerOpen = false;
@@ -232,21 +268,37 @@ function initAnimations() {
     { name: 'Videography',                      desc: 'Direction, capture, multi-format production',                                      link: 'work.html#videography' },
     { name: 'Video Editing & Colour Grading',   desc: 'Premiere Pro, DaVinci Resolve, multi-cam, long and short form',                    link: 'work.html#video-editing' },
     { name: 'Design & Illustration',            desc: 'Brand, print, OOH, social, merch, album art, promotional',                        link: 'work.html#design-illustration' },
-    { name: 'Music Composition & Sound Design', desc: 'Ableton, Logic, Pro Tools \u2014 composition, scoring and sound design',           link: 'work.html#music-composition' },
+    { name: 'Music Composition & Sound Design', desc: 'Ableton, Logic, Pro Tools - composition, scoring and sound design',           link: 'work.html#music-composition' },
     { name: 'Web Design',                       desc: 'Custom builds in HTML, CSS, JavaScript, WordPress and Squarespace',                link: 'work.html#web-design' },
-    { name: 'AI & Generative Design',           desc: 'Stable Diffusion, ComfyUI \u2014 workflow development and ideation',               link: 'work.html#ai-generative-design' },
+    { name: 'AI & Generative Design',           desc: 'Stable Diffusion, ComfyUI - workflow development',               link: 'work.html#ai-generative-design' },
   ];
 
-  // Make each clip clickable — navigates to the relevant work page
+  // Make each clip clickable
   tlClips.forEach((cl, i) => {
     cl.style.cursor = 'pointer';
     cl.addEventListener('click', () => {
-      if (TL_DATA[i]?.link) window.location.href = TL_DATA[i].link;
+      // Desktop: click navigates to work page. Mobile handled separately.
+      if (window.innerWidth >= TABLET_BREAKPOINT) {
+        if (TL_DATA[i]?.link) window.location.href = TL_DATA[i].link;
+      }
+    });
+    // Keyboard: Enter to navigate, focus to show monitor
+    cl.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        if (TL_DATA[i]?.link) window.location.href = TL_DATA[i].link;
+      }
+    });
+    cl.addEventListener('focus', () => {
+      tlClips.forEach(c => c.classList.remove('is-active'));
+      cl.classList.add('is-active');
+      crossfadeContent(i);
+      switchMonitorMedia(TL_DATA[i].name);
+      openDrawer();
     });
   });
 
   if (tlBody && tlPlayhead && tlClips.length) {
-    const TOTAL_FRAMES = 750;
+    const TOTAL_FRAMES = TL_TOTAL_FRAMES;
     let mouseClientX = window.innerWidth * 0.5;
     let targetX  = 0;
     let currentX = 0;
@@ -274,25 +326,56 @@ function initAnimations() {
       mouseClientX = e.clientX;
     }, { passive: true });
 
-    // Touch events for mobile timeline scrub
-    tlSection?.addEventListener('touchstart', e => {
-      scrubActive = true;
-      mouseOverClip = true;
-      mouseClientX = e.touches[0].clientX;
-      cacheRects();
-    }, { passive: true });
-    tlSection?.addEventListener('touchmove', e => {
-      mouseClientX = e.touches[0].clientX;
-    }, { passive: true });
-    tlSection?.addEventListener('touchend', () => {
-      scrubActive = false;
-      mouseOverClip = false;
-    });
-
-    // Mobile scroll-based clip detection and monitor switching
+    const isMobileTimeline = window.innerWidth < TABLET_BREAKPOINT;
     const scrollProgressFill = document.getElementById('tl-scroll-progress-fill');
-    if (tlTrack && window.innerWidth < 1024) {
-      // Track scroll progress bar
+
+    if (!isMobileTimeline) {
+      // Desktop: touch events for mouse-like scrub (tablets with mouse)
+      tlSection?.addEventListener('touchstart', e => {
+        scrubActive = true;
+        mouseOverClip = true;
+        mouseClientX = e.touches[0].clientX;
+        cacheRects();
+      }, { passive: true });
+      tlSection?.addEventListener('touchmove', e => {
+        mouseClientX = e.touches[0].clientX;
+      }, { passive: true });
+      tlSection?.addEventListener('touchend', () => {
+        scrubActive = false;
+        mouseOverClip = false;
+      });
+    }
+
+    if (isMobileTimeline && tlTrack) {
+      // Mobile: clip scroll + smooth playhead via GSAP
+
+      // Position playhead over a clip (call only when clip is in final position)
+      function positionPlayhead(idx) {
+        const clipEl = tlClips[idx];
+        if (!clipEl) return;
+        const bodyLeft = tlBody.getBoundingClientRect().left;
+        const clipRect = clipEl.getBoundingClientRect();
+        const cx = (clipRect.left + clipRect.width / 2) - bodyLeft;
+        tlPlayhead.style.transform = `translateX(${cx}px)`;
+        currentX = cx;
+        const frac = bodyRect.width > 0 ? currentX / bodyRect.width : 0;
+        tlTimecode.textContent = toTimecode(Math.round(frac * TOTAL_FRAMES));
+      }
+
+      // Select a clip — update active state and monitor
+      function selectClipMobile(idx) {
+        pendingClipIdx = idx;
+        tlClips.forEach(cl => cl.classList.remove('is-active'));
+        tlClips[idx]?.classList.add('is-active');
+        openDrawer();
+        if (idx !== monitorIdx) {
+          monitorIdx = idx;
+          crossfadeContent(idx);
+          switchMonitorMedia(TL_DATA[idx].name);
+        }
+      }
+
+      // Scroll progress bar
       tlTrack.addEventListener('scroll', () => {
         const maxScroll = tlTrack.scrollWidth - tlTrack.clientWidth;
         if (maxScroll <= 0) return;
@@ -300,32 +383,58 @@ function initAnimations() {
         if (scrollProgressFill) scrollProgressFill.style.width = (pct * 100) + '%';
       }, { passive: true });
 
-      // IntersectionObserver to detect centred clip
-      const clipObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const idx = tlClips.indexOf(entry.target);
-          if (idx < 0) return;
-          tlClips.forEach(cl => cl.classList.remove('is-active'));
-          entry.target.classList.add('is-active');
-          // Sync playhead to clip position
-          cacheRects();
-          const b = clipRects[idx];
-          if (b) targetX = (b.left + b.right) / 2;
-          scrubActive = true;
-          // Update monitor
-          openDrawer();
-          if (idx !== monitorIdx) {
-            monitorIdx = idx;
-            crossfadeContent(idx);
-            switchMonitorMedia(TL_DATA[idx].name);
-          }
+      // Detect centred clip after scroll snap settles
+      // Use scrollend if supported, otherwise poll until position stabilises
+      let lastScrollLeft = -1;
+      let pollTimer = null;
+
+      function onScrollSettled() {
+        // Find closest clip to track centre
+        const trackRect = tlTrack.getBoundingClientRect();
+        const trackCentre = trackRect.left + trackRect.width / 2;
+        let closestIdx = 0;
+        let closestDist = Infinity;
+        tlClips.forEach((cl, i) => {
+          const r = cl.getBoundingClientRect();
+          const dist = Math.abs((r.left + r.width / 2) - trackCentre);
+          if (dist < closestDist) { closestDist = dist; closestIdx = i; }
         });
-      }, {
-        root: tlTrack,
-        threshold: 0.6,
+        // Select and position playhead on the settled clip
+        selectClipMobile(closestIdx);
+        positionPlayhead(closestIdx);
+      }
+
+      if ('onscrollend' in window) {
+        tlTrack.addEventListener('scrollend', onScrollSettled);
+      } else {
+        tlTrack.addEventListener('scroll', () => {
+          clearInterval(pollTimer);
+          pollTimer = setInterval(() => {
+            if (tlTrack.scrollLeft === lastScrollLeft) {
+              clearInterval(pollTimer);
+              onScrollSettled();
+            }
+            lastScrollLeft = tlTrack.scrollLeft;
+          }, 50);
+        }, { passive: true });
+      }
+
+      // Tap a clip — select it, scroll to centre, playhead follows
+      let tapTimer = null;
+      tlClips.forEach((cl, i) => {
+        cl.addEventListener('click', () => {
+          selectClipMobile(i);
+          cl.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          // Fallback: if clip is at edge and can't scroll to centre,
+          // scrollend won't fire — position playhead after a delay
+          clearTimeout(tapTimer);
+          tapTimer = setTimeout(() => positionPlayhead(i), 350);
+        });
       });
-      tlClips.forEach(cl => clipObserver.observe(cl));
+
+      // Open monitor by default with first clip
+      selectClipMobile(0);
+      positionPlayhead(0);
     }
 
     function pad(n) { return String(n).padStart(2, '0'); }
@@ -338,25 +447,30 @@ function initAnimations() {
     }
 
     (function tlTick() {
-      // Only update playhead position when mouse is over ruler/track
-      if (scrubActive) {
-        targetX  = Math.max(0, Math.min(bodyRect.width, mouseClientX - bodyRect.left));
+      // On mobile, GSAP drives the playhead — skip manual positioning
+      if (!isMobileTimeline) {
+        if (scrubActive) {
+          targetX  = Math.max(0, Math.min(bodyRect.width, mouseClientX - bodyRect.left));
+        }
+        currentX += (targetX - currentX) * PLAYHEAD_LERP;
+
+        tlPlayhead.style.transform = `translateX(${currentX}px)`;
+
+        const frac = bodyRect.width > 0 ? currentX / bodyRect.width : 0;
+        tlTimecode.textContent = toTimecode(Math.round(frac * TOTAL_FRAMES));
       }
-      currentX += (targetX - currentX) * 0.08;
 
-      tlPlayhead.style.transform = `translateX(${currentX}px)`;
-
-      const frac = bodyRect.width > 0 ? currentX / bodyRect.width : 0;
-      tlTimecode.textContent = toTimecode(Math.round(frac * TOTAL_FRAMES));
-
+      // On mobile, clip active state is managed by selectClipMobile — skip tick logic
       let hitIdx = -1;
-      tlClips.forEach((cl, i) => {
-        const b   = clipRects[i];
-        const hit = b && currentX >= b.left && currentX <= b.right;
-        cl.classList.toggle('is-active', !!hit);
-        const monitorHit = b && targetX >= b.left - 4 && targetX <= b.right + 4;
-        if (monitorHit) hitIdx = i;
-      });
+      if (!isMobileTimeline) {
+        tlClips.forEach((cl, i) => {
+          const b   = clipRects[i];
+          const hit = b && currentX >= b.left && currentX <= b.right;
+          cl.classList.toggle('is-active', !!hit);
+          const monitorHit = b && targetX >= b.left - 4 && targetX <= b.right + 4;
+          if (monitorHit) hitIdx = i;
+        });
+      }
 
       const keepOpen = mouseOverClip || mouseOverMonitor;
 
@@ -403,7 +517,7 @@ function initAnimations() {
       'soundtracks', 'storybooks', 'pictures', 'videos',
       'animations', '3D renders', 'websites'
     ];
-    const WORDS = window.innerWidth < 768 ? MOBILE_WORDS : DESKTOP_WORDS;
+    const WORDS = window.innerWidth < MOBILE_BREAKPOINT ? MOBILE_WORDS : DESKTOP_WORDS;
     const COLOURS = WORDS.map((_, i) => ['#4427d7','#3b3fe8','#2e45d9','#4f5cf2'][i % 4]);
     const N       = WORDS.length;
     const DUR     = 2.5;
@@ -518,7 +632,7 @@ function initAnimations() {
   });
 
   // ── STATS block slide in (desktop only) ──
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= MOBILE_BREAKPOINT) {
     gsap.from('#about-stats .stat', {
       opacity: 0, y: 30, duration: .8, ease: 'power3.out', stagger: .1,
       scrollTrigger: { trigger: '#about-stats', start: 'top 80%' }
@@ -529,7 +643,7 @@ function initAnimations() {
   const statCards = document.querySelectorAll('#about-stats .stat');
   let statDelay = null;
 
-  const isMobileStat = window.innerWidth < 768;
+  const isMobileStat = window.innerWidth < MOBILE_BREAKPOINT;
   statCards.forEach(card => {
     if (!isMobileStat) {
       // Desktop: hover flip
@@ -555,10 +669,17 @@ function initAnimations() {
         if (hint) hint.classList.add('is-hidden');
       });
     }
+    // Keyboard: Enter/Space to flip
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('is-flipped');
+      }
+    });
   });
 
   // Add tap hint below stats on mobile
-  if (window.innerWidth < 768) {
+  if (window.innerWidth < MOBILE_BREAKPOINT) {
     const statsEl = document.getElementById('about-stats');
     if (statsEl) {
       const hint = document.createElement('span');
@@ -585,17 +706,21 @@ function initAnimations() {
 
   const ctx = canvas.getContext('2d');
   const REF_W = 2560, REF_H = 1440;
+  const SIGN_W = 1788, SIGN_H = 634;
+  // Sign position within the 2560x1440 reference frame
+  const SIGN_X = (REF_W - SIGN_W) / 2; // 386
+  const SIGN_Y = (REF_H - SIGN_H) / 2; // 403
   const WIRE_THICKNESS = 13; // base cable width — glow and highlight scale from this
 
   // Anchor pairs in 2560x1440 coordinate space
   const ANCHORS = [
-    [[487,640],[947,706]],
-    [[1374,758],[1249,762]],
-    [[1742,662],[1943,818]],
-    [[600,513],[782,630]],
-    [[822,638],[1011,564]],
-    [[1155,536],[1307,571]],
-    [[1742,633],[1851,538]],
+    [[545,728],[961,777]],
+    [[1353,803],[1234,812]],
+    [[1671,737],[1842,864]],
+    [[649,620],[815,714]],
+    [[882,567],[1011,564]],
+    [[1152,648],[1282,670]],
+    [[1464,496],[1674,717]],
   ];
 
   const isTouchDevice = 'ontouchstart' in window;
@@ -613,31 +738,28 @@ function initAnimations() {
   }
 
   function scale(x, y) {
-    // On mobile, sign images use object-fit: contain so we must compute
-    // the contained image bounds within the canvas to position anchors correctly
-    if (window.innerWidth < 1024) {
-      const cw = canvas.width, ch = canvas.height;
-      const imgRatio = REF_W / REF_H;
-      const canvasRatio = cw / ch;
-      let renderW, renderH, offsetX, offsetY;
-      if (canvasRatio > imgRatio) {
-        // Canvas is wider — image height-limited
-        renderH = ch;
-        renderW = ch * imgRatio;
-        offsetX = (cw - renderW) / 2;
-        offsetY = 0;
-      } else {
-        // Canvas is taller — image width-limited
-        renderW = cw;
-        renderH = cw / imgRatio;
-        offsetX = 0;
-        offsetY = (ch - renderH) / 2;
-      }
+    // The sign is now a separate CSS-positioned element.
+    // Find its actual rendered bounds on screen and map anchors accordingly.
+    const signEl = document.querySelector('.hero-sign-off');
+    if (signEl) {
+      const heroRect = hero.getBoundingClientRect();
+      const signRect = signEl.getBoundingClientRect();
+      // Sign's position relative to hero, in canvas pixel space
+      const dpr = devicePixelRatio;
+      const signLeft = (signRect.left - heroRect.left) * dpr;
+      const signTop = (signRect.top - heroRect.top) * dpr;
+      const signW = signRect.width * dpr;
+      const signH = signRect.height * dpr;
+      // Map anchor from 2560x1440 ref space to sign's rendered position
+      // Anchors are relative to the full 2560x1440 frame where sign sits at SIGN_X, SIGN_Y
+      const relX = (x - SIGN_X) / SIGN_W; // 0-1 within sign bounds
+      const relY = (y - SIGN_Y) / SIGN_H;
       return {
-        x: offsetX + (x / REF_W) * renderW,
-        y: offsetY + (y / REF_H) * renderH,
+        x: signLeft + relX * signW,
+        y: signTop + relY * signH,
       };
     }
+    // Fallback
     return { x: x * (canvas.width / REF_W), y: y * (canvas.height / REF_H) };
   }
 
@@ -898,10 +1020,9 @@ function initAnimations() {
     }
   });
 
-  // Initial off-state render
-  window.addEventListener('resize', () => {
+  // Resize and orientation change handler
+  function handleResize() {
     if (neonOn && mouseBody) {
-      // Rebuild physics on resize when active
       if (animFrame) cancelAnimationFrame(animFrame);
       destroyCables();
       sizeCanvas();
@@ -910,7 +1031,9 @@ function initAnimations() {
     } else {
       drawOffCables();
     }
-  });
+  }
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('orientationchange', () => setTimeout(handleResize, 100));
 
   // Initial draw
   sizeCanvas();
@@ -932,6 +1055,22 @@ function initAnimations() {
     }
 
     function unscale(px, py) {
+      const signEl = document.querySelector('.hero-sign-off');
+      if (signEl) {
+        const heroRect = hero.getBoundingClientRect();
+        const signRect = signEl.getBoundingClientRect();
+        const dpr = devicePixelRatio;
+        const signLeft = (signRect.left - heroRect.left) * dpr;
+        const signTop = (signRect.top - heroRect.top) * dpr;
+        const signW = signRect.width * dpr;
+        const signH = signRect.height * dpr;
+        const relX = (px - signLeft) / signW;
+        const relY = (py - signTop) / signH;
+        return {
+          x: Math.round(SIGN_X + relX * SIGN_W),
+          y: Math.round(SIGN_Y + relY * SIGN_H),
+        };
+      }
       return {
         x: Math.round(px / (canvas.width / REF_W)),
         y: Math.round(py / (canvas.height / REF_H)),
