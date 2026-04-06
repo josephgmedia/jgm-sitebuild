@@ -126,21 +126,21 @@ document.addEventListener('mousemove', e => {
   requestAnimationFrame(cursorLoop);
 })();
 
-document.querySelectorAll('a, .work-card, .tl-clip, .stat, .marquee-item').forEach(el => {
+document.querySelectorAll('a, .work__card, .timeline__clip, .stat, .marquee__item').forEach(el => {
   el.addEventListener('mouseenter', () => {
-    ring?.classList.add('big');
-    dot?.classList.add('hot');
+    ring?.classList.add('cursor-ring--big');
+    dot?.classList.add('cursor-dot--hot');
   });
   el.addEventListener('mouseleave', () => {
-    ring?.classList.remove('big');
-    dot?.classList.remove('hot');
+    ring?.classList.remove('cursor-ring--big');
+    dot?.classList.remove('cursor-dot--hot');
   });
 });
 
 // ── NAV SCROLL ──
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav?.classList.toggle('scrolled', scrollY > CONFIG.navScrollThreshold);
+  nav?.classList.toggle('nav--scrolled', scrollY > CONFIG.navScrollThreshold);
 }, { passive: true });
 
 // ── MOBILE NAV ──
@@ -149,25 +149,25 @@ const navClose = document.getElementById('nav-close');
 const navOverlay = document.getElementById('nav-overlay');
 if (hamburger && navOverlay) {
   function openNav() {
-    document.body.classList.add('nav-open');
+    document.body.classList.add('nav--open');
     hamburger.setAttribute('aria-expanded', 'true');
     navOverlay.setAttribute('aria-hidden', 'false');
     navClose?.focus();
   }
   function closeNav() {
-    document.body.classList.remove('nav-open');
+    document.body.classList.remove('nav--open');
     hamburger.setAttribute('aria-expanded', 'false');
     navOverlay.setAttribute('aria-hidden', 'true');
     hamburger.focus();
   }
   hamburger.addEventListener('click', openNav);
   navClose?.addEventListener('click', closeNav);
-  navOverlay.querySelectorAll('.nav-overlay-link').forEach(link => {
+  navOverlay.querySelectorAll('.nav__overlay-link').forEach(link => {
     link.addEventListener('click', closeNav);
   });
   // Close on Escape key
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && document.body.classList.contains('nav-open')) closeNav();
+    if (e.key === 'Escape' && document.body.classList.contains('nav--open')) closeNav();
   });
 }
 
@@ -187,7 +187,7 @@ function initAnimations() {
   const heroFoot = document.getElementById('hero-foot');
   if (heroFoot) {
     ScrollTrigger.create({
-      trigger: '.hero-neon',
+      trigger: '.hero',
       start: '2px top',
       end: '+=' + CONFIG.heroFootScrollEnd,
       scrub: CONFIG.heroFootScrub,
@@ -207,7 +207,7 @@ function initAnimations() {
   const tlTimecode    = document.getElementById('tl-timecode');
   const tlMonitorName = document.getElementById('tl-monitor-name');
   const tlMonitorDesc = document.getElementById('tl-monitor-desc');
-  const tlClips       = tlTrack ? Array.from(tlTrack.querySelectorAll('.tl-clip')) : [];
+  const tlClips       = tlTrack ? Array.from(tlTrack.querySelectorAll('.timeline__clip')) : [];
 
   let drawerOpen      = false;
   let clipLeaveTimer  = null;
@@ -248,7 +248,7 @@ function initAnimations() {
   }
 
   // Playhead only scrubs when mouse is over the ruler/track/clips
-  const tlRuler = tlBody?.querySelector('.tl-ruler');
+  const tlRuler = tlBody?.querySelector('.timeline__ruler');
   [tlRuler, tlTrack].forEach(el => {
     if (!el) return;
     el.addEventListener('mouseenter', () => { scrubActive = true; });
@@ -292,7 +292,7 @@ function initAnimations() {
   let photoIndex = 0;
 
   // Photography slideshow
-  const photoSlides = document.querySelectorAll('#tl-media-photo .tl-photo-slide');
+  const photoSlides = document.querySelectorAll('#tl-media-photo .timeline__photo-slide');
   function startPhotoSlideshow() {
     if (photoInterval) return;
     photoIndex = 0;
@@ -582,7 +582,7 @@ function initAnimations() {
   function wordReveal(selector, stagger = CONFIG.wordRevealStagger) {
     const el = document.querySelector(selector);
     if (!el) return;
-    gsap.to(el.querySelectorAll('.word-inner'), {
+    gsap.to(el.querySelectorAll('.word__inner'), {
       y: '0%', duration: CONFIG.wordRevealDuration, ease: 'power4.out', stagger,
       scrollTrigger: { trigger: el, start: 'top 80%' }
     });
@@ -614,7 +614,7 @@ function initAnimations() {
     // Build elements
     const items = WORDS.map((word, i) => {
       const el = document.createElement('div');
-      el.className = 'slide-txt-item';
+      el.className = 'about__slide-item';
       el.textContent = word;
       el.style.color = COLOURS[i];
       wrap.appendChild(el);
@@ -687,10 +687,10 @@ function initAnimations() {
 
   // ── FEATURED WORK GRID — tap to reveal on mobile ──
   if ('ontouchstart' in window) {
-    document.querySelectorAll('.fw-grid .fw-card').forEach(card => {
+    document.querySelectorAll('.work__grid .work__card').forEach(card => {
       card.addEventListener('click', () => {
         const wasActive = card.classList.contains('is-tapped');
-        document.querySelectorAll('.fw-grid .fw-card.is-tapped').forEach(c => c.classList.remove('is-tapped'));
+        document.querySelectorAll('.work__grid .work__card.is-tapped').forEach(c => c.classList.remove('is-tapped'));
         if (!wasActive) card.classList.add('is-tapped');
       });
     });
@@ -701,9 +701,9 @@ function initAnimations() {
     const p = document.querySelector(sel);
     if (!p) return;
     const words = p.innerHTML.split(' ');
-    p.innerHTML = words.map(w => `<span class="word-light">${w}</span>`).join(' ');
+    p.innerHTML = words.map(w => `<span class="word--light">${w}</span>`).join(' ');
     p.style.color = 'rgba(237,234,228,.6)';
-    gsap.to(p.querySelectorAll('.word-light'), {
+    gsap.to(p.querySelectorAll('.word--light'), {
       color: 'rgba(237,234,228,1)',
       stagger: { each: CONFIG.wordSweepStagger },
       ease: 'none',
@@ -765,7 +765,7 @@ function initAnimations() {
     const statsEl = document.getElementById('about-stats');
     if (statsEl) {
       const hint = document.createElement('span');
-      hint.className = 'stat-tap-hint';
+      hint.className = 'stat__tap-hint';
       hint.id = 'stat-tap-hint';
       hint.textContent = 'Tap to reveal';
       statsEl.insertAdjacentElement('afterend', hint);
@@ -781,7 +781,7 @@ function initAnimations() {
 
 // ── NEON HERO — Matter.js physics cables ──
 (() => {
-  const hero = document.querySelector('.hero-neon');
+  const hero = document.querySelector('.hero');
   const toggle = document.getElementById('neon-toggle');
   const canvas = document.getElementById('cable-canvas');
   if (!hero || !toggle || !canvas) return;
@@ -821,7 +821,7 @@ function initAnimations() {
   function scale(x, y) {
     // The sign is now a separate CSS-positioned element.
     // Find its actual rendered bounds on screen and map anchors accordingly.
-    const signEl = document.querySelector('.hero-sign-off');
+    const signEl = document.querySelector('.hero__sign--off');
     if (signEl) {
       const heroRect = hero.getBoundingClientRect();
       const signRect = signEl.getBoundingClientRect();
@@ -1087,12 +1087,12 @@ function initAnimations() {
   toggle.addEventListener('change', () => {
     neonOn = toggle.checked;
     if (neonOn) {
-      hero.classList.add('neon-on');
+      hero.classList.add('hero--neon-on');
       sizeCanvas();
       buildCables();
       renderLoop();
     } else {
-      hero.classList.remove('neon-on');
+      hero.classList.remove('hero--neon-on');
       if (animFrame) cancelAnimationFrame(animFrame);
       animFrame = null;
       destroyCables();
@@ -1135,7 +1135,7 @@ function initAnimations() {
     }
 
     function unscale(px, py) {
-      const signEl = document.querySelector('.hero-sign-off');
+      const signEl = document.querySelector('.hero__sign--off');
       if (signEl) {
         const heroRect = hero.getBoundingClientRect();
         const signRect = signEl.getBoundingClientRect();
@@ -1252,7 +1252,7 @@ function initAnimations() {
     canvas.style.pointerEvents = 'auto';
     canvas.style.zIndex = '20';
     canvas.style.cursor = 'crosshair';
-    document.querySelector('.hero-ui').style.zIndex = '21';
+    document.querySelector('.hero__ui').style.zIndex = '21';
 
     hero.addEventListener('mousedown', e => {
       const pos = canvasXY(e);
