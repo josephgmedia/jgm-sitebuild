@@ -7,17 +7,95 @@
    - ScrollTrigger @3.12.5
    ============================================================ */
 
-// ── CONSTANTS ──
-const CURSOR_LERP = 0.12;
-const SCROLL_LERP = 0.08;
-const NAV_SCROLL_THRESHOLD = 60;
-const TL_TOTAL_FRAMES = 750;
-const PLAYHEAD_LERP = 0.08;
-const DRAWER_HEIGHT_DESKTOP = 280;
-const DRAWER_HEIGHT_MOBILE_MAX = 200;
-const DRAWER_HEIGHT_MOBILE_VH = 0.4;
-const MOBILE_BREAKPOINT = 768;
-const TABLET_BREAKPOINT = 1024;
+// ── CONFIG ──
+const CONFIG = {
+  // Breakpoints
+  mobileBreakpoint: 768,
+  tabletBreakpoint: 1024,
+
+  // Cursor
+  cursorLerp: 0.12,
+
+  // Smooth scroll
+  scrollLerp: 0.08,
+  navScrollThreshold: 60,
+
+  // Timeline
+  totalFrames: 750,
+  playheadLerp: 0.08,
+  timecodeFramerate: 25,
+  clipCloseDelay: 800,
+  scrollPollInterval: 50,
+  swipeThreshold: 10,
+  tapPositionDelay: 350,
+
+  // Monitor drawer
+  drawerHeightDesktop: 280,
+  drawerHeightMobileMax: 200,
+  drawerHeightMobileVh: 0.4,
+  crossfadeDelay: 150,
+
+  // Photo slideshow
+  slideshowInterval: 3000,
+
+  // Hero entrance
+  heroFootDuration: 0.6,
+  heroFootDelay: 0.4,
+  heroFootScrollEnd: 200,
+  heroFootScrub: 0.6,
+
+  // Word reveal
+  wordRevealDuration: 1,
+  wordRevealStagger: 0.16,
+
+  // Slide text drum
+  drumWordDuration: 2.5,
+  drumMaxAngle: 91,
+
+  // Word sweep (about paragraphs)
+  wordSweepStagger: 0.04,
+  wordSweepScrub: 0.5,
+
+  // Stats
+  statsStagger: 0.1,
+  statFlipDelay: 1,
+
+  // Contact
+  contactRevealDuration: 0.9,
+
+  // Cable physics
+  cableRefW: 2560,
+  cableRefH: 1440,
+  cableSignW: 1788,
+  cableSignH: 634,
+  cableWireThickness: 13,
+  cableMouseRadius: 25,
+  cableSegRadius: 14,
+  cableFrictionAir: 0.1,
+  cableStiffness: 0.5,
+  cableDamping: 0.08,
+  cableMinSegs: 8,
+  cableSegDivisor: 12,
+  cableOffStateSag: 15,
+  cableOffStateSegs: 10,
+  cableZoneBreak: 0.45,
+  cableSplineSteps: 6,
+  cableGlowWidthMul: 2.8,
+  cableGlowAlpha: 0.15,
+  cableHighlightWidthMul: 0.18,
+  cableHighlightAlphaOn: 0.5,
+  cableHighlightAlphaOff: 0.25,
+  cableShadowBlur: 8,
+  cableShadowOffsetX: 2,
+  cableShadowOffsetY: 4,
+
+  // Orientation change
+  orientationDelay: 100,
+
+  // Debug
+  debugDotRadius: 10,
+  debugHitRadius: 20,
+};
 
 // ── GREETING ──
 (function () {
@@ -42,8 +120,8 @@ document.addEventListener('mousemove', e => {
 }, { passive: true });
 
 (function cursorLoop() {
-  rx += (mx - rx) * CURSOR_LERP;
-  ry += (my - ry) * CURSOR_LERP;
+  rx += (mx - rx) * CONFIG.cursorLerp;
+  ry += (my - ry) * CONFIG.cursorLerp;
   if (ring) { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
   requestAnimationFrame(cursorLoop);
 })();
@@ -62,7 +140,7 @@ document.querySelectorAll('a, .work-card, .tl-clip, .stat, .marquee-item').forEa
 // ── NAV SCROLL ──
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav?.classList.toggle('scrolled', scrollY > NAV_SCROLL_THRESHOLD);
+  nav?.classList.toggle('scrolled', scrollY > CONFIG.navScrollThreshold);
 }, { passive: true });
 
 // ── MOBILE NAV ──
@@ -97,13 +175,13 @@ if (hamburger && navOverlay) {
 function initAnimations() {
 
   // Lenis smooth scroll
-  const lenis = new Lenis({ lerp: SCROLL_LERP, smoothWheel: true });
+  const lenis = new Lenis({ lerp: CONFIG.scrollLerp, smoothWheel: true });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(time => lenis.raf(time * 1000));
   gsap.ticker.lagSmoothing(0);
 
   // ── HERO ENTRANCE ──
-  gsap.to('#hero-foot', { opacity: 1, y: 0, duration: .6, delay: .4, ease: 'power4.out' });
+  gsap.to('#hero-foot', { opacity: 1, y: 0, duration: CONFIG.heroFootDuration, delay: CONFIG.heroFootDelay, ease: 'power4.out' });
 
   // ── HERO FOOT — fade, blur & collapse on scroll ──
   const heroFoot = document.getElementById('hero-foot');
@@ -111,11 +189,11 @@ function initAnimations() {
     ScrollTrigger.create({
       trigger: '.hero-neon',
       start: '2px top',
-      end: '+=200',
-      scrub: 0.6,
+      end: '+=' + CONFIG.heroFootScrollEnd,
+      scrub: CONFIG.heroFootScrub,
       animation: gsap.fromTo(heroFoot,
-        { opacity: 1, filter: 'blur(0px)', height: heroFoot.offsetHeight, paddingTop: 22, paddingBottom: 22, borderTopWidth: 1 },
-        { opacity: 0, filter: 'blur(12px)', height: 0, paddingTop: 0, paddingBottom: 0, borderTopWidth: 0, ease: 'none' }
+        { opacity: 1, filter: 'blur(0px)', height: heroFoot.offsetHeight, paddingTop: 22, paddingBottom: 22 },
+        { opacity: 0, filter: 'blur(12px)', height: 0, paddingTop: 0, paddingBottom: 0, ease: 'none' }
       ),
     });
   }
@@ -138,9 +216,9 @@ function initAnimations() {
   let scrubActive     = false;
 
   function getDrawerHeight() {
-    return window.innerWidth < MOBILE_BREAKPOINT
-      ? Math.min(DRAWER_HEIGHT_MOBILE_MAX, window.innerHeight * DRAWER_HEIGHT_MOBILE_VH) + 'px'
-      : DRAWER_HEIGHT_DESKTOP + 'px';
+    return window.innerWidth < CONFIG.mobileBreakpoint
+      ? Math.min(CONFIG.drawerHeightMobileMax, window.innerHeight * CONFIG.drawerHeightMobileVh) + 'px'
+      : CONFIG.drawerHeightDesktop + 'px';
   }
 
   function openDrawer() {
@@ -153,7 +231,7 @@ function initAnimations() {
   function closeDrawer() {
     if (!tlMonitor || !drawerOpen) return;
     // On mobile, keep monitor permanently open
-    if (window.innerWidth < TABLET_BREAKPOINT) return;
+    if (window.innerWidth < CONFIG.tabletBreakpoint) return;
     tlMonitor.style.height = '0';
     tlMonitor.classList.remove('is-open');
     drawerOpen = false;
@@ -181,10 +259,11 @@ function initAnimations() {
     const els = [tlMonitorName, tlMonitorDesc].filter(Boolean);
     els.forEach(el => { el.style.transition = 'opacity 0.15s ease'; el.style.opacity = '0'; });
     setTimeout(() => {
+      // crossfade delay
       if (tlMonitorName) tlMonitorName.textContent = TL_DATA[idx].name;
       if (tlMonitorDesc) tlMonitorDesc.textContent = TL_DATA[idx].desc;
       els.forEach(el => { el.style.transition = 'opacity 0.25s ease'; el.style.opacity = '1'; });
-    }, 150);
+    }, CONFIG.crossfadeDelay);
   }
 
   tlSection?.addEventListener('mouseleave', () => {
@@ -222,7 +301,7 @@ function initAnimations() {
       photoSlides[photoIndex].classList.remove('is-active');
       photoIndex = (photoIndex + 1) % photoSlides.length;
       photoSlides[photoIndex].classList.add('is-active');
-    }, 3000);
+    }, CONFIG.slideshowInterval);
   }
   function stopPhotoSlideshow() {
     if (photoInterval) { clearInterval(photoInterval); photoInterval = null; }
@@ -278,7 +357,7 @@ function initAnimations() {
     cl.style.cursor = 'pointer';
     cl.addEventListener('click', () => {
       // Desktop: click navigates to work page. Mobile handled separately.
-      if (window.innerWidth >= TABLET_BREAKPOINT) {
+      if (window.innerWidth >= CONFIG.tabletBreakpoint) {
         if (TL_DATA[i]?.link) window.location.href = TL_DATA[i].link;
       }
     });
@@ -298,7 +377,7 @@ function initAnimations() {
   });
 
   if (tlBody && tlPlayhead && tlClips.length) {
-    const TOTAL_FRAMES = TL_TOTAL_FRAMES;
+    const TOTAL_FRAMES = CONFIG.totalFrames;
     let mouseClientX = window.innerWidth * 0.5;
     let targetX  = 0;
     let currentX = 0;
@@ -326,7 +405,7 @@ function initAnimations() {
       mouseClientX = e.clientX;
     }, { passive: true });
 
-    const isMobileTimeline = window.innerWidth < TABLET_BREAKPOINT;
+    const isMobileTimeline = window.innerWidth < CONFIG.tabletBreakpoint;
     const scrollProgressFill = document.getElementById('tl-scroll-progress-fill');
 
     if (!isMobileTimeline) {
@@ -383,13 +462,11 @@ function initAnimations() {
         if (scrollProgressFill) scrollProgressFill.style.width = (pct * 100) + '%';
       }, { passive: true });
 
-      // Detect centred clip after scroll snap settles
-      // Use scrollend if supported, otherwise poll until position stabilises
+      // Detect centred clip after scroll settles
       let lastScrollLeft = -1;
       let pollTimer = null;
 
       function onScrollSettled() {
-        // Find closest clip to track centre
         const trackRect = tlTrack.getBoundingClientRect();
         const trackCentre = trackRect.left + trackRect.width / 2;
         let closestIdx = 0;
@@ -399,7 +476,6 @@ function initAnimations() {
           const dist = Math.abs((r.left + r.width / 2) - trackCentre);
           if (dist < closestDist) { closestDist = dist; closestIdx = i; }
         });
-        // Select and position playhead on the settled clip
         selectClipMobile(closestIdx);
         positionPlayhead(closestIdx);
       }
@@ -415,20 +491,28 @@ function initAnimations() {
               onScrollSettled();
             }
             lastScrollLeft = tlTrack.scrollLeft;
-          }, 50);
+          }, CONFIG.scrollPollInterval);
         }, { passive: true });
       }
 
-      // Tap a clip — select it, scroll to centre, playhead follows
-      let tapTimer = null;
+      // Tap a clip to select it — ignore swipe gestures
+      let touchStartX = 0;
+      let touchEndX = 0;
+      let wasSwiping = false;
+      tlTrack.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].clientX;
+        wasSwiping = false;
+      }, { passive: true });
+      tlTrack.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].clientX;
+        wasSwiping = Math.abs(touchEndX - touchStartX) > CONFIG.swipeThreshold;
+      }, { passive: true });
       tlClips.forEach((cl, i) => {
         cl.addEventListener('click', () => {
+          if (wasSwiping) return;
           selectClipMobile(i);
           cl.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-          // Fallback: if clip is at edge and can't scroll to centre,
-          // scrollend won't fire — position playhead after a delay
-          clearTimeout(tapTimer);
-          tapTimer = setTimeout(() => positionPlayhead(i), 350);
+          setTimeout(() => positionPlayhead(i), CONFIG.tapPositionDelay);
         });
       });
 
@@ -439,10 +523,11 @@ function initAnimations() {
 
     function pad(n) { return String(n).padStart(2, '0'); }
     function toTimecode(f) {
-      const ff = f % 25;
-      const ss = Math.floor(f / 25) % 60;
-      const mm = Math.floor(f / 1500) % 60;
-      const hh = Math.floor(f / 90000);
+      const fps = CONFIG.timecodeFramerate;
+      const ff = f % fps;
+      const ss = Math.floor(f / fps) % 60;
+      const mm = Math.floor(f / (fps * 60)) % 60;
+      const hh = Math.floor(f / (fps * 3600));
       return `${pad(hh)}:${pad(mm)}:${pad(ss)}:${pad(ff)}`;
     }
 
@@ -452,7 +537,7 @@ function initAnimations() {
         if (scrubActive) {
           targetX  = Math.max(0, Math.min(bodyRect.width, mouseClientX - bodyRect.left));
         }
-        currentX += (targetX - currentX) * PLAYHEAD_LERP;
+        currentX += (targetX - currentX) * CONFIG.playheadLerp;
 
         tlPlayhead.style.transform = `translateX(${currentX}px)`;
 
@@ -486,7 +571,7 @@ function initAnimations() {
         // Mouse is in monitor but not on a clip — keep drawer open, don't change content
         if (clipLeaveTimer) { clearTimeout(clipLeaveTimer); clipLeaveTimer = null; }
       } else if (drawerOpen && !clipLeaveTimer) {
-        clipLeaveTimer = setTimeout(() => { closeDrawer(); clipLeaveTimer = null; }, 800);
+        clipLeaveTimer = setTimeout(() => { closeDrawer(); clipLeaveTimer = null; }, CONFIG.clipCloseDelay);
       }
 
       requestAnimationFrame(tlTick);
@@ -494,11 +579,11 @@ function initAnimations() {
   }
 
   // ── WORD-WRAP REVEAL (reusable) ──
-  function wordReveal(selector, stagger = 0.16) {
+  function wordReveal(selector, stagger = CONFIG.wordRevealStagger) {
     const el = document.querySelector(selector);
     if (!el) return;
     gsap.to(el.querySelectorAll('.word-inner'), {
-      y: '0%', duration: 1, ease: 'power4.out', stagger,
+      y: '0%', duration: CONFIG.wordRevealDuration, ease: 'power4.out', stagger,
       scrollTrigger: { trigger: el, start: 'top 80%' }
     });
   }
@@ -509,20 +594,15 @@ function initAnimations() {
     const wrap = document.getElementById('slide-txt-wrap');
     if (!wrap) return;
 
-    const DESKTOP_WORDS = [
-      'projection shows', 'music videos', "children's books", 'motion graphics',
-      'documentaries', 'album art', 'press shots', '3D renders', 'animations', 'brand assets'
-    ];
-    const MOBILE_WORDS = [
+    const WORDS = [
       'soundtracks', 'storybooks', 'pictures', 'videos',
-      'animations', '3D renders', 'websites'
+      'animations', '3D renders', 'websites', 'social'
     ];
-    const WORDS = window.innerWidth < MOBILE_BREAKPOINT ? MOBILE_WORDS : DESKTOP_WORDS;
     const COLOURS = WORDS.map((_, i) => ['#4427d7','#3b3fe8','#2e45d9','#4f5cf2'][i % 4]);
     const N       = WORDS.length;
-    const DUR     = 2.5;
+    const DUR     = CONFIG.drumWordDuration;
     const EASE    = 'expo.inOut';
-    const MAX_ANGLE = 91;  // degrees at fully hidden position
+    const MAX_ANGLE = CONFIG.drumMaxAngle;  // degrees at fully hidden position
 
     // Pure rotateX only — the transform-origin: center center -0.26em does the arc.
     // The Y/Z translation in Valentin's DOM is a tiny side-effect of that origin,
@@ -625,16 +705,16 @@ function initAnimations() {
     p.style.color = 'rgba(237,234,228,.6)';
     gsap.to(p.querySelectorAll('.word-light'), {
       color: 'rgba(237,234,228,1)',
-      stagger: { each: .04 },
+      stagger: { each: CONFIG.wordSweepStagger },
       ease: 'none',
-      scrollTrigger: { trigger: p, start: 'top 75%', end: 'bottom 40%', scrub: .5 }
+      scrollTrigger: { trigger: p, start: 'top 75%', end: 'bottom 40%', scrub: CONFIG.wordSweepScrub }
     });
   });
 
   // ── STATS block slide in (desktop only) ──
-  if (window.innerWidth >= MOBILE_BREAKPOINT) {
+  if (window.innerWidth >= CONFIG.mobileBreakpoint) {
     gsap.from('#about-stats .stat', {
-      opacity: 0, y: 30, duration: .8, ease: 'power3.out', stagger: .1,
+      opacity: 0, y: 30, duration: .8, ease: 'power3.out', stagger: CONFIG.statsStagger,
       scrollTrigger: { trigger: '#about-stats', start: 'top 80%' }
     });
   }
@@ -642,17 +722,18 @@ function initAnimations() {
   // ── STATS — one-at-a-time flip (staggered) ──
   const statCards = document.querySelectorAll('#about-stats .stat');
   let statDelay = null;
+  const hasHover = window.matchMedia('(hover: hover)').matches;
+  const hasTouch = 'ontouchstart' in window;
 
-  const isMobileStat = window.innerWidth < MOBILE_BREAKPOINT;
   statCards.forEach(card => {
-    if (!isMobileStat) {
-      // Desktop: hover flip
+    // Pointer devices: hover to flip
+    if (hasHover) {
       card.addEventListener('mouseenter', () => {
         clearTimeout(statDelay);
         const flipped = document.querySelector('#about-stats .stat.is-flipped');
         if (flipped && flipped !== card) {
           flipped.classList.remove('is-flipped');
-          statDelay = setTimeout(() => card.classList.add('is-flipped'), 1);
+          statDelay = setTimeout(() => card.classList.add('is-flipped'), CONFIG.statFlipDelay);
         } else if (!flipped) {
           card.classList.add('is-flipped');
         }
@@ -661,8 +742,9 @@ function initAnimations() {
         clearTimeout(statDelay);
         card.classList.remove('is-flipped');
       });
-    } else {
-      // Mobile: tap to toggle flip
+    }
+    // Touch devices: tap to toggle flip
+    if (hasTouch) {
       card.addEventListener('click', () => {
         card.classList.toggle('is-flipped');
         const hint = document.getElementById('stat-tap-hint');
@@ -678,8 +760,8 @@ function initAnimations() {
     });
   });
 
-  // Add tap hint below stats on mobile
-  if (window.innerWidth < MOBILE_BREAKPOINT) {
+  // Add tap hint below stats on touch devices
+  if (hasTouch && !hasHover) {
     const statsEl = document.getElementById('about-stats');
     if (statsEl) {
       const hint = document.createElement('span');
@@ -692,7 +774,7 @@ function initAnimations() {
 
   // ── CONTACT ──
   gsap.to('#contact-right', {
-    opacity: 1, y: 0, duration: .9, ease: 'power3.out',
+    opacity: 1, y: 0, duration: CONFIG.contactRevealDuration, ease: 'power3.out',
     scrollTrigger: { trigger: '#contact', start: 'top 72%' }
   });
 }
@@ -705,12 +787,11 @@ function initAnimations() {
   if (!hero || !toggle || !canvas) return;
 
   const ctx = canvas.getContext('2d');
-  const REF_W = 2560, REF_H = 1440;
-  const SIGN_W = 1788, SIGN_H = 634;
-  // Sign position within the 2560x1440 reference frame
-  const SIGN_X = (REF_W - SIGN_W) / 2; // 386
-  const SIGN_Y = (REF_H - SIGN_H) / 2; // 403
-  const WIRE_THICKNESS = 13; // base cable width — glow and highlight scale from this
+  const REF_W = CONFIG.cableRefW, REF_H = CONFIG.cableRefH;
+  const SIGN_W = CONFIG.cableSignW, SIGN_H = CONFIG.cableSignH;
+  const SIGN_X = (REF_W - SIGN_W) / 2;
+  const SIGN_Y = (REF_H - SIGN_H) / 2;
+  const WIRE_THICKNESS = CONFIG.cableWireThickness; // base cable width — glow and highlight scale from this
 
   // Anchor pairs in 2560x1440 coordinate space
   const ANCHORS = [
@@ -723,7 +804,7 @@ function initAnimations() {
     [[1464,496],[1674,717]],
   ];
 
-  const isTouchDevice = 'ontouchstart' in window;
+  const isTouchDevice = !window.matchMedia('(hover: hover)').matches;
   let engine, runner, world, mouseBody, cables = [];
   let neonOn = false;
   let animFrame = null;
@@ -772,7 +853,7 @@ function initAnimations() {
 
     // Mouse interaction body — skip on touch devices
     if (!isTouchDevice) {
-      mouseBody = Bodies.circle(0, 0, 25, {
+      mouseBody = Bodies.circle(0, 0, CONFIG.cableMouseRadius, {
         isStatic: true,
         collisionFilter: { category: 0x0002, mask: 0x0001 },
       });
@@ -784,7 +865,7 @@ function initAnimations() {
       const pb = scale(b[0], b[1]);
       const dx = pb.x - pa.x, dy = pb.y - pa.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      const segs = Math.max(8, Math.round(dist / 12));
+      const segs = Math.max(CONFIG.cableMinSegs, Math.round(dist / CONFIG.cableSegDivisor));
       const segLen = dist / segs;
 
       const bodies = [];
@@ -793,9 +874,9 @@ function initAnimations() {
         const x = pa.x + dx * t;
         const y = pa.y + dy * t;
         const isEnd = i === 0 || i === segs;
-        const body = Bodies.circle(x, y, 14, {
+        const body = Bodies.circle(x, y, CONFIG.cableSegRadius, {
           isStatic: isEnd,
-          frictionAir: 0.1,
+          frictionAir: CONFIG.cableFrictionAir,
           collisionFilter: isEnd
             ? { category: 0x0004, mask: 0 }
             : { category: 0x0001, mask: 0x0002 },
@@ -810,8 +891,8 @@ function initAnimations() {
           bodyA: bodies[i],
           bodyB: bodies[i + 1],
           length: segLen,
-          stiffness: 0.5,
-          damping: 0.08,
+          stiffness: CONFIG.cableStiffness,
+          damping: CONFIG.cableDamping,
         }));
       }
       Composite.add(world, constraints);
@@ -865,7 +946,7 @@ function initAnimations() {
     ctx.save();
 
     // Zone-based colour: upper 45% = warm, lower 55% = cool
-    const zoneBreak = canvas.height * 0.45;
+    const zoneBreak = canvas.height * CONFIG.cableZoneBreak;
     function zoneColor(y, warmA, warmB, coolA, coolB) {
       if (y <= zoneBreak) {
         const t = y / zoneBreak;
@@ -877,7 +958,7 @@ function initAnimations() {
 
     cables.forEach(cable => {
       const pts = cable.bodies.map(b => ({ x: b.position.x, y: b.position.y }));
-      const spline = catmullRom(pts, 6);
+      const spline = catmullRom(pts, CONFIG.cableSplineSteps);
       if (spline.length < 2) return;
 
       // Build zone-based gradient along the cable
@@ -901,20 +982,20 @@ function initAnimations() {
       const wt = WIRE_THICKNESS * wireScale;
       const passes = neonOn
         ? [
-            { width: wt * 2.8, alpha: 0.15, glow: true },
+            { width: wt * CONFIG.cableGlowWidthMul, alpha: CONFIG.cableGlowAlpha, glow: true },
             { width: wt,       alpha: 1,    body: true },
-            { width: wt * 0.18, alpha: 0.5, highlight: true },
+            { width: wt * CONFIG.cableHighlightWidthMul, alpha: CONFIG.cableHighlightAlphaOn, highlight: true },
           ]
         : [
             { width: wt,       alpha: 1,    off: true },
-            { width: wt * 0.18, alpha: 0.25, off: true, highlight: true },
+            { width: wt * CONFIG.cableHighlightWidthMul, alpha: CONFIG.cableHighlightAlphaOff, off: true, highlight: true },
           ];
 
       // Cable shadow — applied before all passes
       ctx.shadowColor = 'rgba(0,0,0,0.6)';
-      ctx.shadowBlur = 8;
-      ctx.shadowOffsetX = 2;
-      ctx.shadowOffsetY = 4;
+      ctx.shadowBlur = CONFIG.cableShadowBlur;
+      ctx.shadowOffsetX = CONFIG.cableShadowOffsetX;
+      ctx.shadowOffsetY = CONFIG.cableShadowOffsetY;
 
       passes.forEach(pass => {
         // Blur control per pass
@@ -990,12 +1071,11 @@ function initAnimations() {
     cables = ANCHORS.map(([a, b]) => {
       const pa = scale(a[0], a[1]);
       const pb = scale(b[0], b[1]);
-      const segs = 10;
+      const segs = CONFIG.cableOffStateSegs;
       const bodies = [];
       for (let i = 0; i <= segs; i++) {
         const t = i / segs;
-        // Add subtle sag
-        const sag = Math.sin(t * Math.PI) * 15;
+        const sag = Math.sin(t * Math.PI) * CONFIG.cableOffStateSag;
         bodies.push({ position: { x: pa.x + (pb.x-pa.x)*t, y: pa.y + (pb.y-pa.y)*t + sag } });
       }
       return { bodies, pa, pb };
@@ -1033,7 +1113,7 @@ function initAnimations() {
     }
   }
   window.addEventListener('resize', handleResize);
-  window.addEventListener('orientationchange', () => setTimeout(handleResize, 100));
+  window.addEventListener('orientationchange', () => setTimeout(handleResize, CONFIG.orientationDelay));
 
   // Initial draw
   sizeCanvas();
@@ -1042,8 +1122,8 @@ function initAnimations() {
   // ── DEBUG MODE (?debug=1) ──
   const DEBUG = new URLSearchParams(window.location.search).get('debug') === '1';
   if (DEBUG) {
-    const DOT_R = 10;
-    const HIT_R = 20;
+    const DOT_R = CONFIG.debugDotRadius;
+    const HIT_R = CONFIG.debugHitRadius;
     let dragTarget = null; // { ci: cableIndex, ei: 0|1 }
 
     function canvasXY(e) {
@@ -1120,16 +1200,16 @@ function initAnimations() {
       const pb = scale(b[0], b[1]);
       const dx = pb.x - pa.x, dy = pb.y - pa.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      const segs = Math.max(8, Math.round(dist / 12));
+      const segs = Math.max(CONFIG.cableMinSegs, Math.round(dist / CONFIG.cableSegDivisor));
       const segLen = dist / segs;
 
       const bodies = [];
       for (let i = 0; i <= segs; i++) {
         const t = i / segs;
         const isEnd = i === 0 || i === segs;
-        const body = Bodies.circle(pa.x + dx * t, pa.y + dy * t, 14, {
+        const body = Bodies.circle(pa.x + dx * t, pa.y + dy * t, CONFIG.cableSegRadius, {
           isStatic: isEnd,
-          frictionAir: 0.1,
+          frictionAir: CONFIG.cableFrictionAir,
           collisionFilter: isEnd
             ? { category: 0x0004, mask: 0 }
             : { category: 0x0001, mask: 0x0002 },
@@ -1144,8 +1224,8 @@ function initAnimations() {
           bodyA: bodies[i],
           bodyB: bodies[i + 1],
           length: segLen,
-          stiffness: 0.5,
-          damping: 0.08,
+          stiffness: CONFIG.cableStiffness,
+          damping: CONFIG.cableDamping,
         }));
       }
       Composite.add(world, constraints);
