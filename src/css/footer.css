@@ -1,0 +1,10 @@
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--mid); padding: var(--space-section-top) var(--space-lg);
+  display: flex; justify-content: center; align-items: center;
+}
+footer p {
+  font-family: 'Monument', sans-serif; font-size: clamp(0.5rem, 0.7vw, 0.65rem); font-weight: 400;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(237,234,228,.28); text-align: center; line-height: 1.6;
+}

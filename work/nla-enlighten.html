@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NLA Enlighten - Joseph G Media</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../src/css/main.css" />
+</head>
+<body class="page-case-study">
+  <a href="#case-study-content" class="skip-link">Skip to content</a>
+
+  <!-- CURSOR -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <header>
+    <nav id="nav">
+      <h1 class="nav__logo-wrap">
+        <a href="../index.html" class="nav__logo">
+          <img src="../src/assets/images/logos/JGMedia_Logo.svg" alt="Joseph G Media" />
+        </a>
+      </h1>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-overlay">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="../work.html" class="nav__link--active">Work</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <nav class="nav__overlay" id="nav-overlay" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+        <button class="nav__close" id="nav-close" aria-label="Close menu">✕</button>
+        <a href="../work.html" class="nav__overlay-link">Work</a>
+        <a href="../index.html#about" class="nav__overlay-link">About</a>
+        <a href="../index.html#contact" class="nav__overlay-link">Contact</a>
+      </nav>
+    </nav>
+  </header>
+
+  <main id="case-study-content">
+
+    <!-- EDITORIAL SPLIT LAYOUT -->
+    <div class="cs-layout">
+
+      <!-- LEFT: Sticky project info -->
+      <aside class="cs-sidebar">
+        <span class="cs-sidebar__tag">Projection Mapping</span>
+        <h2 class="cs-sidebar__title">NLA Enlighten</h2>
+
+        <div class="cs-sidebar__meta">
+          <div class="cs-meta">
+            <span class="cs-meta__label">Role</span>
+            <span class="cs-meta__value">Design Lead</span>
+          </div>
+          <div class="cs-meta">
+            <span class="cs-meta__label">Client</span>
+            <span class="cs-meta__value">National Library of Australia</span>
+          </div>
+          <div class="cs-meta">
+            <span class="cs-meta__label">Agency</span>
+            <span class="cs-meta__value">The Electric Canvas</span>
+          </div>
+          <div class="cs-meta">
+            <span class="cs-meta__label">Year</span>
+            <span class="cs-meta__value">2024</span>
+          </div>
+        </div>
+
+        <div class="cs-sidebar__tools">
+          <span class="cs-meta__label">Tools</span>
+          <div class="cs-sidebar__tool-list">
+            <span>After Effects</span>
+            <span>Cinema 4D</span>
+            <span>Resolume</span>
+            <span>Photoshop</span>
+          </div>
+        </div>
+
+        <a href="../work.html" class="cs-sidebar__back">&larr; All Work</a>
+      </aside>
+
+      <!-- RIGHT: Content flow -->
+      <div class="cs-content">
+
+        <!-- Video -->
+        <div class="cs-content__video">
+          <iframe src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="NLA Enlighten showreel"></iframe>
+          <div class="cs-placeholder"><span>Video Embed</span></div>
+        </div>
+
+        <!-- Description -->
+        <div class="cs-content__body">
+          <h3 class="cs-content__heading">The Brief</h3>
+          <p>Large-scale architectural projection mapping for the National Library of Australia as part of Canberra's annual Enlighten Festival. The brief was to transform the library's neoclassical facade into a living canvas - celebrating the building's history through motion and light.</p>
+
+          <h3 class="cs-content__heading">The Approach</h3>
+          <p>Led design across multiple building surfaces, developing motion content that worked with the architecture rather than against it. Every column, cornice, and window became part of the composition. The challenge was scale - content had to read from 200 metres away while maintaining detail up close.</p>
+
+          <p>The show ran nightly across the festival, synced to an original music composition that drove the pacing and emotional arc of the visual narrative.</p>
+        </div>
+
+        <!-- Gallery -->
+        <div class="cs-content__gallery">
+          <div class="cs-content__gallery-wide">
+            <div class="cs-placeholder"><span>Image 1</span></div>
+          </div>
+          <div class="cs-content__gallery-pair">
+            <div class="cs-placeholder"><span>Image 2</span></div>
+            <div class="cs-placeholder"><span>Image 3</span></div>
+          </div>
+        </div>
+
+        <!-- Next project -->
+        <a href="rams-construction.html" class="cs-content__next">
+          <span class="cs-content__next-label">Next Project</span>
+          <span class="cs-content__next-title">RAMS Construction &rarr;</span>
+        </a>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Joseph G Media<br class="u-mobile-break"/> Sydney, Australia</p>
+  </footer>
+
+  <!-- Main JS -->
+  <script type="module" src="../src/js/case-study-page.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+/* ── HERO ── */
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* Shared layer positioning */
+.hero__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Brick background — single image, slightly dimmed by default */
+.hero__brick {
+  z-index: 1;
+  filter: brightness(0.75);
+  transition: filter 0.8s ease;
+}
+.hero--neon-on .hero__brick {
+  filter: brightness(0.9);
+}
+
+/* Vignette + glow overlay */
+.hero__brick-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.8s ease, background 0.8s ease;
+  /* Off state: subtle dark vignette */
+  background: radial-gradient(ellipse 70% 60% at 50% 45%, transparent 30%, rgba(8,8,8,0.7) 100%);
+  opacity: 1;
+}
+.hero--neon-on .hero__brick-glow {
+  /* On state: warm/indigo centre glow + heavy dark vignette */
+  background:
+    radial-gradient(ellipse 40% 35% at 50% 45%, rgba(255,245,220,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 45% at 50% 45%, rgba(57,49,223,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 60% at 50% 45%, transparent 20%, rgba(8,8,8,0.85) 100%);
+  opacity: 1;
+}
+
+/* Canvas sits between brick and sign layers */
+#cable-canvas {
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Sign foregrounds — centred, fluid width, transparent bg */
+.hero__sign {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(280px, 70vw, 1788px);
+  height: auto;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+.hero__sign--off { opacity: 1; }
+.hero__sign--on  { opacity: 0; z-index: 5; }
+
+/* Neon ON — crossfade signs */
+.hero--neon-on .hero__sign--off { opacity: 0; }
+.hero--neon-on .hero__sign--on  { opacity: 1; }
+
+/* Enable pointer events on canvas when neon is on */
+.hero--neon-on #cable-canvas {
+  pointer-events: auto;
+}
+
+/* Hero UI */
+.hero__ui {
+  position: absolute;
+  bottom: var(--space-sm); left: 50%; transform: translateX(-50%);
+  z-index: 10;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  gap: var(--space-xs);
+  padding: 0 var(--space-lg);
+  width: auto;
+  pointer-events: none;
+}
+.hero__ui > * { pointer-events: auto; }
+
+.hero__tagline {
+  font-family: 'Monument', sans-serif;
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(237,234,228,0.4);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero__toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: none;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.hero__toggle-wrap input { display: none; }
+
+.hero__toggle-track {
+  width: 52px;
+  height: 28px;
+  background: var(--mid);
+  border: 1px solid var(--muted);
+  border-radius: 14px;
+  position: relative;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.hero__toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: var(--muted);
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(.16,1,.3,1), background 0.3s;
+}
+
+input:checked + .hero__toggle-track {
+  background: rgba(57,49,223,0.2);
+  border-color: var(--accent);
+}
+
+input:checked + .hero__toggle-track .hero__toggle-thumb {
+  transform: translateX(24px);
+  background: var(--accent);
+}
+
+.hero__toggle-label {
+  font-family: 'Monument', sans-serif;
+  font-weight: 800;
+  font-size: var(--fs-label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(237,234,228,0.5);
+  transition: color 0.3s;
+}
+
+.hero--neon-on .hero__toggle-label {
+  color: var(--accent);
+}
+
+.hero__foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  opacity: 0;
+  will-change: opacity, filter, height;
+}
+.hero__foot-scroll {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero__foot-track {
+  width: 2px;
+  height: 40px;
+  background: var(--mid);
+  position: relative;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+.hero__foot-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  animation: scroll-dot 1.5s ease-in-out infinite;
+}
+@keyframes scroll-dot {
+  0%   { top: 0; }
+  100% { top: calc(100% - 6px); }
+}
+.hero__foot-label {
+  font-family: 'Monument', sans-serif; font-size: var(--fs-ui); font-weight: 300;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(237,234,228,.6); line-height: 1.4;
+}
+.hero__foot-right {
+  margin-left: auto; font-family: 'Monument', sans-serif;
+  font-size: var(--fs-ui); font-weight: 300; letter-spacing: .14em;
+  text-transform: uppercase; color: rgba(237,234,228,.38);
+}

@@ -1,0 +1,264 @@
+/* ══════════════════════════════════════════
+   CASE STUDY — Editorial Split Layout
+   Left: sticky project info (40%)
+   Right: content flow (60%)
+   ══════════════════════════════════════════ */
+
+.nav__link--active {
+  opacity: 1 !important;
+  color: var(--accent) !important;
+}
+
+/* ── LAYOUT ── */
+.cs-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-top: calc(60px + var(--space-nav));
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ── SIDEBAR (left column) ── */
+.cs-sidebar {
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.cs-sidebar__tag {
+  font-family: 'Monument', sans-serif;
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cs-sidebar__title {
+  font-family: 'Monument', sans-serif;
+  font-weight: 800;
+  font-size: var(--fs-display);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1;
+}
+.cs-sidebar__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.cs-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.cs-meta__label {
+  font-family: 'Monument', sans-serif;
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cs-meta__value {
+  font-family: 'Barlow', sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 300;
+  color: var(--white);
+}
+.cs-sidebar__tools {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.cs-sidebar__tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+.cs-sidebar__tool-list span {
+  font-family: 'Barlow', sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 300;
+  color: rgba(237,234,228,0.6);
+}
+.cs-sidebar__tool-list span:not(:last-child)::after {
+  content: ',';
+}
+.cs-sidebar__back {
+  font-family: 'Monument', sans-serif;
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  margin-top: auto;
+}
+.cs-sidebar__back:hover {
+  color: var(--accent);
+}
+
+/* ── CONTENT (right column) ── */
+.cs-content {
+  padding: 0 var(--space-lg) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* Video embed */
+.cs-content__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--dim);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.cs-content__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.cs-content__video iframe[src]:not([src=""]) ~ .cs-placeholder {
+  display: none;
+}
+
+/* Description */
+.cs-content__body {
+  max-width: 115ch;
+}
+.cs-content__heading {
+  font-family: 'Monument', sans-serif;
+  font-weight: 800;
+  font-size: var(--fs-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+}
+.cs-content__heading:not(:first-child) {
+  margin-top: var(--space-lg);
+}
+.cs-content__body p {
+  font-family: 'Barlow', sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(237,234,228,0.75);
+  margin-bottom: var(--space-md);
+}
+
+/* Gallery */
+.cs-content__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.cs-content__gallery-wide {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.cs-content__gallery-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+.cs-content__gallery-pair > * {
+  aspect-ratio: 16 / 9;
+}
+
+/* Next project link */
+.cs-content__next {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  text-decoration: none;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--mid);
+  transition: border-color 0.2s;
+}
+.cs-content__next:hover {
+  border-color: var(--accent);
+}
+.cs-content__next-label {
+  font-family: 'Monument', sans-serif;
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cs-content__next-title {
+  font-family: 'Monument', sans-serif;
+  font-size: var(--fs-sub);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: color 0.2s;
+}
+.cs-content__next:hover .cs-content__next-title {
+  color: var(--accent);
+}
+
+/* ── PLACEHOLDER (dev) ── */
+.cs-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--dim);
+  border: 1px dashed var(--mid);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cs-placeholder span {
+  font-family: 'Monument', sans-serif;
+  font-size: var(--fs-ui);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
+/* Desktop: two-column editorial split — fluid sidebar width */
+@media (min-width: 1024px) {
+  .cs-layout {
+    grid-template-columns: minmax(320px, 440px) 1fr;
+    gap: var(--space-xl);
+  }
+  .cs-sidebar {
+    position: sticky;
+    top: calc(60px + var(--space-nav));
+    height: fit-content;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+  .cs-sidebar__title {
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+  }
+  .cs-content {
+    padding-top: var(--space-xl);
+  }
+}
+
+/* Mobile: stack */
+@media (max-width: 767px) {
+  .cs-sidebar {
+    padding-bottom: 0;
+  }
+  .cs-sidebar__back {
+    display: none;
+  }
+  .cs-content__gallery-pair {
+    grid-template-columns: 1fr;
+  }
+}

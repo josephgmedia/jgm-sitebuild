@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work - Joseph G Media</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="src/css/main.css" />
+</head>
+<body class="page-work">
+  <a href="#gallery-grid" class="skip-link">Skip to content</a>
+
+  <!-- CURSOR -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <header>
+    <nav id="nav">
+      <h1 class="nav__logo-wrap">
+        <a href="index.html" class="nav__logo">
+          <img src="src/assets/images/logos/JGMedia_Logo.svg" alt="Joseph G Media" />
+        </a>
+      </h1>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-overlay">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="work.html" class="nav__link--active">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <nav class="nav__overlay" id="nav-overlay" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+        <button class="nav__close" id="nav-close" aria-label="Close menu">✕</button>
+        <a href="work.html" class="nav__overlay-link">Work</a>
+        <a href="index.html#about" class="nav__overlay-link">About</a>
+        <a href="index.html#contact" class="nav__overlay-link">Contact</a>
+      </nav>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- WORK HERO + FILTERS -->
+    <section class="work-hero" aria-label="Work">
+      <h2 class="work-hero__title">Work</h2>
+      <div class="gallery__filters" role="tablist" aria-label="Filter by category">
+        <button class="gallery__filter gallery__filter--active" role="tab" aria-selected="true" data-category="all">All</button>
+        <button class="gallery__filter" role="tab" aria-selected="false" data-category="projection">Projection</button>
+        <button class="gallery__filter" role="tab" aria-selected="false" data-category="3d">3D</button>
+        <button class="gallery__filter" role="tab" aria-selected="false" data-category="2d">2D</button>
+        <button class="gallery__filter" role="tab" aria-selected="false" data-category="brand">Brand</button>
+        <button class="gallery__filter" role="tab" aria-selected="false" data-category="video">Video</button>
+        <button class="gallery__filter" role="tab" aria-selected="false" data-category="photo">Photo</button>
+        <button class="gallery__filter" role="tab" aria-selected="false" data-category="design">Design</button>
+        <button class="gallery__filter" role="tab" aria-selected="false" data-category="music">Music</button>
+        <button class="gallery__filter" role="tab" aria-selected="false" data-category="web">Web</button>
+      </div>
+    </section>
+
+    <!-- UNIFIED GALLERY GRID -->
+    <section class="gallery" id="gallery" aria-label="Gallery">
+      <div class="gallery__grid" id="gallery-grid" role="list">
+        <!-- Populated dynamically from projects.json -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Joseph G Media<br class="u-mobile-break"/> Sydney, Australia</p>
+  </footer>
+
+  <!-- Main JS -->
+  <script type="module" src="src/js/work-page.js"></script>
+
+</body>
+</html>

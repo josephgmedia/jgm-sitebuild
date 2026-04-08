@@ -53,6 +53,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        work: resolve(__dirname, 'work.html'),
+        'work/nla-enlighten': resolve(__dirname, 'work/nla-enlighten.html'),
       },
       output: {
         // Asset file naming with hashes for cache busting

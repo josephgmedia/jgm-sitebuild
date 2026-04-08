@@ -1,0 +1,38 @@
+/* ── CONTACT ── */
+.contact {
+  padding: var(--space-section-top) var(--space-lg) var(--space-section-bottom); position: relative;
+}
+.contact__bg-text { display: none; }
+.contact__inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column;
+  align-items: flex-start; gap: var(--space-lg);
+}
+.contact__headline {
+  font-family: 'Monument', sans-serif; font-weight: 800;
+  font-size: var(--fs-display); text-transform: uppercase;
+  letter-spacing: .02em; line-height: 1; color: var(--white);
+}
+.contact__headline .word__wrap { display: block; overflow: hidden; }
+.contact__headline .word__inner { display: block; transform: translateY(110%); }
+.contact__headline em { font-style: normal; color: var(--accent); }
+.contact__right {
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start; gap: var(--space-sm);
+  opacity: 100;
+}
+.contact__email {
+  font-family: 'Barlow', sans-serif; font-size: var(--fs-body); font-weight: 300;
+  color: rgba(237,234,228,.68); text-decoration: none;
+  transition: color .2s; margin-bottom: var(--space-sm); letter-spacing: .02em;
+}
+.contact__email:hover { color: var(--white); }
+.contact__link {
+  font-family: 'Monument', sans-serif; font-weight: 400;
+  font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(237,234,228,.35); text-decoration: none;
+  display: flex; align-items: center; gap: var(--space-sm); transition: color .2s;
+}
+.contact__link:hover { color: var(--white); }
+.contact__link .arr { color: var(--accent); transition: transform .3s; display: inline-block; }
+.contact__link:hover .arr { transform: translateX(4px); }

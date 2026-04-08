@@ -1,0 +1,140 @@
+/* ── ABOUT ── */
+.about {
+  padding: var(--space-section-top) var(--space-lg) var(--space-section-bottom);
+  display: grid; grid-template-columns: 1fr;
+  column-gap: 0; row-gap: 0; align-items: center;
+  overflow: hidden;
+}
+.about .section-label { grid-column: 1 / -1; justify-self: stretch; }
+.about__left {
+  min-width: 0; overflow: hidden;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+  width: 100%; max-width: 100%;
+}
+.about__drum {
+  margin-bottom: var(--space-sm);
+  max-width: 100%; overflow: hidden;
+  text-align: center; width: 100%;
+}
+.about__drum-title {
+  font-family: 'Monument', sans-serif; font-weight: 800;
+  font-size: var(--fs-drum);
+  line-height: 1; letter-spacing: .02em; text-transform: uppercase;
+  color: var(--white); text-align: center; width: 100%;
+}
+/* ── SLIDE TEXT (Valentin Cheval style) ── */
+.about__slide-wrap {
+  perspective: 82.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  display: grid;
+  min-height: calc(var(--fs-drum) * 1.1);
+  width: 100%; max-width: 100%;
+  align-items: center; justify-items: center;
+}
+.about__slide-item {
+  font-family: 'Monument', sans-serif;
+  font-weight: 800;
+  font-size: var(--fs-drum);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--accent);
+  grid-area: 1 / 1;
+  backface-visibility: hidden;
+  transform-origin: center center -0.3em;
+  will-change: transform, opacity;
+  text-align: center; width: 100%;
+}
+.about__drum-subtitle {
+  font-family: 'Monument', sans-serif; font-weight: 400;
+  font-size: var(--fs-drum-sub);
+  line-height: 1; letter-spacing: .02em; text-transform: uppercase;
+  color: var(--white); opacity: 0.45;
+  margin-top: 0.08em;
+}
+.about__right {
+  min-width: 0; overflow: hidden;
+  width: 100%; max-width: 100%;
+  box-sizing: border-box; padding: 0;
+}
+.about__right p {
+  font-family: 'Barlow', sans-serif;
+  font-size: var(--fs-body); line-height: 1.85; font-weight: 300;
+  color: rgba(237,234,228,.6);
+  margin-bottom: var(--space-sm);
+  word-wrap: break-word; overflow-wrap: break-word;
+  hyphens: none; word-break: normal;
+}
+.about__right p strong { color: var(--white); font-weight: 500; }
+.word--light { color: rgba(237,234,228,.6); }
+
+/* Tap hint — only injected by JS on touch-only devices */
+.stat__tap-hint {
+  display: block;
+  text-align: center;
+  font-family: 'Monument', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(237,234,228,0.3);
+  padding-top: 15px;
+  transition: opacity 0.4s ease;
+}
+.stat__tap-hint.is-hidden { opacity: 0; height: 0; padding: 0; margin: 0; overflow: hidden; }
+
+/* ── STATS ── */
+.about__stats {
+  display: flex; flex-direction: row;
+  justify-content: center;
+  gap: var(--space-xs); margin-top: var(--space-md);
+  width: 100%; max-width: calc(100vw - 48px);
+  box-sizing: border-box;
+}
+.stat {
+  perspective: 600px;
+  cursor: none;
+  flex: 1 1 0; min-width: 0;
+  height: 100px; overflow: hidden;
+  position: relative;
+}
+.stat__flip {
+  position: relative;
+  width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(.22,.61,.36,1);
+}
+.stat.is-flipped .stat__flip {
+  transform: rotateX(-180deg);
+}
+.stat__face {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+  padding: var(--space-md) var(--space-sm);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.stat__face--front {
+  background: var(--dim); border: 1px solid var(--mid);
+}
+.stat__face--back {
+  background: rgba(57,49,223,0.12);
+  border: 1px solid rgba(57,49,223,0.4);
+  transform: rotateX(180deg);
+}
+.stat__num {
+  font-family: 'Monument', sans-serif; font-weight: 800;
+  font-size: clamp(1.5rem, 4vw, 2.6rem); letter-spacing: .02em;
+  color: var(--accent); line-height: 1; margin-bottom: var(--space-xs);
+}
+.stat__label {
+  font-family: 'Monument', sans-serif; font-size: var(--fs-ui); font-weight: 400;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(237,234,228,.55); line-height: 1.6;
+}
+.stat__face--back .stat__num {
+  color: var(--white);
+}
+.stat__face--back .stat__label {
+  color: #5a7aff; opacity: 1;
+}

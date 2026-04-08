@@ -1,0 +1,133 @@
+/* ══════════════════════════════════════════════════
+   MOBILE-FIRST: LARGE PHONE+ (min-width: 481px)
+   ══════════════════════════════════════════════════ */
+@media (min-width: 481px) {
+  .work__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ══════════════════════════════════════════════════
+   MOBILE-FIRST: TABLET+ (min-width: 768px)
+   ══════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  /* Timeline — restore desktop flex layout */
+  .timeline__track {
+    overflow-x: visible;
+    scroll-snap-type: none;
+    touch-action: auto;
+  }
+  .timeline__clip {
+    flex-grow: var(--w); flex-basis: 0;
+    min-height: 72px;
+    scroll-snap-align: unset;
+  }
+  .timeline__clip.is-active { min-height: 110px; flex-grow: calc(var(--w) * 2.5); }
+  .timeline__scroll-progress { display: none; }
+  .timeline { cursor: none; }
+
+  /* Featured Work — wider gap on tablet+ */
+  .work__grid { gap: 1rem; }
+
+  /* Credits — two column on tablet+ */
+  .credits__inner {
+    grid-template-columns: 1fr 1.35fr;
+    column-gap: var(--space-lg);
+    align-items: center;
+  }
+  .marquee__item { width: clamp(80px, 12vw, 120px); height: clamp(50px, 8vw, 80px); }
+
+  /* Contact — row layout on tablet+ */
+  .contact__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+  }
+  .contact__right { align-items: flex-end; gap: var(--space-sm); }
+}
+
+/* ══════════════════════════════════════════════════
+   MOBILE-FIRST: DESKTOP (min-width: 1024px)
+   ══════════════════════════════════════════════════ */
+@media (min-width: 1024px) {
+  /* Hero — fullscreen on desktop */
+  .hero {
+    aspect-ratio: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  .hero__ui {
+    bottom: 120px;
+    gap: 16px;
+    padding: 0;
+    text-align: left;
+  }
+  .hero__tagline { font-size: var(--fs-body); text-align: left; }
+  .hero__foot { display: flex; }
+
+  /* Headlines — tighter line-height on desktop */
+  .credits__headline,
+  .contact__headline { line-height: .9; }
+
+  /* Featured Work — 3-column, overlays hidden until hover */
+  .work__grid { grid-template-columns: repeat(3, 1fr); }
+  .work__card-info { opacity: 0; transform: translateY(6px); }
+
+  /* Nav — restore desktop links, hide hamburger */
+  .nav__links { display: flex; }
+  .nav__hamburger { display: none; }
+
+  /* About — two column on desktop */
+  .about {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-lg); row-gap: var(--space-lg);
+  }
+  .about__left {
+    position: sticky; top: 120px;
+    text-align: left; align-items: flex-start;
+  }
+  .about__drum { margin-bottom: 40px; }
+  .about__drum-title { font-size: clamp(2rem, 4vw, 4.2rem); text-align: left; }
+  .about__slide-wrap { min-height: auto; }
+  .about__slide-item { font-size: clamp(2rem, 4vw, 4.2rem); text-align: left; }
+  .about__drum-subtitle { font-size: clamp(1.2rem, 2.2vw, 2.4rem); text-align: left; }
+  .about__right p { font-size: var(--fs-body); }
+  .u-mobile-break { display: none; }
+  /* Stats — grid on desktop */
+  .about__stats {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px; margin-top: 56px;
+    max-width: none;
+  }
+  .stat {
+    flex: unset; min-width: unset;
+    height: clamp(100px, 14vw, 140px);
+    overflow: visible;
+  }
+  .stat__face { padding: var(--space-md) var(--space-sm); text-align: left; align-items: flex-start; }
+}
+
+/* ══════════════════════════════════════════════════
+   SAFE AREA INSETS — notched devices
+   ══════════════════════════════════════════════════ */
+@supports (padding-top: env(safe-area-inset-top)) {
+  nav { padding-top: max(var(--space-nav), env(safe-area-inset-top)); }
+  .nav__close { top: max(var(--space-md), env(safe-area-inset-top)); }
+}
+
+/* ══════════════════════════════════════════════════
+   PREFERS REDUCED MOTION
+   ══════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════
+   TOUCH FEEDBACK
+   ══════════════════════════════════════════════════ */
+.nav__hamburger:active { opacity: 0.6; }
+.nav__close:active { opacity: 0.6; }

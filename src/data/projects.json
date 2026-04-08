@@ -1,0 +1,850 @@
+[
+  {
+    "id": "nla-enlighten",
+    "title": "NLA Enlighten",
+    "category": "projection",
+    "role": "Design Lead",
+    "agency": "The Electric Canvas",
+    "thumb": "nla-enlighten.jpg",
+    "type": "link",
+    "href": "work/nla-enlighten.html",
+    "featured": true
+  },
+  {
+    "id": "rams-construction",
+    "title": "RAMS Construction",
+    "category": "brand",
+    "role": "Art Direction, 3D Animation, VFX Supervisor",
+    "agency": "Saatchi & Saatchi",
+    "thumb": "rams-construction.jpg",
+    "type": "link",
+    "href": "work/rams-construction.html",
+    "featured": true
+  },
+  {
+    "id": "porsche-drjack",
+    "title": "Porsche x Dr Jack",
+    "category": "vfx",
+    "role": "3D Animation, Composite, Colour Grade",
+    "thumb": "porsche-drjack.jpg",
+    "type": "link",
+    "href": "work/porsche-drjack.html",
+    "featured": true
+  },
+  {
+    "id": "gryff",
+    "title": "Gryff",
+    "category": "video",
+    "role": "Videography, Video Editing, Colour Grade",
+    "thumb": "gryff.jpg",
+    "type": "link",
+    "href": "work/gryff.html",
+    "featured": true
+  },
+  {
+    "id": "mca-vivid",
+    "title": "MCA Vivid Sydney",
+    "category": "projection",
+    "role": "Animation",
+    "thumb": "mca-vivid.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "mca-vivid-01.jpg", "alt": "MCA Vivid Sydney projection 1" },
+      { "src": "mca-vivid-02.jpg", "alt": "MCA Vivid Sydney projection 2" }
+    ]
+  },
+  {
+    "id": "perth-stg",
+    "title": "St George's Cathedral",
+    "category": "projection",
+    "role": "Design, Animation, Music Composition",
+    "thumb": "perth-stg.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "perth-stg-01.jpg", "alt": "St George's Cathedral projection 1" },
+      { "src": "perth-stg-02.jpg", "alt": "St George's Cathedral projection 2" }
+    ]
+  },
+  {
+    "id": "wrinkles-schminkles",
+    "title": "Wrinkles Schminkles",
+    "category": "3d",
+    "role": "3D Animation",
+    "thumb": "wrinkles.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "ampol-foodary",
+    "title": "Ampol Foodary",
+    "category": "3d",
+    "role": "3D Animation",
+    "thumb": "ampol-foodary.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "murkwood-fiction",
+    "title": "Murkwood - Fiction",
+    "category": "3d",
+    "role": "3D Animation",
+    "thumb": "murkwood-fiction.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "superloop-3d",
+    "title": "Superloop 3D Icons",
+    "category": "3d",
+    "role": "3D Modelling, Rendering",
+    "thumb": "superloop-3d.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "superloop-3d-01.jpg", "alt": "Superloop 3D icon render 1" },
+      { "src": "superloop-3d-02.jpg", "alt": "Superloop 3D icon render 2" }
+    ]
+  },
+  {
+    "id": "small-gods-album",
+    "title": "Small Gods Album Art",
+    "category": "3d",
+    "role": "3D Rendering",
+    "thumb": "small-gods-album.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "small-gods-album-01.jpg", "alt": "Small Gods album art render" }
+    ]
+  },
+  {
+    "id": "weightless-album",
+    "title": "Weightless Album Art",
+    "category": "3d",
+    "role": "3D Rendering",
+    "thumb": "weightless-album.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "weightless-album-01.jpg", "alt": "Weightless album art render" }
+    ]
+  },
+  {
+    "id": "bellwether",
+    "title": "Bellwether - Shortsighted",
+    "category": "2d",
+    "role": "2D Animation",
+    "thumb": "bellwether.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "beast-atriox",
+    "title": "Beast/Atriox Lyric Video",
+    "category": "2d",
+    "role": "2D Animation, Lyric Video",
+    "thumb": "beast-atriox.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "hyundai-autolink",
+    "title": "Hyundai Auto Link",
+    "category": "2d",
+    "role": "Character Animation, Music Composition",
+    "agency": "Tonic Films",
+    "thumb": "hyundai-autolink.jpg",
+    "type": "link",
+    "href": "work/hyundai-autolink.html",
+    "featured": true
+  },
+  {
+    "id": "kia-endframe",
+    "title": "Kia 2D End Frame",
+    "category": "2d",
+    "role": "2D Animation",
+    "thumb": "kia-endframe.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "kia-endframe-01.jpg", "alt": "Kia 2D end frame" }
+    ]
+  },
+  {
+    "id": "bombay-play",
+    "title": "Bombay Play App Icon",
+    "category": "2d",
+    "role": "2D Animation",
+    "thumb": "bombay-play.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "bombay-play-01.jpg", "alt": "Bombay Play app icon animation" }
+    ]
+  },
+  {
+    "id": "nivea-refresh",
+    "title": "Nivea Refresh Your Routine",
+    "category": "2d",
+    "role": "2D Animation",
+    "thumb": "nivea-refresh.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "futureheaven-imber",
+    "title": "Futureheaven - Imber",
+    "category": "2d",
+    "role": "Lyric Video",
+    "thumb": "futureheaven-imber.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "karma-grim-city",
+    "title": "Karma/Grim City Lyric Video",
+    "category": "2d",
+    "role": "Lyric Video",
+    "thumb": "karma-grim-city.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "coles-dinner",
+    "title": "Coles - What's For Dinner",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "coles-dinner.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "ampol-servo",
+    "title": "Ampol - Last Chance Servo",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "ampol-servo.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "heineken-150",
+    "title": "Heineken - 150Y",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "heineken-150.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "donate-your-age",
+    "title": "Donate Your Age",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "donate-your-age.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "vitasoy-baristas",
+    "title": "Vitasoy - Home Grown Baristas",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "vitasoy-baristas.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "visa-sitting",
+    "title": "Visa - Where Are You Sitting",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "visa-sitting.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "estee-lauder-dw",
+    "title": "Estee Lauder - Double Wear",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "estee-lauder-dw.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "pepsi-gflip",
+    "title": "Pepsi - G Flip Event",
+    "category": "video",
+    "role": "Videography, Direction",
+    "thumb": "pepsi-gflip.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "small-gods-razorgrinder",
+    "title": "Small Gods - Razorgrinder",
+    "category": "video",
+    "role": "Videography, Direction",
+    "thumb": "small-gods-razorgrinder.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "small-gods-nemesis",
+    "title": "Small Gods - Nemesis",
+    "category": "video",
+    "role": "Videography, Direction",
+    "thumb": "small-gods-nemesis.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "futureheaven-tired-eyes",
+    "title": "Futureheaven - Tired Eyes",
+    "category": "video",
+    "role": "Videography, Direction",
+    "thumb": "futureheaven-tired-eyes.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "futureheaven-asuka",
+    "title": "Futureheaven - Asuka",
+    "category": "video",
+    "role": "Videography, Direction",
+    "thumb": "futureheaven-asuka.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "murkwood-violent-sleep",
+    "title": "Murkwood - Violent Sleep",
+    "category": "video",
+    "role": "Videography, Direction",
+    "thumb": "murkwood-violent-sleep.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "mourningstar-karma",
+    "title": "MourningStar - Karma",
+    "category": "video",
+    "role": "Videography, Direction",
+    "thumb": "mourningstar-karma.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "false-london-flames",
+    "title": "False London - Flames",
+    "category": "video",
+    "role": "Videography, Direction",
+    "thumb": "false-london-flames.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "baltimore-pain",
+    "title": "Baltimore - Pain",
+    "category": "video",
+    "role": "Videography, Direction",
+    "thumb": "baltimore-pain.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "la-crema-lounge",
+    "title": "La Crema Lounge",
+    "category": "video",
+    "role": "Videography",
+    "thumb": "la-crema-lounge.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "simpson-cottage-promo",
+    "title": "Simpson Cottage Promo",
+    "category": "video",
+    "role": "Videography, Edit",
+    "thumb": "simpson-cottage-promo.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "manifest-launch",
+    "title": "Manifest the Label Launch",
+    "category": "video",
+    "role": "Videography",
+    "thumb": "manifest-launch.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "blc-cosmetics",
+    "title": "BLC Cosmetics Event",
+    "category": "video",
+    "role": "Videography",
+    "thumb": "blc-cosmetics.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "stand-atlantic",
+    "title": "Stand Atlantic",
+    "category": "video",
+    "role": "Second Camera",
+    "thumb": "stand-atlantic.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "bloom",
+    "title": "Bloom",
+    "category": "video",
+    "role": "Second Camera",
+    "thumb": "bloom.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "grenade-jumper",
+    "title": "Grenade Jumper",
+    "category": "video",
+    "role": "Second Camera",
+    "thumb": "grenade-jumper.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "bundaberg-cerumony",
+    "title": "Bundaberg CeRUMony",
+    "titleHtml": "Bundaberg Ce<span class=\"work__rum\">rum</span>ony",
+    "category": "video",
+    "role": "Videography, Video Editing, Colour Grade",
+    "agency": "Leo Burnett",
+    "thumb": "bundaberg-cerumony.jpg",
+    "type": "link",
+    "href": "work/bundaberg.html",
+    "featured": true
+  },
+  {
+    "id": "nic-brent-wedding",
+    "title": "Nic and Brent Wedding",
+    "category": "video",
+    "role": "Videography, Edit",
+    "thumb": "nic-brent-wedding.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "nivea-burgess",
+    "title": "Nivea - Tom Burgess Shoot",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "nivea-burgess.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "nivea-burgess-01.jpg", "alt": "Nivea Tom Burgess shoot 1" },
+      { "src": "nivea-burgess-02.jpg", "alt": "Nivea Tom Burgess shoot 2" }
+    ]
+  },
+  {
+    "id": "egalite",
+    "title": "Publicis Groupe - Egalite",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "egalite.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "egalite-01.jpg", "alt": "Egalite campaign 1" },
+      { "src": "egalite-02.jpg", "alt": "Egalite campaign 2" },
+      { "src": "egalite-03.jpg", "alt": "Egalite campaign 3" }
+    ]
+  },
+  {
+    "id": "manifest-product",
+    "title": "Manifest the Label Product Shoot",
+    "category": "photo",
+    "role": "Product Photography",
+    "thumb": "manifest-product.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "manifest-product-01.jpg", "alt": "Manifest product shot 1" },
+      { "src": "manifest-product-02.jpg", "alt": "Manifest product shot 2" }
+    ]
+  },
+  {
+    "id": "le-vide",
+    "title": "Le Vide Band Shoot",
+    "category": "photo",
+    "role": "Band Photography",
+    "thumb": "le-vide.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "le-vide-01.jpg", "alt": "Le Vide band shoot 1" }
+    ]
+  },
+  {
+    "id": "petiguana",
+    "title": "Petiguana Band Shoot",
+    "category": "photo",
+    "role": "Band Photography",
+    "thumb": "petiguana.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "petiguana-01.jpg", "alt": "Petiguana band shoot 1" }
+    ]
+  },
+  {
+    "id": "murkwood-shoot",
+    "title": "Murkwood Band Shoot",
+    "category": "photo",
+    "role": "Band Photography",
+    "thumb": "murkwood-shoot.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "murkwood-shoot-01.jpg", "alt": "Murkwood band shoot 1" }
+    ]
+  },
+  {
+    "id": "bullet-finance",
+    "title": "Bullet Finance Headshots",
+    "category": "photo",
+    "role": "Corporate Photography",
+    "thumb": "bullet-finance.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "bullet-finance-01.jpg", "alt": "Bullet Finance headshot 1" }
+    ]
+  },
+  {
+    "id": "palmers",
+    "title": "Palmers Before/After",
+    "category": "photo",
+    "role": "Retouching",
+    "thumb": "palmers.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "palmers-01.jpg", "alt": "Palmers before after 1" }
+    ]
+  },
+  {
+    "id": "somber-hills",
+    "title": "Somber Hills Retouching",
+    "category": "photo",
+    "role": "Retouching",
+    "thumb": "somber-hills.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "somber-hills-01.jpg", "alt": "Somber Hills retouching" }
+    ]
+  },
+  {
+    "id": "neotek",
+    "title": "Neotek Band Shoot",
+    "category": "photo",
+    "role": "Band Photography",
+    "thumb": "neotek.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "neotek-01.jpg", "alt": "Neotek band shoot 1" }
+    ]
+  },
+  {
+    "id": "baby-photos",
+    "title": "Baby Photoshoots",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "baby-photos.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "baby-photos-01.jpg", "alt": "Baby photoshoot - Arlo" },
+      { "src": "baby-photos-02.jpg", "alt": "Baby photoshoot - Dino" },
+      { "src": "baby-photos-03.jpg", "alt": "Baby photoshoot - Theo" }
+    ]
+  },
+  {
+    "id": "karli-josh",
+    "title": "Karli and Josh Engagement",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "karli-josh.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "karli-josh-01.jpg", "alt": "Karli and Josh engagement 1" }
+    ]
+  },
+  {
+    "id": "simpson-cottage-accom",
+    "title": "Simpson Cottage Accommodation",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "simpson-cottage-accom.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "simpson-cottage-accom-01.jpg", "alt": "Simpson Cottage accommodation 1" }
+    ]
+  },
+  {
+    "id": "coles-afl",
+    "title": "Coles x AFL Homepage Takeover",
+    "category": "design",
+    "role": "Graphic Design",
+    "thumb": "coles-afl.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "coles-afl-01.jpg", "alt": "Coles AFL homepage takeover" }
+    ]
+  },
+  {
+    "id": "humpty-dumpty",
+    "title": "Humpty Dumpty Christmas Print",
+    "category": "design",
+    "role": "Illustration, Print Design",
+    "thumb": "humpty-dumpty.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "humpty-dumpty-01.jpg", "alt": "Humpty Dumpty Christmas print" }
+    ]
+  },
+  {
+    "id": "pyjama-foundation",
+    "title": "Pyjama Foundation Pyjama Day",
+    "category": "design",
+    "role": "Graphic Design",
+    "thumb": "pyjama-foundation.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "pyjama-foundation-01.jpg", "alt": "Pyjama Foundation design" }
+    ]
+  },
+  {
+    "id": "qantas-100",
+    "title": "Qantas 100th Birthday Print Ad",
+    "category": "design",
+    "role": "Print Design",
+    "thumb": "qantas-100.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "qantas-100-01.jpg", "alt": "Qantas 100th birthday ad" }
+    ]
+  },
+  {
+    "id": "dani-fiori",
+    "title": "Dani and Fiori's Pizzeria Merch",
+    "category": "design",
+    "role": "Merch Design",
+    "thumb": "dani-fiori.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "dani-fiori-01.jpg", "alt": "Dani and Fiori merch design" }
+    ]
+  },
+  {
+    "id": "small-gods-tshirt",
+    "title": "Small Gods Nemesis T-Shirt",
+    "category": "design",
+    "role": "Merch Design, Illustration",
+    "thumb": "small-gods-tshirt.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "small-gods-tshirt-01.jpg", "alt": "Small Gods Nemesis t-shirt" }
+    ]
+  },
+  {
+    "id": "down-for-tomorrow",
+    "title": "Down for Tomorrow Album Art",
+    "category": "design",
+    "role": "Album Art, Illustration",
+    "thumb": "down-for-tomorrow.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "down-for-tomorrow-01.jpg", "alt": "Down for Tomorrow album art" }
+    ]
+  },
+  {
+    "id": "cultists",
+    "title": "Cultists Album Art",
+    "category": "design",
+    "role": "Album Art",
+    "thumb": "cultists.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "cultists-01.jpg", "alt": "Cultists album art" }
+    ]
+  },
+  {
+    "id": "ghost-complex",
+    "title": "Ghost Complex Album Art",
+    "category": "design",
+    "role": "Album Art",
+    "thumb": "ghost-complex.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "ghost-complex-01.jpg", "alt": "Ghost Complex album art 1" },
+      { "src": "ghost-complex-02.jpg", "alt": "Ghost Complex album art 2" },
+      { "src": "ghost-complex-03.jpg", "alt": "Ghost Complex album art 3" }
+    ]
+  },
+  {
+    "id": "junkhead",
+    "title": "Junkhead Album Art",
+    "category": "design",
+    "role": "Album Art",
+    "thumb": "junkhead.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "junkhead-01.jpg", "alt": "Junkhead album art 1" },
+      { "src": "junkhead-02.jpg", "alt": "Junkhead album art 2" }
+    ]
+  },
+  {
+    "id": "sunless",
+    "title": "Sunless Album Art",
+    "category": "design",
+    "role": "Album Art",
+    "thumb": "sunless.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "sunless-01.jpg", "alt": "Sunless album art" }
+    ]
+  },
+  {
+    "id": "moonboy",
+    "title": "Moonboy Posters",
+    "category": "design",
+    "role": "Poster Design",
+    "thumb": "moonboy.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "moonboy-01.jpg", "alt": "Moonboy poster 1" },
+      { "src": "moonboy-02.jpg", "alt": "Moonboy poster 2" },
+      { "src": "moonboy-03.jpg", "alt": "Moonboy poster 3" }
+    ]
+  },
+  {
+    "id": "hyundai-autolink-music",
+    "title": "Hyundai Auto Link Soundtrack",
+    "category": "music",
+    "role": "Music Composition, Sound Design",
+    "thumb": "hyundai-autolink-music.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "hyundai-i30n",
+    "title": "Hyundai i30N TVC Score",
+    "category": "music",
+    "role": "Music Composition",
+    "thumb": "hyundai-i30n.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "hyundai-suv",
+    "title": "Hyundai SUV Range",
+    "category": "music",
+    "role": "Music Composition",
+    "thumb": "hyundai-suv.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "fiba-world-cup",
+    "title": "FIBA World Cup",
+    "category": "music",
+    "role": "Music Composition",
+    "thumb": "fiba-world-cup.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "perth-stg-music",
+    "title": "St George's Cathedral Show Music",
+    "category": "music",
+    "role": "Music Composition",
+    "thumb": "perth-stg-music.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "shared-house",
+    "title": "A Shared House Theme",
+    "category": "music",
+    "role": "Music Composition",
+    "thumb": "shared-house.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "everything-ive-said",
+    "title": "Everything I've Said",
+    "category": "music",
+    "role": "Original Release",
+    "thumb": "everything-ive-said.jpg",
+    "type": "video",
+    "videoUrl": ""
+  },
+  {
+    "id": "great-saints",
+    "title": "greatsaintsgallery.com",
+    "category": "web",
+    "role": "Web Design, Development",
+    "thumb": "great-saints.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "great-saints-01.jpg", "alt": "Great Saints Gallery website" }
+    ]
+  },
+  {
+    "id": "integrated-abseiling",
+    "title": "integratedabseiling.com.au",
+    "category": "web",
+    "role": "Web Design, Development",
+    "thumb": "integrated-abseiling.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "integrated-abseiling-01.jpg", "alt": "Integrated Abseiling website" }
+    ]
+  },
+  {
+    "id": "jazz-diaz",
+    "title": "jazzdiaz.com.au",
+    "category": "web",
+    "role": "Web Design, Development",
+    "thumb": "jazz-diaz.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "jazz-diaz-01.jpg", "alt": "Jazz Diaz website" }
+    ]
+  },
+  {
+    "id": "coles-afl-web",
+    "title": "Coles x AFL Homepage Takeover",
+    "category": "web",
+    "role": "Web Design",
+    "thumb": "coles-afl-web.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "coles-afl-web-01.jpg", "alt": "Coles AFL web takeover" }
+    ]
+  },
+  {
+    "id": "pyjama-banners",
+    "title": "Pyjama Foundation Web Banners",
+    "category": "web",
+    "role": "Web Design",
+    "thumb": "pyjama-banners.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "pyjama-banners-01.jpg", "alt": "Pyjama Foundation web banners" }
+    ]
+  },
+  {
+    "id": "estee-lauder-fb",
+    "title": "Estee Lauder Facebook Experience",
+    "category": "web",
+    "role": "Web Design",
+    "thumb": "estee-lauder-fb.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "estee-lauder-fb-01.jpg", "alt": "Estee Lauder Facebook instant experience" }
+    ]
+  }
+]
