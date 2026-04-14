@@ -14,6 +14,10 @@ nav.nav--scrolled {
 @media (max-width: 767px) {
   nav.nav--scrolled {
     background: rgba(8,8,8,0.75);
+    /* Remove blur on mobile — backdrop-filter forces full-viewport compositing
+       on every scroll frame, which causes thumbnail flickering */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 .nav__logo-wrap { margin: 0; font-size: inherit; font-weight: inherit; }

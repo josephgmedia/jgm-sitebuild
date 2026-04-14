@@ -86,8 +86,6 @@
   background-position: center;
   background-color: var(--dim);
   transition: transform 300ms ease-out;
-  will-change: transform;
-  backface-visibility: hidden;
 }
 .gallery__item:hover .gallery__thumb {
   transform: scale(1.03);
