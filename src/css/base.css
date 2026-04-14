@@ -3,11 +3,13 @@
   font-family: 'Monument';
   src: url('../assets/fonts/MonumentExtended-Regular.otf') format('opentype');
   font-weight: 400; font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Monument';
   src: url('../assets/fonts/MonumentExtended-Ultrabold.otf') format('opentype');
   font-weight: 800; font-style: normal;
+  font-display: swap;
 }
 
 /* ── VARIABLES ── */
@@ -91,6 +93,8 @@ button:focus:not(:focus-visible) {
 /* Hide custom cursor on touch/non-pointer devices */
 @media (pointer: coarse), (pointer: none) {
   #cursor-dot, #cursor-ring { display: none; }
+  /* Disable blend-mode grain on touch — causes scroll-flicker on iOS */
+  body::before { mix-blend-mode: normal; }
 }
 
 /* ── GRAIN ── */

@@ -1,4 +1,12 @@
 /* ══════════════════════════════════════════════════
+   MOBILE: max-width: 767px
+   ══════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  /* Timeline — collapse track to clip height, removing the gap between ruler and clips */
+  .timeline__track { min-height: 0; }
+}
+
+/* ══════════════════════════════════════════════════
    MOBILE-FIRST: LARGE PHONE+ (min-width: 481px)
    ══════════════════════════════════════════════════ */
 @media (min-width: 481px) {

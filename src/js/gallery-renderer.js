@@ -50,14 +50,11 @@ export function renderGallery() {
     const thumbFile = project.thumb || `${project.id}.jpg`;
     const thumbPath = project.featured ? FEATURED_THUMB_PATH : THUMB_PATH;
 
-    const ctaHtml = project.featured ? '<span class="gallery__caption-cta">View Case Study &rarr;</span>' : '';
-
     item.innerHTML = `
       <div class="gallery__thumb" style="background-image: url('${thumbPath}${thumbFile}')"></div>
       <div class="gallery__caption">
         <h4 class="gallery__caption-title">${project.titleHtml || project.title}</h4>
         <span class="gallery__caption-role">${project.role}</span>
-        ${ctaHtml}
       </div>
     `;
 

@@ -86,6 +86,8 @@
   background-position: center;
   background-color: var(--dim);
   transition: transform 300ms ease-out;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 .gallery__item:hover .gallery__thumb {
   transform: scale(1.03);
@@ -217,5 +219,9 @@
   /* Featured: full width on mobile */
   .gallery__item--featured {
     grid-column: span 2;
+  }
+  /* Match caption offset to the smaller bar height on mobile */
+  .gallery__item--featured .gallery__caption {
+    bottom: 16px;
   }
 }

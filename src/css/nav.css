@@ -3,13 +3,18 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: var(--z-nav);
   display: flex; justify-content: space-between; align-items: center;
   padding: var(--space-nav) var(--space-lg);
-  transition: padding .5s, background .5s, backdrop-filter .5s;
+  transition: padding .5s, background .3s, backdrop-filter .3s;
 }
 nav.nav--scrolled {
   padding: var(--space-nav-scrolled) var(--space-lg);
-  background: rgba(8,8,8,0);
+  background: rgba(8,8,8,0.4);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+}
+@media (max-width: 767px) {
+  nav.nav--scrolled {
+    background: rgba(8,8,8,0.75);
+  }
 }
 .nav__logo-wrap { margin: 0; font-size: inherit; font-weight: inherit; }
 .nav__logo { text-decoration: none; }
