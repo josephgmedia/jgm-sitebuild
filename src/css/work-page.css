@@ -153,18 +153,22 @@
   padding: var(--space-xs) 0;
   transition: background 0.2s ease, padding 0.2s ease;
 }
-.gallery__item--featured:hover::after {
-  background: #4a5ef0;
-  padding: var(--space-sm) 0;
-}
 
-/* Featured caption sits above CTA bar, moves up on hover */
+/* Featured caption sits above CTA bar */
 .gallery__item--featured .gallery__caption {
   bottom: 24px;
   transition: transform 0.2s ease-out;
 }
-.gallery__item--featured:hover .gallery__caption {
-  transform: translateY(-16px);
+
+/* Hover lift + bar expansion — only on devices with real hover (not touch) */
+@media (hover: hover) {
+  .gallery__item--featured:hover::after {
+    background: #4a5ef0;
+    padding: var(--space-sm) 0;
+  }
+  .gallery__item--featured:hover .gallery__caption {
+    transform: translateY(-16px);
+  }
 }
 .gallery__item--featured .gallery__caption-title {
   font-size: clamp(0.75rem, 1.4vw, 1.1rem);

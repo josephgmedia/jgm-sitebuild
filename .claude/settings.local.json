@@ -11,7 +11,14 @@
       "Bash(where python3:*)",
       "Bash(where python:*)",
       "Bash(where py:*)",
-      "Bash(\"C:\\\\Users\\\\Joe\\\\miniconda3\\\\python.exe\" src/ui-ux-pro-max/scripts/search.py \"mobile first responsive spacing layout\" --domain ux -n 10)"
+      "Bash(\"C:\\\\Users\\\\Joe\\\\miniconda3\\\\python.exe\" src/ui-ux-pro-max/scripts/search.py \"mobile first responsive spacing layout\" --domain ux -n 10)",
+      "Bash(wc -c /c/Users/Joe/Documents/GitHub/jgm-sitebuild/src/assets/fonts/*.otf)",
+      "Bash(ls /c/Users/Joe/Documents/GitHub/jgm-sitebuild/vite.config*)",
+      "Bash(ls /c/Users/Joe/Documents/GitHub/jgm-sitebuild/*.config*)",
+      "Bash(npm --version)",
+      "Bash(python3 -c \"import fonttools; print\\('fonttools ok'\\)\")",
+      "Bash(npx --yes ttf2woff2)",
+      "Bash(node -e ':*)"
     ]
   }
 }

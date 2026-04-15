@@ -5,14 +5,11 @@
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { CONFIG } from './config.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function initWorkPageAnimations() {
-  // Hero title — no animation (seen every visit, frequency = high)
-  // Per Emil: "No animation. Ever." for 100+ times/day elements
-
-  // Section label line draws
   gsap.utils.toArray('.section-label__line').forEach(line => {
     gsap.to(line, {
       scaleX: 1,
@@ -21,11 +18,10 @@ export function initWorkPageAnimations() {
     });
   });
 
-  // Gallery items — staggered batch entrance
-  // once:true prevents re-triggering on scroll-back (which would flash items to opacity:0).
-  // On mobile, skip the y-transform — animating translateY on 20+ elements simultaneously
-  // creates too many GPU compositing layers and causes visible flicker during scroll.
-  const isMobile = window.innerWidth < 768;
+  // once: true prevents re-triggering on scroll-back, which would flash items to opacity:0.
+  // On mobile, skip translateY — animating it on 20+ elements simultaneously creates too
+  // many GPU compositing layers and causes scroll flicker.
+  const isMobile = window.innerWidth < CONFIG.mobileBreakpoint;
   ScrollTrigger.batch('.gallery__item', {
     onEnter: batch => gsap.from(batch, {
       y: isMobile ? 0 : 8,
