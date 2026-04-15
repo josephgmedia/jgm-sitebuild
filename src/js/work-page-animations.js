@@ -22,10 +22,20 @@ export function initWorkPageAnimations() {
   });
 
   // Gallery items — staggered batch entrance
+  // once:true prevents re-triggering on scroll-back (which would flash items to opacity:0).
+  // On mobile, skip the y-transform — animating translateY on 20+ elements simultaneously
+  // creates too many GPU compositing layers and causes visible flicker during scroll.
+  const isMobile = window.innerWidth < 768;
   ScrollTrigger.batch('.gallery__item', {
     onEnter: batch => gsap.from(batch, {
-      y: 8, opacity: 0, stagger: 0.05, duration: 0.3, ease: 'power2.out'
+      y: isMobile ? 0 : 8,
+      opacity: 0,
+      stagger: 0.05,
+      duration: isMobile ? 0.25 : 0.3,
+      ease: 'power2.out',
+      clearProps: 'transform,opacity'
     }),
-    start: 'top 92%'
+    start: 'top 95%',
+    once: true
   });
 }
