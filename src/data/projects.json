@@ -260,9 +260,9 @@
   },
   {
     "id": "estee-lauder-dw",
-    "title": "Estee Lauder - Double Wear",
-    "category": "brand",
-    "role": "Brand Content",
+    "title": "Estee Lauder - Double Wear Facebook Canvas",
+    "category": "brand, web",
+    "role": "Brand Content, Web Design",
     "thumb": "estee-lauder-dw.jpg",
     "type": "video",
     "videoUrl": ""
@@ -584,8 +584,8 @@
   {
     "id": "coles-afl",
     "title": "Coles x AFL Homepage Takeover",
-    "category": "design",
-    "role": "Graphic Design",
+    "category": "design, web",
+    "role": "Graphic Design, Web Design",
     "thumb": "coles-afl.jpg",
     "type": "gallery",
     "media": [
@@ -606,8 +606,8 @@
   {
     "id": "pyjama-foundation",
     "title": "Pyjama Foundation Pyjama Day",
-    "category": "design",
-    "role": "Graphic Design",
+    "category": "design, web",
+    "role": "Graphic Design, Web Design",
     "thumb": "pyjama-foundation.jpg",
     "type": "gallery",
     "media": [
@@ -619,7 +619,7 @@
     "title": "Qantas 100th Birthday Print Ad",
     "category": "design",
     "role": "Print Design",
-    "thumb": "qantas-100.jpg",
+    "thumb": "qantas.jpg",
     "type": "gallery",
     "media": [
       { "src": "qantas-100-01.jpg", "alt": "Qantas 100th birthday ad" }
@@ -719,15 +719,6 @@
     ]
   },
   {
-    "id": "hyundai-autolink-music",
-    "title": "Hyundai Auto Link Soundtrack",
-    "category": "music",
-    "role": "Music Composition, Sound Design",
-    "thumb": "hyundai-autolink-music.jpg",
-    "type": "video",
-    "videoUrl": ""
-  },
-  {
     "id": "hyundai-i30n",
     "title": "Hyundai i30N TVC Score",
     "category": "music",
@@ -751,15 +742,6 @@
     "category": "music",
     "role": "Music Composition",
     "thumb": "fiba-world-cup.jpg",
-    "type": "video",
-    "videoUrl": ""
-  },
-  {
-    "id": "perth-stg-music",
-    "title": "St George's Cathedral Show Music",
-    "category": "music",
-    "role": "Music Composition",
-    "thumb": "perth-stg-music.jpg",
     "type": "video",
     "videoUrl": ""
   },
@@ -812,39 +794,6 @@
     "type": "gallery",
     "media": [
       { "src": "jazz-diaz-01.jpg", "alt": "Jazz Diaz website" }
-    ]
-  },
-  {
-    "id": "coles-afl-web",
-    "title": "Coles x AFL Homepage Takeover",
-    "category": "web",
-    "role": "Web Design",
-    "thumb": "coles-afl-web.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "coles-afl-web-01.jpg", "alt": "Coles AFL web takeover" }
-    ]
-  },
-  {
-    "id": "pyjama-banners",
-    "title": "Pyjama Foundation Web Banners",
-    "category": "web",
-    "role": "Web Design",
-    "thumb": "pyjama-banners.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "pyjama-banners-01.jpg", "alt": "Pyjama Foundation web banners" }
-    ]
-  },
-  {
-    "id": "estee-lauder-fb",
-    "title": "Estee Lauder Facebook Experience",
-    "category": "web",
-    "role": "Web Design",
-    "thumb": "estee-lauder-fb.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "estee-lauder-fb-01.jpg", "alt": "Estee Lauder Facebook instant experience" }
     ]
   }
 ]

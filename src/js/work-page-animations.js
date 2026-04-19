@@ -18,20 +18,6 @@ export function initWorkPageAnimations() {
     });
   });
 
-  // once: true prevents re-triggering on scroll-back, which would flash items to opacity:0.
-  // On mobile, skip translateY — animating it on 20+ elements simultaneously creates too
-  // many GPU compositing layers and causes scroll flicker.
-  const isMobile = window.innerWidth < CONFIG.mobileBreakpoint;
-  ScrollTrigger.batch('.gallery__item', {
-    onEnter: batch => gsap.from(batch, {
-      y: isMobile ? 0 : 8,
-      opacity: 0,
-      stagger: 0.05,
-      duration: isMobile ? 0.25 : 0.3,
-      ease: 'power2.out',
-      clearProps: 'transform,opacity'
-    }),
-    start: 'top 95%',
-    once: true
-  });
+  // Gallery scroll animations disabled to prevent thumbnail flicker
+  // Images load cleanly without scroll-triggered opacity changes
 }

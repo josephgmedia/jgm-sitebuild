@@ -23,7 +23,8 @@ export function initGalleryFilter() {
       // Query items fresh each time (they're dynamically rendered)
       const items = grid.querySelectorAll('.gallery__item');
       items.forEach(item => {
-        if (category === 'all' || item.dataset.category === category) {
+        const categories = item.dataset.category.split(',').map(c => c.trim());
+        if (category === 'all' || categories.includes(category)) {
           item.classList.remove('gallery__item--hidden');
         } else {
           item.classList.add('gallery__item--hidden');

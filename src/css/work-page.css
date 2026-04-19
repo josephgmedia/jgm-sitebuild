@@ -82,15 +82,34 @@
 .gallery__thumb {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-color: var(--dim);
-  transition: transform 300ms ease-out;
+  background: linear-gradient(90deg, var(--dim) 0%, rgba(40,40,45,0.8) 50%, var(--dim) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  overflow: hidden;
 }
-.gallery__item:hover .gallery__thumb {
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: transform 300ms ease-out, opacity 400ms ease-out;
+}
+.gallery__thumb img.loaded {
+  opacity: 1;
+}
+.gallery__thumb.loaded {
+  animation: none;
+  background: var(--dim);
+}
+.gallery__item:hover .gallery__thumb img {
   transform: scale(1.03);
 }
-.gallery__item:active .gallery__thumb {
+.gallery__item:active .gallery__thumb img {
   transform: scale(0.98);
 }
 

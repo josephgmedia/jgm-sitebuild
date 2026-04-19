@@ -51,7 +51,9 @@ export function renderGallery() {
     const thumbPath = project.featured ? FEATURED_THUMB_PATH : THUMB_PATH;
 
     item.innerHTML = `
-      <div class="gallery__thumb" style="background-image: url('${thumbPath}${thumbFile}')"></div>
+      <div class="gallery__thumb">
+        <img src="${thumbPath}${thumbFile}" alt="${project.title}" loading="lazy" decoding="async">
+      </div>
       <div class="gallery__caption">
         <h4 class="gallery__caption-title">${project.titleHtml || project.title}</h4>
         <span class="gallery__caption-role">${project.role}</span>
@@ -59,6 +61,21 @@ export function renderGallery() {
     `;
 
     grid.appendChild(item);
+
+    // Handle image load to stop shimmer and fade in image
+    const img = item.querySelector('img');
+    const thumb = item.querySelector('.gallery__thumb');
+    if (img && thumb) {
+      const onLoad = () => {
+        img.classList.add('loaded');
+        thumb.classList.add('loaded');
+      };
+      if (img.complete && img.naturalHeight !== 0) {
+        onLoad();
+      } else {
+        img.addEventListener('load', onLoad);
+      }
+    }
   });
 }
 
