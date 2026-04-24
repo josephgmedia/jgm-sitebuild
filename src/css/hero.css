@@ -103,17 +103,17 @@
 
 .hero__toggle-wrap {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   cursor: none;
   justify-content: center;
-  white-space: nowrap;
 }
 
 .hero__toggle-wrap input { display: none; }
 
 .hero__toggle-track {
-  width: 52px;
+  width: 80px;
   height: 28px;
   background: var(--mid);
   border: 1px solid var(--muted);
@@ -126,34 +126,58 @@
   position: absolute;
   top: 3px;
   left: 3px;
-  width: 20px;
+  width: 22px;
   height: 20px;
   background: var(--muted);
-  border-radius: 50%;
+  border-radius: 10px;
   transition: transform 0.3s cubic-bezier(.16,1,.3,1), background 0.3s;
 }
 
-input:checked + .hero__toggle-track {
+#hero-off:checked ~ .hero__toggle-track .hero__toggle-thumb {
+  transform: translateX(0);
+  background: var(--muted);
+}
+
+#hero-on:checked ~ .hero__toggle-track {
   background: rgba(57,49,223,0.2);
   border-color: var(--accent);
 }
 
-input:checked + .hero__toggle-track .hero__toggle-thumb {
-  transform: translateX(24px);
+#hero-on:checked ~ .hero__toggle-track .hero__toggle-thumb {
+  transform: translateX(27px);
   background: var(--accent);
+}
+
+#hero-reel:checked ~ .hero__toggle-track .hero__toggle-thumb {
+  transform: translateX(54px);
+  background: var(--accent);
+}
+
+.hero__toggle-labels {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
 }
 
 .hero__toggle-label {
   font-family: 'Monument', sans-serif;
   font-weight: 800;
-  font-size: var(--fs-label);
-  letter-spacing: 0.2em;
+  font-size: var(--fs-ui);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(237,234,228,0.5);
+  color: rgba(237,234,228,0.38);
   transition: color 0.3s;
+  cursor: pointer;
 }
 
-.hero--neon-on .hero__toggle-label {
+.hero__toggle-label:hover {
+  color: rgba(237,234,228,0.6);
+}
+
+.hero__toggle-label--active,
+#hero-on:checked ~ .hero__toggle-labels label[for="hero-on"],
+#hero-off:checked ~ .hero__toggle-labels label[for="hero-off"],
+#hero-reel:checked ~ .hero__toggle-labels label[for="hero-reel"] {
   color: var(--accent);
 }
 

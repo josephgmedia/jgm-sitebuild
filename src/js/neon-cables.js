@@ -7,9 +7,10 @@ import Matter from 'matter-js';
 
 (() => {
   const hero = document.querySelector('.hero');
-  const toggle = document.getElementById('neon-toggle');
+  const toggleOn = document.getElementById('hero-on');
+  const toggleOff = document.getElementById('hero-off');
   const canvas = document.getElementById('cable-canvas');
-  if (!hero || !toggle || !canvas) return;
+  if (!hero || !toggleOn || !toggleOff || !canvas) return;
 
   const ctx = canvas.getContext('2d');
   const REF_W = CONFIG.cableRefW, REF_H = CONFIG.cableRefH;
@@ -308,15 +309,20 @@ import Matter from 'matter-js';
     drawCables();
   }
 
-  // Toggle handler
-  toggle.addEventListener('change', () => {
-    neonOn = toggle.checked;
-    if (neonOn) {
+  // Toggle handlers
+  toggleOn.addEventListener('change', () => {
+    if (toggleOn.checked) {
+      neonOn = true;
       hero.classList.add('hero--neon-on');
       sizeCanvas();
       buildCables();
       renderLoop();
-    } else {
+    }
+  });
+
+  toggleOff.addEventListener('change', () => {
+    if (toggleOff.checked) {
+      neonOn = false;
       hero.classList.remove('hero--neon-on');
       if (animFrame) cancelAnimationFrame(animFrame);
       animFrame = null;

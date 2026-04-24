@@ -58,13 +58,19 @@
     </nav>
     <div class="hero__ui">
       <span class="hero__tagline">Inspiration doesn't keep business hours.</span>
-      <label class="hero__toggle-wrap">
-        <input type="checkbox" id="neon-toggle" role="switch" aria-label="Toggle neon sign on and off" />
-        <span class="hero__toggle-track" aria-hidden="true">
-          <span class="hero__toggle-thumb"></span>
-        </span>
-        <span class="hero__toggle-label">AFTER HOURS</span>
-      </label>
+      <div class="hero__toggle-wrap">
+        <input type="radio" name="hero-mode" id="hero-off" value="off" checked />
+        <input type="radio" name="hero-mode" id="hero-on" value="on" />
+        <input type="radio" name="hero-mode" id="hero-reel" value="reel" />
+        <div class="hero__toggle-track" aria-hidden="true">
+          <div class="hero__toggle-thumb"></div>
+        </div>
+        <div class="hero__toggle-labels">
+          <label for="hero-off" class="hero__toggle-label hero__toggle-label--active">OFF</label>
+          <label for="hero-on" class="hero__toggle-label">ON</label>
+          <label for="hero-reel" class="hero__toggle-label">REEL</label>
+        </div>
+      </div>
     </div>
     <div class="hero__foot" id="hero-foot">
       <div class="hero__foot-scroll">
@@ -163,58 +169,70 @@
       <a href="work.html" class="section-label__cta">View All <span class="arr">→</span></a>
     </div>
     <div class="work__grid" role="list">
-      <article class="work__card" role="listitem" aria-label="NLA Enlighten - Projection">
-        <div class="work__card-img" role="img" aria-label="NLA Enlighten project thumbnail" style="background-image: url('src/assets/images/featured-work/nla-enlighten.jpg')"></div>
-        <div class="work__card-info">
-          <p class="work__card-tag">Projection</p>
-          <h3 class="work__card-title">NLA Enlighten</h3>
-          <p class="work__card-role">Design Lead</p>
-          <p class="work__card-agency">The Electric Canvas</p>
-        </div>
-      </article>
-      <article class="work__card" role="listitem" aria-label="RAMS Construction - Campaign">
-        <div class="work__card-img" role="img" aria-label="RAMS Construction project thumbnail" style="background-image: url('src/assets/images/featured-work/rams-construction.jpg')"></div>
-        <div class="work__card-info">
-          <p class="work__card-tag">Campaign</p>
-          <h3 class="work__card-title">RAMS Construction</h3>
-          <p class="work__card-role">Art Direction, 3D Animation, VFX Supervisor</p>
-          <p class="work__card-agency">Saatchi &amp; Saatchi</p>
-        </div>
-      </article>
-      <article class="work__card" role="listitem" aria-label="Porsche x Dr Jack - VFX">
-        <div class="work__card-img" role="img" aria-label="Porsche x Dr Jack project thumbnail" style="background-image: url('src/assets/images/featured-work/porsche-drjack.jpg')"></div>
-        <div class="work__card-info">
-          <p class="work__card-tag">VFX</p>
-          <h3 class="work__card-title">Porsche x Dr Jack</h3>
-          <p class="work__card-role">3D Animation, Composite, Colour Grade</p>
-        </div>
-      </article>
-      <article class="work__card" role="listitem" aria-label="Hyundai Auto Link - 2D Animation">
-        <div class="work__card-img" role="img" aria-label="Hyundai Auto Link project thumbnail" style="background-image: url('src/assets/images/featured-work/hyundai-autolink.jpg')"></div>
-        <div class="work__card-info">
-          <p class="work__card-tag">2D Animation</p>
-          <h3 class="work__card-title">Hyundai Auto Link</h3>
-          <p class="work__card-role">Character Animation, Music Composition &amp; Sound Design</p>
-          <p class="work__card-agency">Tonic Films</p>
-        </div>
-      </article>
-      <article class="work__card" role="listitem" aria-label="Bundaberg CeRUMony - Videography">
-        <div class="work__card-img" role="img" aria-label="Bundaberg CeRUMony project thumbnail" style="background-image: url('src/assets/images/featured-work/bundaberg-cerumony.jpg')"></div>
-        <div class="work__card-info">
-          <p class="work__card-tag work__card-tag--tight">Videography</p>
-          <h3 class="work__card-title">Bundaberg Ce<span class="work__rum">rum</span>ony</h3>
-          <p class="work__card-role">Videography, Video Editing, Colour Grade</p>
-          <p class="work__card-agency">Leo Burnett</p>
-        </div>
-      </article>
-      <article class="work__card" role="listitem" aria-label="Gryff - Videography">
-        <div class="work__card-img" role="img" aria-label="Gryff project thumbnail" style="background-image: url('src/assets/images/featured-work/gryff.jpg')"></div>
-        <div class="work__card-info">
-          <p class="work__card-tag">Videography</p>
-          <h3 class="work__card-title">Gryff</h3>
-          <p class="work__card-role">Videography, Video Editing, Colour Grade</p>
-        </div>
-      </article>
+      <a href="work/nla-enlighten.html" class="work__card-link">
+        <article class="work__card" role="listitem" aria-label="NLA Enlighten - Projection">
+          <div class="work__card-img" role="img" aria-label="NLA Enlighten project thumbnail" style="background-image: url('src/assets/images/featured-work/nla-enlighten.jpg')"></div>
+          <div class="work__card-info">
+            <p class="work__card-tag">Projection</p>
+            <h3 class="work__card-title">NLA Enlighten</h3>
+            <p class="work__card-role">Design Lead</p>
+            <p class="work__card-agency">The Electric Canvas</p>
+          </div>
+        </article>
+      </a>
+      <a href="work/rams-construction.html" class="work__card-link">
+        <article class="work__card" role="listitem" aria-label="RAMS Construction - Campaign">
+          <div class="work__card-img" role="img" aria-label="RAMS Construction project thumbnail" style="background-image: url('src/assets/images/featured-work/rams-construction.jpg')"></div>
+          <div class="work__card-info">
+            <p class="work__card-tag">Campaign</p>
+            <h3 class="work__card-title">RAMS Construction</h3>
+            <p class="work__card-role">Art Direction, 3D Animation, VFX Supervisor</p>
+            <p class="work__card-agency">Saatchi &amp; Saatchi</p>
+          </div>
+        </article>
+      </a>
+      <a href="work/porsche-drjack.html" class="work__card-link">
+        <article class="work__card" role="listitem" aria-label="Porsche x Dr Jack - VFX">
+          <div class="work__card-img" role="img" aria-label="Porsche x Dr Jack project thumbnail" style="background-image: url('src/assets/images/featured-work/porsche-drjack.jpg')"></div>
+          <div class="work__card-info">
+            <p class="work__card-tag">VFX</p>
+            <h3 class="work__card-title">Porsche x Dr Jack</h3>
+            <p class="work__card-role">3D Animation, Composite, Colour Grade</p>
+          </div>
+        </article>
+      </a>
+      <a href="work/hyundai-autolink.html" class="work__card-link">
+        <article class="work__card" role="listitem" aria-label="Hyundai Auto Link - 2D Animation">
+          <div class="work__card-img" role="img" aria-label="Hyundai Auto Link project thumbnail" style="background-image: url('src/assets/images/featured-work/hyundai-autolink.jpg')"></div>
+          <div class="work__card-info">
+            <p class="work__card-tag">2D Animation</p>
+            <h3 class="work__card-title">Hyundai Auto Link</h3>
+            <p class="work__card-role">Character Animation, Music Composition &amp; Sound Design</p>
+            <p class="work__card-agency">Tonic Films</p>
+          </div>
+        </article>
+      </a>
+      <a href="work/bundaberg.html" class="work__card-link">
+        <article class="work__card" role="listitem" aria-label="Bundaberg CeRUMony - Videography">
+          <div class="work__card-img" role="img" aria-label="Bundaberg CeRUMony project thumbnail" style="background-image: url('src/assets/images/featured-work/bundaberg-cerumony.jpg')"></div>
+          <div class="work__card-info">
+            <p class="work__card-tag work__card-tag--tight">Videography</p>
+            <h3 class="work__card-title">Bundaberg Ce<span class="work__rum">rum</span>ony</h3>
+            <p class="work__card-role">Videography, Video Editing, Colour Grade</p>
+            <p class="work__card-agency">Leo Burnett</p>
+          </div>
+        </article>
+      </a>
+      <a href="work/gryff.html" class="work__card-link">
+        <article class="work__card" role="listitem" aria-label="Gryff - Videography">
+          <div class="work__card-img" role="img" aria-label="Gryff project thumbnail" style="background-image: url('src/assets/images/featured-work/gryff.jpg')"></div>
+          <div class="work__card-info">
+            <p class="work__card-tag">Videography</p>
+            <h3 class="work__card-title">Gryff</h3>
+            <p class="work__card-role">Videography, Video Editing, Colour Grade</p>
+          </div>
+        </article>
+      </a>
     </div>
   </section>
 
@@ -389,6 +407,32 @@
   <footer>
     <p>© 2026 Joseph G Media<br class="u-mobile-break"/> Sydney, Australia</p>
   </footer>
+
+  <!-- SHOWREEL SELECTOR MODAL -->
+  <div class="reel-modal" id="reel-modal" aria-hidden="true" role="dialog" aria-label="Showreel selector">
+    <div class="reel-modal__overlay"></div>
+    <div class="reel-modal__content">
+      <h2 class="reel-modal__title">Choose Your Showreel</h2>
+      <div class="reel-modal__grid">
+        <button class="reel-card" data-reel="motion">
+          <div class="reel-card__thumb" style="background-image: url('src/assets/images/reel-thumbs/motion-showreel.jpg')"></div>
+          <div class="reel-card__play">▶</div>
+          <h3 class="reel-card__title">Motion Graphics</h3>
+        </button>
+        <button class="reel-card" data-reel="3d">
+          <div class="reel-card__thumb" style="background-image: url('src/assets/images/reel-thumbs/3d-showreel.jpg')"></div>
+          <div class="reel-card__play">▶</div>
+          <h3 class="reel-card__title">3D Animation</h3>
+        </button>
+        <button class="reel-card" data-reel="video">
+          <div class="reel-card__thumb" style="background-image: url('src/assets/images/reel-thumbs/video-showreel.jpg')"></div>
+          <div class="reel-card__play">▶</div>
+          <h3 class="reel-card__title">Videography</h3>
+        </button>
+      </div>
+      <button class="reel-modal__back" id="reel-close" aria-label="Go back">← Back</button>
+    </div>
+  </div>
 
   <!-- Main JS -->
   <script type="module" src="src/js/main.js"></script>

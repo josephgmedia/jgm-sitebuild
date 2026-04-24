@@ -72,16 +72,18 @@
     "role": "3D Animation",
     "thumb": "wrinkles.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/MFFqtn8e5jU"
   },
   {
     "id": "ampol-foodary",
     "title": "Ampol Foodary",
-    "category": "3d",
-    "role": "3D Animation",
+    "category": "design",
+    "role": "3D Design",
     "thumb": "ampol-foodary.jpg",
-    "type": "video",
-    "videoUrl": ""
+    "type": "gallery",
+    "media": [
+      { "src": "ampol-foodary-01.jpg", "alt": "Ampol Foodary 3D design" }
+    ]
   },
   {
     "id": "murkwood-fiction",
@@ -90,7 +92,7 @@
     "role": "3D Animation",
     "thumb": "murkwood-fiction.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/Uwgd425Qdg8"
   },
   {
     "id": "superloop-3d",
@@ -133,7 +135,7 @@
     "role": "2D Animation",
     "thumb": "bellwether.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/PSkdjzTplRQ"
   },
   {
     "id": "beast-atriox",
@@ -142,7 +144,7 @@
     "role": "2D Animation, Lyric Video",
     "thumb": "beast-atriox.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/DhC4JGR6MPY"
   },
   {
     "id": "hyundai-autolink",
@@ -184,7 +186,7 @@
     "role": "2D Animation",
     "thumb": "nivea-refresh.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/iFf3F6De4I4"
   },
   {
     "id": "futureheaven-imber",
@@ -193,7 +195,7 @@
     "role": "Lyric Video",
     "thumb": "futureheaven-imber.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/aw_O5oWbRLk"
   },
   {
     "id": "karma-grim-city",
@@ -202,7 +204,7 @@
     "role": "Lyric Video",
     "thumb": "karma-grim-city.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/pv43f6McgAY"
   },
   {
     "id": "coles-dinner",
@@ -211,7 +213,7 @@
     "role": "Brand Content",
     "thumb": "coles-dinner.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/gFV7_pt3_Ts"
   },
   {
     "id": "ampol-servo",
@@ -220,7 +222,7 @@
     "role": "Brand Content",
     "thumb": "ampol-servo.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/5rjFdvMyU58"
   },
   {
     "id": "heineken-150",
@@ -229,7 +231,7 @@
     "role": "Brand Content",
     "thumb": "heineken-150.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/CMBcmTjtweY"
   },
   {
     "id": "donate-your-age",
@@ -238,7 +240,7 @@
     "role": "Brand Content",
     "thumb": "donate-your-age.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/19B_V5ZUlQc"
   },
   {
     "id": "vitasoy-baristas",
@@ -247,16 +249,7 @@
     "role": "Brand Content",
     "thumb": "vitasoy-baristas.jpg",
     "type": "video",
-    "videoUrl": ""
-  },
-  {
-    "id": "visa-sitting",
-    "title": "Visa - Where Are You Sitting",
-    "category": "brand",
-    "role": "Brand Content",
-    "thumb": "visa-sitting.jpg",
-    "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/X5FFViwS0Jk"
   },
   {
     "id": "estee-lauder-dw",
@@ -265,7 +258,7 @@
     "role": "Brand Content, Web Design",
     "thumb": "estee-lauder-dw.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/cTpZ8C-MSDQ"
   },
   {
     "id": "pepsi-gflip",
@@ -274,7 +267,7 @@
     "role": "Videography, Direction",
     "thumb": "pepsi-gflip.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/RiWtMKlfppw"
   },
   {
     "id": "small-gods-razorgrinder",
@@ -283,7 +276,7 @@
     "role": "Videography, Direction",
     "thumb": "small-gods-razorgrinder.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/9knnrJuZu8M"
   },
   {
     "id": "small-gods-nemesis",
@@ -292,7 +285,7 @@
     "role": "Videography, Direction",
     "thumb": "small-gods-nemesis.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/jnzdubQ6rsY"
   },
   {
     "id": "futureheaven-tired-eyes",
@@ -301,7 +294,7 @@
     "role": "Videography, Direction",
     "thumb": "futureheaven-tired-eyes.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/C7TE8Aof68g"
   },
   {
     "id": "futureheaven-asuka",
@@ -310,7 +303,7 @@
     "role": "Videography, Direction",
     "thumb": "futureheaven-asuka.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/sxCAzzRHRzk"
   },
   {
     "id": "murkwood-violent-sleep",
@@ -319,7 +312,7 @@
     "role": "Videography, Direction",
     "thumb": "murkwood-violent-sleep.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/HFHf2DtBQC0"
   },
   {
     "id": "mourningstar-karma",
@@ -328,7 +321,7 @@
     "role": "Videography, Direction",
     "thumb": "mourningstar-karma.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/mPMuv-eRICI"
   },
   {
     "id": "false-london-flames",
@@ -337,7 +330,7 @@
     "role": "Videography, Direction",
     "thumb": "false-london-flames.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/dmsSpz9FyB0"
   },
   {
     "id": "baltimore-pain",
@@ -346,7 +339,7 @@
     "role": "Videography, Direction",
     "thumb": "baltimore-pain.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/sTgmzZvB8kE"
   },
   {
     "id": "la-crema-lounge",
@@ -355,7 +348,7 @@
     "role": "Videography",
     "thumb": "la-crema-lounge.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/ZcibKAg_16U"
   },
   {
     "id": "simpson-cottage-promo",
@@ -364,7 +357,7 @@
     "role": "Videography, Edit",
     "thumb": "simpson-cottage-promo.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/5jMSin7e5kY"
   },
   {
     "id": "manifest-launch",
@@ -373,7 +366,7 @@
     "role": "Videography",
     "thumb": "manifest-launch.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/d5WqGxi4DgA"
   },
   {
     "id": "blc-cosmetics",
@@ -382,7 +375,7 @@
     "role": "Videography",
     "thumb": "blc-cosmetics.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/A1aRt4iy1js"
   },
   {
     "id": "stand-atlantic",
@@ -391,7 +384,7 @@
     "role": "Second Camera",
     "thumb": "stand-atlantic.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/T6seGttrsrs"
   },
   {
     "id": "bloom",
@@ -400,16 +393,7 @@
     "role": "Second Camera",
     "thumb": "bloom.jpg",
     "type": "video",
-    "videoUrl": ""
-  },
-  {
-    "id": "grenade-jumper",
-    "title": "Grenade Jumper",
-    "category": "video",
-    "role": "Second Camera",
-    "thumb": "grenade-jumper.jpg",
-    "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/5V07h6KS508"
   },
   {
     "id": "bundaberg-cerumony",
@@ -430,7 +414,7 @@
     "role": "Videography, Edit",
     "thumb": "nic-brent-wedding.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/Gt_mHxp5XNk"
   },
   {
     "id": "nivea-burgess",
@@ -725,7 +709,7 @@
     "role": "Music Composition",
     "thumb": "hyundai-i30n.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/vx-K_1Tx9Zo"
   },
   {
     "id": "hyundai-suv",
@@ -734,7 +718,7 @@
     "role": "Music Composition",
     "thumb": "hyundai-suv.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/j_rH3jLVcRE"
   },
   {
     "id": "fiba-world-cup",
@@ -743,7 +727,7 @@
     "role": "Music Composition",
     "thumb": "fiba-world-cup.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/xMPea2T8SoU"
   },
   {
     "id": "shared-house",
@@ -761,7 +745,7 @@
     "role": "Original Release",
     "thumb": "everything-ive-said.jpg",
     "type": "video",
-    "videoUrl": ""
+    "videoUrl": "https://youtu.be/PgLp3KnqK-4"
   },
   {
     "id": "great-saints",
@@ -795,5 +779,59 @@
     "media": [
       { "src": "jazz-diaz-01.jpg", "alt": "Jazz Diaz website" }
     ]
+  },
+  {
+    "id": "madre-natura",
+    "title": "Madre Natura - Last Season Collection",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "madre-natura.jpg",
+    "type": "video",
+    "videoUrl": "https://youtu.be/Mn9jz3q47NY"
+  },
+  {
+    "id": "lexus-fireside",
+    "title": "Lexus - Fireside",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "lexus-fireside.jpg",
+    "type": "video",
+    "videoUrl": "https://youtu.be/J9Y1CuH1N8Y"
+  },
+  {
+    "id": "visit-singapore",
+    "title": "Visit Singapore - Find Yourself in Singapore",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "visit-singapore.jpg",
+    "type": "video",
+    "videoUrl": "https://youtu.be/OEbHX8s4sOg"
+  },
+  {
+    "id": "tell-me-about-it",
+    "title": "Tell Me About It - Event Launch",
+    "category": "video",
+    "role": "Videography",
+    "thumb": "tell-me-about-it.jpg",
+    "type": "video",
+    "videoUrl": "https://youtu.be/XhdMWtIqk_4"
+  },
+  {
+    "id": "health-focus",
+    "title": "Health Focus - Chiropractic Care",
+    "category": "video",
+    "role": "Videography",
+    "thumb": "health-focus.jpg",
+    "type": "video",
+    "videoUrl": "https://youtu.be/efBFe_dvQDw"
+  },
+  {
+    "id": "givewrap",
+    "title": "Givewrap - Case Study",
+    "category": "brand",
+    "role": "Brand Content",
+    "thumb": "givewrap.jpg",
+    "type": "video",
+    "videoUrl": "https://youtu.be/VB42hZI-y2k"
   }
 ]
