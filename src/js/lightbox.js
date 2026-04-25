@@ -78,14 +78,35 @@ function openGallery(media, startIndex = 0) {
 
 function openVideo(videoUrl) {
   if (!overlay) createLightbox();
-  currentMedia = [];
-  prevBtn.style.display = 'none';
-  nextBtn.style.display = 'none';
-  counter.textContent = '';
 
-  if (videoUrl) {
+  // Support array of video URLs for carousel
+  const videoUrls = Array.isArray(videoUrl) ? videoUrl : [videoUrl];
+
+  // Convert to media format for carousel
+  currentMedia = videoUrls.map(url => ({ type: 'video', url }));
+  currentIndex = 0;
+
+  showCurrentVideo();
+
+  overlay.setAttribute('aria-hidden', 'false');
+  overlay.classList.add('lightbox--open');
+  document.body.style.overflow = 'hidden';
+  closeBtn.focus();
+}
+
+function showCurrentVideo() {
+  const item = currentMedia[currentIndex];
+
+  if (item && item.url) {
+    // Convert YouTube URLs to embed format
+    let embedUrl = item.url;
+    const youtubeMatch = item.url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+    if (youtubeMatch) {
+      embedUrl = `https://www.youtube.com/embed/${youtubeMatch[1]}`;
+    }
+
     mediaContainer.innerHTML = `
-      <iframe class="lightbox__iframe" src="${videoUrl}"
+      <iframe class="lightbox__iframe" src="${embedUrl}"
         frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     `;
   } else {
@@ -96,14 +117,23 @@ function openVideo(videoUrl) {
     `;
   }
 
-  overlay.setAttribute('aria-hidden', 'false');
-  overlay.classList.add('lightbox--open');
-  document.body.style.overflow = 'hidden';
-  closeBtn.focus();
+  // Show/hide nav based on video count
+  const isMulti = currentMedia.length > 1;
+  prevBtn.style.display = isMulti ? '' : 'none';
+  nextBtn.style.display = isMulti ? '' : 'none';
+  counter.textContent = isMulti ? `${currentIndex + 1} / ${currentMedia.length}` : '';
 }
 
 function showCurrent() {
   const item = currentMedia[currentIndex];
+
+  // Handle video type in carousel
+  if (item.type === 'video') {
+    showCurrentVideo();
+    return;
+  }
+
+  // Handle image
   mediaContainer.innerHTML = `
     <img class="lightbox__img" src="${GALLERY_PATH}${item.src}" alt="${item.alt || ''}" />
   `;
@@ -155,7 +185,17 @@ export function initLightbox() {
     }
 
     if (type === 'video') {
-      openVideo(item.dataset.videoUrl);
+      let videoUrl = item.dataset.videoUrl;
+      // Parse if it's a JSON array
+      try {
+        const parsed = JSON.parse(videoUrl);
+        if (Array.isArray(parsed)) {
+          videoUrl = parsed;
+        }
+      } catch (e) {
+        // Not JSON, use as-is
+      }
+      openVideo(videoUrl);
       return;
     }
 

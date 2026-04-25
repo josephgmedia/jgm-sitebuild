@@ -41,7 +41,9 @@ export function renderGallery() {
     if (project.type === 'gallery') {
       item.dataset.media = JSON.stringify(project.media);
     } else if (project.type === 'video') {
-      item.dataset.videoUrl = project.videoUrl || '';
+      // Support single video URL or array of URLs
+      const videoUrls = project.videoUrl || project.videoUrls || '';
+      item.dataset.videoUrl = Array.isArray(videoUrls) ? JSON.stringify(videoUrls) : videoUrls;
     } else if (project.type === 'link') {
       item.dataset.href = project.href || '';
     }

@@ -47,8 +47,8 @@
 }
 .lightbox__prev:hover,
 .lightbox__next:hover { opacity: 1; }
-.lightbox__prev { left: var(--space-sm); }
-.lightbox__next { right: var(--space-sm); }
+.lightbox__prev { left: calc(5vw - var(--space-md)); }
+.lightbox__next { right: calc(5vw - var(--space-md)); }
 
 .lightbox__media {
   max-width: 90vw;
@@ -92,7 +92,7 @@
 
 .lightbox__counter {
   position: absolute;
-  bottom: var(--space-md);
+  top: calc(50% + min(90vw * 9 / 32, 960px * 9 / 32) + var(--space-sm));
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Monument', sans-serif;

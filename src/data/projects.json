@@ -72,7 +72,10 @@
     "role": "3D Animation",
     "thumb": "wrinkles.jpg",
     "type": "video",
-    "videoUrl": "https://youtu.be/MFFqtn8e5jU"
+    "videoUrls": [
+      "https://youtu.be/MFFqtn8e5jU",
+      "https://youtu.be/6fWRZYRcAcs"
+    ]
   },
   {
     "id": "ampol-foodary",
@@ -89,7 +92,7 @@
     "id": "murkwood-fiction",
     "title": "Murkwood - Fiction",
     "category": "3d",
-    "role": "3D Animation",
+    "role": "Lyric Video",
     "thumb": "murkwood-fiction.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/Uwgd425Qdg8"
@@ -132,16 +135,16 @@
     "id": "bellwether",
     "title": "Bellwether - Shortsighted",
     "category": "2d",
-    "role": "2D Animation",
+    "role": "Lyric Video",
     "thumb": "bellwether.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/PSkdjzTplRQ"
   },
   {
     "id": "beast-atriox",
-    "title": "Beast/Atriox Lyric Video",
+    "title": "Atriox - Beast",
     "category": "2d",
-    "role": "2D Animation, Lyric Video",
+    "role": "Lyric Video",
     "thumb": "beast-atriox.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/DhC4JGR6MPY"
@@ -186,7 +189,11 @@
     "role": "2D Animation",
     "thumb": "nivea-refresh.jpg",
     "type": "video",
-    "videoUrl": "https://youtu.be/iFf3F6De4I4"
+    "videoUrls": [
+      "https://youtu.be/iFf3F6De4I4",
+      "https://youtu.be/HZPozvv6wuQ",
+      "https://youtu.be/quTpASSaENc"
+    ]
   },
   {
     "id": "futureheaven-imber",
@@ -199,7 +206,7 @@
   },
   {
     "id": "karma-grim-city",
-    "title": "Karma/Grim City Lyric Video",
+    "title": "Karma - Grim City",
     "category": "2d",
     "role": "Lyric Video",
     "thumb": "karma-grim-city.jpg",
@@ -213,7 +220,11 @@
     "role": "Brand Content",
     "thumb": "coles-dinner.jpg",
     "type": "video",
-    "videoUrl": "https://youtu.be/gFV7_pt3_Ts"
+    "videoUrls": [
+      "https://youtu.be/gFV7_pt3_Ts",
+      "https://youtu.be/LaFguXVR48M",
+      "https://youtu.be/-wtnKwI_V-Q"
+    ]
   },
   {
     "id": "ampol-servo",
