@@ -76,7 +76,7 @@ function openGallery(media, startIndex = 0) {
   closeBtn.focus();
 }
 
-function openVideo(videoUrl) {
+export function openVideoLightbox(videoUrl) {
   if (!overlay) createLightbox();
 
   // Support array of video URLs for carousel
@@ -94,15 +94,20 @@ function openVideo(videoUrl) {
   closeBtn.focus();
 }
 
+// Keep internal function for backwards compatibility
+function openVideo(videoUrl) {
+  openVideoLightbox(videoUrl);
+}
+
 function showCurrentVideo() {
   const item = currentMedia[currentIndex];
 
   if (item && item.url) {
-    // Convert YouTube URLs to embed format
+    // Convert YouTube URLs to embed format with autoplay
     let embedUrl = item.url;
     const youtubeMatch = item.url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/);
     if (youtubeMatch) {
-      embedUrl = `https://www.youtube.com/embed/${youtubeMatch[1]}`;
+      embedUrl = `https://www.youtube.com/embed/${youtubeMatch[1]}?autoplay=1`;
     }
 
     mediaContainer.innerHTML = `

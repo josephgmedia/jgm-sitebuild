@@ -1,17 +1,35 @@
 /* ── FONTS ── */
 @font-face {
   font-family: 'Monument';
-  src: url('../assets/fonts/MonumentExtended-Regular.woff2') format('woff2'),
-       url('../assets/fonts/MonumentExtended-Regular.otf') format('opentype');
-  font-weight: 400; font-style: normal;
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
+  src: local('Monument Extended Regular'),
+       local('MonumentExtended-Regular'),
+       url('../assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Monument';
-  src: url('../assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2'),
-       url('../assets/fonts/MonumentExtended-Ultrabold.otf') format('opentype');
-  font-weight: 800; font-style: normal;
+  font-style: normal;
+  font-weight: 800;
   font-display: swap;
+  src: local('Monument Extended Ultrabold'),
+       local('MonumentExtended-Ultrabold'),
+       url('../assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
+}
+
+/* Explicitly set Monument for common elements */
+h1, h2, h3, h4, h5, h6,
+.hero__tagline,
+.hero__toggle-label,
+.nav__links a,
+.section-label__text,
+.work__card-tag,
+.work__card-title,
+button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* ── VARIABLES ── */
@@ -37,7 +55,7 @@
   --z-nav: 500;
   --z-grain: 900;
   --z-overlay: 1000;
-  --z-cursor: 9000;
+  --z-cursor: 10001;
   /* Spacing scale */
   --space-xs: clamp(4px, 0.5vw, 8px);
   --space-sm: clamp(8px, 1.5vw, 16px);

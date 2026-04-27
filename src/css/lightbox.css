@@ -67,9 +67,10 @@
 
 .lightbox__iframe {
   width: min(90vw, 960px);
-  aspect-ratio: 16 / 9;
+  height: min(50.625vw, 540px); /* 16:9 aspect ratio */
   border: none;
   border-radius: 2px;
+  background: #000;
 }
 
 .lightbox__placeholder {

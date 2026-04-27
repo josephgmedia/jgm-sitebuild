@@ -2,6 +2,8 @@
    Showreel Modal — 3-state hero toggle with reel selector
    ============================================================ */
 
+import { openVideoLightbox } from './lightbox.js';
+
 // Showreel YouTube URLs
 const SHOWREELS = {
   motion: 'https://youtu.be/IlWrnCIEMOk',
@@ -36,15 +38,15 @@ export function initReelModal() {
     }
   });
 
-  // Reel card clicks - open video player (lightbox or new window)
+  // Reel card clicks - open video in lightbox
   reelCards?.forEach(card => {
     card.addEventListener('click', () => {
       const reelType = card.dataset.reel;
       const videoUrl = SHOWREELS[reelType];
 
       if (videoUrl) {
-        // Open YouTube video in new tab
-        window.open(videoUrl, '_blank');
+        closeModal();
+        openVideoLightbox(videoUrl);
       } else {
         console.warn(`No video URL set for ${reelType} reel`);
       }

@@ -174,10 +174,17 @@
   color: rgba(237,234,228,0.6);
 }
 
-.hero__toggle-label--active,
+/* Active state - only applied to the checked radio's label */
 #hero-on:checked ~ .hero__toggle-labels label[for="hero-on"],
 #hero-off:checked ~ .hero__toggle-labels label[for="hero-off"],
 #hero-reel:checked ~ .hero__toggle-labels label[for="hero-reel"] {
+  color: var(--accent);
+}
+
+/* Override hover on active labels */
+#hero-on:checked ~ .hero__toggle-labels label[for="hero-on"]:hover,
+#hero-off:checked ~ .hero__toggle-labels label[for="hero-off"]:hover,
+#hero-reel:checked ~ .hero__toggle-labels label[for="hero-reel"]:hover {
   color: var(--accent);
 }
 

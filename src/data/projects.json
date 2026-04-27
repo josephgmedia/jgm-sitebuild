@@ -47,11 +47,8 @@
     "category": "projection",
     "role": "Animation",
     "thumb": "mca-vivid.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "mca-vivid-01.jpg", "alt": "MCA Vivid Sydney projection 1" },
-      { "src": "mca-vivid-02.jpg", "alt": "MCA Vivid Sydney projection 2" }
-    ]
+    "type": "video",
+    "videoUrl": "https://youtu.be/rv75wZVWozw"
   },
   {
     "id": "perth-stg",
@@ -85,7 +82,7 @@
     "thumb": "ampol-foodary.jpg",
     "type": "gallery",
     "media": [
-      { "src": "ampol-foodary-01.jpg", "alt": "Ampol Foodary 3D design" }
+      { "src": "Ampol-Foodary.webp", "alt": "Ampol Foodary 3D design" }
     ]
   },
   {
@@ -105,8 +102,10 @@
     "thumb": "superloop-3d.jpg",
     "type": "gallery",
     "media": [
-      { "src": "superloop-3d-01.jpg", "alt": "Superloop 3D icon render 1" },
-      { "src": "superloop-3d-02.jpg", "alt": "Superloop 3D icon render 2" }
+      { "src": "superloop-3d-01.webp", "alt": "Superloop 3D icon render 1" },
+      { "src": "superloop-3d-02.webp", "alt": "Superloop 3D icon render 2" },
+      { "src": "superloop-3d-03.webp", "alt": "Superloop 3D icon render 3" },
+      { "src": "superloop-3d-04.webp", "alt": "Superloop 3D icon render 4" }
     ]
   },
   {
@@ -117,7 +116,8 @@
     "thumb": "small-gods-album.jpg",
     "type": "gallery",
     "media": [
-      { "src": "small-gods-album-01.jpg", "alt": "Small Gods album art render" }
+      { "src": "small-gods-album-01.webp", "alt": "Small Gods album art render 1" },
+      { "src": "small-gods-album-02.webp", "alt": "Small Gods album art render 2" }
     ]
   },
   {
@@ -128,7 +128,12 @@
     "thumb": "weightless-album.jpg",
     "type": "gallery",
     "media": [
-      { "src": "weightless-album-01.jpg", "alt": "Weightless album art render" }
+      { "src": "weightless-album-01.webp", "alt": "Weightless album art render 1" },
+      { "src": "weightless-album-02.webp", "alt": "Weightless album art render 2" },
+      { "src": "weightless-album-03.webp", "alt": "Weightless album art render 3" },
+      { "src": "weightless-album-04.webp", "alt": "Weightless album art render 4" },
+      { "src": "weightless-album-05.webp", "alt": "Weightless album art render 5" },
+      { "src": "weightless-album-06.webp", "alt": "Weightless album art render 6" }
     ]
   },
   {
@@ -150,26 +155,23 @@
     "videoUrl": "https://youtu.be/DhC4JGR6MPY"
   },
   {
-    "id": "hyundai-autolink",
-    "title": "Hyundai Auto Link",
-    "category": "2d",
-    "role": "Character Animation, Music Composition",
-    "agency": "Tonic Films",
-    "thumb": "hyundai-autolink.jpg",
+    "id": "weightless-ep",
+    "title": "Weightless — A State of Mind",
+    "category": "3d",
+    "role": "Art Direction, Design, 3D, Animation",
+    "thumb": "weightless.jpg",
     "type": "link",
-    "href": "work/hyundai-autolink.html",
+    "href": "work/weightless.html",
     "featured": true
   },
   {
-    "id": "kia-endframe",
-    "title": "Kia 2D End Frame",
+    "id": "kia-cerato",
+    "title": "Kia Cerato",
     "category": "2d",
     "role": "2D Animation",
     "thumb": "kia-endframe.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "kia-endframe-01.jpg", "alt": "Kia 2D end frame" }
-    ]
+    "type": "video",
+    "videoUrl": "https://youtu.be/wpSzhNq-yoU"
   },
   {
     "id": "bombay-play",
@@ -179,7 +181,9 @@
     "thumb": "bombay-play.jpg",
     "type": "gallery",
     "media": [
-      { "src": "bombay-play-01.jpg", "alt": "Bombay Play app icon animation" }
+      { "src": "bombay-play-01.webp", "alt": "Bombay Play app icon animation 1" },
+      { "src": "bombay-play-02.webp", "alt": "Bombay Play app icon animation 2" },
+      { "src": "bombay-play-03.webp", "alt": "Bombay Play app icon animation 3" }
     ]
   },
   {
@@ -212,6 +216,15 @@
     "thumb": "karma-grim-city.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/pv43f6McgAY"
+  },
+  {
+    "id": "mark-cultists",
+    "title": "Cultists - Mark of the Beast",
+    "category": "2d",
+    "role": "Lyric Video",
+    "thumb": "mark-cultists.jpg",
+    "type": "video",
+    "videoUrl": "https://youtu.be/fpLm7Rqu9Uc"
   },
   {
     "id": "coles-dinner",
@@ -327,7 +340,7 @@
   },
   {
     "id": "mourningstar-karma",
-    "title": "MourningStar - Karma",
+    "title": "Mourning Star - Karma",
     "category": "video",
     "role": "Videography, Direction",
     "thumb": "mourningstar-karma.jpg",
@@ -372,7 +385,7 @@
   },
   {
     "id": "manifest-launch",
-    "title": "Manifest the Label Launch",
+    "title": "Manifest the Label - Launch Promo",
     "category": "video",
     "role": "Videography",
     "thumb": "manifest-launch.jpg",
@@ -390,7 +403,7 @@
   },
   {
     "id": "stand-atlantic",
-    "title": "Stand Atlantic",
+    "title": "Stand Atlantic - Fxck 2020 Live Stream",
     "category": "video",
     "role": "Second Camera",
     "thumb": "stand-atlantic.jpg",
@@ -399,7 +412,7 @@
   },
   {
     "id": "bloom",
-    "title": "Bloom",
+    "title": "Bloom - In Passing (Live)",
     "category": "video",
     "role": "Second Camera",
     "thumb": "bloom.jpg",
@@ -435,26 +448,34 @@
     "thumb": "nivea-burgess.jpg",
     "type": "gallery",
     "media": [
-      { "src": "nivea-burgess-01.jpg", "alt": "Nivea Tom Burgess shoot 1" },
-      { "src": "nivea-burgess-02.jpg", "alt": "Nivea Tom Burgess shoot 2" }
+      { "src": "nivea-burgess-01.webp", "alt": "Nivea Tom Burgess shoot 1" },
+      { "src": "nivea-burgess-02.webp", "alt": "Nivea Tom Burgess shoot 2" },
+      { "src": "nivea-burgess-03.webp", "alt": "Nivea Tom Burgess shoot 3" },
+      { "src": "nivea-burgess-04.webp", "alt": "Nivea Tom Burgess shoot 4" },
+      { "src": "nivea-burgess-05.webp", "alt": "Nivea Tom Burgess shoot 5" },
+      { "src": "nivea-burgess-06.webp", "alt": "Nivea Tom Burgess shoot 6" }
     ]
   },
   {
     "id": "egalite",
-    "title": "Publicis Groupe - Egalite",
+    "title": "Publicis Groupe - Egalite Drag Trivia",
     "category": "photo",
     "role": "Photography",
     "thumb": "egalite.jpg",
     "type": "gallery",
     "media": [
-      { "src": "egalite-01.jpg", "alt": "Egalite campaign 1" },
-      { "src": "egalite-02.jpg", "alt": "Egalite campaign 2" },
-      { "src": "egalite-03.jpg", "alt": "Egalite campaign 3" }
+      { "src": "egalite-01.webp", "alt": "Egalite campaign 1" },
+      { "src": "egalite-02.webp", "alt": "Egalite campaign 2" },
+      { "src": "egalite-03.webp", "alt": "Egalite campaign 3" },
+      { "src": "egalite-04.webp", "alt": "Egalite campaign 4" },
+      { "src": "egalite-05.webp", "alt": "Egalite campaign 5" },
+      { "src": "egalite-06.webp", "alt": "Egalite campaign 6" },
+      { "src": "egalite-07.webp", "alt": "Egalite campaign 7" }
     ]
   },
   {
     "id": "manifest-product",
-    "title": "Manifest the Label Product Shoot",
+    "title": "Manifest the Label - Product Shoot",
     "category": "photo",
     "role": "Product Photography",
     "thumb": "manifest-product.jpg",
@@ -510,7 +531,7 @@
   },
   {
     "id": "palmers",
-    "title": "Palmers Before/After",
+    "title": "Palmers Before/After Model Shoot",
     "category": "photo",
     "role": "Retouching",
     "thumb": "palmers.jpg",
@@ -522,7 +543,7 @@
   {
     "id": "somber-hills",
     "title": "Somber Hills Retouching",
-    "category": "photo",
+    "category": "design",
     "role": "Retouching",
     "thumb": "somber-hills.jpg",
     "type": "gallery",
@@ -539,6 +560,28 @@
     "type": "gallery",
     "media": [
       { "src": "neotek-01.jpg", "alt": "Neotek band shoot 1" }
+    ]
+  },
+  {
+    "id": "synge",
+    "title": "Synge - Promo Shoot",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "synge.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "synge-01.jpg", "alt": "Synge promo shoot" }
+    ]
+  },
+  {
+    "id": "synge-rt",
+    "title": "Synge - Album Promo",
+    "category": "3d, design, photo",
+    "role": "3D, Retouching, Photography",
+    "thumb": "synge-rt.jpg",
+    "type": "gallery",
+    "media": [
+      { "src": "synge-rt-01.jpg", "alt": "Synge album promo" }
     ]
   },
   {
@@ -574,17 +617,6 @@
     "type": "gallery",
     "media": [
       { "src": "simpson-cottage-accom-01.jpg", "alt": "Simpson Cottage accommodation 1" }
-    ]
-  },
-  {
-    "id": "coles-afl",
-    "title": "Coles x AFL Homepage Takeover",
-    "category": "design, web",
-    "role": "Graphic Design, Web Design",
-    "thumb": "coles-afl.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "coles-afl-01.jpg", "alt": "Coles AFL homepage takeover" }
     ]
   },
   {
@@ -781,14 +813,14 @@
     ]
   },
   {
-    "id": "jazz-diaz",
-    "title": "jazzdiaz.com.au",
+    "id": "bluebell-bridal",
+    "title": "Bluebell Bridal",
     "category": "web",
     "role": "Web Design, Development",
-    "thumb": "jazz-diaz.jpg",
+    "thumb": "bluebell-bridal.jpg",
     "type": "gallery",
     "media": [
-      { "src": "jazz-diaz-01.jpg", "alt": "Jazz Diaz website" }
+      { "src": "bluebell-bridal-01.jpg", "alt": "Bluebell Bridal website" }
     ]
   },
   {
@@ -801,11 +833,11 @@
     "videoUrl": "https://youtu.be/Mn9jz3q47NY"
   },
   {
-    "id": "lexus-fireside",
-    "title": "Lexus - Fireside",
+    "id": "lexus-encore",
+    "title": "Lexus - Encore Platinum",
     "category": "brand",
-    "role": "Brand Content",
-    "thumb": "lexus-fireside.jpg",
+    "role": "Brand Content, 2d Animation",
+    "thumb": "lexus.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/J9Y1CuH1N8Y"
   },
