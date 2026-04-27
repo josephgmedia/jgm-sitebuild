@@ -1,33 +1,17 @@
 /* ── FONTS ── */
 @font-face {
-  font-family: 'Monument Extended';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('../assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Monument Extended';
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('../assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
-}
-
-/* Alias for backward compatibility */
-@font-face {
   font-family: 'Monument';
-  font-style: normal;
+  src: url('/src/assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
-  src: url('../assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Monument';
-  font-style: normal;
+  src: url('/src/assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
   font-weight: 800;
+  font-style: normal;
   font-display: swap;
-  src: url('../assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
 }
 
 /* Font smoothing for better rendering */
