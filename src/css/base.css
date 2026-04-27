@@ -1,32 +1,43 @@
 /* ── FONTS ── */
 @font-face {
+  font-family: 'Monument Extended';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Monument Extended';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
+}
+
+/* Alias for backward compatibility */
+@font-face {
   font-family: 'Monument';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Monument Extended Regular'),
-       local('MonumentExtended-Regular'),
-       url('../assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
+  src: url('../assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Monument';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: local('Monument Extended Ultrabold'),
-       local('MonumentExtended-Ultrabold'),
-       url('../assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
+  src: url('../assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
 }
 
-/* Explicitly set Monument for common elements */
+/* Font smoothing for better rendering */
 h1, h2, h3, h4, h5, h6,
 .hero__tagline,
 .hero__toggle-label,
 .nav__links a,
 .section-label__text,
 .work__card-tag,
-.work__card-title,
-button {
+.work__card-title {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Test</title>
+  <style>
+    @font-face {
+      font-family: 'Monument';
+      src: url('src/assets/fonts/MonumentExtended-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Monument';
+      src: url('src/assets/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+    body {
+      background: #080808;
+      color: #edeae4;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+    }
+    .test {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #333;
+    }
+    .monument-400 {
+      font-family: 'Monument', sans-serif;
+      font-weight: 400;
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+    .monument-800 {
+      font-family: 'Monument', sans-serif;
+      font-weight: 800;
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+    .arial {
+      font-family: Arial, sans-serif;
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <h1>Font Loading Test</h1>
+
+  <div class="test">
+    <div class="monument-400">Monument Regular (400) - The Quick Brown Fox</div>
+  </div>
+
+  <div class="test">
+    <div class="monument-800">Monument Ultrabold (800) - The Quick Brown Fox</div>
+  </div>
+
+  <div class="test">
+    <div class="arial">Arial (Fallback) - The Quick Brown Fox</div>
+  </div>
+
+  <script>
+    // Check if fonts loaded
+    document.fonts.ready.then(() => {
+      const fonts = Array.from(document.fonts.values());
+      console.log('Loaded fonts:', fonts.map(f => `${f.family} ${f.weight} ${f.style} - ${f.status}`));
+
+      const monument = fonts.filter(f => f.family.includes('Monument'));
+      if (monument.length > 0) {
+        console.log('✅ Monument fonts loaded successfully');
+        alert('✅ Monument fonts LOADED');
+      } else {
+        console.log('❌ Monument fonts NOT loaded');
+        alert('❌ Monument fonts NOT loaded');
+      }
+    });
+  </script>
+</body>
+</html>
