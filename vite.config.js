@@ -54,7 +54,14 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         work: resolve(__dirname, 'work.html'),
+        'font-test': resolve(__dirname, 'font-test.html'),
         'work/nla-enlighten': resolve(__dirname, 'work/nla-enlighten.html'),
+        'work/bundaberg': resolve(__dirname, 'work/bundaberg.html'),
+        'work/gryff': resolve(__dirname, 'work/gryff.html'),
+        'work/hyundai-autolink': resolve(__dirname, 'work/hyundai-autolink.html'),
+        'work/porsche-drjack': resolve(__dirname, 'work/porsche-drjack.html'),
+        'work/rams-construction': resolve(__dirname, 'work/rams-construction.html'),
+        'work/weightless': resolve(__dirname, 'work/weightless.html'),
       },
       output: {
         // Asset file naming with hashes for cache busting

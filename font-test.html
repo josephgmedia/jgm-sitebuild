@@ -64,21 +64,66 @@
     <div class="arial">Arial (Fallback) - The Quick Brown Fox</div>
   </div>
 
-  <script>
-    // Check if fonts loaded
-    document.fonts.ready.then(() => {
-      const fonts = Array.from(document.fonts.values());
-      console.log('Loaded fonts:', fonts.map(f => `${f.family} ${f.weight} ${f.style} - ${f.status}`));
+  <div id="debug" style="margin-top: 40px; padding: 20px; background: #1a1a1a; font-family: monospace; font-size: 14px;"></div>
 
-      const monument = fonts.filter(f => f.family.includes('Monument'));
-      if (monument.length > 0) {
-        console.log('✅ Monument fonts loaded successfully');
-        alert('✅ Monument fonts LOADED');
-      } else {
-        console.log('❌ Monument fonts NOT loaded');
-        alert('❌ Monument fonts NOT loaded');
-      }
-    });
+  <script>
+    const debug = document.getElementById('debug');
+
+    function log(msg) {
+      console.log(msg);
+      debug.innerHTML += msg + '<br>';
+    }
+
+    log('Starting font test...');
+
+    // Check if Font Loading API is supported
+    if ('fonts' in document) {
+      log('✅ Font Loading API supported');
+
+      document.fonts.ready.then(() => {
+        log('Fonts ready event fired');
+        const fonts = Array.from(document.fonts.values());
+        log(`Total fonts loaded: ${fonts.length}`);
+
+        fonts.forEach(f => {
+          log(`Font: ${f.family} ${f.weight} ${f.style} - Status: ${f.status}`);
+        });
+
+        const monument = fonts.filter(f => f.family.includes('Monument'));
+        if (monument.length > 0) {
+          log('✅ Monument fonts loaded successfully');
+          log(`Monument variants: ${monument.length}`);
+        } else {
+          log('❌ Monument fonts NOT loaded');
+        }
+
+        // Test specific font loading
+        const testFont400 = new FontFace('Monument', 'url(src/assets/fonts/MonumentExtended-Regular.woff2)', { weight: '400' });
+        testFont400.load().then(() => {
+          log('✅ Manual load test: Monument 400 loaded');
+        }).catch(err => {
+          log(`❌ Manual load test: Monument 400 failed - ${err.message}`);
+        });
+
+        const testFont800 = new FontFace('Monument', 'url(src/assets/fonts/MonumentExtended-Ultrabold.woff2)', { weight: '800' });
+        testFont800.load().then(() => {
+          log('✅ Manual load test: Monument 800 loaded');
+        }).catch(err => {
+          log(`❌ Manual load test: Monument 800 failed - ${err.message}`);
+        });
+      });
+    } else {
+      log('❌ Font Loading API NOT supported');
+    }
+
+    // Fallback: Check after 2 seconds
+    setTimeout(() => {
+      log('--- After 2 seconds ---');
+      const computed400 = getComputedStyle(document.querySelector('.monument-400')).fontFamily;
+      const computed800 = getComputedStyle(document.querySelector('.monument-800')).fontFamily;
+      log(`Computed font family (400): ${computed400}`);
+      log(`Computed font family (800): ${computed800}`);
+    }, 2000);
   </script>
 </body>
 </html>
