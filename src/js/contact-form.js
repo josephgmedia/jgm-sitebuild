@@ -51,7 +51,7 @@ export function initContactForm() {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        showStatus('Message sent! I'll get back to you soon.', 'success');
+        showStatus('Message sent! I will get back to you soon.', 'success');
         form.reset();
       } else {
         showStatus(data.error || 'Failed to send message. Please try again.', 'error');
