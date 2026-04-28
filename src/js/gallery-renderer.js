@@ -60,7 +60,7 @@ export function renderGallery() {
     const thumbPath = project.featured ? FEATURED_THUMB_PATH : THUMB_PATH;
 
     // Add badge for mixed media items (will be shown/hidden by filter)
-    const mixedBadge = hasMixedMedia ? '<span class="gallery__mixed-badge" data-badge="mixed">+</span>' : '';
+    const mixedBadge = hasMixedMedia ? '<span class="gallery__mixed-badge" data-badge="mixed">PHOTO/VIDEO</span>' : '';
 
     item.innerHTML = `
       <div class="gallery__thumb">
