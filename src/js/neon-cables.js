@@ -350,6 +350,72 @@ import Matter from 'matter-js';
   sizeCanvas();
   drawOffCables();
 
+
+  // ── TOGGLE TRACK CLICK ──
+  const toggleTrack = document.querySelector('.hero__toggle-track');
+
+  if (toggleTrack && toggleOff && toggleOn) {
+    toggleTrack.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Toggle between off and on
+      if (toggleOff.checked) {
+        toggleOn.checked = true;
+        toggleOn.dispatchEvent(new Event('change'));
+      } else {
+        toggleOff.checked = true;
+        toggleOff.dispatchEvent(new Event('change'));
+      }
+    });
+  }
+
+  // ── SCROLL HINT ANIMATION (after 3 seconds) ──
+  const scrollHint = document.getElementById('hero-scroll-hint');
+  if (scrollHint) {
+    setTimeout(() => {
+      scrollHint.classList.add('is-visible');
+    }, 3000);
+
+    // Hide on scroll
+    let scrolled = false;
+    window.addEventListener('scroll', () => {
+      if (!scrolled && window.scrollY > 50) {
+        scrollHint.classList.remove('is-visible');
+        scrolled = true;
+      }
+    });
+  }
+
+  // ── VIEW WORK REEL MODAL ──
+  const viewWorkBtn = document.getElementById('hero-view-work');
+  const reelModal = document.getElementById('reel-modal');
+  const reelModalOverlay = document.getElementById('reel-modal-overlay');
+
+  if (viewWorkBtn && reelModal) {
+    // Open modal
+    viewWorkBtn.addEventListener('click', () => {
+      reelModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal on overlay click
+    if (reelModalOverlay) {
+      reelModalOverlay.addEventListener('click', () => {
+        reelModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Handle reel card clicks (placeholder - you can add video playback here)
+    const reelCards = document.querySelectorAll('.reel-card');
+    reelCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const reelType = card.getAttribute('data-reel');
+        // TODO: Add video playback logic here
+        console.log('Play reel:', reelType);
+      });
+    });
+  }
+
   // ── DEBUG MODE (?debug=1) ──
   const DEBUG = new URLSearchParams(window.location.search).get('debug') === '1';
   if (DEBUG) {

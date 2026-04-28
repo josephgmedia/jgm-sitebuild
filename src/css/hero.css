@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  min-height: 300px;
+  min-height: 500px;
   overflow: hidden;
 }
 
@@ -52,20 +52,46 @@
   pointer-events: none;
 }
 
-/* Sign foregrounds — centred, fluid width, transparent bg */
-.hero__sign {
+/* Hero container — centers and scales all content together */
+.hero__container {
   position: absolute;
+  inset: 0;
   z-index: 4;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(280px, 70vw, 1788px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 4vh, 60px);
+  padding: 10vh 0;
+  pointer-events: none;
+}
+
+/* Sign wrapper to contain both sign states */
+.hero__sign-wrapper {
+  position: relative;
+  width: clamp(240px, 60vw, 1609px);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Sign foregrounds — both positioned identically */
+.hero__sign {
+  position: relative;
+  width: 100%;
   height: auto;
   pointer-events: none;
   transition: opacity 0.8s ease;
 }
-.hero__sign--off { opacity: 1; }
-.hero__sign--on  { opacity: 0; z-index: 5; }
+.hero__sign--off {
+  opacity: 1;
+}
+.hero__sign--on {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 /* Neon ON — crossfade signs */
 .hero--neon-on .hero__sign--off { opacity: 0; }
@@ -76,29 +102,90 @@
   pointer-events: auto;
 }
 
-/* Hero UI */
+/* Hero UI - positioned within container */
 .hero__ui {
-  position: absolute;
-  bottom: var(--space-sm); left: 50%; transform: translateX(-50%);
-  z-index: 10;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   gap: var(--space-xs);
-  padding: 0 var(--space-lg);
   width: auto;
   pointer-events: none;
+  flex-shrink: 0;
+}
+.hero__ui--bottom {
+  gap: var(--space-md);
 }
 .hero__ui > * { pointer-events: auto; }
 
-.hero__tagline {
+/* Scroll hint tab */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  z-index: 10;
+  background: var(--accent);
+  color: var(--white);
   font-family: 'Monument', sans-serif;
-  font-size: var(--fs-ui);
+  font-size: clamp(0.45rem, 0.7vw, 0.55rem);
   font-weight: 400;
-  letter-spacing: 0.12em;
-  color: rgba(237,234,228,0.4);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   text-align: center;
+  padding: var(--space-xs) var(--space-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.hero__scroll-hint.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero__scroll-hint-text::before,
+.hero__scroll-hint-text::after {
+  content: '↓';
+  opacity: 0.6;
+}
+
+.hero__scroll-hint-text::before {
+  margin-right: var(--space-sm);
+}
+
+.hero__scroll-hint-text::after {
+  margin-left: var(--space-sm);
+}
+
+.hero__cta {
+  font-family: 'Monument', sans-serif;
+  font-size: clamp(0.75rem, 1.8vw, 1.2rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: transparent;
+  border: 2px solid var(--white);
+  padding: clamp(8px, 1.5vh, 16px) clamp(16px, 3vw, 32px);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+.hero__cta:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+  box-shadow: 0 0 40px var(--accent), 0 0 80px var(--accent);
+  transform: translateY(-2px);
 }
 
 .hero__toggle-wrap {
@@ -108,18 +195,20 @@
   gap: 12px;
   cursor: none;
   justify-content: center;
+  margin-top: var(--space-sm);
 }
 
 .hero__toggle-wrap input { display: none; }
 
 .hero__toggle-track {
-  width: 80px;
+  width: 54px;
   height: 28px;
   background: var(--mid);
   border: 1px solid var(--muted);
   border-radius: 14px;
   position: relative;
   transition: background 0.3s, border-color 0.3s;
+  cursor: pointer;
 }
 
 .hero__toggle-thumb {
@@ -148,14 +237,9 @@
   background: var(--accent);
 }
 
-#hero-reel:checked ~ .hero__toggle-track .hero__toggle-thumb {
-  transform: translateX(54px);
-  background: var(--accent);
-}
-
 .hero__toggle-labels {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
 }
 
@@ -176,17 +260,16 @@
 
 /* Active state - only applied to the checked radio's label */
 #hero-on:checked ~ .hero__toggle-labels label[for="hero-on"],
-#hero-off:checked ~ .hero__toggle-labels label[for="hero-off"],
-#hero-reel:checked ~ .hero__toggle-labels label[for="hero-reel"] {
+#hero-off:checked ~ .hero__toggle-labels label[for="hero-off"] {
   color: var(--accent);
 }
 
 /* Override hover on active labels */
 #hero-on:checked ~ .hero__toggle-labels label[for="hero-on"]:hover,
-#hero-off:checked ~ .hero__toggle-labels label[for="hero-off"]:hover,
-#hero-reel:checked ~ .hero__toggle-labels label[for="hero-reel"]:hover {
+#hero-off:checked ~ .hero__toggle-labels label[for="hero-off"]:hover {
   color: var(--accent);
 }
+
 
 .hero__foot {
   position: absolute;

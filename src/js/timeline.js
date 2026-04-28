@@ -25,19 +25,15 @@ export function initTimeline() {
   }
 
   function openDrawer() {
-    if (!tlMonitor || drawerOpen) return;
-    tlMonitor.style.height = getDrawerHeight();
-    tlMonitor.classList.add('is-open');
+    if (!tlMonitor) return;
+    // Monitor is now permanently visible - just mark as open
     drawerOpen = true;
   }
 
   function closeDrawer() {
-    if (!tlMonitor || !drawerOpen) return;
-    // On mobile, keep monitor permanently open
-    if (window.innerWidth < CONFIG.tabletBreakpoint) return;
-    tlMonitor.style.height = '0';
-    tlMonitor.classList.remove('is-open');
-    drawerOpen = false;
+    // Monitor is now permanently visible - this function is no longer needed
+    // Keeping it for backwards compatibility but it does nothing
+    return;
   }
 
   // Monitor stays open while cursor is over a clip OR inside the monitor
@@ -74,7 +70,7 @@ export function initTimeline() {
     mouseOverClip = false;
     mouseOverMonitor = false;
     scrubActive = false;
-    closeDrawer();
+    // Monitor now stays permanently open - no closeDrawer() call
   });
 
   // Media element map — each discipline maps to its DOM element ID
@@ -86,7 +82,6 @@ export function initTimeline() {
     'Video Editing & Colour Grading':   'tl-media-editing',
     'Design & Illustration':            'tl-media-design',
     'Music Composition & Sound Design': 'tl-media-audio',
-    'Web Design':                       'tl-media-web',
     'AI & Generative Design':           'tl-media-genai',
   };
 
@@ -151,7 +146,6 @@ export function initTimeline() {
     { name: 'Video Editing & Colour Grading',   desc: 'Premiere Pro, DaVinci Resolve, multi-cam, long and short form',                    link: 'work.html#video-editing' },
     { name: 'Design & Illustration',            desc: 'Brand, print, OOH, social, merch, album art, promotional',                        link: 'work.html#design-illustration' },
     { name: 'Music Composition & Sound Design', desc: 'Ableton, Logic, Pro Tools - composition, scoring and sound design',           link: 'work.html#music-composition' },
-    { name: 'Web Design',                       desc: 'Custom builds in HTML, CSS, JavaScript, WordPress and Squarespace',                link: 'work.html#web-design' },
     { name: 'AI & Generative Design',           desc: 'Stable Diffusion, ComfyUI - workflow development',               link: 'work.html#ai-generative-design' },
   ];
 
@@ -190,6 +184,10 @@ export function initTimeline() {
     if (tlMonitorName) tlMonitorName.textContent = TL_DATA[0].name;
     if (tlMonitorDesc) tlMonitorDesc.textContent = TL_DATA[0].desc;
     tlClips[0].classList.add('is-active');
+
+    // Initialize drawer as open and load first media
+    openDrawer();
+    switchMonitorMedia(TL_DATA[0].name);
 
     let bodyRect  = tlBody.getBoundingClientRect();
     let clipRects = [];
@@ -362,19 +360,14 @@ export function initTimeline() {
       const keepOpen = mouseOverClip || mouseOverMonitor;
 
       if (keepOpen && hitIdx >= 0) {
-        if (clipLeaveTimer) { clearTimeout(clipLeaveTimer); clipLeaveTimer = null; }
-        openDrawer();
+        // Monitor is now permanently visible - no need for timers
         if (hitIdx !== monitorIdx) {
           monitorIdx = hitIdx;
           crossfadeContent(hitIdx);
           switchMonitorMedia(TL_DATA[hitIdx].name);
         }
-      } else if (keepOpen && drawerOpen) {
-        // Mouse is in monitor but not on a clip — keep drawer open, don't change content
-        if (clipLeaveTimer) { clearTimeout(clipLeaveTimer); clipLeaveTimer = null; }
-      } else if (drawerOpen && !clipLeaveTimer) {
-        clipLeaveTimer = setTimeout(() => { closeDrawer(); clipLeaveTimer = null; }, CONFIG.clipCloseDelay);
       }
+      // Monitor now stays permanently open - removed close delay logic
 
       requestAnimationFrame(tlTick);
     })();

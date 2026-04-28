@@ -45,14 +45,29 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: color 0.2s;
-  padding: var(--space-md);
-  margin: var(--space-xl) auto 0;
-  display: block;
+  transition: color 0.2s, border-color 0.2s;
+  padding: 0;
+  padding-bottom: 6px;
+  margin: 0 auto;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  text-align: center;
+}
+
+.reel-modal__content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 90%;
+  padding: var(--space-xl);
+  cursor: auto;
+  text-align: center;
 }
 
 .reel-modal__back:hover {
   color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .reel-modal__title {
@@ -69,8 +84,10 @@
 
 .reel-modal__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
+  max-width: 1000px;
+  margin: 0 auto var(--space-xl) auto;
 }
 
 /* Reel Cards */
@@ -152,11 +169,6 @@
 }
 
 @media (max-width: 767px) {
-  .reel-modal__grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
-
   .reel-modal__content {
     padding: var(--space-lg);
   }

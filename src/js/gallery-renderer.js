@@ -38,8 +38,15 @@ export function renderGallery() {
     }
 
     // Store media data for lightbox
+    let hasMixedMedia = false;
     if (project.type === 'gallery') {
+      // Gallery can contain mixed media (videos + images)
       item.dataset.media = JSON.stringify(project.media);
+
+      // Check if gallery has both video and image types
+      const hasVideo = project.media.some(m => m.type === 'video');
+      const hasImage = project.media.some(m => m.type === 'image' || !m.type);
+      hasMixedMedia = hasVideo && hasImage;
     } else if (project.type === 'video') {
       // Support single video URL or array of URLs
       const videoUrls = project.videoUrl || project.videoUrls || '';
@@ -52,9 +59,13 @@ export function renderGallery() {
     const thumbFile = project.thumb || `${project.id}.jpg`;
     const thumbPath = project.featured ? FEATURED_THUMB_PATH : THUMB_PATH;
 
+    // Add badge for mixed media items (will be shown/hidden by filter)
+    const mixedBadge = hasMixedMedia ? '<span class="gallery__mixed-badge" data-badge="mixed">+</span>' : '';
+
     item.innerHTML = `
       <div class="gallery__thumb">
         <img src="${thumbPath}${thumbFile}" alt="${project.title}" loading="lazy" decoding="async">
+        ${mixedBadge}
       </div>
       <div class="gallery__caption">
         <h4 class="gallery__caption-title">${project.titleHtml || project.title}</h4>

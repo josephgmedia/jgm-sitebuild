@@ -30,6 +30,17 @@ export function initGalleryFilter() {
           item.classList.add('gallery__item--hidden');
         }
       });
+
+      // Show/hide mixed media badges based on filter
+      const badges = grid.querySelectorAll('.gallery__mixed-badge');
+      badges.forEach(badge => {
+        // Only show badges on "All" view
+        if (category === 'all') {
+          badge.style.display = '';
+        } else {
+          badge.style.display = 'none';
+        }
+      });
     });
   });
 }

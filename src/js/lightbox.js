@@ -65,6 +65,27 @@ function createLightbox() {
   });
 }
 
+function positionArrows() {
+  // Position arrows relative to content width
+  requestAnimationFrame(() => {
+    const content = mediaContainer.querySelector('.lightbox__img, .lightbox__iframe');
+    if (!content) return;
+
+    const contentRect = content.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const contentWidth = contentRect.width;
+    const spacing = 16; // var(--space-md) in pixels
+    const arrowPadding = 80; // Extra padding from content edge
+
+    // Calculate position: either at content edge + padding, or at viewport edge
+    const leftPos = Math.max(spacing, (viewportWidth - contentWidth) / 2 - arrowPadding);
+    const rightPos = Math.max(spacing, (viewportWidth - contentWidth) / 2 - arrowPadding);
+
+    if (prevBtn) prevBtn.style.left = leftPos + 'px';
+    if (nextBtn) nextBtn.style.right = rightPos + 'px';
+  });
+}
+
 function openGallery(media, startIndex = 0) {
   if (!overlay) createLightbox();
   currentMedia = media;
@@ -132,13 +153,49 @@ function showCurrentVideo() {
 function showCurrent() {
   const item = currentMedia[currentIndex];
 
-  // Handle video type in carousel
+  // Handle video type in carousel (mixed media galleries)
   if (item.type === 'video') {
-    showCurrentVideo();
+    // Convert to proper format and show video
+    const videoUrl = item.url;
+    let embedUrl = videoUrl;
+    const youtubeMatch = videoUrl.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+    if (youtubeMatch) {
+      embedUrl = `https://www.youtube.com/embed/${youtubeMatch[1]}?autoplay=1`;
+    }
+
+    mediaContainer.innerHTML = `
+      <iframe class="lightbox__iframe" src="${embedUrl}"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    `;
+
+    // Show/hide nav based on gallery size
+    const isMulti = currentMedia.length > 1;
+    prevBtn.style.display = isMulti ? '' : 'none';
+    nextBtn.style.display = isMulti ? '' : 'none';
+    counter.textContent = isMulti ? `${currentIndex + 1} / ${currentMedia.length}` : '';
+
+    positionArrows();
     return;
   }
 
-  // Handle image
+  // Handle audio type (SoundCloud embeds)
+  if (item.type === 'audio') {
+    mediaContainer.innerHTML = `
+      <iframe class="lightbox__iframe lightbox__iframe--audio" src="${item.url}"
+        frameborder="0" allow="autoplay" scrolling="no"></iframe>
+    `;
+
+    // Show/hide nav based on gallery size
+    const isMulti = currentMedia.length > 1;
+    prevBtn.style.display = isMulti ? '' : 'none';
+    nextBtn.style.display = isMulti ? '' : 'none';
+    counter.textContent = isMulti ? `${currentIndex + 1} / ${currentMedia.length}` : '';
+
+    positionArrows();
+    return;
+  }
+
+  // Handle image (type === 'image' or no type field for backwards compatibility)
   mediaContainer.innerHTML = `
     <img class="lightbox__img" src="${GALLERY_PATH}${item.src}" alt="${item.alt || ''}" />
   `;
@@ -148,6 +205,16 @@ function showCurrent() {
   prevBtn.style.display = isMulti ? '' : 'none';
   nextBtn.style.display = isMulti ? '' : 'none';
   counter.textContent = isMulti ? `${currentIndex + 1} / ${currentMedia.length}` : '';
+
+  // Position arrows after image loads
+  const img = mediaContainer.querySelector('.lightbox__img');
+  if (img) {
+    if (img.complete) {
+      positionArrows();
+    } else {
+      img.addEventListener('load', positionArrows, { once: true });
+    }
+  }
 }
 
 function prev() {
@@ -207,7 +274,31 @@ export function initLightbox() {
     if (type === 'gallery') {
       try {
         const media = JSON.parse(item.dataset.media);
-        openGallery(media);
+
+        // Get active filter
+        const activeFilter = document.querySelector('.gallery__filter--active');
+        const activeCategory = activeFilter ? activeFilter.dataset.category : 'all';
+
+        // Filter media based on active category
+        let filteredMedia = media;
+        if (activeCategory !== 'all') {
+          filteredMedia = media.filter(m => {
+            // For 'video' filter, show only video type
+            if (activeCategory === 'video' && m.type === 'video') return true;
+            // For 'photo' filter, show only image type
+            if (activeCategory === 'photo' && m.type === 'image') return true;
+            // For other filters (2d, 3d, design, etc), show all media
+            if (activeCategory !== 'video' && activeCategory !== 'photo') return true;
+            return false;
+          });
+        }
+
+        // If filter resulted in no media, fall back to all media
+        if (filteredMedia.length === 0) {
+          filteredMedia = media;
+        }
+
+        openGallery(filteredMedia);
       } catch (err) {
         // Fallback — just show the thumbnail
         openGallery([{ src: item.querySelector('.gallery__thumb')?.style.backgroundImage?.match(/url\(['"]?(.+?)['"]?\)/)?.[1] || '', alt: '' }]);

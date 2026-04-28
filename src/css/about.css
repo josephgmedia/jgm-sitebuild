@@ -3,7 +3,7 @@
   padding: var(--space-section-top) var(--space-lg) var(--space-section-bottom);
   display: grid; grid-template-columns: 1fr;
   column-gap: 0; row-gap: 0; align-items: center;
-  overflow: hidden;
+  overflow: visible;
 }
 .about .section-label { grid-column: 1 / -1; justify-self: stretch; }
 .about__left {
@@ -55,7 +55,7 @@
   margin-top: 0.08em;
 }
 .about__right {
-  min-width: 0; overflow: hidden;
+  min-width: 0; overflow: visible;
   width: 100%; max-width: 100%;
   box-sizing: border-box; padding: 0;
 }
@@ -69,6 +69,14 @@
 }
 .about__right p strong { color: var(--white); font-weight: 500; }
 .word--light { color: rgba(237,234,228,.6); }
+.about__image {
+  width: 80%;
+  height: auto;
+  margin-top: -15%;
+  margin-bottom: 2%;
+  position: relative;
+  z-index: 10;
+}
 
 /* Tap hint — only injected by JS on touch-only devices */
 .stat__tap-hint {

@@ -51,16 +51,22 @@
     "videoUrl": "https://youtu.be/rv75wZVWozw"
   },
   {
-    "id": "perth-stg",
-    "title": "St George's Cathedral",
+    "id": "perth-stg-24",
+    "title": "Christmas at St George's Cathedral 2024",
     "category": "projection",
     "role": "Design, Animation, Music Composition",
     "thumb": "perth-stg.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "perth-stg-01.jpg", "alt": "St George's Cathedral projection 1" },
-      { "src": "perth-stg-02.jpg", "alt": "St George's Cathedral projection 2" }
-    ]
+    "type": "video",
+    "videoUrl": "https://youtu.be/rv75wZVWozw"
+  },
+  {
+    "id": "perth-stg-25",
+    "title": "Christmas at St George's Cathedral 2025",
+    "category": "projection",
+    "role": "Design, Animation, Music Composition",
+    "thumb": "perth-stg.jpg",
+    "type": "video",
+    "videoUrl": "https://youtu.be/rv75wZVWozw"
   },
   {
     "id": "wrinkles-schminkles",
@@ -70,8 +76,8 @@
     "thumb": "wrinkles.jpg",
     "type": "video",
     "videoUrls": [
-      "https://youtu.be/MFFqtn8e5jU",
-      "https://youtu.be/6fWRZYRcAcs"
+      "https://youtu.be/6fWRZYRcAcs",
+      "https://youtu.be/MFFqtn8e5jU"
     ]
   },
   {
@@ -82,7 +88,10 @@
     "thumb": "ampol-foodary.jpg",
     "type": "gallery",
     "media": [
-      { "src": "Ampol-Foodary.webp", "alt": "Ampol Foodary 3D design" }
+      {
+        "src": "Ampol-Foodary.webp",
+        "alt": "Ampol Foodary 3D design"
+      }
     ]
   },
   {
@@ -102,38 +111,237 @@
     "thumb": "superloop-3d.jpg",
     "type": "gallery",
     "media": [
-      { "src": "superloop-3d-01.webp", "alt": "Superloop 3D icon render 1" },
-      { "src": "superloop-3d-02.webp", "alt": "Superloop 3D icon render 2" },
-      { "src": "superloop-3d-03.webp", "alt": "Superloop 3D icon render 3" },
-      { "src": "superloop-3d-04.webp", "alt": "Superloop 3D icon render 4" }
+      {
+        "src": "superloop-3d-01.webp",
+        "alt": "Superloop 3D icon render 1"
+      },
+      {
+        "src": "superloop-3d-02.webp",
+        "alt": "Superloop 3D icon render 2"
+      },
+      {
+        "src": "superloop-3d-03.webp",
+        "alt": "Superloop 3D icon render 3"
+      },
+      {
+        "src": "superloop-3d-04.webp",
+        "alt": "Superloop 3D icon render 4"
+      }
     ]
   },
   {
-    "id": "small-gods-album",
-    "title": "Small Gods Album Art",
-    "category": "3d",
-    "role": "3D Rendering",
-    "thumb": "small-gods-album.jpg",
+    "id": "small-gods-razorgrinder-art",
+    "title": "Small Gods - Razorgrinder",
+    "category": "3d, design",
+    "role": "Album Art, 3D Rendering, Design",
+    "thumb": "small-gods-razorgrinder.jpg",
     "type": "gallery",
     "media": [
-      { "src": "small-gods-album-01.webp", "alt": "Small Gods album art render 1" },
-      { "src": "small-gods-album-02.webp", "alt": "Small Gods album art render 2" }
+      {
+        "type": "image",
+        "src": "small-gods-album-01.webp",
+        "alt": "Small Gods Razorgrinder album art"
+      },
+      {
+        "type": "image",
+        "src": "small-gods-razor-ON-vertical.webp",
+        "alt": "Small Gods Razorgrinder vertical (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "small-gods-razor-ON-coverphoto.webp",
+        "alt": "Small Gods Razorgrinder cover photo (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "small-gods-razor-PS-vertical.webp",
+        "alt": "Small Gods Razorgrinder vertical (Presave)"
+      },
+      {
+        "type": "image",
+        "src": "small-gods-razor-PS-coverphoto.webp",
+        "alt": "Small Gods Razorgrinder cover photo (Presave)"
+      }
     ]
   },
   {
-    "id": "weightless-album",
-    "title": "Weightless Album Art",
-    "category": "3d",
-    "role": "3D Rendering",
-    "thumb": "weightless-album.jpg",
+    "id": "small-gods-nemesis-art",
+    "title": "Small Gods - Nemesis",
+    "category": "3d, design",
+    "role": "Album Art, 3D Rendering, Design",
+    "thumb": "small-gods-nemesis.jpg",
     "type": "gallery",
     "media": [
-      { "src": "weightless-album-01.webp", "alt": "Weightless album art render 1" },
-      { "src": "weightless-album-02.webp", "alt": "Weightless album art render 2" },
-      { "src": "weightless-album-03.webp", "alt": "Weightless album art render 3" },
-      { "src": "weightless-album-04.webp", "alt": "Weightless album art render 4" },
-      { "src": "weightless-album-05.webp", "alt": "Weightless album art render 5" },
-      { "src": "weightless-album-06.webp", "alt": "Weightless album art render 6" }
+      {
+        "type": "image",
+        "src": "small-gods-album-02.webp",
+        "alt": "Small Gods Nemesis album art"
+      },
+      {
+        "type": "image",
+        "src": "small-gods-nemesis-ON-vertical.webp",
+        "alt": "Small Gods Nemesis vertical (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "small-gods-nemesis-PS-vertical.webp",
+        "alt": "Small Gods Nemesis vertical (Presave)"
+      }
+    ]
+  },
+  {
+    "id": "weightless-state-of-mind",
+    "title": "Weightless - A State of Mind",
+    "category": "3d",
+    "role": "Album Art, 3D Rendering",
+    "thumb": "weightless-state-of-mind.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "weightless-album-02.webp",
+        "alt": "Weightless A State of Mind album art"
+      }
+    ]
+  },
+  {
+    "id": "weightless-bloodsucker",
+    "title": "Weightless - Bloodsucker",
+    "category": "3d, design",
+    "role": "Album Art, 3D Rendering, Design",
+    "thumb": "weightless-bloodsucker.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "weightless-album-03.webp",
+        "alt": "Weightless Bloodsucker album art"
+      },
+      {
+        "type": "image",
+        "src": "weightless_bloodsucker_ON_fbcover.webp",
+        "alt": "Weightless Bloodsucker FB cover (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_bloodsucker_PS_Fbcover.webp",
+        "alt": "Weightless Bloodsucker FB cover (Presave)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_bloodsucker_post.webp",
+        "alt": "Weightless Bloodsucker post"
+      },
+      {
+        "type": "image",
+        "src": "weightless_bloodsucker_story.webp",
+        "alt": "Weightless Bloodsucker story"
+      }
+    ]
+  },
+  {
+    "id": "weightless-counterfeit",
+    "title": "Weightless - Counterfeit",
+    "category": "3d, design",
+    "role": "Album Art, 3D Rendering, Design",
+    "thumb": "weightless-counterfeit.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "weightless-album-04.webp",
+        "alt": "Weightless Counterfeit album art"
+      },
+      {
+        "type": "image",
+        "src": "weightless_counter_ON_fbcover.webp",
+        "alt": "Weightless Counterfeit FB cover (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_counter_ON_post.webp",
+        "alt": "Weightless Counterfeit post (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_counter_ON_story.webp",
+        "alt": "Weightless Counterfeit story (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_counter_PS_fbcover.webp",
+        "alt": "Weightless Counterfeit FB cover (Presave)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_counter_PS_post.webp",
+        "alt": "Weightless Counterfeit post (Presave)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_counter_PS_story.webp",
+        "alt": "Weightless Counterfeit story (Presave)"
+      }
+    ]
+  },
+  {
+    "id": "weightless-perspectives",
+    "title": "Weightless - Perspectives",
+    "category": "3d, design",
+    "role": "Album Art, 3D Rendering, Design",
+    "thumb": "weightless-perspectives.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "weightless-album-05.webp",
+        "alt": "Weightless Perspectives album art"
+      },
+      {
+        "type": "image",
+        "src": "weightless_perspectives_ON_fbcover.webp",
+        "alt": "Weightless Perspectives FB cover (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_perspectives_ON_post.webp",
+        "alt": "Weightless Perspectives post (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_perspectives_ON_story.webp",
+        "alt": "Weightless Perspectives story (Orbit Nights)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_perspectives_PS_fbcover.webp",
+        "alt": "Weightless Perspectives FB cover (Presave)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_perspectives_PS_post.webp",
+        "alt": "Weightless Perspectives post (Presave)"
+      },
+      {
+        "type": "image",
+        "src": "weightless_perspectives_PS_story.webp",
+        "alt": "Weightless Perspectives story (Presave)"
+      }
+    ]
+  },
+  {
+    "id": "weightless-sabotage",
+    "title": "Weightless - Sabotage",
+    "category": "3d",
+    "role": "Album Art, 3D Rendering",
+    "thumb": "weightless-sabotage.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "weightless-album-06.webp",
+        "alt": "Weightless Sabotage album art"
+      }
     ]
   },
   {
@@ -181,9 +389,37 @@
     "thumb": "bombay-play.jpg",
     "type": "gallery",
     "media": [
-      { "src": "bombay-play-01.webp", "alt": "Bombay Play app icon animation 1" },
-      { "src": "bombay-play-02.webp", "alt": "Bombay Play app icon animation 2" },
-      { "src": "bombay-play-03.webp", "alt": "Bombay Play app icon animation 3" }
+      {
+        "type": "video",
+        "url": "https://youtube.com/shorts/28_KkOeegaQ"
+      },
+      {
+        "type": "video",
+        "url": "https://youtube.com/shorts/udL2Bv9cLjI"
+      },
+      {
+        "type": "video",
+        "url": "https://youtube.com/shorts/Mg54XaTYXjc"
+      },
+      {
+        "type": "video",
+        "url": "https://youtube.com/shorts/mipt7ByRf5s"
+      },
+      {
+        "type": "image",
+        "src": "bombay-play-01.webp",
+        "alt": "Bombay Play app icon animation 1"
+      },
+      {
+        "type": "image",
+        "src": "bombay-play-02.webp",
+        "alt": "Bombay Play app icon animation 2"
+      },
+      {
+        "type": "image",
+        "src": "bombay-play-03.webp",
+        "alt": "Bombay Play app icon animation 3"
+      }
     ]
   },
   {
@@ -278,8 +514,8 @@
   {
     "id": "estee-lauder-dw",
     "title": "Estee Lauder - Double Wear Facebook Canvas",
-    "category": "brand, web",
-    "role": "Brand Content, Web Design",
+    "category": "brand",
+    "role": "Brand Content",
     "thumb": "estee-lauder-dw.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/cTpZ8C-MSDQ"
@@ -298,7 +534,7 @@
     "title": "Small Gods - Razorgrinder",
     "category": "video",
     "role": "Videography, Direction",
-    "thumb": "small-gods-razorgrinder.jpg",
+    "thumb": "small-gods-razorgrinder-vid.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/9knnrJuZu8M"
   },
@@ -307,7 +543,7 @@
     "title": "Small Gods - Nemesis",
     "category": "video",
     "role": "Videography, Direction",
-    "thumb": "small-gods-nemesis.jpg",
+    "thumb": "small-gods-nemesis-vid.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/jnzdubQ6rsY"
   },
@@ -368,11 +604,36 @@
   {
     "id": "la-crema-lounge",
     "title": "La Crema Lounge",
-    "category": "video",
+    "category": "video, photo",
     "role": "Videography",
     "thumb": "la-crema-lounge.jpg",
-    "type": "video",
-    "videoUrl": "https://youtu.be/ZcibKAg_16U"
+    "type": "gallery",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://youtu.be/ZcibKAg_16U"
+      },
+      {
+        "type": "image",
+        "src": "lacrema-01.webp",
+        "alt": "La Crema Lounge 1"
+      },
+      {
+        "type": "image",
+        "src": "lacrema-02.webp",
+        "alt": "La Crema Lounge 2"
+      },
+      {
+        "type": "image",
+        "src": "lacrema-03.webp",
+        "alt": "La Crema Lounge 3"
+      },
+      {
+        "type": "image",
+        "src": "lacrema-04.webp",
+        "alt": "La Crema Lounge 4"
+      }
+    ]
   },
   {
     "id": "simpson-cottage-promo",
@@ -386,20 +647,90 @@
   {
     "id": "manifest-launch",
     "title": "Manifest the Label - Launch Promo",
-    "category": "video",
-    "role": "Videography",
+    "category": "video, photo",
+    "role": "Videography, Edit, Photography",
     "thumb": "manifest-launch.jpg",
-    "type": "video",
-    "videoUrl": "https://youtu.be/d5WqGxi4DgA"
+    "type": "gallery",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://youtu.be/d5WqGxi4DgA"
+      },
+      {
+        "type": "image",
+        "src": "manifest-product-01.webp",
+        "alt": "Manifest product shot 1"
+      },
+      {
+        "type": "image",
+        "src": "manifest-product-02.webp",
+        "alt": "Manifest product shot 2"
+      },
+      {
+        "type": "image",
+        "src": "manifest-product-03.webp",
+        "alt": "Manifest product shot 3"
+      },
+      {
+        "type": "image",
+        "src": "manifest-product-04.webp",
+        "alt": "Manifest product shot 4"
+      },
+      {
+        "type": "image",
+        "src": "manifest-product-05.webp",
+        "alt": "Manifest product shot 5"
+      }
+    ]
   },
   {
     "id": "blc-cosmetics",
     "title": "BLC Cosmetics Event",
-    "category": "video",
-    "role": "Videography",
+    "category": "video, photo",
+    "role": "Videography, Photography",
     "thumb": "blc-cosmetics.jpg",
-    "type": "video",
-    "videoUrl": "https://youtu.be/A1aRt4iy1js"
+    "type": "gallery",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://youtu.be/A1aRt4iy1js"
+      },
+      {
+        "type": "image",
+        "src": "blc-01.webp",
+        "alt": "BLC Cosmetics event 1"
+      },
+      {
+        "type": "image",
+        "src": "blc-02.webp",
+        "alt": "BLC Cosmetics event 2"
+      },
+      {
+        "type": "image",
+        "src": "blc-03.webp",
+        "alt": "BLC Cosmetics event 3"
+      },
+      {
+        "type": "image",
+        "src": "blc-04.webp",
+        "alt": "BLC Cosmetics event 4"
+      },
+      {
+        "type": "image",
+        "src": "blc-05.webp",
+        "alt": "BLC Cosmetics event 5"
+      },
+      {
+        "type": "image",
+        "src": "blc-06.webp",
+        "alt": "BLC Cosmetics event 6"
+      },
+      {
+        "type": "image",
+        "src": "blc-07.webp",
+        "alt": "BLC Cosmetics event 7"
+      }
+    ]
   },
   {
     "id": "stand-atlantic",
@@ -413,11 +744,41 @@
   {
     "id": "bloom",
     "title": "Bloom - In Passing (Live)",
-    "category": "video",
-    "role": "Second Camera",
+    "category": "video, photo",
+    "role": "Second Camera, Photography",
     "thumb": "bloom.jpg",
-    "type": "video",
-    "videoUrl": "https://youtu.be/5V07h6KS508"
+    "type": "gallery",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://youtu.be/5V07h6KS508"
+      },
+      {
+        "type": "image",
+        "src": "bloom-bts-01.webp",
+        "alt": "Bloom live session BTS 1"
+      },
+      {
+        "type": "image",
+        "src": "bloom-bts-02.webp",
+        "alt": "Bloom live session BTS 2"
+      },
+      {
+        "type": "image",
+        "src": "bloom-bts-03.webp",
+        "alt": "Bloom live session BTS 3"
+      },
+      {
+        "type": "image",
+        "src": "bloom-bts-04.webp",
+        "alt": "Bloom live session BTS 4"
+      },
+      {
+        "type": "image",
+        "src": "bloom-bts-05.webp",
+        "alt": "Bloom live session BTS 5"
+      }
+    ]
   },
   {
     "id": "bundaberg-cerumony",
@@ -448,12 +809,30 @@
     "thumb": "nivea-burgess.jpg",
     "type": "gallery",
     "media": [
-      { "src": "nivea-burgess-01.webp", "alt": "Nivea Tom Burgess shoot 1" },
-      { "src": "nivea-burgess-02.webp", "alt": "Nivea Tom Burgess shoot 2" },
-      { "src": "nivea-burgess-03.webp", "alt": "Nivea Tom Burgess shoot 3" },
-      { "src": "nivea-burgess-04.webp", "alt": "Nivea Tom Burgess shoot 4" },
-      { "src": "nivea-burgess-05.webp", "alt": "Nivea Tom Burgess shoot 5" },
-      { "src": "nivea-burgess-06.webp", "alt": "Nivea Tom Burgess shoot 6" }
+      {
+        "src": "nivea-burgess-01.webp",
+        "alt": "Nivea Tom Burgess shoot 1"
+      },
+      {
+        "src": "nivea-burgess-02.webp",
+        "alt": "Nivea Tom Burgess shoot 2"
+      },
+      {
+        "src": "nivea-burgess-03.webp",
+        "alt": "Nivea Tom Burgess shoot 3"
+      },
+      {
+        "src": "nivea-burgess-04.webp",
+        "alt": "Nivea Tom Burgess shoot 4"
+      },
+      {
+        "src": "nivea-burgess-05.webp",
+        "alt": "Nivea Tom Burgess shoot 5"
+      },
+      {
+        "src": "nivea-burgess-06.webp",
+        "alt": "Nivea Tom Burgess shoot 6"
+      }
     ]
   },
   {
@@ -464,58 +843,129 @@
     "thumb": "egalite.jpg",
     "type": "gallery",
     "media": [
-      { "src": "egalite-01.webp", "alt": "Egalite campaign 1" },
-      { "src": "egalite-02.webp", "alt": "Egalite campaign 2" },
-      { "src": "egalite-03.webp", "alt": "Egalite campaign 3" },
-      { "src": "egalite-04.webp", "alt": "Egalite campaign 4" },
-      { "src": "egalite-05.webp", "alt": "Egalite campaign 5" },
-      { "src": "egalite-06.webp", "alt": "Egalite campaign 6" },
-      { "src": "egalite-07.webp", "alt": "Egalite campaign 7" }
-    ]
-  },
-  {
-    "id": "manifest-product",
-    "title": "Manifest the Label - Product Shoot",
-    "category": "photo",
-    "role": "Product Photography",
-    "thumb": "manifest-product.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "manifest-product-01.jpg", "alt": "Manifest product shot 1" },
-      { "src": "manifest-product-02.jpg", "alt": "Manifest product shot 2" }
+      {
+        "src": "egalite-01.webp",
+        "alt": "Egalite campaign 1"
+      },
+      {
+        "src": "egalite-02.webp",
+        "alt": "Egalite campaign 2"
+      },
+      {
+        "src": "egalite-03.webp",
+        "alt": "Egalite campaign 3"
+      },
+      {
+        "src": "egalite-04.webp",
+        "alt": "Egalite campaign 4"
+      },
+      {
+        "src": "egalite-05.webp",
+        "alt": "Egalite campaign 5"
+      },
+      {
+        "src": "egalite-06.webp",
+        "alt": "Egalite campaign 6"
+      },
+      {
+        "src": "egalite-07.webp",
+        "alt": "Egalite campaign 7"
+      }
     ]
   },
   {
     "id": "le-vide",
-    "title": "Le Vide Band Shoot",
+    "title": "Le Vide Promos",
     "category": "photo",
-    "role": "Band Photography",
+    "role": "Photography",
     "thumb": "le-vide.jpg",
     "type": "gallery",
     "media": [
-      { "src": "le-vide-01.jpg", "alt": "Le Vide band shoot 1" }
+      {
+        "type": "image",
+        "src": "le-vide-01.webp",
+        "alt": "Le Vide Promos 1"
+      },
+      {
+        "type": "image",
+        "src": "le-vide-02.webp",
+        "alt": "Le Vide Promos 2"
+      },
+      {
+        "type": "image",
+        "src": "le-vide-03.webp",
+        "alt": "Le Vide Promos 3"
+      },
+      {
+        "type": "image",
+        "src": "le-vide-04.webp",
+        "alt": "Le Vide Promos 4"
+      }
     ]
   },
   {
     "id": "petiguana",
-    "title": "Petiguana Band Shoot",
+    "title": "Petiguana Promos",
     "category": "photo",
-    "role": "Band Photography",
+    "role": "Photography",
     "thumb": "petiguana.jpg",
     "type": "gallery",
     "media": [
-      { "src": "petiguana-01.jpg", "alt": "Petiguana band shoot 1" }
+      {
+        "type": "image",
+        "src": "petiguana-01.webp",
+        "alt": "Petiguana Promos 1"
+      },
+      {
+        "type": "image",
+        "src": "petiguana-02.webp",
+        "alt": "Petiguana Promos 2"
+      },
+      {
+        "type": "image",
+        "src": "petiguana-03.webp",
+        "alt": "Petiguana Promos 3"
+      },
+      {
+        "type": "image",
+        "src": "petiguana-04.webp",
+        "alt": "Petiguana Promos 4"
+      },
+      {
+        "type": "image",
+        "src": "petiguana-05.webp",
+        "alt": "Petiguana Promos 5"
+      }
     ]
   },
   {
     "id": "murkwood-shoot",
-    "title": "Murkwood Band Shoot",
+    "title": "Murkwood Promos",
     "category": "photo",
-    "role": "Band Photography",
+    "role": "Photography",
     "thumb": "murkwood-shoot.jpg",
     "type": "gallery",
     "media": [
-      { "src": "murkwood-shoot-01.jpg", "alt": "Murkwood band shoot 1" }
+      {
+        "type": "image",
+        "src": "murkwood-shoot-01.webp",
+        "alt": "Murkwood Promos 1"
+      },
+      {
+        "type": "image",
+        "src": "murkwood-shoot-02.webp",
+        "alt": "Murkwood Promos 2"
+      },
+      {
+        "type": "image",
+        "src": "murkwood-shoot-03.webp",
+        "alt": "Murkwood Promos 3"
+      },
+      {
+        "type": "image",
+        "src": "murkwood-shoot-04.webp",
+        "alt": "Murkwood Promos 4"
+      }
     ]
   },
   {
@@ -526,7 +976,26 @@
     "thumb": "bullet-finance.jpg",
     "type": "gallery",
     "media": [
-      { "src": "bullet-finance-01.jpg", "alt": "Bullet Finance headshot 1" }
+      {
+        "type": "image",
+        "src": "bullet-finance-01.webp",
+        "alt": "Bullet Finance headshot 1"
+      },
+      {
+        "type": "image",
+        "src": "bullet-finance-02.webp",
+        "alt": "Bullet Finance headshot 2"
+      },
+      {
+        "type": "image",
+        "src": "bullet-finance-03.webp",
+        "alt": "Bullet Finance headshot 3"
+      },
+      {
+        "type": "image",
+        "src": "bullet-finance-04.webp",
+        "alt": "Bullet Finance headshot 4"
+      }
     ]
   },
   {
@@ -537,7 +1006,26 @@
     "thumb": "palmers.jpg",
     "type": "gallery",
     "media": [
-      { "src": "palmers-01.jpg", "alt": "Palmers before after 1" }
+      {
+        "type": "image",
+        "src": "palmers-01.webp",
+        "alt": "Palmers before after 1"
+      },
+      {
+        "type": "image",
+        "src": "palmers-02.webp",
+        "alt": "Palmers before after 2"
+      },
+      {
+        "type": "image",
+        "src": "palmers-03.webp",
+        "alt": "Palmers before after 3"
+      },
+      {
+        "type": "image",
+        "src": "palmers-04.webp",
+        "alt": "Palmers before after 4"
+      }
     ]
   },
   {
@@ -548,18 +1036,41 @@
     "thumb": "somber-hills.jpg",
     "type": "gallery",
     "media": [
-      { "src": "somber-hills-01.jpg", "alt": "Somber Hills retouching" }
+      {
+        "type": "image",
+        "src": "somber-hills-rt.webp",
+        "alt": "Somber Hills retouching"
+      }
     ]
   },
   {
     "id": "neotek",
-    "title": "Neotek Band Shoot",
+    "title": "Neotek Promos",
     "category": "photo",
-    "role": "Band Photography",
+    "role": "Photography",
     "thumb": "neotek.jpg",
     "type": "gallery",
     "media": [
-      { "src": "neotek-01.jpg", "alt": "Neotek band shoot 1" }
+      {
+        "type": "image",
+        "src": "neotek-01.webp",
+        "alt": "Neotek Promos 1"
+      },
+      {
+        "type": "image",
+        "src": "neotek-02.webp",
+        "alt": "Neotek Promos 2"
+      },
+      {
+        "type": "image",
+        "src": "neotek-03.webp",
+        "alt": "Neotek Promos 3"
+      },
+      {
+        "type": "image",
+        "src": "neotek-04.webp",
+        "alt": "Neotek Promos 4"
+      }
     ]
   },
   {
@@ -570,18 +1081,46 @@
     "thumb": "synge.jpg",
     "type": "gallery",
     "media": [
-      { "src": "synge-01.jpg", "alt": "Synge promo shoot" }
+      {
+        "type": "image",
+        "src": "synge-01.webp",
+        "alt": "Synge promo shoot 1"
+      },
+      {
+        "type": "image",
+        "src": "synge-02.webp",
+        "alt": "Synge promo shoot 2"
+      }
     ]
   },
   {
-    "id": "synge-rt",
-    "title": "Synge - Album Promo",
+    "id": "synge-rt-cyberpunk",
+    "title": "Synge - Cyberpunk Retouching",
     "category": "3d, design, photo",
     "role": "3D, Retouching, Photography",
-    "thumb": "synge-rt.jpg",
+    "thumb": "synge-cyberpunk-rt.jpg",
     "type": "gallery",
     "media": [
-      { "src": "synge-rt-01.jpg", "alt": "Synge album promo" }
+      {
+        "type": "image",
+        "src": "synge-cyberpunk-rt.webp",
+        "alt": "Synge cyberpunk retouching"
+      }
+    ]
+  },
+  {
+    "id": "synge-rt-space",
+    "title": "Synge - Space Retouching",
+    "category": "3d, design, photo",
+    "role": "3D, Retouching, Photography",
+    "thumb": "synge-space-rt.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "synge-space-rt.webp",
+        "alt": "Synge space retouching"
+      }
     ]
   },
   {
@@ -592,9 +1131,51 @@
     "thumb": "baby-photos.jpg",
     "type": "gallery",
     "media": [
-      { "src": "baby-photos-01.jpg", "alt": "Baby photoshoot - Arlo" },
-      { "src": "baby-photos-02.jpg", "alt": "Baby photoshoot - Dino" },
-      { "src": "baby-photos-03.jpg", "alt": "Baby photoshoot - Theo" }
+      {
+        "type": "image",
+        "src": "baby-photos-01.webp",
+        "alt": "Baby photoshoot 1"
+      },
+      {
+        "type": "image",
+        "src": "baby-photos-02.webp",
+        "alt": "Baby photoshoot 2"
+      },
+      {
+        "type": "image",
+        "src": "baby-photos-03.webp",
+        "alt": "Baby photoshoot 3"
+      },
+      {
+        "type": "image",
+        "src": "baby-photos-04.webp",
+        "alt": "Baby photoshoot 4"
+      },
+      {
+        "type": "image",
+        "src": "baby-photos-05.webp",
+        "alt": "Baby photoshoot 5"
+      },
+      {
+        "type": "image",
+        "src": "baby-photos-06.webp",
+        "alt": "Baby photoshoot 6"
+      },
+      {
+        "type": "image",
+        "src": "baby-photos-07.webp",
+        "alt": "Baby photoshoot 7"
+      },
+      {
+        "type": "image",
+        "src": "baby-photos-08.webp",
+        "alt": "Baby photoshoot 8"
+      },
+      {
+        "type": "image",
+        "src": "baby-photos-09.webp",
+        "alt": "Baby photoshoot 9"
+      }
     ]
   },
   {
@@ -605,7 +1186,26 @@
     "thumb": "karli-josh.jpg",
     "type": "gallery",
     "media": [
-      { "src": "karli-josh-01.jpg", "alt": "Karli and Josh engagement 1" }
+      {
+        "type": "image",
+        "src": "karli-josh-01.webp",
+        "alt": "Karli and Josh engagement 1"
+      },
+      {
+        "type": "image",
+        "src": "karli-josh-02.webp",
+        "alt": "Karli and Josh engagement 2"
+      },
+      {
+        "type": "image",
+        "src": "karli-josh-03.webp",
+        "alt": "Karli and Josh engagement 3"
+      },
+      {
+        "type": "image",
+        "src": "karli-josh-04.webp",
+        "alt": "Karli and Josh engagement 4"
+      }
     ]
   },
   {
@@ -616,29 +1216,126 @@
     "thumb": "simpson-cottage-accom.jpg",
     "type": "gallery",
     "media": [
-      { "src": "simpson-cottage-accom-01.jpg", "alt": "Simpson Cottage accommodation 1" }
+      {
+        "type": "image",
+        "src": "simpson-cottage-accom-01.webp",
+        "alt": "Simpson Cottage accommodation 1"
+      },
+      {
+        "type": "image",
+        "src": "simpson-cottage-accom-02.webp",
+        "alt": "Simpson Cottage accommodation 2"
+      },
+      {
+        "type": "image",
+        "src": "simpson-cottage-accom-03.webp",
+        "alt": "Simpson Cottage accommodation 3"
+      },
+      {
+        "type": "image",
+        "src": "simpson-cottage-accom-04.webp",
+        "alt": "Simpson Cottage accommodation 4"
+      },
+      {
+        "type": "image",
+        "src": "simpson-cottage-accom-05.webp",
+        "alt": "Simpson Cottage accommodation 5"
+      },
+      {
+        "type": "image",
+        "src": "simpson-cottage-accom-06.webp",
+        "alt": "Simpson Cottage accommodation 6"
+      },
+      {
+        "type": "image",
+        "src": "simpson-cottage-accom-07.webp",
+        "alt": "Simpson Cottage accommodation 7"
+      },
+      {
+        "type": "image",
+        "src": "simpson-cottage-accom-08.webp",
+        "alt": "Simpson Cottage accommodation 8"
+      },
+      {
+        "type": "image",
+        "src": "simpson-cottage-accom-09.webp",
+        "alt": "Simpson Cottage accommodation 9"
+      }
     ]
   },
   {
     "id": "humpty-dumpty",
-    "title": "Humpty Dumpty Christmas Print",
+    "title": "Humpty Dumpty Christmas Appeal",
     "category": "design",
-    "role": "Illustration, Print Design",
+    "role": "Design",
     "thumb": "humpty-dumpty.jpg",
     "type": "gallery",
     "media": [
-      { "src": "humpty-dumpty-01.jpg", "alt": "Humpty Dumpty Christmas print" }
+      {
+        "type": "image",
+        "src": "humpty-dumpty-01.webp",
+        "alt": "Humpty Dumpty Christmas print 1"
+      },
+      {
+        "type": "image",
+        "src": "humpty-dumpty-02.webp",
+        "alt": "Humpty Dumpty Christmas print 2"
+      },
+      {
+        "type": "image",
+        "src": "humpty-dumpty-03.webp",
+        "alt": "Humpty Dumpty Christmas print 3"
+      },
+      {
+        "type": "image",
+        "src": "humpty-dumpty-04.webp",
+        "alt": "Humpty Dumpty Christmas print 4"
+      },
+      {
+        "type": "image",
+        "src": "humpty-dumpty-05.webp",
+        "alt": "Humpty Dumpty Christmas print 5"
+      }
     ]
   },
   {
     "id": "pyjama-foundation",
     "title": "Pyjama Foundation Pyjama Day",
-    "category": "design, web",
-    "role": "Graphic Design, Web Design",
+    "category": "design",
+    "role": "Graphic Design",
     "thumb": "pyjama-foundation.jpg",
     "type": "gallery",
     "media": [
-      { "src": "pyjama-foundation-01.jpg", "alt": "Pyjama Foundation design" }
+      {
+        "type": "image",
+        "src": "pyjama-foundation-01.webp",
+        "alt": "Pyjama Foundation design 1"
+      },
+      {
+        "type": "image",
+        "src": "pyjama-foundation-02.webp",
+        "alt": "Pyjama Foundation design 2"
+      },
+      {
+        "type": "image",
+        "src": "pyjama-foundation-03.webp",
+        "alt": "Pyjama Foundation design 3"
+      },
+      {
+        "type": "image",
+        "src": "pyjama-foundation-04.webp",
+        "alt": "Pyjama Foundation design 4"
+      },
+      {
+        "type": "image",
+        "src": "pyjama-foundation-05.webp",
+        "alt": "Pyjama Foundation design 5"
+      },
+      {
+        "type": "image",
+        "src": "pyjama-foundation-06.webp",
+        "alt": "Pyjama Foundation design 6"
+      }
     ]
   },
   {
@@ -649,29 +1346,51 @@
     "thumb": "qantas.jpg",
     "type": "gallery",
     "media": [
-      { "src": "qantas-100-01.jpg", "alt": "Qantas 100th birthday ad" }
+      {
+        "type": "image",
+        "src": "qantas-100-01.webp",
+        "alt": "Qantas 100th birthday ad 1"
+      },
+      {
+        "type": "image",
+        "src": "qantas-100-02.webp",
+        "alt": "Qantas 100th birthday ad 2"
+      }
     ]
   },
   {
     "id": "dani-fiori",
     "title": "Dani and Fiori's Pizzeria Merch",
-    "category": "design",
+    "category": "design, merch",
     "role": "Merch Design",
     "thumb": "dani-fiori.jpg",
     "type": "gallery",
     "media": [
-      { "src": "dani-fiori-01.jpg", "alt": "Dani and Fiori merch design" }
+      {
+        "type": "image",
+        "src": "dani-fiori-01.webp",
+        "alt": "Dani and Fiori merch design 1"
+      },
+      {
+        "type": "image",
+        "src": "dani-fiori-02.webp",
+        "alt": "Dani and Fiori merch design 2"
+      }
     ]
   },
   {
     "id": "small-gods-tshirt",
     "title": "Small Gods Nemesis T-Shirt",
-    "category": "design",
+    "category": "design, merch",
     "role": "Merch Design, Illustration",
     "thumb": "small-gods-tshirt.jpg",
     "type": "gallery",
     "media": [
-      { "src": "small-gods-tshirt-01.jpg", "alt": "Small Gods Nemesis t-shirt" }
+      {
+        "type": "image",
+        "src": "small-gods-tshirt-01.webp",
+        "alt": "Small Gods Nemesis t-shirt"
+      }
     ]
   },
   {
@@ -682,7 +1401,31 @@
     "thumb": "down-for-tomorrow.jpg",
     "type": "gallery",
     "media": [
-      { "src": "down-for-tomorrow-01.jpg", "alt": "Down for Tomorrow album art" }
+      {
+        "type": "image",
+        "src": "down-for-tomorrow-05.webp",
+        "alt": "Down for Tomorrow Dark Comedy Artwork"
+      },
+      {
+        "type": "image",
+        "src": "down-for-tomorrow-02.webp",
+        "alt": "Down for Tomorrow Dark Comedy Teaser"
+      },
+      {
+        "type": "image",
+        "src": "down-for-tomorrow-03.webp",
+        "alt": "Down for Tomorrow Triple J First Play"
+      },
+      {
+        "type": "image",
+        "src": "down-for-tomorrow-04.webp",
+        "alt": "Down for Tomorrow Tour Flyer"
+      },
+      {
+        "type": "image",
+        "src": "down-for-tomorrow-01.webp",
+        "alt": "Down for Tomorrow Out Now Promo"
+      }
     ]
   },
   {
@@ -693,20 +1436,66 @@
     "thumb": "cultists.jpg",
     "type": "gallery",
     "media": [
-      { "src": "cultists-01.jpg", "alt": "Cultists album art" }
+      {
+        "type": "image",
+        "src": "cultists-01.webp",
+        "alt": "Cultists Killing Spree Artwork"
+      },
+      {
+        "type": "image",
+        "src": "cultists-02.webp",
+        "alt": "Cultists Killing Spree Out Now"
+      },
+      {
+        "type": "image",
+        "src": "cultists-03.webp",
+        "alt": "Cultists Killing Spree Pre Save"
+      },
+      {
+        "type": "image",
+        "src": "cultists-04.webp",
+        "alt": "Cultists Klling Spree Pre Save Facebook"
+      }
     ]
   },
   {
-    "id": "ghost-complex",
-    "title": "Ghost Complex Album Art",
+    "id": "ghost-complex-voice",
+    "title": "Ghost Complex - Voice of the Void",
     "category": "design",
     "role": "Album Art",
-    "thumb": "ghost-complex.jpg",
+    "thumb": "ghost-complex-void.jpg",
     "type": "gallery",
     "media": [
-      { "src": "ghost-complex-01.jpg", "alt": "Ghost Complex album art 1" },
-      { "src": "ghost-complex-02.jpg", "alt": "Ghost Complex album art 2" },
-      { "src": "ghost-complex-03.jpg", "alt": "Ghost Complex album art 3" }
+      {
+        "type": "image",
+        "src": "ghost-complex-01.webp",
+        "alt": "Ghost Complex Voice of the Void 1"
+      },
+      {
+        "type": "image",
+        "src": "ghost-complex-02.webp",
+        "alt": "Ghost Complex Voice of the Void 2"
+      },
+      {
+        "type": "image",
+        "src": "ghost-complex-03.webp",
+        "alt": "Ghost Complex Voice of the Void 3"
+      }
+    ]
+  },
+  {
+    "id": "ghost-complex-mania",
+    "title": "Ghost Complex - Mania",
+    "category": "design",
+    "role": "Album Art",
+    "thumb": "ghost-complex-mania.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "ghost-complex-04.webp",
+        "alt": "Ghost Complex Mania album art"
+      }
     ]
   },
   {
@@ -717,8 +1506,56 @@
     "thumb": "junkhead.jpg",
     "type": "gallery",
     "media": [
-      { "src": "junkhead-01.jpg", "alt": "Junkhead album art 1" },
-      { "src": "junkhead-02.jpg", "alt": "Junkhead album art 2" }
+      {
+        "type": "image",
+        "src": "junkhead-01.webp",
+        "alt": "Junkhead album art 1"
+      },
+      {
+        "type": "image",
+        "src": "junkhead-02.webp",
+        "alt": "Junkhead album art 2"
+      },
+      {
+        "type": "image",
+        "src": "junkhead-03.webp",
+        "alt": "Junkhead album art 3"
+      },
+      {
+        "type": "image",
+        "src": "junkhead-04.webp",
+        "alt": "Junkhead album art 4"
+      }
+    ]
+  },
+  {
+    "id": "junkhead-merch-longsleeve",
+    "title": "Junkhead Long Sleeve",
+    "category": "design, merch",
+    "role": "Merch Design",
+    "thumb": "junkhead-merch-01.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "junkhead-merch-01.webp",
+        "alt": "Junkhead long sleeve merch design"
+      }
+    ]
+  },
+  {
+    "id": "junkhead-merch-shortsleeve",
+    "title": "Junkhead Short Sleeve",
+    "category": "design, merch",
+    "role": "Merch Design",
+    "thumb": "junkhead-merch-02.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "junkhead-merch-02.webp",
+        "alt": "Junkhead short sleeve merch design"
+      }
     ]
   },
   {
@@ -729,20 +1566,10 @@
     "thumb": "sunless.jpg",
     "type": "gallery",
     "media": [
-      { "src": "sunless-01.jpg", "alt": "Sunless album art" }
-    ]
-  },
-  {
-    "id": "moonboy",
-    "title": "Moonboy Posters",
-    "category": "design",
-    "role": "Poster Design",
-    "thumb": "moonboy.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "moonboy-01.jpg", "alt": "Moonboy poster 1" },
-      { "src": "moonboy-02.jpg", "alt": "Moonboy poster 2" },
-      { "src": "moonboy-03.jpg", "alt": "Moonboy poster 3" }
+      {
+        "src": "sunless-01.webp",
+        "alt": "Sunless album art"
+      }
     ]
   },
   {
@@ -789,39 +1616,6 @@
     "thumb": "everything-ive-said.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/PgLp3KnqK-4"
-  },
-  {
-    "id": "great-saints",
-    "title": "greatsaintsgallery.com",
-    "category": "web",
-    "role": "Web Design, Development",
-    "thumb": "great-saints.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "great-saints-01.jpg", "alt": "Great Saints Gallery website" }
-    ]
-  },
-  {
-    "id": "integrated-abseiling",
-    "title": "integratedabseiling.com.au",
-    "category": "web",
-    "role": "Web Design, Development",
-    "thumb": "integrated-abseiling.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "integrated-abseiling-01.jpg", "alt": "Integrated Abseiling website" }
-    ]
-  },
-  {
-    "id": "bluebell-bridal",
-    "title": "Bluebell Bridal",
-    "category": "web",
-    "role": "Web Design, Development",
-    "thumb": "bluebell-bridal.jpg",
-    "type": "gallery",
-    "media": [
-      { "src": "bluebell-bridal-01.jpg", "alt": "Bluebell Bridal website" }
-    ]
   },
   {
     "id": "madre-natura",
@@ -876,5 +1670,333 @@
     "thumb": "givewrap.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/VB42hZI-y2k"
+  },
+  {
+    "id": "pokolbin-mountain",
+    "title": "Pokolbin Mountain Estate - Promotional Video",
+    "category": "video, photo",
+    "role": "Videography",
+    "thumb": "pokolbin-mountain.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "video",
+        "url": "https://youtu.be/UaQ0PniEsYI"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-01.webp",
+        "alt": "Pokolbin Mountain Estate 1"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-02.webp",
+        "alt": "Pokolbin Mountain Estate 2"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-03.webp",
+        "alt": "Pokolbin Mountain Estate 3"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-04.webp",
+        "alt": "Pokolbin Mountain Estate 4"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-05.webp",
+        "alt": "Pokolbin Mountain Estate 5"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-06.webp",
+        "alt": "Pokolbin Mountain Estate 6"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-07.webp",
+        "alt": "Pokolbin Mountain Estate 7"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-08.webp",
+        "alt": "Pokolbin Mountain Estate 8"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-09.webp",
+        "alt": "Pokolbin Mountain Estate 9"
+      },
+      {
+        "type": "image",
+        "src": "pokolbin-ME-10.webp",
+        "alt": "Pokolbin Mountain Estate 10"
+      }
+    ]
+  },
+  {
+    "id": "sam-vanguard",
+    "title": "Sam Higginson - Live at the Vanguard",
+    "category": "video",
+    "role": "Videography",
+    "thumb": "sam-vanguard.jpg",
+    "type": "video",
+    "videoUrl": "https://youtu.be/u2rgwGpwDyU"
+  },
+  {
+    "id": "gryff-losing-touch",
+    "title": "Gryff - Losing Touch Promo Shoot",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "gryff-losingtouch.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "gryff-losingtouch-01.webp",
+        "alt": "Gryff Losing Touch promo 1"
+      },
+      {
+        "type": "image",
+        "src": "gryff-losingtouch-02.webp",
+        "alt": "Gryff Losing Touch promo 2"
+      },
+      {
+        "type": "image",
+        "src": "gryff-losingtouch-03.webp",
+        "alt": "Gryff Losing Touch promo 3"
+      },
+      {
+        "type": "image",
+        "src": "gryff-losingtouch-04.webp",
+        "alt": "Gryff Losing Touch promo 4"
+      },
+      {
+        "type": "image",
+        "src": "gryff-losingtouch-05.webp",
+        "alt": "Gryff Losing Touch promo 5"
+      },
+      {
+        "type": "image",
+        "src": "gryff-losingtouch-06.webp",
+        "alt": "Gryff Losing Touch promo 6"
+      }
+    ]
+  },
+  {
+    "id": "gryff-dimensions",
+    "title": "Gryff - Dimensions Promo Shoot",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "gryff-dimensions.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "gyff-dimensions-01.webp",
+        "alt": "Gryff Dimensions promo 1"
+      },
+      {
+        "type": "image",
+        "src": "gyff-dimensions-02.webp",
+        "alt": "Gryff Dimensions promo 2"
+      },
+      {
+        "type": "image",
+        "src": "gyff-dimensions-03.webp",
+        "alt": "Gryff Dimensions promo 3"
+      },
+      {
+        "type": "image",
+        "src": "gyff-dimensions-04.webp",
+        "alt": "Gryff Dimensions promo 4"
+      },
+      {
+        "type": "image",
+        "src": "gyff-dimensions-05.webp",
+        "alt": "Gryff Dimensions promo 5"
+      },
+      {
+        "type": "image",
+        "src": "gyff-dimensions-06.webp",
+        "alt": "Gryff Dimensions promo 6"
+      }
+    ]
+  },
+  {
+    "id": "jordan-f",
+    "title": "Jordan F - Promo Shoot",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "jordanf.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "jordanf-01.webp",
+        "alt": "Jordan F promo shoot 1"
+      },
+      {
+        "type": "image",
+        "src": "jordanf-02.webp",
+        "alt": "Jordan F promo shoot 2"
+      },
+      {
+        "type": "image",
+        "src": "jordanf-03.webp",
+        "alt": "Jordan F promo shoot 3"
+      },
+      {
+        "type": "image",
+        "src": "jordanf-04.webp",
+        "alt": "Jordan F promo shoot 4"
+      },
+      {
+        "type": "image",
+        "src": "jordanf-05.webp",
+        "alt": "Jordan F promo shoot 5"
+      },
+      {
+        "type": "image",
+        "src": "jordanf-06.webp",
+        "alt": "Jordan F promo shoot 6"
+      },
+      {
+        "type": "image",
+        "src": "jordanf-07.webp",
+        "alt": "Jordan F promo shoot 7"
+      }
+    ]
+  },
+  {
+    "id": "maxwell-jxhn",
+    "title": "Maxwell JXHN - Promo Shoot",
+    "category": "photo",
+    "role": "Photography",
+    "thumb": "maxwelljxhn.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "maxwelljxhn-01.webp",
+        "alt": "Maxwell JXHN promo shoot 1"
+      },
+      {
+        "type": "image",
+        "src": "maxwelljxhn-02.webp",
+        "alt": "Maxwell JXHN promo shoot 2"
+      },
+      {
+        "type": "image",
+        "src": "maxwelljxhn-03.webp",
+        "alt": "Maxwell JXHN promo shoot 3"
+      },
+      {
+        "type": "image",
+        "src": "maxwelljxhn-04.webp",
+        "alt": "Maxwell JXHN promo shoot 4"
+      },
+      {
+        "type": "image",
+        "src": "maxwelljxhn-05.webp",
+        "alt": "Maxwell JXHN promo shoot 5"
+      },
+      {
+        "type": "image",
+        "src": "maxwelljxhn-06.webp",
+        "alt": "Maxwell JXHN promo shoot 6"
+      },
+      {
+        "type": "image",
+        "src": "maxwelljxhn-07.webp",
+        "alt": "Maxwell JXHN promo shoot 7"
+      }
+    ]
+  },
+  {
+    "id": "weightless-merch",
+    "title": "Weightless Merch",
+    "category": "design, merch",
+    "role": "Merch Design",
+    "thumb": "weightless-merch.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "image",
+        "src": "weightless-merch.jpg",
+        "alt": "Weightless merch design"
+      }
+    ]
+  },
+  {
+    "id": "waiting-for-tonight",
+    "title": "WAITING FOR TONIGHT X FLOWERS - MNEK (GFRDA REMIX)",
+    "category": "music",
+    "role": "Remix, Music Production",
+    "thumb": "waiting-for-tonight.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "audio",
+        "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2181353835&color=%23a572ba&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      }
+    ]
+  },
+  {
+    "id": "on-a-night",
+    "title": "ON A NIGHT LIKE THIS - KYLIE MINOGUE (GFRDA REMIX)",
+    "category": "music",
+    "role": "Remix, Music Production",
+    "thumb": "on-a-night.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "audio",
+        "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1871982591&color=%23a572ba&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      }
+    ]
+  },
+  {
+    "id": "summer-heat",
+    "title": "SUMMER HEAT - SOLIDISCO (GFRDA REMIX)",
+    "category": "music",
+    "role": "Remix, Music Production",
+    "thumb": "summer-heat.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "audio",
+        "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2009714419&color=%23c49dd5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      }
+    ]
+  },
+  {
+    "id": "sublime",
+    "title": "SUBLIME - GFRDA X ABI FLYNN",
+    "category": "music",
+    "role": "Original Release, Music Production",
+    "thumb": "sublime.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "audio",
+        "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1346094682&color=%2389529d&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      }
+    ]
+  },
+  {
+    "id": "how-deep",
+    "title": "HOW DEEP IS YOUR LOVE - CALVIN HARRIS X DISCIPLES (GFRDA REMIX)",
+    "category": "music",
+    "role": "Remix, Music Production",
+    "thumb": "how-deep.jpg",
+    "type": "gallery",
+    "media": [
+      {
+        "type": "audio",
+        "url": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2081989989&color=%238c4696&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+      }
+    ]
   }
 ]

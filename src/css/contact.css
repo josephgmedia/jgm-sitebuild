@@ -36,3 +36,95 @@
 .contact__link:hover { color: var(--white); }
 .contact__link .arr { color: var(--accent); transition: transform .3s; display: inline-block; }
 .contact__link:hover .arr { transform: translateX(4px); }
+
+/* ── CONTACT FORM ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: var(--space-lg);
+}
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.contact-form__label {
+  font-family: 'Monument', sans-serif;
+  font-size: var(--fs-ui);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(237,234,228,.55);
+}
+.contact-form__input,
+.contact-form__textarea {
+  font-family: 'Barlow', sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 300;
+  color: var(--white);
+  background: var(--dim);
+  border: 1px solid var(--mid);
+  border-radius: 2px;
+  padding: var(--space-sm) var(--space-md);
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(0,0,0,0.3);
+}
+.contact-form__textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+.contact-form__submit {
+  font-family: 'Monument', sans-serif;
+  font-size: var(--fs-ui);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: transparent;
+  border: 2px solid var(--white);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+.contact-form__submit:hover:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(57,49,223,0.4);
+}
+.contact-form__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.contact-form__status {
+  font-family: 'Barlow', sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  margin-top: var(--space-xs);
+  min-height: 24px;
+}
+.contact-form__status--success {
+  color: #4ade80;
+}
+.contact-form__status--error {
+  color: #f87171;
+}
+.contact__socials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--mid);
+}

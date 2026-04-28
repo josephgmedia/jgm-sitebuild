@@ -18,8 +18,6 @@
   <link rel="stylesheet" href="src/css/main.css" />
 </head>
 <body>
-  <a href="#work" class="skip-link">Skip to content</a>
-
   <!-- CURSOR -->
   <div id="cursor-dot" aria-hidden="true"></div>
   <div id="cursor-ring" aria-hidden="true"></div>
@@ -31,14 +29,39 @@
     <img class="hero__layer hero__brick" src="src/assets/images/hero-sign/hero-brick-bg.webp" alt="" />
     <div class="hero__brick-glow"></div>
 
-    <!-- Layer 2: Cable canvas -->
+    <!-- Layer 2: Cable canvas (full layer) -->
     <canvas id="cable-canvas" class="hero__layer" aria-hidden="true"></canvas>
 
-    <!-- Layer 3: Sign foregrounds (tight crop, transparent bg) -->
-    <img class="hero__sign hero__sign--off" src="src/assets/images/hero-sign/hero-sign-fg-off.webp" alt="" />
-    <img class="hero__sign hero__sign--on"  src="src/assets/images/hero-sign/hero-sign-fg-on.webp"  alt="" />
+    <!-- Layer 3: Hero content container -->
+    <div class="hero__container">
+      <!-- Sign wrapper to contain both states -->
+      <div class="hero__sign-wrapper">
+        <img class="hero__sign hero__sign--off" src="src/assets/images/hero-sign/hero-sign-fg-off.webp" alt="" />
+        <img class="hero__sign hero__sign--on"  src="src/assets/images/hero-sign/hero-sign-fg-on.webp"  alt="" />
+      </div>
 
-    <!-- Layer 4: UI -->
+      <div class="hero__ui hero__ui--bottom">
+        <button class="hero__cta" id="hero-view-work">View Work</button>
+        <div class="hero__toggle-wrap">
+          <input type="radio" name="hero-mode" id="hero-off" value="off" checked />
+          <input type="radio" name="hero-mode" id="hero-on" value="on" />
+          <div class="hero__toggle-track" aria-hidden="true">
+            <div class="hero__toggle-thumb"></div>
+          </div>
+          <div class="hero__toggle-labels">
+            <label for="hero-off" class="hero__toggle-label">OFF</label>
+            <label for="hero-on" class="hero__toggle-label">ON</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="hero__scroll-hint" id="hero-scroll-hint">
+      <span class="hero__scroll-hint-text">Scroll to Explore</span>
+    </div>
+
+    <!-- Navigation -->
     <nav id="nav">
       <h1 class="nav__logo-wrap">
         <a href="index.html" class="nav__logo">
@@ -50,37 +73,39 @@
       </button>
       <ul class="nav__links">
         <li><a href="work.html">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <nav class="nav__overlay" id="nav-overlay" role="dialog" aria-label="Navigation menu" aria-hidden="true">
         <button class="nav__close" id="nav-close" aria-label="Close menu">✕</button>
         <a href="work.html" class="nav__overlay-link">Work</a>
       </nav>
     </nav>
-    <div class="hero__ui">
-      <span class="hero__tagline">Inspiration doesn't keep business hours.</span>
-      <div class="hero__toggle-wrap">
-        <input type="radio" name="hero-mode" id="hero-off" value="off" checked />
-        <input type="radio" name="hero-mode" id="hero-on" value="on" />
-        <input type="radio" name="hero-mode" id="hero-reel" value="reel" />
-        <div class="hero__toggle-track" aria-hidden="true">
-          <div class="hero__toggle-thumb"></div>
-        </div>
-        <div class="hero__toggle-labels">
-          <label for="hero-off" class="hero__toggle-label">OFF</label>
-          <label for="hero-on" class="hero__toggle-label">ON</label>
-          <label for="hero-reel" class="hero__toggle-label">REEL</label>
-        </div>
+  </section>
+
+  <!-- Reel Modal -->
+  <div class="reel-modal" id="reel-modal" aria-hidden="true" role="dialog" aria-label="Showreel selection">
+    <div class="reel-modal__overlay" id="reel-modal-overlay"></div>
+    <div class="reel-modal__content">
+      <div class="reel-modal__grid">
+        <button class="reel-card" data-reel="motion">
+          <div class="reel-card__thumb" style="background-image: url('src/assets/images/reel-thumbs/motion-showreel.jpg');"></div>
+          <div class="reel-card__play">▶</div>
+          <div class="reel-card__title">Motion Design</div>
+        </button>
+        <button class="reel-card" data-reel="3d">
+          <div class="reel-card__thumb" style="background-image: url('src/assets/images/reel-thumbs/3d-showreel.jpg');"></div>
+          <div class="reel-card__play">▶</div>
+          <div class="reel-card__title">3D Animation</div>
+        </button>
+        <button class="reel-card" data-reel="video">
+          <div class="reel-card__thumb" style="background-image: url('src/assets/images/reel-thumbs/video-showreel.jpg');"></div>
+          <div class="reel-card__play">▶</div>
+          <div class="reel-card__title">Videographyt</div>
+        </button>
       </div>
+      <a href="work.html" class="reel-modal__back">View Full Portfolio →</a>
     </div>
-    <div class="hero__foot" id="hero-foot">
-      <div class="hero__foot-scroll">
-        <div class="hero__foot-track">
-          <div class="hero__foot-dot"></div>
-        </div>
-        <span class="hero__foot-label">Scroll to<br/>explore</span>
-      </div>
-      <span class="hero__foot-right">Sydney, AU - 2026</span>
-    </div>
+  </div>
   </section>
 
   </header>
@@ -150,7 +175,6 @@
         <div class="timeline__clip" role="tab" tabindex="0" style="--w:200;--bg:#3f50cc"><span class="timeline__clip-name">Video Editing & Colour Grading</span></div>
         <div class="timeline__clip" role="tab" tabindex="0" style="--w:140;--bg:#4a5ef0"><span class="timeline__clip-name">Design & Illustration</span></div>
         <div class="timeline__clip" role="tab" tabindex="0" style="--w:160;--bg:#3340b0"><span class="timeline__clip-name">Music Composition & Sound Design</span></div>
-        <div class="timeline__clip" role="tab" tabindex="0" style="--w:120;--bg:#3c4fd6"><span class="timeline__clip-name">Web Design</span></div>
         <div class="timeline__clip" role="tab" tabindex="0" style="--w:140;--bg:#4558e2"><span class="timeline__clip-name">AI & Generative Design</span></div>
       </div>
       <div class="timeline__playhead" id="tl-playhead" aria-hidden="true"><div class="timeline__playhead-handle"></div></div>
@@ -161,84 +185,10 @@
   </section>
 
   <!-- WORK -->
-  <section class="section work" id="work" aria-label="Featured Work">
-    <div class="section-label">
-      <span class="section-label__num">02</span>
-      <span class="section-label__text">Featured Work</span>
-      <div class="section-label__line"></div>
-      <a href="work.html" class="section-label__cta">View All <span class="arr">→</span></a>
-    </div>
-    <div class="work__grid" role="list">
-      <a href="work/nla-enlighten.html" class="work__card-link">
-        <article class="work__card" role="listitem" aria-label="NLA Enlighten - Projection">
-          <div class="work__card-img" role="img" aria-label="NLA Enlighten project thumbnail" style="background-image: url('src/assets/images/featured-work/nla-enlighten.jpg')"></div>
-          <div class="work__card-info">
-            <p class="work__card-tag">Projection</p>
-            <h3 class="work__card-title">NLA Enlighten</h3>
-            <p class="work__card-role">Design Lead</p>
-            <p class="work__card-agency">The Electric Canvas</p>
-          </div>
-        </article>
-      </a>
-      <a href="work/rams-construction.html" class="work__card-link">
-        <article class="work__card" role="listitem" aria-label="RAMS Construction - Campaign">
-          <div class="work__card-img" role="img" aria-label="RAMS Construction project thumbnail" style="background-image: url('src/assets/images/featured-work/rams-construction.jpg')"></div>
-          <div class="work__card-info">
-            <p class="work__card-tag">Campaign</p>
-            <h3 class="work__card-title">RAMS Construction</h3>
-            <p class="work__card-role">Art Direction, 3D Animation, VFX Supervisor</p>
-            <p class="work__card-agency">Saatchi &amp; Saatchi</p>
-          </div>
-        </article>
-      </a>
-      <a href="work/porsche-drjack.html" class="work__card-link">
-        <article class="work__card" role="listitem" aria-label="Porsche x Dr Jack - VFX">
-          <div class="work__card-img" role="img" aria-label="Porsche x Dr Jack project thumbnail" style="background-image: url('src/assets/images/featured-work/porsche-drjack.jpg')"></div>
-          <div class="work__card-info">
-            <p class="work__card-tag">VFX</p>
-            <h3 class="work__card-title">Porsche x Dr Jack</h3>
-            <p class="work__card-role">3D Animation, Composite, Colour Grade</p>
-          </div>
-        </article>
-      </a>
-      <a href="work/weightless.html" class="work__card-link">
-        <article class="work__card" role="listitem" aria-label="Weightless - A State of Mind - Design & 3D">
-          <div class="work__card-img" role="img" aria-label="Weightless EP artwork thumbnail" style="background-image: url('src/assets/images/featured-work/weightless.jpg')"></div>
-          <div class="work__card-info">
-            <p class="work__card-tag">Design &amp; 3D</p>
-            <h3 class="work__card-title">Weightless — A State of Mind</h3>
-            <p class="work__card-role">Art Direction, Design, 3D, Animation</p>
-          </div>
-        </article>
-      </a>
-      <a href="work/bundaberg.html" class="work__card-link">
-        <article class="work__card" role="listitem" aria-label="Bundaberg CeRUMony - Videography">
-          <div class="work__card-img" role="img" aria-label="Bundaberg CeRUMony project thumbnail" style="background-image: url('src/assets/images/featured-work/bundaberg-cerumony.jpg')"></div>
-          <div class="work__card-info">
-            <p class="work__card-tag work__card-tag--tight">Videography</p>
-            <h3 class="work__card-title">Bundaberg Ce<span class="work__rum">rum</span>ony</h3>
-            <p class="work__card-role">Videography, Video Editing, Colour Grade</p>
-            <p class="work__card-agency">Leo Burnett</p>
-          </div>
-        </article>
-      </a>
-      <a href="work/gryff.html" class="work__card-link">
-        <article class="work__card" role="listitem" aria-label="Gryff - Videography">
-          <div class="work__card-img" role="img" aria-label="Gryff project thumbnail" style="background-image: url('src/assets/images/featured-work/gryff.jpg')"></div>
-          <div class="work__card-info">
-            <p class="work__card-tag">Videography</p>
-            <h3 class="work__card-title">Gryff</h3>
-            <p class="work__card-role">Videography, Video Editing, Colour Grade</p>
-          </div>
-        </article>
-      </a>
-    </div>
-  </section>
-
   <!-- ABOUT -->
   <section class="about" id="about" aria-label="About">
     <div class="section-label">
-      <span class="section-label__num">03</span>
+      <span class="section-label__num">02</span>
       <span class="section-label__text">About</span>
       <div class="section-label__line"></div>
     </div>
@@ -252,6 +202,7 @@
       </div>
     </div>
     <div class="about__right" id="about-right">
+      <img class="about__image" src="src/assets/images/hero-sign/about.webp" alt="About Joseph G Media" loading="lazy" />
       <p id="about-p1">
         A hunger to learn everything and refusing to stop at one changes the way I see the world - music informs how I approach motion, and parenting informs how I approach clients.
       </p>
@@ -261,51 +212,13 @@
       <p id="about-p3">
         Outside of that I'm a freelance creative, a self-published children's book author and illustrator, a recording musician, and a dad of two boys. I started opening Photoshop before I knew what I was doing. That instinct hasn't gone away.
       </p>
-      <div class="about__stats" id="about-stats">
-        <div class="stat" tabindex="0" role="button" aria-label="Flip stat card">
-          <div class="stat__flip">
-            <div class="stat__face stat__face--front">
-              <div class="stat__num">10+</div>
-              <div class="stat__label">Years in<br/>Motion</div>
-            </div>
-            <div class="stat__face stat__face--back">
-              <div class="stat__num">10+</div>
-              <div class="stat__label">Years too long</div>
-            </div>
-          </div>
-        </div>
-        <div class="stat" tabindex="0" role="button" aria-label="Flip stat card">
-          <div class="stat__flip">
-            <div class="stat__face stat__face--front">
-              <div class="stat__num">SYD</div>
-              <div class="stat__label">Based</div>
-            </div>
-            <div class="stat__face stat__face--back">
-              <div class="stat__num">SYD</div>
-              <div class="stat__label">Still here</div>
-            </div>
-          </div>
-        </div>
-        <div class="stat" tabindex="0" role="button" aria-label="Flip stat card">
-          <div class="stat__flip">
-            <div class="stat__face stat__face--front">
-              <div class="stat__num">2</div>
-              <div class="stat__label">Kids</div>
-            </div>
-            <div class="stat__face stat__face--back">
-              <div class="stat__num">2</div>
-              <div class="stat__label">Reasons to<br/>keep working</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- CREDITS -->
   <section class="credits" id="credits" aria-label="Credits">
     <div class="section-label">
-      <span class="section-label__num">04</span>
+      <span class="section-label__num">03</span>
       <span class="section-label__text">Credits</span>
       <div class="section-label__line"></div>
     </div>
@@ -381,7 +294,7 @@
   <!-- CONTACT -->
   <section class="contact" id="contact" aria-label="Contact">
     <div class="section-label">
-      <span class="section-label__num">05</span>
+      <span class="section-label__num">04</span>
       <span class="section-label__text">Contact</span>
       <div class="section-label__line"></div>
     </div>
@@ -392,10 +305,29 @@
         <span class="word__wrap"><span class="word__inner"><em style="color:var(--accent)">Work.</em></span></span>
       </h2>
       <div class="contact__right" id="contact-right">
-        <a href="mailto:info@josephgmedia.com" class="contact__link">info@josephgmedia.com</a>
-        <a href="https://www.instagram.com/josephgmedia" class="contact__link"><span class="arr">→</span> Instagram</a>
-        <a href="https://www.youtube.com/@josephgmedia" class="contact__link"><span class="arr">→</span> Youtube</a>
-        <a href="https://www.linkedin.com/in/jgiuffrida93/" class="contact__link"><span class="arr">→</span> LinkedIn</a>
+        <form id="contact-form" class="contact-form">
+          <div class="contact-form__field">
+            <label for="contact-name" class="contact-form__label">Name</label>
+            <input type="text" id="contact-name" name="name" required class="contact-form__input" />
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-email" class="contact-form__label">Email</label>
+            <input type="email" id="contact-email" name="email" required class="contact-form__input" />
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-message" class="contact-form__label">Message</label>
+            <textarea id="contact-message" name="message" required rows="5" class="contact-form__input contact-form__textarea"></textarea>
+          </div>
+          <!-- Honeypot field (hidden from users, catches bots) -->
+          <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off" />
+          <button type="submit" class="contact-form__submit">Send Message</button>
+          <div class="contact-form__status"></div>
+        </form>
+        <div class="contact__socials">
+          <a href="https://www.instagram.com/josephgmedia" class="contact__link"><span class="arr">→</span> Instagram</a>
+          <a href="https://www.youtube.com/@josephgmedia" class="contact__link"><span class="arr">→</span> Youtube</a>
+          <a href="https://www.linkedin.com/in/jgiuffrida93/" class="contact__link"><span class="arr">→</span> LinkedIn</a>
+        </div>
       </div>
     </div>
   </section>

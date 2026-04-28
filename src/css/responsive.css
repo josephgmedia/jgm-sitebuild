@@ -2,8 +2,59 @@
    MOBILE: max-width: 767px
    ══════════════════════════════════════════════════ */
 @media (max-width: 767px) {
+  /* Hero — mobile layout */
+  .hero__container {
+    gap: clamp(15px, 3vh, 30px);
+    padding: 8vh 0 4vh;
+  }
+  .hero__toggle-label {
+    font-size: clamp(0.6rem, 1.5vw, 0.7rem);
+  }
+  .hero__scroll-hint {
+    display: none;
+  }
+
+  /* Section labels — maintain breathing room on mobile */
+  .section-label {
+    margin-bottom: var(--space-md);
+  }
+
+  /* Reel modal — mobile adjustments */
+  .reel-modal__grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-md);
+  }
+  .reel-modal__content {
+    padding: var(--space-lg);
+    width: 95%;
+  }
+  .reel-card__play {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
   /* Timeline — collapse track to clip height, removing the gap between ruler and clips */
   .timeline__track { min-height: 0; }
+
+  /* About — more space between "depending on the week" and paragraph */
+  .about__drum { margin-bottom: var(--space-lg); }
+
+  /* About image — no overlap on mobile */
+  .about__image {
+    margin-top: 0;
+  }
+
+  /* Stats — more vertical spacing above and below, fix horizontal padding */
+  .about__stats {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+    padding: 0 var(--space-md);
+    max-width: 100%;
+  }
+  .stat__face {
+    padding: var(--space-md) var(--space-md);
+  }
 }
 
 /* ══════════════════════════════════════════════════
@@ -16,7 +67,20 @@
 /* ══════════════════════════════════════════════════
    MOBILE-FIRST: TABLET+ (min-width: 768px)
    ══════════════════════════════════════════════════ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* About image — no overlap on tablet */
+  .about__image {
+    margin-top: 0;
+  }
+}
+
 @media (min-width: 768px) {
+  /* Hero — tablet+ reset */
+  .hero__container {
+    gap: clamp(25px, 5vh, 70px);
+    padding: 10vh 0;
+  }
+
   /* Timeline — restore desktop flex layout */
   .timeline__track {
     overflow-x: visible;
@@ -63,13 +127,13 @@
     min-height: 100vh;
     min-height: 100dvh;
   }
-  .hero__ui {
-    bottom: 120px;
-    gap: 16px;
-    padding: 0;
-    text-align: left;
+  .hero__ui--top {
+    top: 12vh;
   }
-  .hero__tagline { font-size: var(--fs-body); text-align: left; }
+  .hero__ui--bottom {
+    bottom: 12vh;
+    gap: var(--space-lg);
+  }
   .hero__foot { display: flex; }
 
   /* Headlines — tighter line-height on desktop */
