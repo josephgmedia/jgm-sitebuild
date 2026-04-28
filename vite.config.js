@@ -58,7 +58,6 @@ export default defineConfig({
         'work/nla-enlighten': resolve(__dirname, 'work/nla-enlighten.html'),
         'work/bundaberg': resolve(__dirname, 'work/bundaberg.html'),
         'work/gryff': resolve(__dirname, 'work/gryff.html'),
-        'work/hyundai-autolink': resolve(__dirname, 'work/hyundai-autolink.html'),
         'work/porsche-drjack': resolve(__dirname, 'work/porsche-drjack.html'),
         'work/rams-construction': resolve(__dirname, 'work/rams-construction.html'),
         'work/weightless': resolve(__dirname, 'work/weightless.html'),
