@@ -64,9 +64,7 @@
   position: relative;
   z-index: 1;
   width: 90%;
-  max-width: 640px;
-  max-height: 90vh;
-  overflow-y: auto;
+  max-width: 780px;
   background: linear-gradient(135deg, rgba(20,20,20,0.98) 0%, rgba(14,14,16,0.98) 100%);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 4px;
@@ -76,6 +74,7 @@
     inset 0 1px 0 rgba(255,255,255,0.06);
   transform: translateY(20px) scale(0.96);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: visible;
 }
 .contact-modal.is-open .contact-modal__container {
   transform: translateY(0) scale(1);
@@ -168,10 +167,27 @@
   box-shadow: 0 0 0 3px rgba(57,49,223,0.08);
 }
 .contact-modal__textarea {
-  resize: vertical;
-  min-height: 140px;
+  resize: none;
+  height: 140px;
   line-height: 1.7;
   font-family: 'Barlow', sans-serif;
+  overflow-y: auto;
+}
+/* Custom scrollbar for textarea */
+.contact-modal__textarea::-webkit-scrollbar {
+  width: 8px;
+}
+.contact-modal__textarea::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.03);
+  border-radius: 4px;
+}
+.contact-modal__textarea::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.contact-modal__textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(57,49,223,0.8);
 }
 .contact-modal__submit {
   font-family: 'Monument', sans-serif;
@@ -186,7 +202,7 @@
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  align-self: flex-start;
+  align-self: flex-end;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -245,8 +261,8 @@
   border: 1px solid rgba(248,113,113,0.2);
 }
 .contact-modal__footer {
-  margin-top: var(--space-lg);
-  padding-top: var(--space-lg);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
   border-top: 1px solid rgba(255,255,255,0.06);
   display: flex;
   flex-direction: column;
