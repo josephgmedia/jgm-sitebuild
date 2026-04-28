@@ -1,13 +1,52 @@
-// Contact form submission handler
+// Contact modal and form handler
 export function initContactForm() {
+  const modal = document.getElementById('contact-modal');
+  const trigger = document.getElementById('contact-trigger');
+  const closeBtn = document.getElementById('contact-modal-close');
+  const overlay = document.getElementById('contact-modal-overlay');
   const form = document.getElementById('contact-form');
-  if (!form) return;
+
+  if (!modal || !trigger || !form) return;
 
   const nameInput = form.querySelector('#contact-name');
   const emailInput = form.querySelector('#contact-email');
   const messageInput = form.querySelector('#contact-message');
-  const submitBtn = form.querySelector('.contact-form__submit');
-  const statusEl = form.querySelector('.contact-form__status');
+  const submitBtn = form.querySelector('.contact-modal__submit .contact-modal__submit-text');
+  const statusEl = form.querySelector('.contact-modal__status');
+
+  // Open modal
+  function openModal(e) {
+    e.preventDefault();
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    // Focus first input after animation
+    setTimeout(() => nameInput.focus(), 300);
+  }
+
+  // Close modal
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    form.reset();
+    if (statusEl) {
+      statusEl.textContent = '';
+      statusEl.className = 'contact-modal__status';
+    }
+  }
+
+  // Event listeners
+  trigger.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -15,7 +54,7 @@ export function initContactForm() {
     // Clear previous status
     if (statusEl) {
       statusEl.textContent = '';
-      statusEl.className = 'contact-form__status';
+      statusEl.className = 'contact-modal__status';
     }
 
     // Get values
@@ -68,6 +107,10 @@ export function initContactForm() {
   function showStatus(message, type) {
     if (!statusEl) return;
     statusEl.textContent = message;
-    statusEl.className = `contact-form__status contact-form__status--${type}`;
+    statusEl.className = `contact-modal__status contact-modal__status--${type}`;
+    // Auto-close modal on success after 3 seconds
+    if (type === 'success') {
+      setTimeout(() => closeModal(), 3000);
+    }
   }
 }

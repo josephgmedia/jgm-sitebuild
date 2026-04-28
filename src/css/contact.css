@@ -37,94 +37,252 @@
 .contact__link .arr { color: var(--accent); transition: transform .3s; display: inline-block; }
 .contact__link:hover .arr { transform: translateX(4px); }
 
-/* ── CONTACT FORM ── */
-.contact-form {
+/* ── CONTACT MODAL ── */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.contact-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.contact-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.contact-modal__container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, rgba(20,20,20,0.98) 0%, rgba(14,14,16,0.98) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  box-shadow:
+    0 24px 48px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(255,255,255,0.03),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.contact-modal.is-open .contact-modal__container {
+  transform: translateY(0) scale(1);
+}
+.contact-modal__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  color: rgba(255,255,255,0.6);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+.contact-modal__close:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.16);
+  color: var(--white);
+}
+.contact-modal__content {
+  padding: var(--space-xl) var(--space-lg);
+}
+.contact-modal__title {
+  font-family: 'Monument', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: var(--space-xs);
+}
+.contact-modal__subtitle {
+  font-family: 'Barlow', sans-serif;
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(237,234,228,0.6);
+  margin-bottom: var(--space-lg);
+}
+.contact-modal__form {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: var(--space-lg);
 }
-.contact-form__field {
+.contact-modal__field {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
 }
-.contact-form__label {
+.contact-modal__label {
   font-family: 'Monument', sans-serif;
-  font-size: var(--fs-ui);
+  font-size: 0.65rem;
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(237,234,228,.55);
+  color: rgba(237,234,228,0.5);
 }
-.contact-form__input,
-.contact-form__textarea {
+.contact-modal__input,
+.contact-modal__textarea {
   font-family: 'Barlow', sans-serif;
   font-size: var(--fs-body);
   font-weight: 300;
   color: var(--white);
-  background: var(--dim);
-  border: 1px solid var(--mid);
-  border-radius: 2px;
-  padding: var(--space-sm) var(--space-md);
-  transition: border-color 0.2s, background 0.2s;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 3px;
+  padding: 14px 16px;
+  transition: all 0.2s ease;
   width: 100%;
   box-sizing: border-box;
 }
-.contact-form__input:focus,
-.contact-form__textarea:focus {
+.contact-modal__input::placeholder,
+.contact-modal__textarea::placeholder {
+  color: rgba(237,234,228,0.25);
+}
+.contact-modal__input:focus,
+.contact-modal__textarea:focus {
   outline: none;
   border-color: var(--accent);
-  background: rgba(0,0,0,0.3);
+  background: rgba(57,49,223,0.04);
+  box-shadow: 0 0 0 3px rgba(57,49,223,0.08);
 }
-.contact-form__textarea {
+.contact-modal__textarea {
   resize: vertical;
-  min-height: 120px;
-  line-height: 1.6;
+  min-height: 140px;
+  line-height: 1.7;
+  font-family: 'Barlow', sans-serif;
 }
-.contact-form__submit {
+.contact-modal__submit {
   font-family: 'Monument', sans-serif;
-  font-size: var(--fs-ui);
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--white);
-  background: transparent;
-  border: 2px solid var(--white);
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  align-self: flex-start;
-}
-.contact-form__submit:hover:not(:disabled) {
   background: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 0 0 20px rgba(57,49,223,0.4);
+  border: 2px solid var(--accent);
+  padding: 16px 32px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
 }
-.contact-form__submit:disabled {
+.contact-modal__submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.contact-modal__submit:hover:not(:disabled)::before {
+  opacity: 1;
+}
+.contact-modal__submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 24px rgba(57,49,223,0.4),
+    0 0 32px rgba(57,49,223,0.3);
+}
+.contact-modal__submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+.contact-modal__submit:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
 }
-.contact-form__status {
+.contact-modal__submit-arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+}
+.contact-modal__submit:hover:not(:disabled) .contact-modal__submit-arrow {
+  transform: translateX(4px);
+}
+.contact-modal__status {
   font-family: 'Barlow', sans-serif;
   font-size: var(--fs-body);
   font-weight: 400;
   margin-top: var(--space-xs);
   min-height: 24px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 3px;
 }
-.contact-form__status--success {
+.contact-modal__status--success {
   color: #4ade80;
+  background: rgba(74,222,128,0.08);
+  border: 1px solid rgba(74,222,128,0.2);
 }
-.contact-form__status--error {
+.contact-modal__status--error {
   color: #f87171;
+  background: rgba(248,113,113,0.08);
+  border: 1px solid rgba(248,113,113,0.2);
 }
-.contact__socials {
+.contact-modal__footer {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255,255,255,0.06);
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
-  padding-top: var(--space-sm);
-  border-top: 1px solid var(--mid);
+  gap: var(--space-xs);
+  align-items: center;
+  text-align: center;
+}
+.contact-modal__footer-text {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(237,234,228,0.4);
+}
+.contact-modal__footer-link {
+  font-family: 'Monument', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-modal__footer-link:hover {
+  color: var(--white);
+}
+
+@media (max-width: 767px) {
+  .contact-modal__container {
+    width: 95%;
+    max-height: 95vh;
+  }
+  .contact-modal__content {
+    padding: var(--space-lg) var(--space-md);
+  }
+  .contact-modal__submit {
+    width: 100%;
+    justify-content: center;
+  }
 }
