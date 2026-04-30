@@ -65,16 +65,25 @@
 /* Mobile: show short names from data-short attribute */
 @media (max-width: 767px) {
   .timeline__clip[data-short] .timeline__clip-name {
-    font-size: 0 !important;
+    visibility: hidden;
+    position: relative;
   }
   .timeline__clip[data-short] .timeline__clip-name::before {
     content: attr(data-short);
-    font-size: var(--fs-ui) !important;
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'Monument', sans-serif;
+    font-size: var(--fs-ui);
     font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: rgba(255,255,255,0.5);
+    line-height: 1.25;
   }
   .timeline__clip.is-active[data-short] .timeline__clip-name::before {
-    font-size: clamp(0.6rem, 1.2vw, 0.9rem) !important;
+    font-size: clamp(0.6rem, 1.2vw, 0.9rem);
     font-weight: 800;
     color: #fff;
   }
