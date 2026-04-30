@@ -30,7 +30,7 @@
   position: relative;
   z-index: 1;
   max-width: 1560px;
-  width: 90%;
+  width: 95%;
   padding: var(--space-xl);
   cursor: auto;
 }
