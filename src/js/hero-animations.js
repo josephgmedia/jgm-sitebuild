@@ -5,7 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export function initHeroAnimations() {
   // ── SCROLL INDICATOR ENTRANCE ──
   const scrollIndicator = document.getElementById('hero-scroll-indicator');
+  console.log('Scroll indicator element:', scrollIndicator);
   if (scrollIndicator) {
+    console.log('Starting scroll indicator animation');
     // Animate in
     gsap.to(scrollIndicator, {
       opacity: 1,
