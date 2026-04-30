@@ -46,8 +46,11 @@ export function initReelModal() {
       const reelType = card.dataset.reel;
       const videoUrl = SHOWREELS[reelType];
 
+      console.log('Reel card clicked:', reelType, videoUrl);
+
       if (videoUrl) {
         closeModal();
+        console.log('Opening lightbox with:', videoUrl);
         openVideoLightbox(videoUrl);
       } else {
         console.warn(`No video URL set for ${reelType} reel`);
@@ -61,6 +64,7 @@ export function initReelModal() {
   }
 
   function closeModal() {
+    console.log('Closing reel modal');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
 
