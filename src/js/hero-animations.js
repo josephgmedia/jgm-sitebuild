@@ -5,27 +5,41 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export function initHeroAnimations() {
   // ── SCROLL INDICATOR ENTRANCE ──
   const scrollIndicator = document.getElementById('hero-scroll-indicator');
-  console.log('Scroll indicator element:', scrollIndicator);
   if (scrollIndicator) {
-    console.log('Starting scroll indicator animation');
-    // Animate in
-    gsap.to(scrollIndicator, {
+    const circlePath = scrollIndicator.querySelector('.scroll-circle__path');
+    const arrow = scrollIndicator.querySelector('.scroll-arrow');
+
+    // Timeline for scroll indicator animation
+    const tl = gsap.timeline({ delay: 1.5 });
+
+    // 1. Fade in container and draw circle
+    tl.to(scrollIndicator, {
       opacity: 1,
+      duration: 0.3
+    })
+    .to(circlePath, {
+      strokeDashoffset: 0,
+      duration: 1,
+      ease: 'power2.out'
+    }, '<')
+    // 2. Arrow drops down from above and fades in
+    .fromTo(arrow, {
+      y: -20,
+      opacity: 0
+    }, {
       y: 0,
-      duration: CONFIG.heroFootDuration,
-      delay: CONFIG.heroFootDelay,
-      ease: 'power4.out',
-      onComplete: () => {
-        // Add floating animation after entrance
-        gsap.to(scrollIndicator, {
-          y: -10,
-          duration: 2,
-          ease: 'sine.inOut',
-          repeat: -1,
-          yoyo: true
-        });
-      }
-    });
+      opacity: 1,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '-=0.2')
+    // 3. Start floating animation
+    .to(scrollIndicator, {
+      y: -10,
+      duration: 2,
+      ease: 'sine.inOut',
+      repeat: -1,
+      yoyo: true
+    }, '+=0.5');
 
     // ── SCROLL INDICATOR — fade & blur on scroll ──
     ScrollTrigger.create({
