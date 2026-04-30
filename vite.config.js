@@ -55,6 +55,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         work: resolve(__dirname, 'work.html'),
         'font-test': resolve(__dirname, 'font-test.html'),
+        'font-debug': resolve(__dirname, 'font-debug.html'),
         'work/nla-enlighten': resolve(__dirname, 'work/nla-enlighten.html'),
         'work/bundaberg': resolve(__dirname, 'work/bundaberg.html'),
         'work/gryff': resolve(__dirname, 'work/gryff.html'),
