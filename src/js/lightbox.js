@@ -22,6 +22,7 @@ function createLightbox() {
 
   overlay.innerHTML = `
     <button class="lightbox__close" aria-label="Close">&times;</button>
+    <button class="lightbox__back" aria-label="Go back">← Back</button>
     <button class="lightbox__prev" aria-label="Previous">&lsaquo;</button>
     <button class="lightbox__next" aria-label="Next">&rsaquo;</button>
     <div class="lightbox__media"></div>
@@ -31,6 +32,7 @@ function createLightbox() {
   document.body.appendChild(overlay);
 
   closeBtn = overlay.querySelector('.lightbox__close');
+  const backBtn = overlay.querySelector('.lightbox__back');
   prevBtn = overlay.querySelector('.lightbox__prev');
   nextBtn = overlay.querySelector('.lightbox__next');
   mediaContainer = overlay.querySelector('.lightbox__media');
@@ -38,6 +40,7 @@ function createLightbox() {
 
   // Close handlers
   closeBtn.addEventListener('click', close);
+  backBtn.addEventListener('click', close);
   overlay.addEventListener('click', e => {
     if (e.target === overlay) close();
   });
