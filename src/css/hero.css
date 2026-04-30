@@ -69,9 +69,15 @@
 /* Sign wrapper to contain both sign states */
 .hero__sign-wrapper {
   position: relative;
-  width: clamp(288px, 72vw, 1609px); /* 20% bigger on mobile: 240px → 288px, 60vw → 72vw */
+  width: clamp(288px, 72vw, 72vw); /* Mobile/tablet: 72vw scales smoothly */
   flex-shrink: 0;
   pointer-events: none;
+}
+
+@media (width >= 1024px) {
+  .hero__sign-wrapper {
+    width: clamp(288px, 60vw, 1609px); /* Desktop: 60vw */
+  }
 }
 
 /* Sign foregrounds — both positioned identically */
@@ -136,6 +142,7 @@
     width: 40px;
     height: 40px;
     opacity: 0;
+    z-index: 10;
   }
 
   .scroll-circle,
