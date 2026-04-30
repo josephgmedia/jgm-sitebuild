@@ -216,7 +216,6 @@
   color: var(--white);
   text-align: center;
   line-height: 1.3;
-  transform: translateY(-30px);
 }
 
 @media (max-width: 767px) {
