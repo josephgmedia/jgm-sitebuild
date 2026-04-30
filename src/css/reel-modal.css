@@ -63,6 +63,10 @@
   padding: var(--space-xl);
   cursor: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
 .reel-modal__back:hover {
@@ -106,7 +110,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
   max-width: 1000px;
-  margin: 0 auto var(--space-xl) auto;
+  width: 100%;
+  margin: 0;
 }
 
 /* Reel Cards */
