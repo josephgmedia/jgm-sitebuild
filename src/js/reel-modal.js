@@ -13,30 +13,19 @@ const SHOWREELS = {
 
 export function initReelModal() {
   const modal = document.getElementById('reel-modal');
-  const reelToggle = document.getElementById('hero-reel');
+  const viewWorkBtn = document.getElementById('hero-view-work');
   const backBtn = document.getElementById('reel-close-btn');
   const overlay = modal?.querySelector('.reel-modal__overlay');
   const reelCards = modal?.querySelectorAll('.reel-card');
 
-  console.log('initReelModal called');
-  console.log('modal:', modal);
-  console.log('reelToggle:', reelToggle);
-  console.log('backBtn:', backBtn);
-  console.log('overlay:', overlay);
-  console.log('reelCards:', reelCards);
-
-  if (!modal || !reelToggle) {
-    console.error('Missing required elements!');
-    return;
-  }
+  if (!modal || !viewWorkBtn) return;
 
   console.log('Reel modal initialized. Found', reelCards?.length, 'reel cards');
 
-  // Open modal when REEL toggle is selected
-  reelToggle.addEventListener('change', () => {
-    if (reelToggle.checked) {
-      openModal();
-    }
+  // Open modal when View Work button is clicked
+  viewWorkBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
   });
 
   // Close modal handlers
@@ -77,8 +66,5 @@ export function initReelModal() {
     console.log('Closing reel modal');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-
-    // Reset toggle to "ON" state when closing
-    document.getElementById('hero-on').checked = true;
   }
 }
