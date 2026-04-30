@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Font Test</title>
+
+  <!-- Load Barlow like the main site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Load the same CSS as main site -->
+  <link rel="stylesheet" href="./assets/css/smooth-scroll-YCVAU6co.css">
+
+  <style>
+    body {
+      background: #080808;
+      color: #edeae4;
+      padding: 20px;
+      font-family: 'Barlow', sans-serif;
+    }
+    .info {
+      font-size: 12px;
+      color: #3931df;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+    .test-monument {
+      font-family: 'Monument', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      margin: 20px 0;
+      border: 2px solid #3931df;
+      padding: 10px;
+    }
+    .test-barlow {
+      font-family: 'Barlow', sans-serif;
+      font-size: 32px;
+      font-weight: 300;
+      margin: 20px 0;
+      border: 2px solid #666;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="info">Testing with main site CSS loaded</div>
+
+  <div class="info">Monument (should be bold/wide):</div>
+  <div class="test-monument">JOSEPH G MEDIA</div>
+
+  <div class="info">Barlow (should be thin/narrow):</div>
+  <div class="test-barlow">JOSEPH G MEDIA</div>
+
+  <div class="info" id="font-status">Checking fonts...</div>
+
+  <script>
+    // Check which fonts loaded
+    document.fonts.ready.then(() => {
+      const loaded = [];
+      document.fonts.forEach(font => {
+        loaded.push(`${font.family} ${font.weight} ${font.style}`);
+      });
+
+      const status = document.getElementById('font-status');
+      status.innerHTML = '<strong>Fonts loaded:</strong><br>' + loaded.join('<br>');
+
+      // Check computed style
+      const monumentEl = document.querySelector('.test-monument');
+      const computedFont = window.getComputedStyle(monumentEl).fontFamily;
+      status.innerHTML += '<br><br><strong>Computed font-family:</strong><br>' + computedFont;
+    });
+  </script>
+</body>
+</html>
