@@ -61,6 +61,20 @@
   font-size: clamp(0.55rem, 1vw, 0.85rem);
   color: #fff;
 }
+
+/* Mobile: show short names from data-short attribute */
+@media (width < 768px) {
+  .timeline__clip[data-short] .timeline__clip-name {
+    font-size: 0;
+  }
+  .timeline__clip[data-short] .timeline__clip-name::before {
+    content: attr(data-short);
+    font-size: var(--fs-ui);
+  }
+  .timeline__clip.is-active[data-short] .timeline__clip-name::before {
+    font-size: clamp(0.6rem, 1.2vw, 0.9rem);
+  }
+}
 .timeline__playhead {
   position: absolute; top: 0; bottom: 0; left: 0;
   width: 2px;
