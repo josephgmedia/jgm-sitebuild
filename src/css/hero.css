@@ -61,7 +61,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(20px, 4vh, 60px);
+  gap: clamp(32px, 5vh, 60px); /* Increased from 20px to 32px for more spacing on mobile */
   padding: 10vh 0;
   pointer-events: none;
 }
@@ -69,7 +69,7 @@
 /* Sign wrapper to contain both sign states */
 .hero__sign-wrapper {
   position: relative;
-  width: clamp(240px, 60vw, 1609px);
+  width: clamp(288px, 72vw, 1609px); /* 20% bigger on mobile: 240px → 288px, 60vw → 72vw */
   flex-shrink: 0;
   pointer-events: none;
 }
