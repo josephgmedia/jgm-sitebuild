@@ -313,12 +313,12 @@
   100% { top: calc(100% - 6px); }
 }
 .hero__foot-label {
-  font-family: 'Monument', sans-serif; font-size: var(--fs-ui); font-weight: 300;
+  font-family: 'Monument', sans-serif; font-size: var(--fs-ui); font-weight: 400;
   letter-spacing: .14em; text-transform: uppercase;
   color: rgba(237,234,228,.6); line-height: 1.4;
 }
 .hero__foot-right {
   margin-left: auto; font-family: 'Monument', sans-serif;
-  font-size: var(--fs-ui); font-weight: 300; letter-spacing: .14em;
+  font-size: var(--fs-ui); font-weight: 400; letter-spacing: .14em;
   text-transform: uppercase; color: rgba(237,234,228,.38);
 }
