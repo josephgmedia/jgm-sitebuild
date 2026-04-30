@@ -28,7 +28,7 @@ nav.nav--scrolled {
   font-family: 'Monument', sans-serif; font-weight: 400;
   font-size: var(--fs-label); letter-spacing: clamp(0.08em, 0.5vw, 0.16em); text-transform: uppercase;
   color: var(--white); text-decoration: none;
-  opacity: .38; transition: opacity .25s, color .25s; position: relative;
+  opacity: 1; transition: opacity .25s, color .25s; position: relative;
 }
 .nav__links a::after {
   content: ''; position: absolute; bottom: -4px; left: 0;

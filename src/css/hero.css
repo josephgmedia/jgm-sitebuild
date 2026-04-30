@@ -119,41 +119,63 @@
 }
 .hero__ui > * { pointer-events: auto; }
 
-/* Scroll hint tab */
-.hero__scroll-hint {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transform: translateY(100%);
-  z-index: 10;
-  background: var(--accent);
-  color: var(--white);
-  font-family: 'Monument', sans-serif;
-  font-size: clamp(0.45rem, 0.7vw, 0.55rem);
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: var(--space-xs) var(--space-md);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
+/* Scroll indicator - desktop only */
+.hero__scroll-indicator {
+  display: none;
 }
 
-.hero__scroll-hint.is-visible {
-  transform: translateY(0);
-  opacity: 1;
-}
+@media (width >= 1024px) {
+  .hero__scroll-indicator {
+    position: absolute;
+    bottom: var(--space-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease 2s forwards, floatY 2s ease-in-out 3s infinite;
+  }
 
-.hero__scroll-hint-text::before,
-.hero__scroll-hint-text::after {
-  content: '↓';
-  opacity: 0.6;
+  .scroll-circle,
+  .scroll-arrow {
+    position: absolute;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .scroll-circle__path {
+    stroke-dasharray: 113;
+    stroke-dashoffset: 113;
+    animation: drawCircle 1s ease 0.5s forwards;
+  }
+
+  .scroll-arrow {
+    opacity: 0;
+    animation: fadeIn 0.4s ease 1.5s forwards;
+  }
+
+  @keyframes drawCircle {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes floatY {
+    0%, 100% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, 8px);
+    }
+  }
 }
 
 .hero__scroll-hint-text::before {

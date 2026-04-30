@@ -52,9 +52,14 @@
       </div>
     </div>
 
-    <!-- Scroll hint -->
-    <div class="hero__scroll-hint" id="hero-scroll-hint">
-      <span class="hero__scroll-hint-text">Scroll to Explore</span>
+    <!-- Scroll indicator -->
+    <div class="hero__scroll-indicator" id="hero-scroll-indicator">
+      <svg class="scroll-circle" width="40" height="40" viewBox="0 0 40 40">
+        <circle class="scroll-circle__path" cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <svg class="scroll-arrow" width="16" height="16" viewBox="0 0 16 16">
+        <path class="scroll-arrow__path" d="M8 2 L8 12 M8 12 L4 8 M8 12 L12 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
 
     <!-- Navigation -->
@@ -69,6 +74,7 @@
       </button>
       <ul class="nav__links">
         <li><a href="work.html">Work</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#" id="contact-trigger">Contact</a></li>
       </ul>
       <nav class="nav__overlay" id="nav-overlay" role="dialog" aria-label="Navigation menu" aria-hidden="true">
@@ -303,9 +309,9 @@
       </h2>
       <div class="contact__right" id="contact-right">
         <a href="mailto:info@josephgmedia.com" class="contact__link">info@josephgmedia.com</a>
-        <a href="https://www.instagram.com/josephgmedia" class="contact__link"><span class="arr">→</span> Instagram</a>
-        <a href="https://www.youtube.com/@josephgmedia" class="contact__link"><span class="arr">→</span> Youtube</a>
-        <a href="https://www.linkedin.com/in/jgiuffrida93/" class="contact__link"><span class="arr">→</span> LinkedIn</a>
+        <a href="https://www.instagram.com/josephgmedia" class="contact__link" target="_blank" rel="noopener noreferrer"><span class="arr">→</span> Instagram</a>
+        <a href="https://www.youtube.com/@josephgmedia" class="contact__link" target="_blank" rel="noopener noreferrer"><span class="arr">→</span> Youtube</a>
+        <a href="https://www.linkedin.com/in/jgiuffrida93/" class="contact__link" target="_blank" rel="noopener noreferrer"><span class="arr">→</span> LinkedIn</a>
       </div>
     </div>
   </section>

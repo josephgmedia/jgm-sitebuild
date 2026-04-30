@@ -65,15 +65,10 @@
 /* Mobile: show short names from data-short attribute */
 @media (max-width: 767px) {
   .timeline__clip[data-short] .timeline__clip-name {
-    visibility: hidden;
-    position: relative;
+    display: none;
   }
-  .timeline__clip[data-short] .timeline__clip-name::before {
+  .timeline__clip[data-short]::after {
     content: attr(data-short);
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    top: 0;
     font-family: 'Monument', sans-serif;
     font-size: var(--fs-ui);
     font-weight: 400;
@@ -81,8 +76,9 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.5);
     line-height: 1.25;
+    pointer-events: none;
   }
-  .timeline__clip.is-active[data-short] .timeline__clip-name::before {
+  .timeline__clip.is-active[data-short]::after {
     font-size: clamp(0.6rem, 1.2vw, 0.9rem);
     font-weight: 800;
     color: #fff;
