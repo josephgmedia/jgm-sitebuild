@@ -33,7 +33,7 @@
 
 .lightbox__back {
   position: absolute;
-  bottom: var(--space-lg);
+  bottom: calc(7.5vh + var(--space-md));
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0,0,0,0.5);
