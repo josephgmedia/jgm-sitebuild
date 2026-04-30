@@ -405,15 +405,7 @@ import Matter from 'matter-js';
       });
     }
 
-    // Handle reel card clicks (placeholder - you can add video playback here)
-    const reelCards = document.querySelectorAll('.reel-card');
-    reelCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const reelType = card.getAttribute('data-reel');
-        // TODO: Add video playback logic here
-        console.log('Play reel:', reelType);
-      });
-    });
+    // Reel card clicks are handled by reel-modal.js
   }
 
   // ── DEBUG MODE (?debug=1) ──

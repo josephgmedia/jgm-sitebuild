@@ -14,12 +14,13 @@ const SHOWREELS = {
 export function initReelModal() {
   const modal = document.getElementById('reel-modal');
   const reelToggle = document.getElementById('hero-reel');
-  const closeBtn = document.getElementById('reel-close');
   const backBtn = document.getElementById('reel-close-btn');
   const overlay = modal?.querySelector('.reel-modal__overlay');
   const reelCards = modal?.querySelectorAll('.reel-card');
 
   if (!modal || !reelToggle) return;
+
+  console.log('Reel modal initialized. Found', reelCards?.length, 'reel cards');
 
   // Open modal when REEL toggle is selected
   reelToggle.addEventListener('change', () => {
@@ -29,7 +30,6 @@ export function initReelModal() {
   });
 
   // Close modal handlers
-  closeBtn?.addEventListener('click', closeModal);
   backBtn?.addEventListener('click', closeModal);
   overlay?.addEventListener('click', closeModal);
 
