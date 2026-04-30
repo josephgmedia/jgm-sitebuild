@@ -65,14 +65,16 @@
 /* Mobile: show short names from data-short attribute */
 @media (width < 768px) {
   .timeline__clip[data-short] .timeline__clip-name {
-    font-size: 0;
+    font-size: 0 !important;
   }
   .timeline__clip[data-short] .timeline__clip-name::before {
     content: attr(data-short);
     font-size: var(--fs-ui);
+    font-weight: 400;
   }
   .timeline__clip.is-active[data-short] .timeline__clip-name::before {
     font-size: clamp(0.6rem, 1.2vw, 0.9rem);
+    font-weight: 800;
   }
 }
 .timeline__playhead {
