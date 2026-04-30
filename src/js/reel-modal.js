@@ -20,8 +20,6 @@ export function initReelModal() {
 
   if (!modal || !viewWorkBtn) return;
 
-  console.log('Reel modal initialized. Found', reelCards?.length, 'reel cards');
-
   // Open modal when View Work button is clicked
   viewWorkBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -45,14 +43,9 @@ export function initReelModal() {
       const reelType = card.dataset.reel;
       const videoUrl = SHOWREELS[reelType];
 
-      console.log('Reel card clicked:', reelType, videoUrl);
-
       if (videoUrl) {
         closeModal();
-        console.log('Opening lightbox with:', videoUrl);
         openVideoLightbox(videoUrl);
-      } else {
-        console.warn(`No video URL set for ${reelType} reel`);
       }
     });
   });
@@ -63,7 +56,11 @@ export function initReelModal() {
   }
 
   function closeModal() {
-    console.log('Closing reel modal');
+    // Blur focused element to prevent aria-hidden focus warning
+    if (document.activeElement && modal.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
