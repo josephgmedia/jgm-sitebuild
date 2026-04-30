@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Debug Test</title>
+  <style>
+    @font-face {
+      font-family: 'Monument';
+      src: url('/fonts/MonumentExtended-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Monument';
+      src: url('/fonts/MonumentExtended-Ultrabold.woff2') format('woff2');
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+    body {
+      background: #080808;
+      color: #edeae4;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+    }
+    .test {
+      font-family: 'Monument', sans-serif;
+      font-size: 48px;
+      margin: 20px 0;
+    }
+    .test-regular {
+      font-weight: 400;
+    }
+    .test-bold {
+      font-weight: 800;
+    }
+    .fallback {
+      font-family: Arial, sans-serif;
+      font-size: 48px;
+      margin: 20px 0;
+    }
+    .info {
+      font-size: 14px;
+      margin: 10px 0;
+      font-family: monospace;
+      color: #3931df;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="info">Font Loading Debug Page</h1>
+
+  <div class="info">Monument Regular (400):</div>
+  <div class="test test-regular">JOSEPH G MEDIA</div>
+
+  <div class="info">Monument Ultrabold (800):</div>
+  <div class="test test-bold">JOSEPH G MEDIA</div>
+
+  <div class="info">Fallback Arial:</div>
+  <div class="fallback">JOSEPH G MEDIA</div>
+
+  <div class="info" id="status">Checking font load status...</div>
+
+  <script>
+    document.fonts.ready.then(() => {
+      const status = document.getElementById('status');
+      const monument = Array.from(document.fonts).filter(f => f.family === 'Monument');
+      if (monument.length > 0) {
+        status.textContent = `✓ Monument fonts loaded: ${monument.map(f => f.weight).join(', ')}`;
+        status.style.color = '#00ff00';
+      } else {
+        status.textContent = '✗ Monument fonts NOT loaded';
+        status.style.color = '#ff0000';
+      }
+    });
+  </script>
+</body>
+</html>
