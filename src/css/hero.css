@@ -129,14 +129,13 @@
     position: absolute;
     bottom: var(--space-xl);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(20px);
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
     opacity: 0;
-    animation: fadeIn 0.8s ease 2s forwards, floatY 2s ease-in-out 3s infinite;
   }
 
   .scroll-circle,
