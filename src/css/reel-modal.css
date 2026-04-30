@@ -177,7 +177,7 @@
 
 .reel-card__play {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60px;
@@ -203,7 +203,7 @@
 
 .reel-card__title {
   position: absolute;
-  bottom: 0;
+  bottom: 8%;
   left: 0;
   right: 0;
   padding: 60px var(--space-md) var(--space-md);
