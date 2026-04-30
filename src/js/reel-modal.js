@@ -18,7 +18,17 @@ export function initReelModal() {
   const overlay = modal?.querySelector('.reel-modal__overlay');
   const reelCards = modal?.querySelectorAll('.reel-card');
 
-  if (!modal || !reelToggle) return;
+  console.log('initReelModal called');
+  console.log('modal:', modal);
+  console.log('reelToggle:', reelToggle);
+  console.log('backBtn:', backBtn);
+  console.log('overlay:', overlay);
+  console.log('reelCards:', reelCards);
+
+  if (!modal || !reelToggle) {
+    console.error('Missing required elements!');
+    return;
+  }
 
   console.log('Reel modal initialized. Found', reelCards?.length, 'reel cards');
 
