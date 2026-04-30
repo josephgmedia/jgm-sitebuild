@@ -34,8 +34,8 @@ export function initHeroAnimations() {
     }, '-=0.2')
     // 3. Start floating animation
     .to(scrollIndicator, {
-      y: -10,
-      duration: 2,
+      y: -6,
+      duration: 1.8,
       ease: 'sine.inOut',
       repeat: -1,
       yoyo: true
