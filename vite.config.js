@@ -66,7 +66,7 @@ export default defineConfig({
         // Asset file naming with hashes for cache busting
         assetFileNames: (assetInfo) => {
           // Keep fonts in their own directory
-          if (/\.(otf|woff|woff2|ttf|eot)$/.test(assetInfo.name)) {
+          if (/\.(woff|woff2|ttf|eot)$/.test(assetInfo.name)) {
             return 'assets/fonts/[name]-[hash][extname]';
           }
           // CSS
