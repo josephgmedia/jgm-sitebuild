@@ -77,6 +77,8 @@
     color: rgba(255,255,255,0.5);
     line-height: 1.25;
     pointer-events: none;
+    display: block;
+    align-self: flex-end;
   }
   .timeline__clip.is-active[data-short]::after {
     font-size: clamp(0.6rem, 1.2vw, 0.9rem);
