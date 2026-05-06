@@ -1,7 +1,7 @@
 [
   {
     "id": "nla-enlighten",
-    "title": "NLA Enlighten",
+    "title": "NLA - Enlighten",
     "category": "projection",
     "role": "Design Lead",
     "agency": "The Electric Canvas",
@@ -12,7 +12,7 @@
   },
   {
     "id": "rams-construction",
-    "title": "RAMS Construction",
+    "title": "RAMS - Construction Campaign",
     "category": "brand",
     "role": "Art Direction, 3D Animation, VFX Supervisor",
     "agency": "Saatchi & Saatchi",
@@ -33,7 +33,7 @@
   },
   {
     "id": "gryff",
-    "title": "Gryff",
+    "title": "Gryff - Music Video",
     "category": "video",
     "role": "Videography, Video Editing, Colour Grade",
     "thumb": "gryff.jpg",
@@ -43,7 +43,7 @@
   },
   {
     "id": "weightless-ep",
-    "title": "Weightless — A State of Mind",
+    "title": "Weightless - A State of Mind EP",
     "category": "3d",
     "role": "Art Direction, Design, 3D, Animation",
     "thumb": "weightless.jpg",
@@ -53,8 +53,8 @@
   },
   {
     "id": "bundaberg-cerumony",
-    "title": "Bundaberg CeRUMony",
-    "titleHtml": "Bundaberg Ce<span class=\"work__rum\">rum</span>ony",
+    "title": "Bundaberg - CeRUMony",
+    "titleHtml": "Bundaberg - Ce<span class=\"work__rum\">rum</span>ony",
     "category": "video",
     "role": "Videography, Video Editing, Colour Grade",
     "agency": "Leo Burnett",
@@ -65,7 +65,7 @@
   },
   {
     "id": "mca-vivid",
-    "title": "MCA Vivid Sydney",
+    "title": "MCA - Vivid Sydney",
     "category": "projection",
     "role": "Animation",
     "thumb": "mca-vivid.jpg",
@@ -74,7 +74,7 @@
   },
   {
     "id": "perth-stg-24",
-    "title": "Christmas at St George's Cathedral 2024",
+    "title": "St George's Cathedral - Christmas 2024",
     "category": "projection",
     "role": "Design, Animation, Music Composition",
     "thumb": "perth-stg.jpg",
@@ -83,7 +83,7 @@
   },
   {
     "id": "wrinkles-schminkles",
-    "title": "Wrinkles Schminkles",
+    "title": "Wrinkles Schminkles - 3D Campaign",
     "category": "3d",
     "role": "3D Animation",
     "thumb": "wrinkles.jpg",
@@ -95,7 +95,7 @@
   },
   {
     "id": "small-gods-razorgrinder-art",
-    "title": "Small Gods - Razorgrinder",
+    "title": "Small Gods - Razorgrinder Album Art",
     "category": "3d, design",
     "role": "Album Art, 3D Rendering, Design",
     "thumb": "small-gods-razorgrinder.jpg",
@@ -130,7 +130,7 @@
   },
   {
     "id": "bombay-play",
-    "title": "Bombay Play App Icon",
+    "title": "Bombay Sapphire - Play App Icon",
     "category": "2d",
     "role": "2D Animation",
     "thumb": "bombay-play.jpg",
@@ -171,7 +171,7 @@
   },
   {
     "id": "perth-stg-25",
-    "title": "Christmas at St George's Cathedral 2025",
+    "title": "St George's Cathedral - Christmas 2025",
     "category": "projection",
     "role": "Design, Animation, Music Composition",
     "thumb": "perth-stg-25.jpg",
@@ -180,7 +180,7 @@
   },
   {
     "id": "superloop-3d",
-    "title": "Superloop 3D Icons",
+    "title": "Superloop - 3D Icons",
     "category": "3d",
     "role": "3D Modelling, Rendering",
     "thumb": "superloop-3d.jpg",
@@ -206,7 +206,7 @@
   },
   {
     "id": "qantas-100",
-    "title": "Qantas 100th Birthday Print Ad",
+    "title": "Qantas - 100th Birthday Print",
     "category": "design",
     "role": "Print Design",
     "thumb": "qantas.jpg",
@@ -226,7 +226,7 @@
   },
   {
     "id": "murkwood-fiction",
-    "title": "Murkwood - Fiction",
+    "title": "Murkwood - Fiction Lyric Video",
     "category": "3d",
     "role": "Lyric Video",
     "thumb": "murkwood-fiction.jpg",
@@ -235,7 +235,7 @@
   },
   {
     "id": "nivea-burgess",
-    "title": "Nivea - Tom Burgess Shoot",
+    "title": "Nivea - Tom Burgess Photoshoot",
     "category": "photo",
     "role": "Photography",
     "thumb": "nivea-burgess.jpg",
@@ -269,7 +269,7 @@
   },
   {
     "id": "ampol-foodary",
-    "title": "Ampol Foodary",
+    "title": "Ampol - Foodary 3D",
     "category": "design",
     "role": "3D Design",
     "thumb": "ampol-foodary.jpg",
@@ -283,7 +283,7 @@
   },
   {
     "id": "small-gods-nemesis-art",
-    "title": "Small Gods - Nemesis",
+    "title": "Small Gods - Nemesis Album Art",
     "category": "3d, design",
     "role": "Album Art, 3D Rendering, Design",
     "thumb": "small-gods-nemesis.jpg",
@@ -308,7 +308,7 @@
   },
   {
     "id": "kia-cerato",
-    "title": "Kia Cerato",
+    "title": "Kia - Cerato Campaign",
     "category": "2d",
     "role": "2D Animation",
     "thumb": "kia-endframe.jpg",
@@ -317,7 +317,7 @@
   },
   {
     "id": "weightless-bloodsucker",
-    "title": "Weightless - Bloodsucker",
+    "title": "Weightless - Bloodsucker Album Art",
     "category": "3d, design",
     "role": "Album Art, 3D Rendering, Design",
     "thumb": "weightless-bloodsucker.jpg",
@@ -352,7 +352,7 @@
   },
   {
     "id": "bellwether",
-    "title": "Bellwether - Shortsighted",
+    "title": "Bellwether - Shortsighted Lyric Video",
     "category": "2d",
     "role": "Lyric Video",
     "thumb": "bellwether.jpg",
@@ -361,7 +361,7 @@
   },
   {
     "id": "down-for-tomorrow",
-    "title": "Down for Tomorrow Album Art",
+    "title": "Down for Tomorrow - Album Art",
     "category": "design",
     "role": "Design",
     "thumb": "down-for-tomorrow.jpg",
@@ -396,7 +396,7 @@
   },
   {
     "id": "coles-dinner",
-    "title": "Coles - What's For Dinner",
+    "title": "Coles - What's for Dinner",
     "category": "brand",
     "role": "Brand Content",
     "thumb": "coles-dinner.jpg",
@@ -409,7 +409,7 @@
   },
   {
     "id": "weightless-state-of-mind",
-    "title": "Weightless - A State of Mind",
+    "title": "Weightless - A State of Mind Album Art",
     "category": "3d",
     "role": "Album Art, 3D Rendering",
     "thumb": "weightless-state-of-mind.jpg",
@@ -424,7 +424,7 @@
   },
   {
     "id": "beast-atriox",
-    "title": "Atriox - Beast",
+    "title": "Atriox - Beast Lyric Video",
     "category": "2d",
     "role": "Lyric Video",
     "thumb": "beast-atriox.jpg",
@@ -433,7 +433,7 @@
   },
   {
     "id": "egalite",
-    "title": "Publicis Groupe - Egalite Drag Trivia",
+    "title": "Publicis Groupe - Egalite Drag Trivia Photoshoot",
     "category": "photo",
     "role": "Photography",
     "thumb": "egalite.jpg",
@@ -471,7 +471,7 @@
   },
   {
     "id": "cultists",
-    "title": "Cultists Album Art",
+    "title": "Cultists - Album Art",
     "category": "design",
     "role": "Design",
     "thumb": "cultists.jpg",
@@ -501,7 +501,7 @@
   },
   {
     "id": "dani-fiori",
-    "title": "Dani and Fiori's Pizzeria Merch",
+    "title": "Dani and Fiori's Pizzeria - Merch Design",
     "category": "design, merch",
     "role": "Merch Design",
     "thumb": "dani-fiori.jpg",
@@ -516,7 +516,7 @@
   },
   {
     "id": "weightless-counterfeit",
-    "title": "Weightless - Counterfeit",
+    "title": "Weightless - Counterfeit Album Art",
     "category": "3d, design",
     "role": "Album Art, 3D Rendering, Design",
     "thumb": "weightless-counterfeit.jpg",
@@ -561,7 +561,7 @@
   },
   {
     "id": "nivea-refresh",
-    "title": "Nivea Refresh Your Routine",
+    "title": "Nivea - Refresh Your Routine",
     "category": "2d",
     "role": "2D Animation",
     "thumb": "nivea-refresh.jpg",
@@ -583,7 +583,7 @@
   },
   {
     "id": "small-gods-razorgrinder",
-    "title": "Small Gods - Razorgrinder",
+    "title": "Small Gods - Razorgrinder Music Video",
     "category": "video",
     "role": "Videography, Direction",
     "thumb": "small-gods-razorgrinder-vid.jpg",
@@ -592,7 +592,7 @@
   },
   {
     "id": "futureheaven-imber",
-    "title": "Futureheaven - Imber",
+    "title": "Futureheaven - Imber Lyric Video",
     "category": "2d",
     "role": "Lyric Video",
     "thumb": "futureheaven-imber.jpg",
@@ -601,7 +601,7 @@
   },
   {
     "id": "donate-your-age",
-    "title": "Donate Your Age",
+    "title": "Donate Your Age - Brand Content",
     "category": "brand",
     "role": "Brand Content",
     "thumb": "donate-your-age.jpg",
@@ -610,7 +610,7 @@
   },
   {
     "id": "weightless-perspectives",
-    "title": "Weightless - Perspectives",
+    "title": "Weightless - Perspectives Album Art",
     "category": "3d, design",
     "role": "Album Art, 3D Rendering, Design",
     "thumb": "weightless-perspectives.jpg",
@@ -655,7 +655,7 @@
   },
   {
     "id": "humpty-dumpty",
-    "title": "Humpty Dumpty Christmas Appeal",
+    "title": "Humpty Dumpty - Christmas Appeal",
     "category": "design",
     "role": "Design",
     "thumb": "humpty-dumpty.jpg",
@@ -879,7 +879,7 @@
   },
   {
     "id": "karma-grim-city",
-    "title": "Karma - Grim City",
+    "title": "Karma - Grim City Lyric Video",
     "category": "2d",
     "role": "Lyric Video",
     "thumb": "karma-grim-city.jpg",
@@ -888,7 +888,7 @@
   },
   {
     "id": "bullet-finance",
-    "title": "Bullet Finance Headshots",
+    "title": "Bullet Finance - Corporate Headshots",
     "category": "photo",
     "role": "Corporate Photography",
     "thumb": "bullet-finance.jpg",
@@ -927,7 +927,7 @@
   },
   {
     "id": "petiguana",
-    "title": "Petiguana Promos",
+    "title": "Petiguana - Promo Shoot",
     "category": "photo",
     "role": "Photography",
     "thumb": "petiguana.jpg",
@@ -962,7 +962,7 @@
   },
   {
     "id": "ghost-complex-mania",
-    "title": "Ghost Complex - Mania",
+    "title": "Ghost Complex - Mania Album Art",
     "category": "design",
     "role": "Design",
     "thumb": "ghost-complex-mania.jpg",
@@ -977,7 +977,7 @@
   },
   {
     "id": "palmers",
-    "title": "Palmers Before/After Model Shoot",
+    "title": "Palmers - Before/After Retouching",
     "category": "photo",
     "role": "Retouching",
     "thumb": "palmers.jpg",
@@ -1007,7 +1007,7 @@
   },
   {
     "id": "mark-cultists",
-    "title": "Cultists - Mark of the Beast",
+    "title": "Cultists - Mark of the Beast Lyric Video",
     "category": "2d",
     "role": "Lyric Video",
     "thumb": "mark-cultists.jpg",
@@ -1016,7 +1016,7 @@
   },
   {
     "id": "murkwood-shoot",
-    "title": "Murkwood Promos",
+    "title": "Murkwood - Promo Shoot",
     "category": "photo",
     "role": "Photography",
     "thumb": "murkwood-shoot.jpg",
@@ -1046,7 +1046,7 @@
   },
   {
     "id": "futureheaven-tired-eyes",
-    "title": "Futureheaven - Tired Eyes",
+    "title": "Futureheaven - Tired Eyes Music Video",
     "category": "video",
     "role": "Videography, Direction",
     "thumb": "futureheaven-tired-eyes.jpg",
@@ -1055,7 +1055,7 @@
   },
   {
     "id": "neotek",
-    "title": "Neotek Promos",
+    "title": "Neotek - Promo Shoot",
     "category": "photo",
     "role": "Photography",
     "thumb": "neotek.jpg",
@@ -1085,7 +1085,7 @@
   },
   {
     "id": "junkhead",
-    "title": "Junkhead Album Art",
+    "title": "Junkhead - Album Art",
     "category": "design",
     "role": "Design",
     "thumb": "junkhead.jpg",
@@ -1135,7 +1135,7 @@
   },
   {
     "id": "futureheaven-asuka",
-    "title": "Futureheaven - Asuka",
+    "title": "Futureheaven - Asuka Music Video",
     "category": "video",
     "role": "Videography, Direction",
     "thumb": "futureheaven-asuka.jpg",
@@ -1144,7 +1144,7 @@
   },
   {
     "id": "small-gods-tshirt",
-    "title": "Small Gods Nemesis Merch",
+    "title": "Small Gods - Nemesis Merch",
     "category": "design, merch",
     "role": "Merch Design, Illustration",
     "thumb": "small-gods-tshirt.jpg",
@@ -1159,7 +1159,7 @@
   },
   {
     "id": "mourningstar-karma",
-    "title": "Mourning Star - Karma",
+    "title": "Mourning Star - Karma Music Video",
     "category": "video",
     "role": "Videography, Direction",
     "thumb": "mourningstar-karma.jpg",
@@ -1168,7 +1168,7 @@
   },
   {
     "id": "synge-rt-cyberpunk",
-    "title": "Synge - Cyberpunk Retouching",
+    "title": "Synge - Cyberpunk Composite",
     "category": "3d, design, photo",
     "role": "3D, Retouching, Photography",
     "thumb": "synge-cyberpunk-rt.jpg",
@@ -1183,7 +1183,7 @@
   },
   {
     "id": "junkhead-merch-longsleeve",
-    "title": "Junkhead Lyric Merch",
+    "title": "Junkhead - Lyric Merch",
     "category": "design, merch",
     "role": "Merch Design",
     "thumb": "junkhead-merch-01.jpg",
@@ -1253,7 +1253,7 @@
   },
   {
     "id": "false-london-flames",
-    "title": "False London - Flames",
+    "title": "False London - Flames Music Video",
     "category": "video",
     "role": "Videography, Direction",
     "thumb": "false-london-flames.jpg",
@@ -1262,7 +1262,7 @@
   },
   {
     "id": "synge-rt-space",
-    "title": "Synge - Space Retouching",
+    "title": "Synge - Space Composite",
     "category": "3d, design, photo",
     "role": "3D, Retouching, Photography",
     "thumb": "synge-space-rt.jpg",
@@ -1277,7 +1277,7 @@
   },
   {
     "id": "baltimore-pain",
-    "title": "Baltimore - Pain",
+    "title": "Baltimore - Pain Music Video",
     "category": "video",
     "role": "Videography, Direction",
     "thumb": "baltimore-pain.jpg",
@@ -1286,7 +1286,7 @@
   },
   {
     "id": "karli-josh",
-    "title": "Karli and Josh Engagement",
+    "title": "Karli and Josh - Engagement Shoot",
     "category": "photo",
     "role": "Photography",
     "thumb": "karli-josh.jpg",
@@ -1316,7 +1316,7 @@
   },
   {
     "id": "junkhead-merch-shortsleeve",
-    "title": "Junkhead Logo Merch",
+    "title": "Junkhead - Logo Merch",
     "category": "design, merch",
     "role": "Merch Design",
     "thumb": "junkhead-merch-02.jpg",
@@ -1331,7 +1331,7 @@
   },
   {
     "id": "somber-hills",
-    "title": "Somber Hills",
+    "title": "Somber Hills - Retouching",
     "category": "design",
     "role": "Retouching",
     "thumb": "somber-hills.jpg",
@@ -1346,7 +1346,7 @@
   },
   {
     "id": "simpson-cottage",
-    "title": "Simpson Cottage",
+    "title": "Simpson Cottage - Promotional Video",
     "category": "video, photo",
     "role": "Videography, Edit, Photography",
     "thumb": "simpson-cottage-promo.jpg",
@@ -1405,7 +1405,7 @@
   },
   {
     "id": "sunless",
-    "title": "Sunless Album Art",
+    "title": "Sunless - Album Art",
     "category": "design",
     "role": "Design",
     "thumb": "sunless.jpg",
@@ -1458,7 +1458,7 @@
   },
   {
     "id": "hyundai-i30n",
-    "title": "Hyundai i30N TVC Score",
+    "title": "Hyundai - i30N TVC Score",
     "category": "music",
     "role": "Music Composition",
     "thumb": "hyundai-i30n.jpg",
@@ -1467,7 +1467,7 @@
   },
   {
     "id": "blc-cosmetics",
-    "title": "BLC Cosmetics Event",
+    "title": "BLC Cosmetics - Event Coverage",
     "category": "video, photo",
     "role": "Videography, Edit, Photography",
     "thumb": "blc-cosmetics.jpg",
@@ -1516,7 +1516,7 @@
   },
   {
     "id": "hyundai-suv",
-    "title": "Hyundai SUV Range",
+    "title": "Hyundai - SUV Range TVC Score",
     "category": "music",
     "role": "Music Composition",
     "thumb": "hyundai-suv.jpg",
@@ -1525,7 +1525,7 @@
   },
   {
     "id": "stand-atlantic",
-    "title": "Stand Atlantic - Fxck 2020 Live Stream",
+    "title": "Stand Atlantic - Fxck 2020 Livestream",
     "category": "video",
     "role": "Second Camera",
     "thumb": "stand-atlantic.jpg",
@@ -1534,7 +1534,7 @@
   },
   {
     "id": "fiba-world-cup",
-    "title": "FIBA World Cup",
+    "title": "FIBA - World Cup Promo Score",
     "category": "music",
     "role": "Music Composition",
     "thumb": "fiba-world-cup.jpg",
@@ -1543,7 +1543,7 @@
   },
   {
     "id": "bloom",
-    "title": "Bloom - In Passing (Live)",
+    "title": "Bloom - In Passing Live Session",
     "category": "video, photo",
     "role": "Second Camera, Photography",
     "thumb": "bloom.jpg",
@@ -1582,7 +1582,7 @@
   },
   {
     "id": "shared-house",
-    "title": "A Shared House Theme",
+    "title": "A Shared House - Theme Music",
     "category": "music",
     "role": "Music Composition",
     "thumb": "shared-house.jpg",
@@ -1591,7 +1591,7 @@
   },
   {
     "id": "nic-brent-wedding",
-    "title": "Nic and Brent Wedding",
+    "title": "Nic and Brent - Wedding Video",
     "category": "video",
     "role": "Videography, Edit",
     "thumb": "nic-brent-wedding.jpg",
@@ -1600,7 +1600,7 @@
   },
   {
     "id": "everything-ive-said",
-    "title": "Everything I've Said",
+    "title": "Everything I've Said - Original Score",
     "category": "music",
     "role": "Music Composition",
     "thumb": "everything-ive-said.jpg",
@@ -1649,7 +1649,7 @@
   },
   {
     "id": "weightless-merch",
-    "title": "Weightless Lyric Merch",
+    "title": "Weightless - Lyric Merch",
     "category": "design, merch",
     "role": "Merch Design",
     "thumb": "weightless-merch.jpg",
@@ -1830,7 +1830,7 @@
   },
   {
     "id": "waiting-for-tonight",
-    "title": "WAITING FOR TONIGHT X FLOWERS - MNEK (GFRDA REMIX)",
+    "title": "GFRDA - Waiting for Tonight x Flowers (MNEK Remix)",
     "category": "music",
     "role": "Music Production",
     "thumb": "waiting-for-tonight.jpg",
@@ -1844,7 +1844,7 @@
   },
   {
     "id": "health-focus",
-    "title": "Health Focus - Chiropractic Care",
+    "title": "Health Focus - Chiropractic Promo",
     "category": "video",
     "role": "Videography",
     "thumb": "health-focus.jpg",
@@ -1853,7 +1853,7 @@
   },
   {
     "id": "on-a-night",
-    "title": "ON A NIGHT LIKE THIS - KYLIE MINOGUE (GFRDA REMIX)",
+    "title": "GFRDA - On a Night Like This (Kylie Minogue Remix)",
     "category": "music",
     "role": "Music Production",
     "thumb": "on-a-night.jpg",
@@ -1876,7 +1876,7 @@
   },
   {
     "id": "summer-heat",
-    "title": "SUMMER HEAT - SOLIDISCO (GFRDA REMIX)",
+    "title": "GFRDA - Summer Heat (Solidisco Remix)",
     "category": "music",
     "role": "Music Production",
     "thumb": "summer-heat.jpg",
@@ -1890,7 +1890,7 @@
   },
   {
     "id": "pokolbin-mountain",
-    "title": "Pokolbin Mountain Estate - Promotional Video",
+    "title": "Pokolbin Mountain Estate - Promo Video",
     "category": "video, photo",
     "role": "Videography",
     "thumb": "pokolbin-mountain.jpg",
@@ -1954,7 +1954,7 @@
   },
   {
     "id": "sublime",
-    "title": "SUBLIME - GFRDA X ABI FLYNN",
+    "title": "GFRDA x Abi Flynn - Sublime",
     "category": "music",
     "role": "Music Production",
     "thumb": "sublime.jpg",
@@ -1977,7 +1977,7 @@
   },
   {
     "id": "how-deep",
-    "title": "HOW DEEP IS YOUR LOVE - CALVIN HARRIS X DISCIPLES (GFRDA REMIX)",
+    "title": "GFRDA - How Deep Is Your Love (Calvin Harris x Disciples Remix)",
     "category": "music",
     "role": "Music Production",
     "thumb": "how-deep.jpg",
