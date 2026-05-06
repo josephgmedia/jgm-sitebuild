@@ -3,7 +3,7 @@ import gsap from 'gsap';
 
 export function initWordSweep() {
   // ── ABOUT — word-by-word colour sweep ──
-  ['#about-p1', '#about-p2', '#about-p3'].forEach(sel => {
+  ['#about-p1', '#about-p2', '#about-p3', '#about-p4', '#about-p5'].forEach(sel => {
     const p = document.querySelector(sel);
     if (!p) return;
     const words = p.innerHTML.split(' ');
