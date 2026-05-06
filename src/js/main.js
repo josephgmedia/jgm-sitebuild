@@ -8,6 +8,7 @@
    ============================================================ */
 
 import '../css/main.css';
+import '../css/back-to-top.css';
 
 import './greeting.js';
 import './cursor.js';
@@ -15,10 +16,12 @@ import './nav.js';
 import { initAnimations } from './init-animations.js';
 import { initReelModal } from './reel-modal.js';
 import { initContactForm } from './contact-form.js';
+import { initBackToTop } from './back-to-top.js';
 import './neon-cables.js';
 
 window.addEventListener('load', () => {
   initAnimations();
   initReelModal();
   initContactForm();
+  initBackToTop();
 });

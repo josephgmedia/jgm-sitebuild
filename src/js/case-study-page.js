@@ -4,10 +4,13 @@
 
 import '../css/main.css';
 import '../css/case-study.css';
+import '../css/back-to-top.css';
 
 import './cursor.js';
 import './nav.js';
 import { initSmoothScroll } from './smooth-scroll.js';
+import { initContactForm } from './contact-form.js';
+import { initBackToTop } from './back-to-top.js';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,6 +19,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('load', () => {
   initSmoothScroll();
+  initContactForm();
+  initBackToTop();
 
   // Hero image subtle parallax
   gsap.to('.cs-hero__img', {

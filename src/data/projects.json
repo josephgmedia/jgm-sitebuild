@@ -65,7 +65,7 @@
   },
   {
     "id": "mca-vivid",
-    "title": "MCA - Vivid Sydney",
+    "title": "MCA, Vivid Sydney - King Dingo",
     "category": "projection",
     "role": "Animation",
     "thumb": "mca-vivid.jpg",
@@ -74,7 +74,7 @@
   },
   {
     "id": "perth-stg-24",
-    "title": "St George's Cathedral - Christmas 2024",
+    "title": "St George's Cathedral - Christmas at the Cathedral 2024",
     "category": "projection",
     "role": "Design, Animation, Music Composition",
     "thumb": "perth-stg.jpg",
@@ -83,7 +83,7 @@
   },
   {
     "id": "wrinkles-schminkles",
-    "title": "Wrinkles Schminkles - 3D Campaign",
+    "title": "Wrinkles Schminkles - UK Product Launch",
     "category": "3d",
     "role": "3D Animation",
     "thumb": "wrinkles.jpg",
@@ -95,9 +95,9 @@
   },
   {
     "id": "small-gods-razorgrinder-art",
-    "title": "Small Gods - Razorgrinder Album Art",
-    "category": "3d, design",
-    "role": "Album Art, 3D Rendering, Design",
+    "title": "Small Gods - Razorgrinder Album Art Package",
+    "category": "design",
+    "role": "Design",
     "thumb": "small-gods-razorgrinder.jpg",
     "type": "gallery",
     "media": [
@@ -130,7 +130,7 @@
   },
   {
     "id": "bombay-play",
-    "title": "Bombay Sapphire - Play App Icon",
+    "title": "Bombay Sapphire - Bombay Play Icon Design",
     "category": "2d",
     "role": "2D Animation",
     "thumb": "bombay-play.jpg",
@@ -171,7 +171,7 @@
   },
   {
     "id": "perth-stg-25",
-    "title": "St George's Cathedral - Christmas 2025",
+    "title": "St George's Cathedral - Christmas at the Cathedral 2025",
     "category": "projection",
     "role": "Design, Animation, Music Composition",
     "thumb": "perth-stg-25.jpg",
@@ -180,7 +180,7 @@
   },
   {
     "id": "superloop-3d",
-    "title": "Superloop - 3D Icons",
+    "title": "Superloop - Refresh Your Internet 3D Icon Design",
     "category": "3d",
     "role": "3D Modelling, Rendering",
     "thumb": "superloop-3d.jpg",
@@ -206,7 +206,7 @@
   },
   {
     "id": "qantas-100",
-    "title": "Qantas - 100th Birthday Print",
+    "title": "Qantas - 100th Birthday Print Ad",
     "category": "design",
     "role": "Print Design",
     "thumb": "qantas.jpg",
@@ -235,7 +235,7 @@
   },
   {
     "id": "nivea-burgess",
-    "title": "Nivea - Tom Burgess Photoshoot",
+    "title": "Nivea x Tom Burgess - Nivea Men Photoshoot",
     "category": "photo",
     "role": "Photography",
     "thumb": "nivea-burgess.jpg",
@@ -269,9 +269,9 @@
   },
   {
     "id": "ampol-foodary",
-    "title": "Ampol - Foodary 3D",
-    "category": "design",
-    "role": "3D Design",
+    "title": "Ampol Foodary - Meant to Be Campaign",
+    "category": "brand",
+    "role": "Brand Content",
     "thumb": "ampol-foodary.jpg",
     "type": "gallery",
     "media": [
@@ -283,9 +283,9 @@
   },
   {
     "id": "small-gods-nemesis-art",
-    "title": "Small Gods - Nemesis Album Art",
-    "category": "3d, design",
-    "role": "Album Art, 3D Rendering, Design",
+    "title": "Small Gods - Nemesis Album Art Package",
+    "category": "design",
+    "role": "Design",
     "thumb": "small-gods-nemesis.jpg",
     "type": "gallery",
     "media": [
@@ -308,7 +308,7 @@
   },
   {
     "id": "kia-cerato",
-    "title": "Kia - Cerato Campaign",
+    "title": "Kia - Cerato GT End Frame",
     "category": "2d",
     "role": "2D Animation",
     "thumb": "kia-endframe.jpg",
@@ -317,9 +317,9 @@
   },
   {
     "id": "weightless-bloodsucker",
-    "title": "Weightless - Bloodsucker Album Art",
-    "category": "3d, design",
-    "role": "Album Art, 3D Rendering, Design",
+    "title": "Weightless - Bloodsucker Album Art Package",
+    "category": "design",
+    "role": "Design",
     "thumb": "weightless-bloodsucker.jpg",
     "type": "gallery",
     "media": [
@@ -361,7 +361,7 @@
   },
   {
     "id": "down-for-tomorrow",
-    "title": "Down for Tomorrow - Album Art",
+    "title": "Down for Tomorrow - Dark Comedy Album Art Package",
     "category": "design",
     "role": "Design",
     "thumb": "down-for-tomorrow.jpg",
@@ -396,7 +396,7 @@
   },
   {
     "id": "coles-dinner",
-    "title": "Coles - What's for Dinner",
+    "title": "Coles - What's for Dinner Campaign",
     "category": "brand",
     "role": "Brand Content",
     "thumb": "coles-dinner.jpg",
@@ -410,8 +410,8 @@
   {
     "id": "weightless-state-of-mind",
     "title": "Weightless - A State of Mind Album Art",
-    "category": "3d",
-    "role": "Album Art, 3D Rendering",
+    "category": "design",
+    "role": "Design",
     "thumb": "weightless-state-of-mind.jpg",
     "type": "gallery",
     "media": [
@@ -433,7 +433,7 @@
   },
   {
     "id": "egalite",
-    "title": "Publicis Groupe - Egalite Drag Trivia Photoshoot",
+    "title": "Publicis Groupe - Egalite Drag Trivia Event",
     "category": "photo",
     "role": "Photography",
     "thumb": "egalite.jpg",
@@ -471,7 +471,7 @@
   },
   {
     "id": "cultists",
-    "title": "Cultists - Album Art",
+    "title": "Cultists - Killing Spree Album Art Package",
     "category": "design",
     "role": "Design",
     "thumb": "cultists.jpg",
@@ -516,9 +516,9 @@
   },
   {
     "id": "weightless-counterfeit",
-    "title": "Weightless - Counterfeit Album Art",
-    "category": "3d, design",
-    "role": "Album Art, 3D Rendering, Design",
+    "title": "Weightless - Counterfeit Album Art Package",
+    "category": "design",
+    "role": "Design",
     "thumb": "weightless-counterfeit.jpg",
     "type": "gallery",
     "media": [
@@ -574,7 +574,7 @@
   },
   {
     "id": "pepsi-gflip",
-    "title": "Pepsi - G Flip Event",
+    "title": "Pepsi - Pulse Collection Event",
     "category": "video",
     "role": "Videography, Direction",
     "thumb": "pepsi-gflip.jpg",
@@ -601,7 +601,7 @@
   },
   {
     "id": "donate-your-age",
-    "title": "Donate Your Age - Brand Content",
+    "title": "Donate Your Age - Case Study Video",
     "category": "brand",
     "role": "Brand Content",
     "thumb": "donate-your-age.jpg",
@@ -610,9 +610,9 @@
   },
   {
     "id": "weightless-perspectives",
-    "title": "Weightless - Perspectives Album Art",
-    "category": "3d, design",
-    "role": "Album Art, 3D Rendering, Design",
+    "title": "Weightless - Perspectives Album Art Package",
+    "category": "design",
+    "role": "Design",
     "thumb": "weightless-perspectives.jpg",
     "type": "gallery",
     "media": [
@@ -645,17 +645,12 @@
         "type": "image",
         "src": "weightless_perspectives_PS_post.webp",
         "alt": "Weightless Perspectives post (Presave)"
-      },
-      {
-        "type": "image",
-        "src": "weightless_perspectives_PS_story.webp",
-        "alt": "Weightless Perspectives story (Presave)"
       }
     ]
   },
   {
     "id": "humpty-dumpty",
-    "title": "Humpty Dumpty - Christmas Appeal",
+    "title": "Humpty Dumpty - Christmas Appeal Campaign",
     "category": "design",
     "role": "Design",
     "thumb": "humpty-dumpty.jpg",
@@ -690,7 +685,7 @@
   },
   {
     "id": "ampol-servo",
-    "title": "Ampol - Last Chance Servo",
+    "title": "Ampol - Last Chance Servo Case Study",
     "category": "brand",
     "role": "Brand Content",
     "thumb": "ampol-servo.jpg",
@@ -699,7 +694,7 @@
   },
   {
     "id": "la-crema-lounge",
-    "title": "La Crema Lounge",
+    "title": "La Crema Lounge - Promotional Content",
     "category": "video, photo",
     "role": "Videography, Edit, Photography",
     "thumb": "la-crema-lounge.jpg",
@@ -733,7 +728,7 @@
   },
   {
     "id": "ghost-complex-voice",
-    "title": "Ghost Complex - Voice of the Void",
+    "title": "Ghost Complex - Voice of the Void Album Art Package",
     "category": "design",
     "role": "Design",
     "thumb": "ghost-complex-void.jpg",
@@ -785,7 +780,7 @@
   },
   {
     "id": "heineken-150",
-    "title": "Heineken - 150Y",
+    "title": "Heineken - 150 Years Case Study",
     "category": "brand",
     "role": "Brand Content",
     "thumb": "heineken-150.jpg",
@@ -794,7 +789,7 @@
   },
   {
     "id": "le-vide",
-    "title": "Le Vide Promos",
+    "title": "Le Vide - Promo Shoot",
     "category": "photo",
     "role": "Photography",
     "thumb": "le-vide.jpg",
@@ -824,9 +819,9 @@
   },
   {
     "id": "weightless-sabotage",
-    "title": "Weightless - Sabotage",
-    "category": "3d",
-    "role": "Album Art, 3D Rendering",
+    "title": "Weightless - Sabotage Album Art",
+    "category": "design",
+    "role": "Design",
     "thumb": "weightless-sabotage.jpg",
     "type": "gallery",
     "media": [
@@ -918,7 +913,7 @@
   },
   {
     "id": "vitasoy-baristas",
-    "title": "Vitasoy - Home Grown Baristas",
+    "title": "Vitasoy - Homegrown Baristas",
     "category": "brand",
     "role": "Brand Content",
     "thumb": "vitasoy-baristas.jpg",
@@ -962,7 +957,7 @@
   },
   {
     "id": "ghost-complex-mania",
-    "title": "Ghost Complex - Mania Album Art",
+    "title": "Ghost Complex - Mania Album Artwork",
     "category": "design",
     "role": "Design",
     "thumb": "ghost-complex-mania.jpg",
@@ -977,7 +972,7 @@
   },
   {
     "id": "palmers",
-    "title": "Palmers - Before/After Retouching",
+    "title": "Palmers - Before/After Photoshoot",
     "category": "photo",
     "role": "Retouching",
     "thumb": "palmers.jpg",
@@ -1055,7 +1050,7 @@
   },
   {
     "id": "neotek",
-    "title": "Neotek - Promo Shoot",
+    "title": "Neotex - Promo Shoot",
     "category": "photo",
     "role": "Photography",
     "thumb": "neotek.jpg",
@@ -1085,7 +1080,7 @@
   },
   {
     "id": "junkhead",
-    "title": "Junkhead - Album Art",
+    "title": "Junkhead - Grifter Album Art Package",
     "category": "design",
     "role": "Design",
     "thumb": "junkhead.jpg",
@@ -1168,7 +1163,7 @@
   },
   {
     "id": "synge-rt-cyberpunk",
-    "title": "Synge - Cyberpunk Composite",
+    "title": "Synge - Cyberpunk Promo Shoot",
     "category": "3d, design, photo",
     "role": "3D, Retouching, Photography",
     "thumb": "synge-cyberpunk-rt.jpg",
@@ -1262,7 +1257,7 @@
   },
   {
     "id": "synge-rt-space",
-    "title": "Synge - Space Composite",
+    "title": "Synge - Cosmic Promo Shoot",
     "category": "3d, design, photo",
     "role": "3D, Retouching, Photography",
     "thumb": "synge-space-rt.jpg",
@@ -1331,7 +1326,7 @@
   },
   {
     "id": "somber-hills",
-    "title": "Somber Hills - Retouching",
+    "title": "Somberhills - Promo Shoot Retouching",
     "category": "design",
     "role": "Retouching",
     "thumb": "somber-hills.jpg",
@@ -1346,7 +1341,7 @@
   },
   {
     "id": "simpson-cottage",
-    "title": "Simpson Cottage - Promotional Video",
+    "title": "Simpson Cottage - Promotional Content",
     "category": "video, photo",
     "role": "Videography, Edit, Photography",
     "thumb": "simpson-cottage-promo.jpg",
@@ -1405,7 +1400,7 @@
   },
   {
     "id": "sunless",
-    "title": "Sunless - Album Art",
+    "title": "Sunless - From Below Album Artwork",
     "category": "design",
     "role": "Design",
     "thumb": "sunless.jpg",
@@ -1419,7 +1414,7 @@
   },
   {
     "id": "manifest-launch",
-    "title": "Manifest the Label - Launch Promo",
+    "title": "Manifest the Label - Face Mask Launch Content",
     "category": "video, photo",
     "role": "Videography, Edit, Photography",
     "thumb": "manifest-launch.jpg",
@@ -1467,7 +1462,7 @@
   },
   {
     "id": "blc-cosmetics",
-    "title": "BLC Cosmetics - Event Coverage",
+    "title": "BLC Cosmetics - Beauty Expo Event Coverage",
     "category": "video, photo",
     "role": "Videography, Edit, Photography",
     "thumb": "blc-cosmetics.jpg",
@@ -1525,7 +1520,7 @@
   },
   {
     "id": "stand-atlantic",
-    "title": "Stand Atlantic - Fxck 2020 Livestream",
+    "title": "Stand Atlantic - Fxck 2020 Live Stream",
     "category": "video",
     "role": "Second Camera",
     "thumb": "stand-atlantic.jpg",
@@ -1582,7 +1577,7 @@
   },
   {
     "id": "shared-house",
-    "title": "A Shared House - Theme Music",
+    "title": "A Shared House - Web Series Underscore, Season 1",
     "category": "music",
     "role": "Music Composition",
     "thumb": "shared-house.jpg",
@@ -1600,7 +1595,7 @@
   },
   {
     "id": "everything-ive-said",
-    "title": "Everything I've Said - Original Score",
+    "title": "Joe Giuffrida - Everything I've Said",
     "category": "music",
     "role": "Music Composition",
     "thumb": "everything-ive-said.jpg",
@@ -1664,7 +1659,7 @@
   },
   {
     "id": "madre-natura",
-    "title": "Madre Natura - Last Season Collection",
+    "title": "Madre Natura - Last Season Collection Case Study",
     "category": "brand",
     "role": "Brand Content",
     "thumb": "madre-natura.jpg",
@@ -1713,7 +1708,7 @@
   },
   {
     "id": "lexus-encore",
-    "title": "Lexus - Encore Platinum",
+    "title": "Lexus - Encore Platinum Animation",
     "category": "brand",
     "role": "Brand Content, 2d Animation",
     "thumb": "lexus.jpg",
@@ -1767,7 +1762,7 @@
   },
   {
     "id": "visit-singapore",
-    "title": "Visit Singapore - Find Yourself in Singapore",
+    "title": "Visit Singapore - Find Yourself in Singapore 3D Model",
     "category": "brand",
     "role": "Brand Content",
     "thumb": "visit-singapore.jpg",
@@ -1821,7 +1816,7 @@
   },
   {
     "id": "tell-me-about-it",
-    "title": "Tell Me About It - Event Launch",
+    "title": "Tell Me About It - Brand Launch Event",
     "category": "video",
     "role": "Videography",
     "thumb": "tell-me-about-it.jpg",
@@ -1844,7 +1839,7 @@
   },
   {
     "id": "health-focus",
-    "title": "Health Focus - Chiropractic Promo",
+    "title": "Health Focus - Chiropractic Care During Pregnancy",
     "category": "video",
     "role": "Videography",
     "thumb": "health-focus.jpg",
@@ -1890,9 +1885,9 @@
   },
   {
     "id": "pokolbin-mountain",
-    "title": "Pokolbin Mountain Estate - Promo Video",
+    "title": "Pokolbin Mountain Estate - Promotional Content",
     "category": "video, photo",
-    "role": "Videography",
+    "role": "Videography, Photography",
     "thumb": "pokolbin-mountain.jpg",
     "type": "gallery",
     "media": [
