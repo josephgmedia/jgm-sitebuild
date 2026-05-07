@@ -20,6 +20,14 @@
   line-height: 1;
   margin-bottom: var(--space-md);
 }
+.work-hero__intro {
+  font-family: 'Barlow', sans-serif;
+  font-size: var(--fs-body-lg);
+  line-height: 1.6;
+  color: var(--text-dim);
+  max-width: 800px;
+  margin-bottom: var(--space-lg);
+}
 
 /* ── FILTER BAR — sticky below nav ── */
 .gallery__filters {

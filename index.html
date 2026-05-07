@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joseph G Media</title>
+  <title>Joseph G Media | Motion Design, 3D & Video Sydney</title>
+  <meta name="description" content="Senior motion designer in Sydney with 10+ years creating motion graphics, 3D animation, video production, photography, and design for broadcast, advertising, and live events.">
+  <link rel="canonical" href="https://josephgmedia.com/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Joseph G Media | Motion Design, 3D & Video Sydney">
+  <meta property="og:description" content="Senior motion designer in Sydney with 10+ years creating motion graphics, 3D animation, video, photography, and design.">
+  <meta property="og:image" content="https://josephgmedia.com/src/assets/images/hero-sign/about.webp">
+  <meta property="og:url" content="https://josephgmedia.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Joseph G Media">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Joseph G Media | Motion Design, 3D & Video Sydney">
+  <meta name="twitter:description" content="Senior motion designer in Sydney. 10+ years creating motion graphics, 3D animation, video, photography & design.">
+  <meta name="twitter:image" content="https://josephgmedia.com/src/assets/images/hero-sign/about.webp">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,6 +29,80 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="src/css/main.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Joseph G Media",
+    "url": "https://josephgmedia.com",
+    "logo": "https://josephgmedia.com/src/assets/images/logos/JGMedia_Logo.svg",
+    "description": "Motion design and video production specializing in broadcast, advertising, and live events in Sydney, Australia",
+    "email": "info@josephgmedia.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sydney",
+      "addressRegion": "NSW",
+      "addressCountry": "AU"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Joseph Giuffrida",
+      "jobTitle": "Senior Motion Designer",
+      "sameAs": [
+        "https://www.linkedin.com/in/jgiuffrida93/",
+        "https://www.instagram.com/josephgmedia"
+      ]
+    },
+    "sameAs": [
+      "https://www.instagram.com/josephgmedia",
+      "https://www.youtube.com/@josephgmedia",
+      "https://www.linkedin.com/in/jgiuffrida93/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joseph Giuffrida",
+    "alternateName": "Joseph G Media",
+    "jobTitle": "Senior Motion Designer",
+    "description": "Motion designer, 3D animator, videographer, and multimedia artist with 10+ years experience in broadcast, advertising, and live events",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "The Electric Canvas"
+    },
+    "alumniOf": [
+      {
+        "@type": "Organization",
+        "name": "Saatchi & Saatchi"
+      },
+      {
+        "@type": "Organization",
+        "name": "Omnicom"
+      }
+    ],
+    "knowsAbout": [
+      "Motion Design",
+      "3D Animation",
+      "Video Production",
+      "After Effects",
+      "Cinema 4D",
+      "Video Editing",
+      "Sound Design",
+      "Music Composition"
+    ],
+    "url": "https://josephgmedia.com",
+    "email": "info@josephgmedia.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/jgiuffrida93/",
+      "https://www.instagram.com/josephgmedia",
+      "https://www.youtube.com/@josephgmedia"
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- CURSOR -->
@@ -23,7 +113,7 @@
   <!-- HERO -->
   <section class="hero" id="hero" aria-label="Hero">
     <!-- Layer 1: Brick background (single image, CSS handles on/off state) -->
-    <img class="hero__layer hero__brick" src="src/assets/images/hero-sign/hero-brick-bg.webp" alt="" />
+    <img class="hero__layer hero__brick" src="src/assets/images/hero-sign/hero-brick-bg.webp" alt="" fetchpriority="high" width="1920" height="1080" />
     <div class="hero__brick-glow"></div>
 
     <!-- Layer 2: Cable canvas (full layer) -->
@@ -33,8 +123,8 @@
     <div class="hero__container">
       <!-- Sign wrapper to contain both states -->
       <div class="hero__sign-wrapper">
-        <img class="hero__sign hero__sign--off" src="src/assets/images/hero-sign/hero-sign-fg-off.webp" alt="" />
-        <img class="hero__sign hero__sign--on"  src="src/assets/images/hero-sign/hero-sign-fg-on.webp"  alt="" />
+        <img class="hero__sign hero__sign--off" src="src/assets/images/hero-sign/hero-sign-fg-off.webp" alt="" width="1920" height="1080" />
+        <img class="hero__sign hero__sign--on"  src="src/assets/images/hero-sign/hero-sign-fg-on.webp"  alt="" width="1920" height="1080" />
       </div>
 
       <div class="hero__ui hero__ui--bottom">
@@ -66,6 +156,7 @@
     <!-- Navigation -->
     <nav id="nav">
       <h1 class="nav__logo-wrap">
+        <span class="sr-only">Joseph G Media - Motion Design, 3D & Video Production</span>
         <a href="index.html" class="nav__logo">
           <img src="src/assets/images/logos/JGMedia_Logo.svg" alt="Joseph G Media" />
         </a>
@@ -148,19 +239,19 @@
           </video>
           <!-- Static image disciplines (Ken Burns) -->
           <div id="tl-media-design" class="timeline__monitor-video timeline__media-layer timeline__kb-wrap">
-            <img class="timeline__kb-img" loading="lazy" src="src/assets/images/monitor-img/design.webp" alt="Design and illustration work sample" />
+            <img class="timeline__kb-img" loading="lazy" decoding="async" width="1920" height="1080" src="src/assets/images/monitor-img/design.webp" alt="Graphic design and illustration work samples showcasing branding and visual identity projects" />
           </div>
           <div id="tl-media-web" class="timeline__monitor-video timeline__media-layer timeline__kb-wrap">
-            <img class="timeline__kb-img" loading="lazy" src="src/assets/images/monitor-img/web.webp" alt="Web design work sample" />
+            <img class="timeline__kb-img" loading="lazy" decoding="async" width="1920" height="1080" src="src/assets/images/monitor-img/web.webp" alt="Web design and development work samples featuring responsive website designs" />
           </div>
           <div id="tl-media-genai" class="timeline__monitor-video timeline__media-layer timeline__kb-wrap">
-            <img class="timeline__kb-img" loading="lazy" src="src/assets/images/monitor-img/genai.webp" alt="AI and generative design work sample" />
+            <img class="timeline__kb-img" loading="lazy" decoding="async" width="1920" height="1080" src="src/assets/images/monitor-img/genai.webp" alt="AI and generative design work samples using machine learning and creative coding" />
           </div>
           <!-- Photography slideshow (Ken Burns per image) -->
           <div id="tl-media-photo" class="timeline__monitor-video timeline__media-layer timeline__kb-wrap">
-            <img class="timeline__photo-slide timeline__kb-img" loading="lazy" src="src/assets/images/monitor-img/photo-1.webp" alt="Photography work sample" />
-            <img class="timeline__photo-slide timeline__kb-img" loading="lazy" src="src/assets/images/monitor-img/photo-2.webp" alt="Photography work sample" />
-            <img class="timeline__photo-slide timeline__kb-img" loading="lazy" src="src/assets/images/monitor-img/photo-3.webp" alt="Photography work sample" />
+            <img class="timeline__photo-slide timeline__kb-img" loading="lazy" decoding="async" width="1920" height="1080" src="src/assets/images/monitor-img/photo-1.webp" alt="Professional photography portfolio sample featuring commercial and artistic work" />
+            <img class="timeline__photo-slide timeline__kb-img" loading="lazy" decoding="async" width="1920" height="1080" src="src/assets/images/monitor-img/photo-2.webp" alt="Professional photography portfolio sample showcasing portrait and event photography" />
+            <img class="timeline__photo-slide timeline__kb-img" loading="lazy" decoding="async" width="1920" height="1080" src="src/assets/images/monitor-img/photo-3.webp" alt="Professional photography portfolio sample with creative composition and lighting" />
           </div>
         </div>
         <div class="timeline__monitor-duotone"></div>
@@ -206,7 +297,7 @@
       </div>
     </div>
     <div class="about__right" id="about-right">
-      <img class="about__image" src="src/assets/images/hero-sign/about.webp" alt="About Joseph G Media" loading="lazy" />
+      <img class="about__image" src="src/assets/images/hero-sign/about.webp" alt="Joseph Giuffrida - Senior motion designer working on creative projects in Sydney studio" loading="lazy" decoding="async" width="1920" height="1080" />
       <p id="about-p1">
         I've never been able to give a straight answer to "what do you do?"
       </p>
@@ -239,62 +330,62 @@
       <div class="credits__right" id="credits-right">
         <div class="marquee__row marquee__row-1">
           <div class="marquee__track marquee__track--left">
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Ampol-Logo.svg" alt="Ampol"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Arnotts-Logo.svg" alt="Arnott's"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/BombaySapphire-Logo.svg" alt="Bombay Sapphire"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Codral-Logo.svg" alt="Codral"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Coles-Logo.svg" alt="Coles"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Cottees-Logo.svg" alt="Cottee's"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Dulux-Logo.svg" alt="Dulux"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Elastoplast-Logo.svg" alt="Elastoplast"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/EsteeLauder-Logo.svg" alt="Estée Lauder"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Heineken-Logo.svg" alt="Heineken"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Hyundai-Logo.svg" alt="Hyundai"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Kia-Logo.svg" alt="Kia"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/L'Oréal-Logo.svg" alt="L'Oréal"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Ampol-Logo.svg" alt="Ampol"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Arnotts-Logo.svg" alt="Arnott's"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/BombaySapphire-Logo.svg" alt="Bombay Sapphire"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Codral-Logo.svg" alt="Codral"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Coles-Logo.svg" alt="Coles"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Cottees-Logo.svg" alt="Cottee's"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Dulux-Logo.svg" alt="Dulux"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Elastoplast-Logo.svg" alt="Elastoplast"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/EsteeLauder-Logo.svg" alt="Estée Lauder"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Heineken-Logo.svg" alt="Heineken"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Hyundai-Logo.svg" alt="Hyundai"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Kia-Logo.svg" alt="Kia"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/L'Oréal-Logo.svg" alt="L'Oréal"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Ampol-Logo.svg" alt="Ampol - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Arnotts-Logo.svg" alt="Arnott's - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/BombaySapphire-Logo.svg" alt="Bombay Sapphire - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Codral-Logo.svg" alt="Codral - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Coles-Logo.svg" alt="Coles - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Cottees-Logo.svg" alt="Cottee's - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Dulux-Logo.svg" alt="Dulux - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Elastoplast-Logo.svg" alt="Elastoplast - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/EsteeLauder-Logo.svg" alt="Estée Lauder - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Heineken-Logo.svg" alt="Heineken - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Hyundai-Logo.svg" alt="Hyundai - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Kia-Logo.svg" alt="Kia - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/L'Oréal-Logo.svg" alt="L'Oréal - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Ampol-Logo.svg" alt="Ampol - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Arnotts-Logo.svg" alt="Arnott's - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/BombaySapphire-Logo.svg" alt="Bombay Sapphire - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Codral-Logo.svg" alt="Codral - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Coles-Logo.svg" alt="Coles - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Cottees-Logo.svg" alt="Cottee's - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Dulux-Logo.svg" alt="Dulux - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Elastoplast-Logo.svg" alt="Elastoplast - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/EsteeLauder-Logo.svg" alt="Estée Lauder - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Heineken-Logo.svg" alt="Heineken - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Hyundai-Logo.svg" alt="Hyundai - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Kia-Logo.svg" alt="Kia - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/L'Oréal-Logo.svg" alt="L'Oréal - Client logo"></span>
           </div>
         </div>
         <div class="marquee__row marquee__row-2">
           <div class="marquee__track marquee__track--right">
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Lexus-Logo.svg" alt="Lexus"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Listerine-Logo.svg" alt="Listerine"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Nescafe-Logo.svg" alt="Nescafé"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Nivea-Logo.svg" alt="Nivea"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/NSWGov-Logo.svg" alt="NSW Government"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Pepsi-Logo.svg" alt="Pepsi"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Qantas-Logo.svg" alt="Qantas"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Rams-Logo.svg" alt="RAMS"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/STG-Logo.svg" alt="St.George"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Superloop-Logo.svg" alt="Superloop"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Toyota-Logo.svg" alt="Toyota"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/VicGov-Logo.svg" alt="Victorian Government"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Visa-Logo.svg" alt="Visa"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Lexus-Logo.svg" alt="Lexus"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Listerine-Logo.svg" alt="Listerine"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Nescafe-Logo.svg" alt="Nescafé"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Nivea-Logo.svg" alt="Nivea"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/NSWGov-Logo.svg" alt="NSW Government"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Pepsi-Logo.svg" alt="Pepsi"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Qantas-Logo.svg" alt="Qantas"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Rams-Logo.svg" alt="RAMS"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/STG-Logo.svg" alt="St.George"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Superloop-Logo.svg" alt="Superloop"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Toyota-Logo.svg" alt="Toyota"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/VicGov-Logo.svg" alt="Victorian Government"></span>
-            <span class="marquee__item"><img class="marquee__logo" loading="lazy" src="src/assets/images/logos/Visa-Logo.svg" alt="Visa"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Lexus-Logo.svg" alt="Lexus - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Listerine-Logo.svg" alt="Listerine - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Nescafe-Logo.svg" alt="Nescafé - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Nivea-Logo.svg" alt="Nivea - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/NSWGov-Logo.svg" alt="NSW Government - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Pepsi-Logo.svg" alt="Pepsi - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Qantas-Logo.svg" alt="Qantas - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Rams-Logo.svg" alt="RAMS - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/STG-Logo.svg" alt="St.George - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Superloop-Logo.svg" alt="Superloop - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Toyota-Logo.svg" alt="Toyota - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/VicGov-Logo.svg" alt="Victorian Government - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Visa-Logo.svg" alt="Visa - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Lexus-Logo.svg" alt="Lexus - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Listerine-Logo.svg" alt="Listerine - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Nescafe-Logo.svg" alt="Nescafé - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Nivea-Logo.svg" alt="Nivea - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/NSWGov-Logo.svg" alt="NSW Government - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Pepsi-Logo.svg" alt="Pepsi - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Qantas-Logo.svg" alt="Qantas - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Rams-Logo.svg" alt="RAMS - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/STG-Logo.svg" alt="St.George - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Superloop-Logo.svg" alt="Superloop - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Toyota-Logo.svg" alt="Toyota - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/VicGov-Logo.svg" alt="Victorian Government - Client logo"></span>
+            <span class="marquee__item"><img class="marquee__logo" loading="lazy" decoding="async" width="120" height="60" src="src/assets/images/logos/Visa-Logo.svg" alt="Visa - Client logo"></span>
           </div>
         </div>
       </div>

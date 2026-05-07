@@ -1,0 +1,49 @@
+# robots.txt for josephgmedia.com
+
+# Sitemap
+Sitemap: https://josephgmedia.com/sitemap.xml
+
+# ALLOW AI search crawlers (visibility in ChatGPT, Perplexity, Google AI Overviews)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# BLOCK training/scraping crawlers only
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+# Allow search engine crawlers
+User-agent: *
+Allow: /
+
+# Block test/debug pages
+Disallow: /font-test.html
+Disallow: /font-debug.html
+Disallow: /mobile-test.html
+
+# Block source directories from indexing
+Disallow: /src/js/
+Disallow: /src/css/
+Disallow: /.claude/
+Disallow: /.git/
+Disallow: /node_modules/
