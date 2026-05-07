@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio CMS - Joseph G Media</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    button {
+      background: #4a5ef0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    button:hover { background: #3a4ed9; }
+    button.secondary {
+      background: #333;
+    }
+    button.secondary:hover { background: #444; }
+    button.danger {
+      background: #e53e3e;
+    }
+    button.danger:hover { background: #c53030; }
+
+    .table-wrapper {
+      overflow-x: auto;
+      background: #1a1a1a;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+    }
+    th {
+      background: #222;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    tr:hover {
+      background: #252525;
+    }
+    .thumb-preview {
+      width: 60px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 4px;
+      background: #333;
+    }
+    .category-pills {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .category-pill {
+      background: #4a5ef0;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .btn-edit, .btn-delete {
+      padding: 4px 12px;
+      font-size: 12px;
+      margin-right: 4px;
+    }
+    .btn-delete { background: #e53e3e; }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+    .modal.active { display: flex; align-items: center; justify-content: center; }
+    .modal-content {
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 30px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid #333;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .modal-header h2 {
+      font-size: 1.5rem;
+    }
+    .close-modal {
+      background: transparent;
+      font-size: 24px;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      color: #999;
+    }
+    .close-modal:hover {
+      background: #333;
+      color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      background: #0a0a0a;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #e0e0e0;
+      font-size: 14px;
+    }
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #4a5ef0;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 8px;
+      background: #0a0a0a;
+      border-radius: 4px;
+      border: 1px solid #333;
+    }
+    .checkbox-label:hover {
+      background: #222;
+    }
+    .checkbox-label input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 30px;
+    }
+
+    .help-text {
+      font-size: 12px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    .featured-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .featured-toggle input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .search-box {
+      padding: 10px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #e0e0e0;
+      width: 300px;
+      font-size: 14px;
+    }
+
+    .stats {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #333;
+      display: flex;
+      gap: 30px;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: 600;
+      color: #4a5ef0;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #999;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📁 Portfolio CMS</h1>
+
+    <div class="stats" id="stats">
+      <div class="stat">
+        <span class="stat-value" id="total-count">0</span>
+        <span class="stat-label">Total Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="featured-count">0</span>
+        <span class="stat-label">Featured</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button onclick="openAddModal()">➕ Add New Project</button>
+      <button class="secondary" onclick="exportJSON()">💾 Export JSON</button>
+      <button class="secondary" onclick="document.getElementById('import-input').click()">📥 Import JSON</button>
+      <input type="file" id="import-input" accept=".json" style="display: none;" onchange="importJSON(event)">
+      <input type="text" class="search-box" id="search" placeholder="🔍 Search projects..." oninput="filterProjects()">
+    </div>
+
+    <div class="table-wrapper">
+      <table id="projects-table">
+        <thead>
+          <tr>
+            <th style="width: 80px;">Thumb</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Role</th>
+            <th style="width: 80px;">Featured</th>
+            <th style="width: 140px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="projects-tbody">
+          <!-- Projects populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Edit/Add Modal -->
+  <div class="modal" id="edit-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-title">Add Project</h2>
+        <button class="close-modal" onclick="closeModal()">×</button>
+      </div>
+
+      <form id="project-form" onsubmit="saveProject(event)">
+        <input type="hidden" id="edit-index" value="">
+
+        <div class="form-group">
+          <label for="project-id">ID *</label>
+          <input type="text" id="project-id" required>
+          <div class="help-text">Lowercase, hyphenated (e.g., "bundaberg-cerumony")</div>
+        </div>
+
+        <div class="form-group">
+          <label for="project-title">Title *</label>
+          <input type="text" id="project-title" required>
+        </div>
+
+        <div class="form-group">
+          <label>Categories * (select all that apply)</label>
+          <div class="checkbox-group" id="category-checkboxes">
+            <label class="checkbox-label">
+              <input type="checkbox" value="projection"> projection
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="3d"> 3d
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="2d"> 2d
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="brand"> brand
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="video"> video
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="photo"> photo
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="design"> design
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="merch"> merch
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="music"> music
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="project-role">Role</label>
+          <input type="text" id="project-role" placeholder="e.g., Design, 3D Animation, Photography">
+        </div>
+
+        <div class="form-group">
+          <label for="project-agency">Agency (optional)</label>
+          <input type="text" id="project-agency" placeholder="e.g., Saatchi & Saatchi">
+        </div>
+
+        <div class="form-group">
+          <label for="project-thumb">Thumbnail Filename *</label>
+          <input type="text" id="project-thumb" required placeholder="e.g., bundaberg-cerumony.jpg">
+          <div class="help-text">File should be in /src/assets/images/thumbnails/</div>
+        </div>
+
+        <div class="form-group">
+          <label for="project-type">Type *</label>
+          <select id="project-type" required onchange="toggleTypeFields()">
+            <option value="">-- Select Type --</option>
+            <option value="link">Link (to case study page)</option>
+            <option value="video">Video (single YouTube URL)</option>
+            <option value="gallery">Gallery (images/videos)</option>
+          </select>
+        </div>
+
+        <!-- Link type -->
+        <div class="form-group" id="field-href" style="display: none;">
+          <label for="project-href">Case Study URL</label>
+          <input type="text" id="project-href" placeholder="work/bundaberg.html">
+        </div>
+
+        <!-- Video type -->
+        <div class="form-group" id="field-video-url" style="display: none;">
+          <label for="project-video-url">YouTube URL</label>
+          <input type="text" id="project-video-url" placeholder="https://youtu.be/...">
+        </div>
+
+        <!-- Gallery type -->
+        <div class="form-group" id="field-media" style="display: none;">
+          <label for="project-media">Media (JSON format)</label>
+          <textarea id="project-media" rows="4" placeholder='[{"type":"image","src":"file.webp","alt":"Description"}]'></textarea>
+          <div class="help-text">Advanced: JSON array of media objects</div>
+        </div>
+
+        <div class="form-group">
+          <label class="featured-toggle">
+            <input type="checkbox" id="project-featured">
+            <span>⭐ Featured Project (shows on homepage)</span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="secondary" onclick="closeModal()">Cancel</button>
+          <button type="submit">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let projects = [];
+
+    // Load existing projects.json
+    async function loadProjects() {
+      try {
+        const response = await fetch('src/data/projects.json');
+        projects = await response.json();
+        renderTable();
+        updateStats();
+      } catch (error) {
+        console.error('Error loading projects:', error);
+        alert('Could not load projects.json. Make sure the file exists.');
+      }
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('projects-tbody');
+      const searchTerm = document.getElementById('search').value.toLowerCase();
+
+      const filtered = searchTerm
+        ? projects.filter(p =>
+            p.title.toLowerCase().includes(searchTerm) ||
+            p.category.toLowerCase().includes(searchTerm) ||
+            (p.role && p.role.toLowerCase().includes(searchTerm))
+          )
+        : projects;
+
+      tbody.innerHTML = filtered.map((project, index) => {
+        const categories = project.category.split(',').map(c => c.trim());
+        const realIndex = projects.findIndex(p => p.id === project.id);
+
+        return `
+          <tr>
+            <td>
+              <img src="src/assets/images/thumbnails/${project.thumb}"
+                   class="thumb-preview"
+                   onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2240%22%3E%3Crect fill=%22%23333%22 width=%2260%22 height=%2240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2210%22%3ENo image%3C/text%3E%3C/svg%3E'">
+            </td>
+            <td><strong>${project.title}</strong></td>
+            <td>
+              <div class="category-pills">
+                ${categories.map(cat => `<span class="category-pill">${cat}</span>`).join('')}
+              </div>
+            </td>
+            <td>${project.role || '—'}</td>
+            <td>${project.featured ? '⭐' : ''}</td>
+            <td>
+              <button class="btn-edit" onclick="openEditModal(${realIndex})">Edit</button>
+              <button class="btn-delete danger" onclick="deleteProject(${realIndex})">Delete</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function updateStats() {
+      document.getElementById('total-count').textContent = projects.length;
+      document.getElementById('featured-count').textContent = projects.filter(p => p.featured).length;
+    }
+
+    function filterProjects() {
+      renderTable();
+    }
+
+    function openAddModal() {
+      document.getElementById('modal-title').textContent = 'Add New Project';
+      document.getElementById('project-form').reset();
+      document.getElementById('edit-index').value = '';
+      document.getElementById('edit-modal').classList.add('active');
+    }
+
+    function openEditModal(index) {
+      const project = projects[index];
+      document.getElementById('modal-title').textContent = 'Edit Project';
+      document.getElementById('edit-index').value = index;
+
+      document.getElementById('project-id').value = project.id;
+      document.getElementById('project-title').value = project.title;
+      document.getElementById('project-role').value = project.role || '';
+      document.getElementById('project-agency').value = project.agency || '';
+      document.getElementById('project-thumb').value = project.thumb;
+      document.getElementById('project-type').value = project.type;
+      document.getElementById('project-featured').checked = project.featured || false;
+
+      // Set categories
+      const categories = project.category.split(',').map(c => c.trim());
+      document.querySelectorAll('#category-checkboxes input[type="checkbox"]').forEach(cb => {
+        cb.checked = categories.includes(cb.value);
+      });
+
+      // Set type-specific fields
+      toggleTypeFields();
+      if (project.type === 'link') {
+        document.getElementById('project-href').value = project.href || '';
+      } else if (project.type === 'video') {
+        document.getElementById('project-video-url').value = project.videoUrl || '';
+      } else if (project.type === 'gallery') {
+        document.getElementById('project-media').value = JSON.stringify(project.media, null, 2);
+      }
+
+      document.getElementById('edit-modal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('edit-modal').classList.remove('active');
+    }
+
+    function toggleTypeFields() {
+      const type = document.getElementById('project-type').value;
+      document.getElementById('field-href').style.display = type === 'link' ? 'block' : 'none';
+      document.getElementById('field-video-url').style.display = type === 'video' ? 'block' : 'none';
+      document.getElementById('field-media').style.display = type === 'gallery' ? 'block' : 'none';
+    }
+
+    function saveProject(event) {
+      event.preventDefault();
+
+      const index = document.getElementById('edit-index').value;
+      const categories = Array.from(document.querySelectorAll('#category-checkboxes input:checked'))
+        .map(cb => cb.value)
+        .join(', ');
+
+      if (!categories) {
+        alert('Please select at least one category');
+        return;
+      }
+
+      const project = {
+        id: document.getElementById('project-id').value,
+        title: document.getElementById('project-title').value,
+        category: categories,
+        role: document.getElementById('project-role').value,
+        thumb: document.getElementById('project-thumb').value,
+        type: document.getElementById('project-type').value
+      };
+
+      // Optional fields
+      const agency = document.getElementById('project-agency').value;
+      if (agency) project.agency = agency;
+
+      const featured = document.getElementById('project-featured').checked;
+      if (featured) project.featured = true;
+
+      // Type-specific fields
+      if (project.type === 'link') {
+        project.href = document.getElementById('project-href').value;
+      } else if (project.type === 'video') {
+        project.videoUrl = document.getElementById('project-video-url').value;
+      } else if (project.type === 'gallery') {
+        try {
+          project.media = JSON.parse(document.getElementById('project-media').value);
+        } catch (e) {
+          alert('Invalid JSON in media field');
+          return;
+        }
+      }
+
+      if (index === '') {
+        // Add new
+        projects.push(project);
+      } else {
+        // Update existing
+        projects[parseInt(index)] = project;
+      }
+
+      renderTable();
+      updateStats();
+      closeModal();
+    }
+
+    function deleteProject(index) {
+      if (confirm(`Delete "${projects[index].title}"?`)) {
+        projects.splice(index, 1);
+        renderTable();
+        updateStats();
+      }
+    }
+
+    function exportJSON() {
+      const json = JSON.stringify(projects, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'projects.json';
+      a.click();
+      URL.revokeObjectURL(url);
+
+      alert('Downloaded projects.json! Replace the file at src/data/projects.json with this new version.');
+    }
+
+    function importJSON(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          projects = JSON.parse(e.target.result);
+          renderTable();
+          updateStats();
+          alert('Imported successfully!');
+        } catch (error) {
+          alert('Invalid JSON file');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // Load on page load
+    loadProjects();
+
+    // Close modal on outside click
+    document.getElementById('edit-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'edit-modal') {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>

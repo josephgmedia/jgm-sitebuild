@@ -13,7 +13,7 @@
   {
     "id": "rams-construction",
     "title": "RAMS - Construction Campaign",
-    "category": "brand",
+    "category": "brand, 3d",
     "role": "Art Direction, 3D Animation, VFX Supervisor",
     "agency": "Saatchi & Saatchi",
     "thumb": "rams-construction.jpg",
@@ -55,7 +55,7 @@
     "id": "bundaberg-cerumony",
     "title": "Bundaberg - CeRUMony",
     "titleHtml": "Bundaberg - Ce<span class=\"work__rum\">rum</span>ony",
-    "category": "video",
+    "category": "video, brand",
     "role": "Videography, Video Editing, Colour Grade",
     "agency": "Leo Burnett",
     "thumb": "bundaberg-cerumony.jpg",
@@ -84,7 +84,7 @@
   {
     "id": "wrinkles-schminkles",
     "title": "Wrinkles Schminkles - UK Product Launch",
-    "category": "3d",
+    "category": "3d, brand",
     "role": "3D Animation",
     "thumb": "wrinkles.jpg",
     "type": "video",
@@ -96,7 +96,7 @@
   {
     "id": "small-gods-razorgrinder-art",
     "title": "Small Gods - Razorgrinder Album Art Package",
-    "category": "design",
+    "category": "design, 3d",
     "role": "Design",
     "thumb": "small-gods-razorgrinder.jpg",
     "type": "gallery",
@@ -131,7 +131,7 @@
   {
     "id": "bombay-play",
     "title": "Bombay Sapphire - Bombay Play Icon Design",
-    "category": "2d",
+    "category": "2d, brand",
     "role": "2D Animation",
     "thumb": "bombay-play.jpg",
     "type": "gallery",
@@ -181,7 +181,7 @@
   {
     "id": "superloop-3d",
     "title": "Superloop - Refresh Your Internet 3D Icon Design",
-    "category": "3d",
+    "category": "3d, brand",
     "role": "3D Modelling, Rendering",
     "thumb": "superloop-3d.jpg",
     "type": "gallery",
@@ -207,7 +207,7 @@
   {
     "id": "qantas-100",
     "title": "Qantas - 100th Birthday Print Ad",
-    "category": "design",
+    "category": "design, brand",
     "role": "Print Design",
     "thumb": "qantas.jpg",
     "type": "gallery",
@@ -236,7 +236,7 @@
   {
     "id": "nivea-burgess",
     "title": "Nivea x Tom Burgess - Nivea Men Photoshoot",
-    "category": "photo",
+    "category": "photo, brand",
     "role": "Photography",
     "thumb": "nivea-burgess.jpg",
     "type": "gallery",
@@ -270,7 +270,7 @@
   {
     "id": "ampol-foodary",
     "title": "Ampol Foodary - Meant to Be Campaign",
-    "category": "brand",
+    "category": "brand, 3d",
     "role": "Brand Content",
     "thumb": "ampol-foodary.jpg",
     "type": "gallery",
@@ -284,7 +284,7 @@
   {
     "id": "small-gods-nemesis-art",
     "title": "Small Gods - Nemesis Album Art Package",
-    "category": "design",
+    "category": "design, 3d",
     "role": "Design",
     "thumb": "small-gods-nemesis.jpg",
     "type": "gallery",
@@ -309,7 +309,7 @@
   {
     "id": "kia-cerato",
     "title": "Kia - Cerato GT End Frame",
-    "category": "2d",
+    "category": "2d, brand",
     "role": "2D Animation",
     "thumb": "kia-endframe.jpg",
     "type": "video",
@@ -318,7 +318,7 @@
   {
     "id": "weightless-bloodsucker",
     "title": "Weightless - Bloodsucker Album Art Package",
-    "category": "design",
+    "category": "design, 3d",
     "role": "Design",
     "thumb": "weightless-bloodsucker.jpg",
     "type": "gallery",
@@ -410,7 +410,7 @@
   {
     "id": "weightless-state-of-mind",
     "title": "Weightless - A State of Mind Album Art",
-    "category": "design",
+    "category": "design, 3d",
     "role": "Design",
     "thumb": "weightless-state-of-mind.jpg",
     "type": "gallery",
@@ -517,7 +517,7 @@
   {
     "id": "weightless-counterfeit",
     "title": "Weightless - Counterfeit Album Art Package",
-    "category": "design",
+    "category": "design, 3d",
     "role": "Design",
     "thumb": "weightless-counterfeit.jpg",
     "type": "gallery",
@@ -562,7 +562,7 @@
   {
     "id": "nivea-refresh",
     "title": "Nivea - Refresh Your Routine",
-    "category": "2d",
+    "category": "2d, brand",
     "role": "2D Animation",
     "thumb": "nivea-refresh.jpg",
     "type": "video",
@@ -575,7 +575,7 @@
   {
     "id": "pepsi-gflip",
     "title": "Pepsi - Pulse Collection Event",
-    "category": "video",
+    "category": "video, brand",
     "role": "Videography, Direction",
     "thumb": "pepsi-gflip.jpg",
     "type": "video",
@@ -611,7 +611,7 @@
   {
     "id": "weightless-perspectives",
     "title": "Weightless - Perspectives Album Art Package",
-    "category": "design",
+    "category": "design, 3d",
     "role": "Design",
     "thumb": "weightless-perspectives.jpg",
     "type": "gallery",
@@ -651,7 +651,7 @@
   {
     "id": "humpty-dumpty",
     "title": "Humpty Dumpty - Christmas Appeal Campaign",
-    "category": "design",
+    "category": "design, brand",
     "role": "Design",
     "thumb": "humpty-dumpty.jpg",
     "type": "gallery",
@@ -820,7 +820,7 @@
   {
     "id": "weightless-sabotage",
     "title": "Weightless - Sabotage Album Art",
-    "category": "design",
+    "category": "design, 3d",
     "role": "Design",
     "thumb": "weightless-sabotage.jpg",
     "type": "gallery",
@@ -835,7 +835,7 @@
   {
     "id": "pyjama-foundation",
     "title": "Pyjama Foundation Pyjama Day",
-    "category": "design",
+    "category": "design, brand",
     "role": "Graphic Design",
     "thumb": "pyjama-foundation.jpg",
     "type": "gallery",
@@ -958,7 +958,7 @@
   {
     "id": "ghost-complex-mania",
     "title": "Ghost Complex - Mania Album Artwork",
-    "category": "design",
+    "category": "design, 3d",
     "role": "Design",
     "thumb": "ghost-complex-mania.jpg",
     "type": "gallery",
@@ -1454,7 +1454,7 @@
   {
     "id": "hyundai-i30n",
     "title": "Hyundai - i30N TVC Score",
-    "category": "music",
+    "category": "music, brand",
     "role": "Music Composition",
     "thumb": "hyundai-i30n.jpg",
     "type": "video",
@@ -1463,7 +1463,7 @@
   {
     "id": "blc-cosmetics",
     "title": "BLC Cosmetics - Beauty Expo Event Coverage",
-    "category": "video, photo",
+    "category": "video, photo, brand",
     "role": "Videography, Edit, Photography",
     "thumb": "blc-cosmetics.jpg",
     "type": "gallery",
@@ -1512,7 +1512,7 @@
   {
     "id": "hyundai-suv",
     "title": "Hyundai - SUV Range TVC Score",
-    "category": "music",
+    "category": "music, brand",
     "role": "Music Composition",
     "thumb": "hyundai-suv.jpg",
     "type": "video",
@@ -1530,7 +1530,7 @@
   {
     "id": "fiba-world-cup",
     "title": "FIBA - World Cup Promo Score",
-    "category": "music",
+    "category": "music, brand",
     "role": "Music Composition",
     "thumb": "fiba-world-cup.jpg",
     "type": "video",
@@ -1709,7 +1709,7 @@
   {
     "id": "lexus-encore",
     "title": "Lexus - Encore Platinum Animation",
-    "category": "brand",
+    "category": "brand, 2d",
     "role": "Brand Content, 2d Animation",
     "thumb": "lexus.jpg",
     "type": "video",

@@ -9,6 +9,7 @@
 /* ── WORK HERO ── */
 .work-hero {
   padding: calc(80px + var(--space-nav)) var(--space-lg) 0;
+  text-align: center;
 }
 .work-hero__title {
   font-family: 'Monument', sans-serif;
@@ -18,7 +19,7 @@
   text-transform: uppercase;
   color: var(--white);
   line-height: 1;
-  margin-bottom: var(--space-md);
+  margin-bottom: 2rem;
 }
 .work-hero__intro {
   font-family: 'Barlow', sans-serif;
@@ -26,13 +27,14 @@
   line-height: 1.6;
   color: var(--text-dim);
   max-width: 800px;
-  margin-bottom: var(--space-lg);
+  margin: 0 auto var(--space-md);
 }
 
 /* ── FILTER BAR — sticky below nav ── */
 .gallery__filters {
   display: flex;
   gap: var(--space-xs);
+  justify-content: center;
   position: sticky;
   top: 60px;
   z-index: 100;
