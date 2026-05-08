@@ -191,15 +191,12 @@
   width: 100%;
   max-width: 100%;
 }
-.cs-content__gallery-pair > * {
-  aspect-ratio: 16 / 9;
-  min-width: 0;
-}
 .cs-content__gallery-pair img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 3px;
+  display: block;
 }
 
 /* Next project link */
@@ -290,6 +287,7 @@
   }
   .cs-content__gallery-pair {
     grid-template-columns: 1fr;
+    gap: var(--space-sm);
   }
   .cs-content__gallery-wide img {
     object-fit: contain;
@@ -297,8 +295,6 @@
   }
   .cs-content__gallery-pair img {
     width: 100%;
-    height: auto;
-    max-height: none;
     aspect-ratio: 16 / 9;
     object-fit: contain;
     object-position: center;
