@@ -3,7 +3,7 @@
     "id": "nla-enlighten",
     "title": "NLA - Enlighten",
     "category": "projection",
-    "role": "Design Lead",
+    "role": "GenAI, 2D Animation",
     "agency": "The Electric Canvas",
     "thumb": "nla-enlighten.jpg",
     "type": "link",
@@ -14,7 +14,7 @@
     "id": "rams-construction",
     "title": "RAMS - Construction Campaign",
     "category": "brand, 3d",
-    "role": "Art Direction, 3D Animation, VFX Supervisor, Edit, Colour, Mix",
+    "role": "3D, Edit, Colour, Mix",
     "agency": "Saatchi & Saatchi",
     "thumb": "rams-construction.jpg",
     "type": "link",
@@ -25,7 +25,7 @@
     "id": "porsche-drjack",
     "title": "Porsche x Dr Jack",
     "category": "vfx",
-    "role": "Design, 3D Animation, Composite, Colour Grade, VFX Consultant (Remote)",
+    "role": "3D, Colour",
     "thumb": "porsche-drjack.jpg",
     "type": "link",
     "href": "work/porsche-drjack.html",
@@ -35,7 +35,7 @@
     "id": "gryff",
     "title": "Gryff - Music Video",
     "category": "video",
-    "role": "Producer, DOP, Edit, Colour Grade",
+    "role": "Videography, Edit, Colour",
     "thumb": "gryff.jpg",
     "type": "link",
     "href": "work/gryff.html",
@@ -45,7 +45,7 @@
     "id": "weightless-ep",
     "title": "Weightless - A State of Mind EP",
     "category": "3d",
-    "role": "Art Direction, Design, 3D, Animation",
+    "role": "Design, 3D",
     "thumb": "weightless.jpg",
     "type": "link",
     "href": "work/weightless.html",
@@ -56,7 +56,7 @@
     "title": "Bundaberg - CeRUMony",
     "titleHtml": "Bundaberg - Ce<span class=\"work__rum\">rum</span>ony",
     "category": "video, brand",
-    "role": "Videography, Video Editing, Colour Grade",
+    "role": "Videography, Edit, Colour",
     "agency": "Leo Burnett",
     "thumb": "bundaberg-cerumony.jpg",
     "type": "link",
@@ -67,7 +67,7 @@
     "id": "mca-vivid",
     "title": "MCA, Vivid Sydney - King Dingo",
     "category": "projection",
-    "role": "Animation",
+    "role": "2D Animation",
     "thumb": "mca-vivid.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/rv75wZVWozw"
@@ -76,7 +76,7 @@
     "id": "perth-stg-24",
     "title": "St George's Cathedral - Christmas at the Cathedral 2024",
     "category": "projection",
-    "role": "Design, Animation, Music Composition",
+    "role": "2D Animation, Music Composition",
     "thumb": "perth-stg.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/rv75wZVWozw"
@@ -85,7 +85,7 @@
     "id": "wrinkles-schminkles",
     "title": "Wrinkles Schminkles - UK Product Launch",
     "category": "3d, brand",
-    "role": "3D Animation",
+    "role": "3D Animation, Edit, Mix",
     "thumb": "wrinkles.jpg",
     "type": "video",
     "videoUrls": [
@@ -132,7 +132,7 @@
     "id": "bombay-play",
     "title": "Bombay Sapphire - Bombay Play Icon Design",
     "category": "2d, brand",
-    "role": "2D Animation",
+    "role": "Design, 2D Animation",
     "thumb": "bombay-play.jpg",
     "type": "gallery",
     "media": [
@@ -173,7 +173,7 @@
     "id": "perth-stg-25",
     "title": "St George's Cathedral - Christmas at the Cathedral 2025",
     "category": "projection",
-    "role": "Design, Animation, Music Composition",
+    "role": "2D Animation, Music Composition",
     "thumb": "perth-stg-25.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/rv75wZVWozw"
@@ -182,7 +182,7 @@
     "id": "superloop-3d",
     "title": "Superloop - Refresh Your Internet 3D Icon Design",
     "category": "3d, brand",
-    "role": "3D Modelling, Rendering",
+    "role": "3D Animation",
     "thumb": "superloop-3d.jpg",
     "type": "gallery",
     "media": [
@@ -228,7 +228,7 @@
     "id": "murkwood-fiction",
     "title": "Murkwood - Fiction Lyric Video",
     "category": "3d",
-    "role": "Edit, 2D Animation",
+    "role": "3D Animation",
     "thumb": "murkwood-fiction.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/Uwgd425Qdg8"
@@ -271,7 +271,7 @@
     "id": "ampol-foodary",
     "title": "Ampol Foodary - Meant to Be Campaign",
     "category": "brand, 3d",
-    "role": "Brand Content",
+    "role": "3D, Design",
     "thumb": "ampol-foodary.jpg",
     "type": "gallery",
     "media": [
@@ -319,7 +319,7 @@
     "id": "weightless-bloodsucker",
     "title": "Weightless - Bloodsucker Album Art Package",
     "category": "design, 3d",
-    "role": "Design",
+    "role": "3D, Design",
     "thumb": "weightless-bloodsucker.jpg",
     "type": "gallery",
     "media": [
@@ -354,7 +354,7 @@
     "id": "bellwether",
     "title": "Bellwether - Shortsighted Lyric Video",
     "category": "2d",
-    "role": "Edit, 2D Animation",
+    "role": "Edit",
     "thumb": "bellwether.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/PSkdjzTplRQ"
@@ -426,7 +426,7 @@
     "id": "beast-atriox",
     "title": "Atriox - Beast Lyric Video",
     "category": "2d",
-    "role": "Edit, 2D Animation",
+    "role": "Edit",
     "thumb": "beast-atriox.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/DhC4JGR6MPY"
@@ -518,7 +518,7 @@
     "id": "weightless-counterfeit",
     "title": "Weightless - Counterfeit Album Art Package",
     "category": "design, 3d",
-    "role": "Design",
+    "role": "3D, Design",
     "thumb": "weightless-counterfeit.jpg",
     "type": "gallery",
     "media": [
@@ -576,7 +576,7 @@
     "id": "pepsi-gflip",
     "title": "Pepsi - Pulse Collection Event",
     "category": "video, brand",
-    "role": "DOP, Edit, Colour Grade",
+    "role": "Videography, Edit, Colour",
     "thumb": "pepsi-gflip.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/RiWtMKlfppw"
@@ -585,7 +585,7 @@
     "id": "small-gods-razorgrinder",
     "title": "Small Gods - Razorgrinder Music Video",
     "category": "video",
-    "role": "DOP, Edit, Colour Grade",
+    "role": "Videography, Edit, Colour",
     "thumb": "small-gods-razorgrinder-vid.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/9knnrJuZu8M"
@@ -594,7 +594,7 @@
     "id": "futureheaven-imber",
     "title": "Futureheaven - Imber Lyric Video",
     "category": "2d",
-    "role": "Edit, 2D Animation",
+    "role": "Edit",
     "thumb": "futureheaven-imber.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/aw_O5oWbRLk"
@@ -603,7 +603,7 @@
     "id": "donate-your-age",
     "title": "Donate Your Age - Case Study Video",
     "category": "brand",
-    "role": "Brand Content",
+    "role": "Edit, Music Composition",
     "thumb": "donate-your-age.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/19B_V5ZUlQc"
@@ -612,7 +612,7 @@
     "id": "weightless-perspectives",
     "title": "Weightless - Perspectives Album Art Package",
     "category": "design, 3d",
-    "role": "Design",
+    "role": "3D, Design",
     "thumb": "weightless-perspectives.jpg",
     "type": "gallery",
     "media": [
@@ -687,7 +687,7 @@
     "id": "ampol-servo",
     "title": "Ampol - Last Chance Servo Case Study",
     "category": "brand",
-    "role": "Brand Content",
+    "role": "Edit",
     "thumb": "ampol-servo.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/5rjFdvMyU58"
@@ -696,7 +696,7 @@
     "id": "la-crema-lounge",
     "title": "La Crema Lounge - Promotional Content",
     "category": "video, photo",
-    "role": "Videography, Edit, Photography",
+    "role": "Photography, Videography, Edit, Colour",
     "thumb": "la-crema-lounge.jpg",
     "type": "gallery",
     "media": [
@@ -755,7 +755,7 @@
     "id": "murkwood-violent-sleep",
     "title": "Murkwood - Violent Sleep",
     "category": "video",
-    "role": "DOP, Edit, Colour Grade",
+    "role": "Videography",
     "thumb": "murkwood-violent-sleep.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/HFHf2DtBQC0"
@@ -764,7 +764,7 @@
     "id": "estee-lauder-dw",
     "title": "Estee Lauder - Double Wear Facebook Canvas",
     "category": "brand",
-    "role": "Brand Content",
+    "role": "Design",
     "thumb": "estee-lauder-dw.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/cTpZ8C-MSDQ"
@@ -773,7 +773,7 @@
     "id": "small-gods-nemesis",
     "title": "Small Gods - Nemesis",
     "category": "video",
-    "role": "DOP, Edit, Colour Grade",
+    "role": "Videography, Edit, Colour",
     "thumb": "small-gods-nemesis-vid.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/jnzdubQ6rsY"
@@ -782,7 +782,7 @@
     "id": "heineken-150",
     "title": "Heineken - 150 Years Case Study",
     "category": "brand",
-    "role": "Brand Content",
+    "role": "Edit, 2D Animation",
     "thumb": "heineken-150.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/CMBcmTjtweY"
@@ -876,7 +876,7 @@
     "id": "karma-grim-city",
     "title": "Karma - Grim City Lyric Video",
     "category": "2d",
-    "role": "Edit, 2D Animation",
+    "role": "Edit",
     "thumb": "karma-grim-city.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/pv43f6McgAY"
@@ -974,7 +974,7 @@
     "id": "palmers",
     "title": "Palmers - Before/After Photoshoot",
     "category": "photo",
-    "role": "Retouching",
+    "role": "Photography, Retouching",
     "thumb": "palmers.jpg",
     "type": "gallery",
     "media": [
@@ -1004,7 +1004,7 @@
     "id": "mark-cultists",
     "title": "Cultists - Mark of the Beast Lyric Video",
     "category": "2d",
-    "role": "Edit, 2D Animation",
+    "role": "Edit",
     "thumb": "mark-cultists.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/fpLm7Rqu9Uc"
@@ -1043,7 +1043,7 @@
     "id": "futureheaven-tired-eyes",
     "title": "Futureheaven - Tired Eyes Music Video",
     "category": "video",
-    "role": "DOP, Edit, Colour Grade",
+    "role": "Videography, Edit, Colour",
     "thumb": "futureheaven-tired-eyes.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/C7TE8Aof68g"
@@ -1132,7 +1132,7 @@
     "id": "futureheaven-asuka",
     "title": "Futureheaven - Asuka Music Video",
     "category": "video",
-    "role": "DOP, Edit, Colour Grade",
+    "role": "Videography, Edit",
     "thumb": "futureheaven-asuka.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/sxCAzzRHRzk"
@@ -1141,7 +1141,7 @@
     "id": "small-gods-tshirt",
     "title": "Small Gods - Nemesis Merch",
     "category": "design, merch",
-    "role": "Merch Design, Illustration",
+    "role": "Merch Design",
     "thumb": "small-gods-tshirt.jpg",
     "type": "gallery",
     "media": [
@@ -1156,7 +1156,7 @@
     "id": "mourningstar-karma",
     "title": "Mourning Star - Karma Music Video",
     "category": "video",
-    "role": "DOP, Edit, Colour Grade",
+    "role": "Videography, Edit, 2D Animation, Colour",
     "thumb": "mourningstar-karma.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/mPMuv-eRICI"
@@ -1165,7 +1165,7 @@
     "id": "synge-rt-cyberpunk",
     "title": "Synge - Cyberpunk Promo Shoot",
     "category": "3d, design, photo",
-    "role": "3D, Retouching, Photography",
+    "role": "Photography, 3D, Retouching",
     "thumb": "synge-cyberpunk-rt.jpg",
     "type": "gallery",
     "media": [
@@ -1250,7 +1250,7 @@
     "id": "false-london-flames",
     "title": "False London - Flames Music Video",
     "category": "video",
-    "role": "DOP, Edit, Colour Grade",
+    "role": "Videography, Edit, Colour",
     "thumb": "false-london-flames.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/dmsSpz9FyB0"
@@ -1259,7 +1259,7 @@
     "id": "synge-rt-space",
     "title": "Synge - Cosmic Promo Shoot",
     "category": "3d, design, photo",
-    "role": "3D, Retouching, Photography",
+    "role": "Photography, 3D, Retouching",
     "thumb": "synge-space-rt.jpg",
     "type": "gallery",
     "media": [
@@ -1274,7 +1274,7 @@
     "id": "baltimore-pain",
     "title": "Baltimore - Pain Music Video",
     "category": "video",
-    "role": "DOP, Edit, Colour Grade",
+    "role": "Videography, Edit, Colour",
     "thumb": "baltimore-pain.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/sTgmzZvB8kE"
@@ -1343,7 +1343,7 @@
     "id": "simpson-cottage",
     "title": "Simpson Cottage - Promotional Content",
     "category": "video, photo",
-    "role": "Videography, Edit, Photography",
+    "role": "Videography, Photography, Edit, Colour",
     "thumb": "simpson-cottage-promo.jpg",
     "type": "gallery",
     "media": [
@@ -1416,7 +1416,7 @@
     "id": "manifest-launch",
     "title": "Manifest the Label - Face Mask Launch Content",
     "category": "video, photo",
-    "role": "Videography, Edit, Photography",
+    "role": "Videography",
     "thumb": "manifest-launch.jpg",
     "type": "gallery",
     "media": [
@@ -1464,7 +1464,7 @@
     "id": "blc-cosmetics",
     "title": "BLC Cosmetics - Beauty Expo Event Coverage",
     "category": "video, photo, brand",
-    "role": "Videography, Edit, Photography",
+    "role": "Videography, Photography",
     "thumb": "blc-cosmetics.jpg",
     "type": "gallery",
     "media": [
@@ -1522,7 +1522,7 @@
     "id": "stand-atlantic",
     "title": "Stand Atlantic - Fxck 2020 Live Stream",
     "category": "video",
-    "role": "Second Camera",
+    "role": "Videography",
     "thumb": "stand-atlantic.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/T6seGttrsrs"
@@ -1540,7 +1540,7 @@
     "id": "bloom",
     "title": "Bloom - In Passing Live Session",
     "category": "video, photo",
-    "role": "Second Camera, Photography",
+    "role": "Videography, Photography",
     "thumb": "bloom.jpg",
     "type": "gallery",
     "media": [
@@ -1588,7 +1588,7 @@
     "id": "nic-brent-wedding",
     "title": "Nic and Brent - Wedding Video",
     "category": "video",
-    "role": "Videography, Edit",
+    "role": "Videography, Edit, Colour",
     "thumb": "nic-brent-wedding.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/Gt_mHxp5XNk"
@@ -1661,7 +1661,7 @@
     "id": "madre-natura",
     "title": "Madre Natura - Last Season Collection Case Study",
     "category": "brand",
-    "role": "Brand Content",
+    "role": "Edit",
     "thumb": "madre-natura.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/Mn9jz3q47NY"
@@ -1710,7 +1710,7 @@
     "id": "lexus-encore",
     "title": "Lexus - Encore Platinum Animation",
     "category": "brand, 2d",
-    "role": "Brand Content, 2d Animation",
+    "role": "2D Animation",
     "thumb": "lexus.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/J9Y1CuH1N8Y"
@@ -1764,7 +1764,7 @@
     "id": "visit-singapore",
     "title": "Visit Singapore - Find Yourself in Singapore 3D Model",
     "category": "brand",
-    "role": "Brand Content",
+    "role": "3D",
     "thumb": "visit-singapore.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/OEbHX8s4sOg"
@@ -1818,7 +1818,7 @@
     "id": "tell-me-about-it",
     "title": "Tell Me About It - Brand Launch Event",
     "category": "video",
-    "role": "Videography",
+    "role": "Videography, Edit, Colour",
     "thumb": "tell-me-about-it.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/XhdMWtIqk_4"
@@ -1887,7 +1887,7 @@
     "id": "pokolbin-mountain",
     "title": "Pokolbin Mountain Estate - Promotional Content",
     "category": "video, photo",
-    "role": "Videography, Photography",
+    "role": "Videography, Photography, Edit",
     "thumb": "pokolbin-mountain.jpg",
     "type": "gallery",
     "media": [
