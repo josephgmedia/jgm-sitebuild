@@ -2,6 +2,7 @@
 export function initContactForm() {
   const modal = document.getElementById('contact-modal');
   const trigger = document.getElementById('contact-trigger');
+  const triggerMobile = document.getElementById('contact-trigger-mobile');
   const closeBtn = document.getElementById('contact-modal-close');
   const overlay = document.getElementById('contact-modal-overlay');
   const form = document.getElementById('contact-form');
@@ -38,6 +39,7 @@ export function initContactForm() {
 
   // Event listeners
   trigger.addEventListener('click', openModal);
+  if (triggerMobile) triggerMobile.addEventListener('click', openModal);
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
 

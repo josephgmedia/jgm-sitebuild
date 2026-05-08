@@ -283,12 +283,20 @@
 /* Mobile: stack */
 @media (max-width: 767px) {
   .cs-sidebar {
-    padding-bottom: 0;
+    padding-bottom: var(--space-xl);
   }
   .cs-sidebar__back {
     display: none;
   }
   .cs-content__gallery-pair {
     grid-template-columns: 1fr;
+  }
+  .cs-content__gallery-wide img {
+    object-fit: contain;
+    object-position: center;
+  }
+  .cs-content__gallery-pair img {
+    object-fit: contain;
+    object-position: center;
   }
 }

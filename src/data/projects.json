@@ -14,7 +14,7 @@
     "id": "rams-construction",
     "title": "RAMS - Construction Campaign",
     "category": "brand, 3d",
-    "role": "Art Direction, 3D Animation, VFX Supervisor",
+    "role": "Art Direction, 3D Animation, VFX Supervisor, Edit, Colour, Mix",
     "agency": "Saatchi & Saatchi",
     "thumb": "rams-construction.jpg",
     "type": "link",
@@ -25,7 +25,7 @@
     "id": "porsche-drjack",
     "title": "Porsche x Dr Jack",
     "category": "vfx",
-    "role": "3D Animation, Composite, Colour Grade",
+    "role": "Design, 3D Animation, Composite, Colour Grade, VFX Consultant (Remote)",
     "thumb": "porsche-drjack.jpg",
     "type": "link",
     "href": "work/porsche-drjack.html",
@@ -35,7 +35,7 @@
     "id": "gryff",
     "title": "Gryff - Music Video",
     "category": "video",
-    "role": "Videography, Video Editing, Colour Grade",
+    "role": "Producer, DOP, Edit, Colour Grade",
     "thumb": "gryff.jpg",
     "type": "link",
     "href": "work/gryff.html",
@@ -228,7 +228,7 @@
     "id": "murkwood-fiction",
     "title": "Murkwood - Fiction Lyric Video",
     "category": "3d",
-    "role": "Lyric Video",
+    "role": "Edit, 2D Animation",
     "thumb": "murkwood-fiction.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/Uwgd425Qdg8"
@@ -354,7 +354,7 @@
     "id": "bellwether",
     "title": "Bellwether - Shortsighted Lyric Video",
     "category": "2d",
-    "role": "Lyric Video",
+    "role": "Edit, 2D Animation",
     "thumb": "bellwether.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/PSkdjzTplRQ"
@@ -426,7 +426,7 @@
     "id": "beast-atriox",
     "title": "Atriox - Beast Lyric Video",
     "category": "2d",
-    "role": "Lyric Video",
+    "role": "Edit, 2D Animation",
     "thumb": "beast-atriox.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/DhC4JGR6MPY"
@@ -576,7 +576,7 @@
     "id": "pepsi-gflip",
     "title": "Pepsi - Pulse Collection Event",
     "category": "video, brand",
-    "role": "Videography, Direction",
+    "role": "DOP, Edit, Colour Grade",
     "thumb": "pepsi-gflip.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/RiWtMKlfppw"
@@ -585,7 +585,7 @@
     "id": "small-gods-razorgrinder",
     "title": "Small Gods - Razorgrinder Music Video",
     "category": "video",
-    "role": "Videography, Direction",
+    "role": "DOP, Edit, Colour Grade",
     "thumb": "small-gods-razorgrinder-vid.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/9knnrJuZu8M"
@@ -594,7 +594,7 @@
     "id": "futureheaven-imber",
     "title": "Futureheaven - Imber Lyric Video",
     "category": "2d",
-    "role": "Lyric Video",
+    "role": "Edit, 2D Animation",
     "thumb": "futureheaven-imber.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/aw_O5oWbRLk"
@@ -755,7 +755,7 @@
     "id": "murkwood-violent-sleep",
     "title": "Murkwood - Violent Sleep",
     "category": "video",
-    "role": "Videography, Direction",
+    "role": "DOP, Edit, Colour Grade",
     "thumb": "murkwood-violent-sleep.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/HFHf2DtBQC0"
@@ -773,7 +773,7 @@
     "id": "small-gods-nemesis",
     "title": "Small Gods - Nemesis",
     "category": "video",
-    "role": "Videography, Direction",
+    "role": "DOP, Edit, Colour Grade",
     "thumb": "small-gods-nemesis-vid.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/jnzdubQ6rsY"
@@ -876,7 +876,7 @@
     "id": "karma-grim-city",
     "title": "Karma - Grim City Lyric Video",
     "category": "2d",
-    "role": "Lyric Video",
+    "role": "Edit, 2D Animation",
     "thumb": "karma-grim-city.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/pv43f6McgAY"
@@ -1004,7 +1004,7 @@
     "id": "mark-cultists",
     "title": "Cultists - Mark of the Beast Lyric Video",
     "category": "2d",
-    "role": "Lyric Video",
+    "role": "Edit, 2D Animation",
     "thumb": "mark-cultists.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/fpLm7Rqu9Uc"
@@ -1043,7 +1043,7 @@
     "id": "futureheaven-tired-eyes",
     "title": "Futureheaven - Tired Eyes Music Video",
     "category": "video",
-    "role": "Videography, Direction",
+    "role": "DOP, Edit, Colour Grade",
     "thumb": "futureheaven-tired-eyes.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/C7TE8Aof68g"
@@ -1132,7 +1132,7 @@
     "id": "futureheaven-asuka",
     "title": "Futureheaven - Asuka Music Video",
     "category": "video",
-    "role": "Videography, Direction",
+    "role": "DOP, Edit, Colour Grade",
     "thumb": "futureheaven-asuka.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/sxCAzzRHRzk"
@@ -1156,7 +1156,7 @@
     "id": "mourningstar-karma",
     "title": "Mourning Star - Karma Music Video",
     "category": "video",
-    "role": "Videography, Direction",
+    "role": "DOP, Edit, Colour Grade",
     "thumb": "mourningstar-karma.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/mPMuv-eRICI"
@@ -1250,7 +1250,7 @@
     "id": "false-london-flames",
     "title": "False London - Flames Music Video",
     "category": "video",
-    "role": "Videography, Direction",
+    "role": "DOP, Edit, Colour Grade",
     "thumb": "false-london-flames.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/dmsSpz9FyB0"
@@ -1274,7 +1274,7 @@
     "id": "baltimore-pain",
     "title": "Baltimore - Pain Music Video",
     "category": "video",
-    "role": "Videography, Direction",
+    "role": "DOP, Edit, Colour Grade",
     "thumb": "baltimore-pain.jpg",
     "type": "video",
     "videoUrl": "https://youtu.be/sTgmzZvB8kE"
