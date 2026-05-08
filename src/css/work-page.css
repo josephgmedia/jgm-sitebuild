@@ -23,8 +23,8 @@
 }
 .work-hero__intro {
   font-family: 'Barlow', sans-serif;
-  font-size: var(--fs-body-lg);
-  line-height: 1.6;
+  font-size: var(--fs-body);
+  line-height: 1.85;
   color: var(--text-dim);
   max-width: 800px;
   margin: 0 auto var(--space-md);

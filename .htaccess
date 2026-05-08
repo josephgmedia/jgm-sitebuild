@@ -1,0 +1,7 @@
+# Set index.html as default directory index
+DirectoryIndex index.html
+
+# Remove index.html from URLs
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
