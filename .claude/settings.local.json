@@ -18,7 +18,8 @@
       "Bash(npm --version)",
       "Bash(python3 -c \"import fonttools; print\\('fonttools ok'\\)\")",
       "Bash(npx --yes ttf2woff2)",
-      "Bash(node -e ':*)"
+      "Bash(node -e ':*)",
+      "Bash(gh pr create --title 'Update NLA Enlighten approach copy' --body ' *)"
     ]
   }
 }
