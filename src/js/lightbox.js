@@ -196,8 +196,12 @@ function showCurrent() {
   }
 
   // Handle image (type === 'image' or no type field for backwards compatibility)
+  // Blob-uploaded items have absolute URLs; static items use the GALLERY_PATH prefix
+  const imgSrc = (item.src && (item.src.startsWith('http') || item.src.startsWith('//')))
+    ? item.src
+    : GALLERY_PATH + item.src;
   mediaContainer.innerHTML = `
-    <img class="lightbox__img" src="${GALLERY_PATH}${item.src}" alt="${item.alt || ''}" />
+    <img class="lightbox__img" src="${imgSrc}" alt="${item.alt || ''}" />
   `;
 
   // Show/hide nav based on gallery size

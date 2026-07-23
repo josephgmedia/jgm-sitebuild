@@ -55,6 +55,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         links: resolve(__dirname, 'links.html'),
         work: resolve(__dirname, 'work.html'),
+        admin: resolve(__dirname, 'admin/index.html'),
         'font-test': resolve(__dirname, 'font-test.html'),
         'font-debug': resolve(__dirname, 'font-debug.html'),
         'mobile-test': resolve(__dirname, 'mobile-test.html'),

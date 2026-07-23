@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Joseph G Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808;
+      --dim: #111;
+      --mid: #1c1c1c;
+      --border: #2a2a2a;
+      --muted: #555;
+      --text: #ccc;
+      --white: #edeae4;
+      --accent: #3931df;
+      --accent-hover: #4a5ef0;
+      --danger: #df3131;
+      --success: #31df7a;
+    }
+    html, body { height: 100%; }
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+
+    /* Layout */
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header h1 {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .site-header a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .site-header a:hover { color: var(--white); }
+
+    /* Auth panel */
+    #auth-panel { margin-bottom: 40px; }
+    .auth-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    .auth-status .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+      flex-shrink: 0;
+    }
+    .auth-status.authed .dot { background: var(--success); }
+    .auth-status.authed { color: var(--success); }
+
+    /* Form sections */
+    .section {
+      margin-bottom: 32px;
+    }
+    .section-title {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Fields */
+    .field { margin-bottom: 16px; }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    textarea,
+    select {
+      width: 100%;
+      background: var(--dim);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 300;
+      padding: 10px 12px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent);
+    }
+    textarea { resize: vertical; min-height: 80px; }
+    select option { background: var(--dim); }
+
+    /* Checkbox group */
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: auto;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .checkbox-item span {
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      user-select: none;
+    }
+
+    /* Radio group */
+    .radio-group {
+      display: flex;
+      gap: 20px;
+    }
+    .radio-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .radio-item input[type="radio"] {
+      width: auto;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .radio-item span {
+      font-size: 0.85rem;
+      user-select: none;
+    }
+
+    /* Toggle */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .toggle {
+      position: relative;
+      width: 36px; height: 20px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .toggle-track {
+      position: absolute; inset: 0;
+      background: var(--border);
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+    .toggle input:checked ~ .toggle-track { background: var(--accent); }
+    .toggle-thumb {
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--white);
+      transition: transform 0.2s;
+    }
+    .toggle input:checked ~ .toggle-track ~ .toggle-thumb,
+    .toggle input:checked ~ .toggle-thumb {
+      transform: translateX(16px);
+    }
+    .toggle-label { font-size: 0.85rem; }
+
+    /* Image upload zone */
+    .upload-zone {
+      border: 1px dashed var(--border);
+      border-radius: 4px;
+      padding: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .upload-zone:hover, .upload-zone.drag-over {
+      border-color: var(--accent);
+      background: rgba(57, 49, 223, 0.05);
+    }
+    .upload-zone input[type="file"] {
+      position: absolute; inset: 0;
+      opacity: 0; cursor: pointer;
+      width: 100%; height: 100%;
+    }
+    .upload-zone p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      pointer-events: none;
+    }
+    .upload-zone p strong { color: var(--text); }
+    .thumb-preview {
+      margin-top: 12px;
+      display: none;
+    }
+    .thumb-preview img {
+      max-height: 180px;
+      max-width: 100%;
+      border-radius: 3px;
+      object-fit: contain;
+    }
+    .thumb-preview .info {
+      margin-top: 6px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* Media items (gallery type) */
+    #media-section { display: none; }
+    .media-list { display: flex; flex-direction: column; gap: 10px; }
+    .media-item {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      background: var(--dim);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 10px 12px;
+    }
+    .media-item select { padding: 6px 8px; font-size: 0.8rem; }
+    .media-item input[type="text"] { padding: 6px 10px; font-size: 0.8rem; }
+    .media-item .preview-img {
+      height: 40px;
+      width: 60px;
+      object-fit: cover;
+      border-radius: 2px;
+      display: none;
+    }
+    .btn-remove {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .btn-remove:hover { color: var(--danger); }
+    .add-media-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 3px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, color 0.2s, opacity 0.2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .btn-primary:hover:not(:disabled) { background: var(--accent-hover); }
+    .btn-secondary {
+      background: var(--mid);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: var(--border); }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-sm { padding: 7px 14px; font-size: 0.7rem; }
+
+    /* Status message */
+    .status {
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      display: none;
+    }
+    .status.success { background: rgba(49, 223, 122, 0.1); color: var(--success); border: 1px solid rgba(49, 223, 122, 0.2); }
+    .status.error { background: rgba(223, 49, 49, 0.1); color: var(--danger); border: 1px solid rgba(223, 49, 49, 0.2); }
+    .status.info { background: rgba(57, 49, 223, 0.1); color: #8b88ff; border: 1px solid rgba(57, 49, 223, 0.2); }
+
+    /* Progress bar */
+    .progress-wrap { margin-top: 12px; display: none; }
+    .progress-bar {
+      height: 2px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0;
+      transition: width 0.3s;
+    }
+    .progress-label { font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
+
+    /* Submit row */
+    .submit-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .field-row { grid-template-columns: 1fr; }
+      .radio-group { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site-header">
+    <h1>JGM Admin</h1>
+    <a href="/">&larr; Back to site</a>
+  </header>
+
+  <!-- Auth -->
+  <div id="auth-panel">
+    <div id="auth-form">
+      <div class="field">
+        <label for="secret-input">Admin password</label>
+        <input type="password" id="secret-input" placeholder="Enter ADMIN_SECRET" autocomplete="current-password" />
+      </div>
+      <button class="btn btn-secondary btn-sm" id="auth-btn" type="button">Authenticate</button>
+    </div>
+    <div id="auth-indicator" style="display:none">
+      <div class="auth-status authed">
+        <span class="dot"></span>
+        Authenticated
+        &nbsp;&mdash;&nbsp;
+        <a href="#" id="signout-btn" style="font-size:0.75rem">Sign out</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload form -->
+  <form id="upload-form" style="display:none" novalidate>
+
+    <!-- Project details -->
+    <div class="section">
+      <p class="section-title">Project details</p>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-title">Title *</label>
+          <input type="text" id="f-title" required placeholder="Client - Project Name" />
+        </div>
+        <div class="field">
+          <label for="f-id">ID (slug) *</label>
+          <input type="text" id="f-id" required placeholder="client-project-name" />
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-role">Role *</label>
+          <input type="text" id="f-role" required placeholder="3D Animation, Edit" />
+        </div>
+        <div class="field">
+          <label for="f-agency">Agency / Studio</label>
+          <input type="text" id="f-agency" placeholder="Saatchi &amp; Saatchi" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Category</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="category" value="projection" /><span>Projection</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="category" value="3d" /><span>3D</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="category" value="2d" /><span>2D</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="category" value="brand" /><span>Brand</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="category" value="video" /><span>Video</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="category" value="photo" /><span>Photo</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="category" value="design" /><span>Design</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="category" value="merch" /><span>Merch</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="category" value="music" /><span>Music</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="category" value="vfx" /><span>VFX</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Display type -->
+    <div class="section">
+      <p class="section-title">Display type</p>
+
+      <div class="field">
+        <label>Type *</label>
+        <div class="radio-group">
+          <label class="radio-item">
+            <input type="radio" name="type" value="gallery" checked />
+            <span>Gallery (images + videos)</span>
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="type" value="video" />
+            <span>Video (YouTube / Vimeo)</span>
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="type" value="link" />
+            <span>Case study page</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field toggle-row">
+        <label class="toggle" for="f-featured">
+          <input type="checkbox" id="f-featured" />
+          <span class="toggle-track"></span>
+          <span class="toggle-thumb"></span>
+        </label>
+        <span class="toggle-label">Featured (appears at top with 16:9 tile + "View Case Study" bar)</span>
+      </div>
+
+      <div class="field" id="href-field" style="display:none">
+        <label for="f-href">Case study page path</label>
+        <input type="text" id="f-href" placeholder="work/project-name.html" />
+      </div>
+    </div>
+
+    <!-- Thumbnail -->
+    <div class="section">
+      <p class="section-title">Tile image *</p>
+      <div class="upload-zone" id="thumb-zone">
+        <input type="file" id="thumb-file" accept="image/*" />
+        <p><strong>Click or drag an image here</strong><br>JPEG, PNG, WebP &mdash; will be compressed to 1400px wide</p>
+        <div class="thumb-preview" id="thumb-preview">
+          <img id="thumb-preview-img" src="" alt="Preview" />
+          <div class="info" id="thumb-preview-info"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video URLs (video type) -->
+    <div class="section" id="video-section" style="display:none">
+      <p class="section-title">Video URL(s)</p>
+      <div class="field">
+        <label for="f-video-url">Primary video URL</label>
+        <input type="url" id="f-video-url" placeholder="https://youtu.be/..." />
+      </div>
+      <div class="field">
+        <label for="f-video-url-2">Second video URL (optional)</label>
+        <input type="url" id="f-video-url-2" placeholder="https://youtu.be/..." />
+      </div>
+      <div class="field">
+        <label for="f-video-url-3">Third video URL (optional)</label>
+        <input type="url" id="f-video-url-3" placeholder="https://youtu.be/..." />
+      </div>
+    </div>
+
+    <!-- Gallery media (gallery type) -->
+    <div class="section" id="media-section">
+      <p class="section-title">Gallery media</p>
+      <p style="font-size:0.8rem;color:var(--muted);margin-bottom:14px">
+        Add images (upload) and/or videos (YouTube/Vimeo URL). Images are compressed and uploaded to Blob storage.
+      </p>
+      <div class="media-list" id="media-list"></div>
+      <div class="add-media-row">
+        <button type="button" class="btn btn-secondary btn-sm" id="add-image-btn">+ Image</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="add-video-btn">+ Video URL</button>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="submit-row">
+      <button type="submit" class="btn btn-primary" id="submit-btn">Upload project</button>
+      <div class="progress-wrap" id="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="progress-label" id="progress-label">Uploading...</div>
+      </div>
+    </div>
+    <div class="status" id="status"></div>
+
+  </form>
+</div>
+
+<script>
+  const API_BASE = '';
+
+  /* ── Auth ── */
+  let secret = sessionStorage.getItem('jgm-admin-secret') || '';
+
+  function setAuthed(s) {
+    secret = s;
+    sessionStorage.setItem('jgm-admin-secret', s);
+    document.getElementById('auth-form').style.display = 'none';
+    document.getElementById('auth-indicator').style.display = '';
+    document.getElementById('upload-form').style.display = '';
+  }
+
+  function clearAuth() {
+    secret = '';
+    sessionStorage.removeItem('jgm-admin-secret');
+    document.getElementById('auth-form').style.display = '';
+    document.getElementById('auth-indicator').style.display = 'none';
+    document.getElementById('upload-form').style.display = 'none';
+  }
+
+  if (secret) setAuthed(secret);
+
+  document.getElementById('auth-btn').addEventListener('click', () => {
+    const val = document.getElementById('secret-input').value.trim();
+    if (val) setAuthed(val);
+  });
+  document.getElementById('secret-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') document.getElementById('auth-btn').click();
+  });
+  document.getElementById('signout-btn').addEventListener('click', e => {
+    e.preventDefault();
+    clearAuth();
+  });
+
+  /* ── Auto-slug from title ── */
+  document.getElementById('f-title').addEventListener('input', function () {
+    const slug = this.value.toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+    document.getElementById('f-id').value = slug;
+  });
+
+  /* ── Type toggle ── */
+  const typeInputs = document.querySelectorAll('input[name="type"]');
+  function onTypeChange() {
+    const t = document.querySelector('input[name="type"]:checked').value;
+    document.getElementById('video-section').style.display = t === 'video' ? '' : 'none';
+    document.getElementById('media-section').style.display = t === 'gallery' ? '' : 'none';
+  }
+  typeInputs.forEach(r => r.addEventListener('change', onTypeChange));
+
+  /* ── Featured toggle ── */
+  document.getElementById('f-featured').addEventListener('change', function () {
+    document.getElementById('href-field').style.display = this.checked ? '' : 'none';
+  });
+
+  /* ── Thumb upload ── */
+  let thumbData = null; // { base64, filename }
+
+  const thumbFile = document.getElementById('thumb-file');
+  const thumbZone = document.getElementById('thumb-zone');
+  const thumbPreview = document.getElementById('thumb-preview');
+  const thumbPreviewImg = document.getElementById('thumb-preview-img');
+  const thumbPreviewInfo = document.getElementById('thumb-preview-info');
+
+  thumbZone.addEventListener('dragover', e => { e.preventDefault(); thumbZone.classList.add('drag-over'); });
+  thumbZone.addEventListener('dragleave', () => thumbZone.classList.remove('drag-over'));
+  thumbZone.addEventListener('drop', e => {
+    e.preventDefault();
+    thumbZone.classList.remove('drag-over');
+    if (e.dataTransfer.files[0]) handleThumbFile(e.dataTransfer.files[0]);
+  });
+  thumbFile.addEventListener('change', function () {
+    if (this.files[0]) handleThumbFile(this.files[0]);
+  });
+
+  async function handleThumbFile(file) {
+    thumbPreviewInfo.textContent = 'Compressing...';
+    thumbPreview.style.display = 'block';
+    thumbPreviewImg.src = '';
+    try {
+      const { base64, size, dataUrl } = await compressImage(file, 1400, 0.84);
+      thumbData = { base64, filename: slugify(document.getElementById('f-id').value || file.name) + '.jpg' };
+      thumbPreviewImg.src = dataUrl;
+      thumbPreviewInfo.textContent = `Ready — ${Math.round(size / 1024)}KB compressed`;
+    } catch (e) {
+      thumbPreviewInfo.textContent = 'Error compressing image';
+    }
+  }
+
+  /* ── Gallery media items ── */
+  let mediaItems = []; // { type, file?, base64?, filename?, url?, alt? }
+  let mediaCounter = 0;
+
+  function renderMediaList() {
+    const list = document.getElementById('media-list');
+    list.innerHTML = '';
+    mediaItems.forEach((item, i) => {
+      const row = document.createElement('div');
+      row.className = 'media-item';
+      if (item.type === 'video') {
+        row.innerHTML = `
+          <span style="font-size:0.75rem;color:var(--muted);letter-spacing:0.08em">VIDEO</span>
+          <input type="url" placeholder="https://youtu.be/..." value="${escHtml(item.url || '')}" data-idx="${i}" class="media-url-input" />
+          <button type="button" class="btn-remove" data-idx="${i}" title="Remove">&times;</button>
+        `;
+      } else {
+        const imgSrc = item.dataUrl || '';
+        row.innerHTML = `
+          <span style="font-size:0.75rem;color:var(--muted);letter-spacing:0.08em">
+            ${item.dataUrl ? `<img src="${imgSrc}" style="height:40px;width:60px;object-fit:cover;border-radius:2px">` : 'IMAGE'}
+          </span>
+          <span style="font-size:0.78rem;color:var(--text)">${escHtml(item.filename || 'Uploading...')}</span>
+          <button type="button" class="btn-remove" data-idx="${i}" title="Remove">&times;</button>
+        `;
+      }
+      list.appendChild(row);
+    });
+
+    list.querySelectorAll('.media-url-input').forEach(input => {
+      input.addEventListener('input', function () {
+        const idx = parseInt(this.dataset.idx);
+        mediaItems[idx].url = this.value;
+      });
+    });
+
+    list.querySelectorAll('.btn-remove').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const idx = parseInt(this.dataset.idx);
+        mediaItems.splice(idx, 1);
+        renderMediaList();
+      });
+    });
+  }
+
+  document.getElementById('add-video-btn').addEventListener('click', () => {
+    mediaItems.push({ type: 'video', url: '' });
+    renderMediaList();
+  });
+
+  document.getElementById('add-image-btn').addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.multiple = true;
+    input.onchange = async () => {
+      for (const file of input.files) {
+        const idx = mediaItems.length;
+        const placeholder = { type: 'image', filename: file.name, base64: null, dataUrl: null };
+        mediaItems.push(placeholder);
+        renderMediaList();
+        try {
+          const { base64, dataUrl } = await compressImage(file, 1600, 0.86);
+          const slug = document.getElementById('f-id').value || 'project';
+          mediaItems[idx] = {
+            type: 'image',
+            base64,
+            filename: `${slugify(slug)}-media-${mediaCounter++}.jpg`,
+            dataUrl,
+          };
+          renderMediaList();
+        } catch {
+          mediaItems[idx].filename = 'Error compressing';
+          renderMediaList();
+        }
+      }
+    };
+    input.click();
+  });
+
+  /* ── Image compression ── */
+  function compressImage(file, maxWidth, quality) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = e => {
+        const img = new Image();
+        img.onerror = reject;
+        img.onload = () => {
+          const scale = Math.min(1, maxWidth / img.width);
+          const w = Math.round(img.width * scale);
+          const h = Math.round(img.height * scale);
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          canvas.toBlob(blob => {
+            if (!blob) return reject(new Error('Canvas toBlob failed'));
+            const fr = new FileReader();
+            fr.onerror = reject;
+            fr.onload = () => {
+              const dataUrl = fr.result;
+              const base64 = dataUrl.split(',')[1];
+              resolve({ base64, size: blob.size, dataUrl });
+            };
+            fr.readAsDataURL(blob);
+          }, 'image/jpeg', quality);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  /* ── Helpers ── */
+  function slugify(str) {
+    return String(str).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'project';
+  }
+  function escHtml(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+  }
+
+  function setStatus(msg, type) {
+    const el = document.getElementById('status');
+    el.textContent = msg;
+    el.className = `status ${type}`;
+    el.style.display = msg ? 'block' : 'none';
+  }
+
+  function setProgress(pct, label) {
+    const wrap = document.getElementById('progress-wrap');
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-label').textContent = label;
+    wrap.style.display = pct > 0 ? 'block' : 'none';
+  }
+
+  /* ── Image upload to Blob ── */
+  async function uploadImage(base64, filename) {
+    const res = await fetch(`${API_BASE}/api/upload-image`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret, base64, filename }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Upload failed');
+    return data.url;
+  }
+
+  /* ── Form submit ── */
+  document.getElementById('upload-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    setStatus('', '');
+
+    const id = document.getElementById('f-id').value.trim();
+    const title = document.getElementById('f-title').value.trim();
+    const role = document.getElementById('f-role').value.trim();
+    const agency = document.getElementById('f-agency').value.trim();
+    const type = document.querySelector('input[name="type"]:checked').value;
+    const featured = document.getElementById('f-featured').checked;
+    const href = document.getElementById('f-href').value.trim();
+    const cats = [...document.querySelectorAll('input[name="category"]:checked')].map(c => c.value);
+
+    if (!id || !title || !role) {
+      setStatus('Title, ID, and Role are required.', 'error');
+      return;
+    }
+    if (!thumbData) {
+      setStatus('A tile image is required.', 'error');
+      return;
+    }
+
+    const submitBtn = document.getElementById('submit-btn');
+    submitBtn.disabled = true;
+    setStatus('', '');
+
+    try {
+      // 1. Upload thumb
+      setProgress(10, 'Uploading tile image...');
+      const thumbUrl = await uploadImage(thumbData.base64, `${id}-thumb.jpg`);
+
+      // 2. Upload gallery images (if any)
+      let media = [];
+      if (type === 'gallery') {
+        const totalImages = mediaItems.filter(m => m.type === 'image' && m.base64).length;
+        let uploaded = 0;
+
+        for (const item of mediaItems) {
+          if (item.type === 'video') {
+            if (item.url) media.push({ type: 'video', url: item.url });
+          } else if (item.type === 'image' && item.base64) {
+            setProgress(10 + Math.round((uploaded / Math.max(totalImages, 1)) * 70), `Uploading image ${uploaded + 1} of ${totalImages}...`);
+            const imgUrl = await uploadImage(item.base64, item.filename || `${id}-${uploaded}.jpg`);
+            media.push({ type: 'image', src: imgUrl, alt: title });
+            uploaded++;
+          }
+        }
+      }
+
+      // 3. Build project entry
+      const project = {
+        id,
+        title,
+        category: cats.join(', '),
+        role,
+        ...(agency && { agency }),
+        thumb: thumbUrl,
+        type,
+        ...(featured && { featured: true }),
+        ...(featured && href && { href }),
+        ...(type === 'video' && buildVideoFields()),
+        ...(type === 'gallery' && media.length && { media }),
+      };
+
+      // 4. Save to Blob projects.json
+      setProgress(90, 'Saving project...');
+      const res = await fetch(`${API_BASE}/api/save-project`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ secret, project }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Save failed');
+
+      setProgress(100, 'Done!');
+      setStatus(`"${title}" added successfully. It will appear on the work page within a minute.`, 'success');
+      this.reset();
+      thumbData = null;
+      thumbPreview.style.display = 'none';
+      mediaItems = [];
+      renderMediaList();
+      setTimeout(() => setProgress(0, ''), 2000);
+
+    } catch (err) {
+      setStatus('Error: ' + err.message, 'error');
+      setProgress(0, '');
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  function buildVideoFields() {
+    const u1 = document.getElementById('f-video-url').value.trim();
+    const u2 = document.getElementById('f-video-url-2').value.trim();
+    const u3 = document.getElementById('f-video-url-3').value.trim();
+    const urls = [u1, u2, u3].filter(Boolean);
+    if (urls.length === 0) return {};
+    if (urls.length === 1) return { videoUrl: urls[0] };
+    return { videoUrls: urls };
+  }
+</script>
+</body>
+</html>

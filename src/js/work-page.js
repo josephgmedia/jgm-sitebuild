@@ -17,9 +17,9 @@ import { initWorkPageAnimations } from './work-page-animations.js';
 import { initContactForm } from './contact-form.js';
 import { initBackToTop } from './back-to-top.js';
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   initSmoothScroll();
-  renderGallery();
+  await renderGallery();
   initGalleryFilter();
   initLightbox();
   initWorkPageAnimations();

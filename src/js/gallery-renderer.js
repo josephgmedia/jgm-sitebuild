@@ -1,23 +1,36 @@
 /* ============================================================
-   Gallery Renderer — builds grid from projects.json
+   Gallery Renderer — builds grid from /api/projects (Blob + static)
 
-   File naming convention:
+   File naming convention for static items:
    - Thumbnails: gallery-thumbs/{id}.jpg
-   - Gallery images: gallery/{id}.jpg (single) or gallery/{id}-01.jpg, {id}-02.jpg (carousel)
-   - Videos: paste YouTube/Vimeo URL into "videoUrl" field in JSON
-   - Featured: set "featured": true and "href": "work/{slug}.html"
+   - Featured thumbs: featured-work/{id}.jpg
+   - Gallery images: gallery/{id}.jpg or gallery/{id}-01.jpg
+   - Dynamic items use absolute Blob URLs for all images.
    ============================================================ */
-
-import projectData from '../data/projects.json';
 
 const THUMB_PATH = 'src/assets/images/gallery-thumbs/';
 const FEATURED_THUMB_PATH = 'src/assets/images/featured-work/';
 
-export function renderGallery() {
+function isAbsoluteUrl(str) {
+  return typeof str === 'string' && (str.startsWith('http') || str.startsWith('//'));
+}
+
+export async function renderGallery() {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
 
-  // Sort featured items to the top so they render first as a group
+  let projectData;
+  try {
+    const res = await fetch('/api/projects');
+    if (!res.ok) throw new Error('API not available');
+    projectData = await res.json();
+  } catch {
+    // Local dev fallback — import static JSON directly
+    const { default: staticData } = await import('../data/projects.json');
+    projectData = staticData;
+  }
+
+  // Sort featured items to the top
   const sorted = [...projectData].sort((a, b) => {
     if (a.featured && !b.featured) return -1;
     if (!a.featured && b.featured) return 1;
@@ -32,39 +45,36 @@ export function renderGallery() {
     item.dataset.type = project.type;
     item.dataset.id = project.id;
 
-    // Featured items get special class
     if (project.featured) {
       item.classList.add('gallery__item--featured');
     }
 
-    // Store media data for lightbox
     let hasMixedMedia = false;
     if (project.type === 'gallery') {
-      // Gallery can contain mixed media (videos + images)
       item.dataset.media = JSON.stringify(project.media);
-
-      // Check if gallery has both video and image types
       const hasVideo = project.media.some(m => m.type === 'video');
       const hasImage = project.media.some(m => m.type === 'image' || !m.type);
       hasMixedMedia = hasVideo && hasImage;
     } else if (project.type === 'video') {
-      // Support single video URL or array of URLs
       const videoUrls = project.videoUrl || project.videoUrls || '';
       item.dataset.videoUrl = Array.isArray(videoUrls) ? JSON.stringify(videoUrls) : videoUrls;
     } else if (project.type === 'link') {
       item.dataset.href = project.href || '';
     }
 
-    // Use featured-work path for featured items, gallery-thumbs for everything else
     const thumbFile = project.thumb || `${project.id}.jpg`;
-    const thumbPath = project.featured ? FEATURED_THUMB_PATH : THUMB_PATH;
+    // Blob-stored items use absolute URLs; static items use relative paths
+    const thumbSrc = isAbsoluteUrl(thumbFile)
+      ? thumbFile
+      : (project.featured ? FEATURED_THUMB_PATH : THUMB_PATH) + thumbFile;
 
-    // Add badge for mixed media items (will be shown/hidden by filter)
-    const mixedBadge = hasMixedMedia ? '<span class="gallery__mixed-badge" data-badge="mixed">PHOTO/VIDEO</span>' : '';
+    const mixedBadge = hasMixedMedia
+      ? '<span class="gallery__mixed-badge" data-badge="mixed">PHOTO/VIDEO</span>'
+      : '';
 
     item.innerHTML = `
       <div class="gallery__thumb">
-        <img src="${thumbPath}${thumbFile}" alt="${project.title}" loading="lazy" decoding="async">
+        <img src="${thumbSrc}" alt="${project.title}" loading="lazy" decoding="async">
         ${mixedBadge}
       </div>
       <div class="gallery__caption">
@@ -75,7 +85,6 @@ export function renderGallery() {
 
     grid.appendChild(item);
 
-    // Handle image load to stop shimmer and fade in image
     const img = item.querySelector('img');
     const thumb = item.querySelector('.gallery__thumb');
     if (img && thumb) {
@@ -91,5 +100,3 @@ export function renderGallery() {
     }
   });
 }
-
-export { projectData };
