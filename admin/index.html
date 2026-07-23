@@ -580,10 +580,11 @@
   const typeInputs = document.querySelectorAll('input[name="type"]');
   function onTypeChange() {
     const t = document.querySelector('input[name="type"]:checked').value;
-    document.getElementById('video-section').style.display = t === 'video' ? '' : 'none';
-    document.getElementById('media-section').style.display = t === 'gallery' ? '' : 'none';
+    document.getElementById('video-section').style.display = t === 'video' ? 'block' : 'none';
+    document.getElementById('media-section').style.display = t === 'gallery' ? 'block' : 'none';
   }
   typeInputs.forEach(r => r.addEventListener('change', onTypeChange));
+  onTypeChange();
 
   /* ── Featured toggle ── */
   document.getElementById('f-featured').addEventListener('change', function () {
