@@ -17,7 +17,8 @@ export default async function handler(req, res) {
   try {
     const { blobs } = await list({ prefix: 'data/projects.json' });
     if (blobs.length > 0) {
-      const r = await fetch(blobs[0].url);
+      // Query param busts the Blob CDN cache so we read the latest version
+      const r = await fetch(`${blobs[0].url}?t=${Date.now()}`);
       if (r.ok) dynamicProjects = await r.json();
     }
   } catch {
