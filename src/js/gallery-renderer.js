@@ -30,6 +30,9 @@ export async function renderGallery() {
     projectData = staticData;
   }
 
+  // Items flagged "hidden": true stay in the data but never render
+  projectData = projectData.filter(p => !p.hidden);
+
   // Sort featured items to the top
   const sorted = [...projectData].sort((a, b) => {
     if (a.featured && !b.featured) return -1;

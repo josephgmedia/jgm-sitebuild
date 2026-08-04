@@ -29,6 +29,9 @@ export default async function handler(req, res) {
   const seen = new Set(dynamicProjects.map(p => p.id));
   const dedupedStatic = staticProjects.filter(p => !seen.has(p.id));
 
+  // Items flagged "hidden": true stay in the data but never reach the site
+  const visible = [...dynamicProjects, ...dedupedStatic].filter(p => !p.hidden);
+
   res.setHeader('Cache-Control', 'no-store');
-  return res.json([...dynamicProjects, ...dedupedStatic]);
+  return res.json(visible);
 }

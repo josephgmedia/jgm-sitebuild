@@ -8,7 +8,8 @@
     "thumb": "nla-enlighten.jpg",
     "type": "link",
     "href": "work/nla-enlighten.html",
-    "featured": true
+    "featured": true,
+    "hidden": true
   },
   {
     "id": "rams-construction",
@@ -70,7 +71,8 @@
     "role": "2D Animation",
     "thumb": "mca-vivid.jpg",
     "type": "video",
-    "videoUrl": "https://youtu.be/rv75wZVWozw"
+    "videoUrl": "https://youtu.be/rv75wZVWozw",
+    "hidden": true
   },
   {
     "id": "perth-stg-24",
@@ -79,7 +81,8 @@
     "role": "2D Animation, Music Composition",
     "thumb": "perth-stg.jpg",
     "type": "video",
-    "videoUrl": "https://youtu.be/rv75wZVWozw"
+    "videoUrl": "https://youtu.be/rv75wZVWozw",
+    "hidden": true
   },
   {
     "id": "wrinkles-schminkles",
@@ -176,7 +179,8 @@
     "role": "2D Animation, Music Composition",
     "thumb": "perth-stg-25.jpg",
     "type": "video",
-    "videoUrl": "https://youtu.be/rv75wZVWozw"
+    "videoUrl": "https://youtu.be/rv75wZVWozw",
+    "hidden": true
   },
   {
     "id": "superloop-3d",
