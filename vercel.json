@@ -11,15 +11,15 @@
   "rewrites": [
     {
       "source": "/client-portal",
-      "destination": "https://PORTAL-HOST/client-portal"
+      "destination": "https://jgm-client-portal.vercel.app/client-portal"
     },
     {
       "source": "/client-portal/:path*",
-      "destination": "https://PORTAL-HOST/client-portal/:path*"
+      "destination": "https://jgm-client-portal.vercel.app/client-portal/:path*"
     },
     {
       "source": "/api/portal/:path*",
-      "destination": "https://PORTAL-HOST/api/portal/:path*"
+      "destination": "https://jgm-client-portal.vercel.app/api/portal/:path*"
     }
   ]
 }
