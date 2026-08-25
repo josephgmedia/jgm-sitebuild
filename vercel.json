@@ -28,6 +28,10 @@
     {
       "source": "/logo.svg",
       "destination": "https://jgm-client-portal.vercel.app/logo.svg"
+    },
+    {
+      "source": "/_next/:path*",
+      "destination": "https://jgm-client-portal.vercel.app/_next/:path*"
     }
   ]
 }
