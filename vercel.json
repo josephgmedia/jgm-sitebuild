@@ -20,6 +20,14 @@
     {
       "source": "/api/portal/:path*",
       "destination": "https://jgm-client-portal.vercel.app/api/portal/:path*"
+    },
+    {
+      "source": "/docs/:path*",
+      "destination": "https://jgm-client-portal.vercel.app/docs/:path*"
+    },
+    {
+      "source": "/logo.svg",
+      "destination": "https://jgm-client-portal.vercel.app/logo.svg"
     }
   ]
 }
