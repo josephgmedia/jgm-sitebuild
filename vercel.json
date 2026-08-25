@@ -7,5 +7,19 @@
       "destination": "/",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/client-portal",
+      "destination": "https://PORTAL-HOST/client-portal"
+    },
+    {
+      "source": "/client-portal/:path*",
+      "destination": "https://PORTAL-HOST/client-portal/:path*"
+    },
+    {
+      "source": "/api/portal/:path*",
+      "destination": "https://PORTAL-HOST/api/portal/:path*"
+    }
   ]
 }
