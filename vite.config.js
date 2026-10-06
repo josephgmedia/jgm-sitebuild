@@ -56,11 +56,6 @@ export default defineConfig({
         links: resolve(__dirname, 'links.html'),
         work: resolve(__dirname, 'work.html'),
         admin: resolve(__dirname, 'admin/index.html'),
-        'font-test': resolve(__dirname, 'font-test.html'),
-        'font-debug': resolve(__dirname, 'font-debug.html'),
-        'mobile-test': resolve(__dirname, 'mobile-test.html'),
-        // NLA Enlighten hidden for now — uncomment to restore the page:
-        // 'work/nla-enlighten': resolve(__dirname, 'work/nla-enlighten.html'),
         'work/bundaberg': resolve(__dirname, 'work/bundaberg.html'),
         'work/gryff': resolve(__dirname, 'work/gryff.html'),
         'work/porsche-drjack': resolve(__dirname, 'work/porsche-drjack.html'),

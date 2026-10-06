@@ -1,17 +1,5 @@
 [
   {
-    "id": "nla-enlighten",
-    "title": "NLA - Enlighten",
-    "category": "projection",
-    "role": "GenAI, 2D Animation",
-    "agency": "The Electric Canvas",
-    "thumb": "nla-enlighten.jpg",
-    "type": "link",
-    "href": "work/nla-enlighten.html",
-    "featured": true,
-    "hidden": true
-  },
-  {
     "id": "rams-construction",
     "title": "RAMS - Construction Campaign",
     "category": "brand, 3d",
@@ -63,26 +51,6 @@
     "type": "link",
     "href": "work/bundaberg.html",
     "featured": true
-  },
-  {
-    "id": "mca-vivid",
-    "title": "MCA, Vivid Sydney - King Dingo",
-    "category": "projection",
-    "role": "2D Animation",
-    "thumb": "mca-vivid.jpg",
-    "type": "video",
-    "videoUrl": "https://youtu.be/rv75wZVWozw",
-    "hidden": true
-  },
-  {
-    "id": "perth-stg-24",
-    "title": "St George's Cathedral - Christmas at the Cathedral 2024",
-    "category": "projection",
-    "role": "2D Animation, Music Composition",
-    "thumb": "perth-stg.jpg",
-    "type": "video",
-    "videoUrl": "https://youtu.be/rv75wZVWozw",
-    "hidden": true
   },
   {
     "id": "wrinkles-schminkles",
@@ -171,16 +139,6 @@
         "alt": "Bombay Play app icon animation 3"
       }
     ]
-  },
-  {
-    "id": "perth-stg-25",
-    "title": "St George's Cathedral - Christmas at the Cathedral 2025",
-    "category": "projection",
-    "role": "2D Animation, Music Composition",
-    "thumb": "perth-stg-25.jpg",
-    "type": "video",
-    "videoUrl": "https://youtu.be/rv75wZVWozw",
-    "hidden": true
   },
   {
     "id": "superloop-3d",

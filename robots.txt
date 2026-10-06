@@ -37,9 +37,6 @@ User-agent: *
 Allow: /
 
 # Block test/debug pages
-Disallow: /font-test.html
-Disallow: /font-debug.html
-Disallow: /mobile-test.html
 
 # Block source directories from indexing
 Disallow: /src/js/
