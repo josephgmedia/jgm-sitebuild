@@ -1,0 +1,21 @@
+{
+  "release": {
+    "schema": 1,
+    "extensionId": "studio.artist.motiondock",
+    "version": "2.6.0",
+    "publishedAt": "2026-10-29T01:59:14.742Z",
+    "downloadUrl": "https://www.josephgmedia.com/downloads/motion-dock/Motion-Dock-2.6.0.zip",
+    "sha256": "8203e8fcd97c1f82daa385943d39bbc24934da2b511d3d71654b9416dcd770a8",
+    "size": 417809,
+    "notes": [
+      "Signed website releases and in-panel updates.",
+      "ROI patches, pre-rendering and audio stems in Export.",
+      "Anybody and Barlow fonts included."
+    ],
+    "requires": {
+      "platform": "windows",
+      "afterEffects": "2026"
+    }
+  },
+  "signature": "NAgw17HSl4clqzQku5Ique6Lr88pvinGFXKMkR0Wx1cPQfwmi6V9v8AUFitsAIWlaVuH4TeRe2Dfp3B9Fo14h/INRE+S6CQr4lT+hNket3F7l94Hk/OA/pUND9seTXAW9ho6vlF7N1UjA1Ir/WURyoX36n2/j5xm6S0Y6VFL1QFcq+3J8Q7MJ+Rsv2Q2YRAZQTAZSHy3NfZe35eneI3YjRB/qyg3VPeQ6URVeqyUuMmBSwHPxo89X6R8Y2vvN7o8g0edDqxq5lJjj6iveyqzsJVkTvbkY1yrC7f8jZHYF549panwghHY2bjdjcfRQgh64H0NB2xAK+vVBLmY/9egMSP9r+fvneA6fh8thv/Rz7Sb3NCBfRKT/25g657J5/11kR/l+E5wdrq+2yMpJ/T2+3jsbdIQdIQ6QOaCmnF7JzLpSts+ZJtDVQHsYt7M4cpmi/g+6r4MMdWezFESjxASnQPm11yk7q00KCSnYPQ6gC+4IjoEa4v8T+DfshHVTCbH"
+}

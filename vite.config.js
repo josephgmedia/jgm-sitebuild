@@ -21,9 +21,8 @@ export default defineConfig({
   // Root is project root where index.html lives
   root: '.',
 
-  // Base path for GitHub Pages — update if deploying to a subdirectory
-  // e.g. '/repo-name/' for https://username.github.io/repo-name/
-  base: './',
+  // This site is served at the Vercel/custom-domain root. Keep public asset URLs absolute.
+  base: '/',
 
   plugins: [copyStaticAssets()],
 
@@ -53,6 +52,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        plugins: resolve(__dirname, 'plugins.html'),
         links: resolve(__dirname, 'links.html'),
         work: resolve(__dirname, 'work.html'),
         admin: resolve(__dirname, 'admin/index.html'),

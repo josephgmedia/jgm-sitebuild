@@ -24,3 +24,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Keep local secrets and private release keys out of source control
+.env.*
+!.env.example
+*.private.pem
