@@ -1,37 +1,60 @@
 # Motion Dock releases
 
-The portfolio remains deployed from `main` to the existing Vercel `jgm-website` project.
+Production remains the existing GitHub main branch and Vercel jgm-website project.
 
-- Download page: `/plugins`
-- Signed release feed: `/updates/motion-dock/latest.json`
-- Immutable ZIPs: `/downloads/motion-dock/Motion-Dock-VERSION.zip`
-- The extension source lives separately in the Motion Dock Codex workspace, not in this website repo.
+- Download page: /plugins
+- Signed release feed: /updates/motion-dock/latest.json
+- Public installer: /downloads/motion-dock/Motion-Dock-VERSION.zxp
+- Legacy update archive: /downloads/motion-dock/Motion-Dock-VERSION.zip
 
-To release an update, finish and test the extension, bump its manifest/host/UI version,
-then run `work/publish-motiondock.cjs` from that workspace with this checkout as its
-argument. It prepares the ZIP and signed feed; it does not deploy. Commit the generated
-release artifacts and push the website `main` branch after reviewing/building.
-Never replace an already-published versioned ZIP; use a new version number.
+The extension source is in the Motion Dock Codex workspace, separately from this repo.
 
-The signing private key is local under `%USERPROFILE%/Documents/Codex/Release Keys/Motion Dock/`.
-Keep a private backup. It must never be committed or uploaded. Existing installations pin
-the corresponding public key. If the private key is lost, restore it; generating a new key
-would require a deliberate manual upgrade on every installation.
+## Publishing
 
-The update installer only replaces `client`, `host` and `CSXS`, verifies SHA-256, and backs
-up replaced files under `%APPDATA%/Motion Dock/updates/backups`. Local preferences,
-expressions and ROI records are outside the release package. Public packages contain
-user instructions and font licences, not internal validation logs or user project data.
+1. Finish and test the extension. Bump manifest, host hello version, UI and readme.
+2. Run work/sign-motiondock.cjs in its workspace. It uses Adobe ZXPSignCmd 4.1.3,
+   signs with the private Joseph G Media certificate and a DigiCert timestamp,
+   and verifies the ZXP signature. Signing requires network access for timestamping.
+3. Run work/publish-motiondock.cjs with the website checkout path. It verifies
+   the ZXP, prepares the legacy ZIP, and signs a feed containing hashes and sizes
+   for both files. It does not deploy.
+4. Review/build the website, commit the new archives/feed, then push main.
 
-## Repository cleanup / mobile fonts
+Never change bytes at an already published versioned URL. Use a new version.
 
-The October source cleanup had already removed old skill/tooling folders. This change
-removes the only unreachable JS module (`case-study-expand.js`), extracts four unchanged
-base64 images from the links page, self-hosts its existing fonts, and excludes local
-secret files. Portfolio images remain because both static and Blob-backed project data
-can reference them; a filename-only unused-file sweep would delete live gallery content.
+## Signing credentials
 
-The mobile Monument failure was a real 404: a relative Vite base generated
-`/assets/fonts/MonumentExtended-*.woff2` while public fonts live at `/fonts/`.
-The site now uses a root base, local font assets and static display instances where
-needed for WebKit. Existing homepage Monument styling is retained.
+Private credentials live outside Git under Documents/Codex/Release Keys/Motion Dock:
+- signing-private.pem signs the update feed. Its public key is pinned in installed panels.
+- zxp-signing.p12 and zxp-password.txt sign Adobe ZXP packages.
+
+Keep private backups. Do not commit/upload credentials, regenerate them casually,
+or put their values into logs. The ZXP uses a self-signed certificate; this is not
+Adobe Marketplace approval or an independently verified publisher identity.
+
+## Updating
+
+Signed installations detect META-INF/signatures.xml. They download a feed-verified
+ZXP into Downloads/Motion Dock, show it in Explorer, and instruct the user to install
+it using a ZXP extension installer and restart AE. They never use in-place ZIP updates.
+Both the Node updater and the PowerShell worker refuse ZIP replacement of signed installs.
+
+Existing unsigned local installations can retain the ZIP install/reload flow.
+It verifies SHA-256 and backs up replaced client/host/CSXS files under
+%APPDATA%/Motion Dock/updates/backups. The legacy ZIP remains available in the feed
+so 2.6 updaters continue to work. The website's primary download is the signed ZXP.
+
+Preferences, saved expressions and ROI Patch Manager records live outside the package.
+The public ZXP contains client, host, CSXS, user instructions, licences and its signature.
+It contains no CMD installer, vendor JSXBIN/AEX, private credentials or review reports.
+
+## Source review
+
+A technical crop/easing provenance review is in the Motion Dock workspace outputs.
+It found no substantial verbatim matches or bundled vendor binaries. Earlier recovered
+reference scripts were examined, so this is not a clean-room claim or legal clearance.
+
+## Mobile fonts
+
+Root Vite base and locally hosted fonts repair the old /assets/fonts 404s.
+The homepage retains its existing Monument styling. Plugins uses Anybody and Barlow.

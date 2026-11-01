@@ -53,7 +53,7 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/zip"
+          "value": "application/octet-stream"
         },
         {
           "key": "Content-Disposition",

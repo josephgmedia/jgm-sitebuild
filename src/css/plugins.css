@@ -1,8 +1,8 @@
 @font-face{font-family:Anybody;src:url('/fonts/Anybody-DisplayWide.woff2') format('woff2');font-style:normal;font-weight:850;font-stretch:normal;font-display:swap}
 .page-plugins{--accent:#4d4fff;--soft:#93aeff;font-family:Barlow,sans-serif;font-weight:400;cursor:auto}
 .page-plugins a,.page-plugins button,.page-plugins summary{cursor:pointer}
-.page-plugins main,.plugins-footer{width:min(100%,1320px);margin-inline:auto;padding-inline:clamp(24px,5vw,72px)}
-.page-plugins main{padding-top:clamp(136px,12vw,184px);padding-bottom:96px;min-height:calc(100svh - 100px)}
+.page-plugins main{width:min(100%,1320px);margin-inline:auto;padding-inline:clamp(24px,5vw,72px)}
+.page-plugins main{padding-top:clamp(136px,12vw,184px);padding-bottom:96px;min-height:0}
 .page-plugins h1,.page-plugins h2{font-family:Anybody,sans-serif;font-weight:850;line-height:1.05;letter-spacing:-.035em}
 .page-plugins h1{font-size:clamp(40px,6vw,76px);margin-bottom:48px}
 .page-plugins h1>span{color:var(--accent)}
@@ -25,9 +25,11 @@
 .plugin-details li{padding-left:4px;margin-bottom:12px}
 .plugin-details strong{font-weight:500}
 .plugin-details p{margin-top:16px;color:#c5c5ce}
-.plugins-footer{display:flex;justify-content:space-between;gap:24px;padding-block:28px;border-top:1px solid #303038;font-size:16px;line-height:1.5}
-.plugins-footer a{color:var(--white);text-decoration:none}
-.plugins-footer a:hover{text-decoration:underline;text-underline-offset:5px}
+
+
+
 .page-plugins :is(a,summary,button):focus-visible{outline:2px solid var(--soft);outline-offset:5px}
-@media(max-width:700px){.page-plugins main{padding-top:136px;padding-bottom:64px}.page-plugins h1{margin-bottom:32px}.plugin-entry{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:28px}.plugin-preview{max-height:280px;max-width:360px;width:100%}.plugin-info h2{font-size:30px}.plugin-description{font-size:19px;margin-block:20px}.plugin-info{padding:0}.plugin-details{font-size:17px}.plugins-footer{flex-wrap:wrap}.plugin-compatibility{font-size:16px}}
+@media(max-width:700px){.page-plugins main{padding-top:136px;padding-bottom:64px}.page-plugins h1{margin-bottom:32px}.plugin-entry{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:28px}.plugin-preview{max-height:280px;max-width:360px;width:100%}.plugin-info h2{font-size:30px}.plugin-description{font-size:19px;margin-block:20px}.plugin-info{padding:0}.plugin-details{font-size:17px}.plugin-compatibility{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.page-plugins *{transition:none!important}}
+
+.plugin-details a{color:var(--soft);text-underline-offset:4px}
