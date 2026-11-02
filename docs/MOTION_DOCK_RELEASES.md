@@ -34,15 +34,26 @@ Adobe Marketplace approval or an independently verified publisher identity.
 
 ## Updating
 
-Signed installations detect META-INF/signatures.xml. They download a feed-verified
-ZXP into Downloads/Motion Dock, show it in Explorer, and instruct the user to install
-it using a ZXP extension installer and restart AE. They never use in-place ZIP updates.
-Both the Node updater and the PowerShell worker refuse ZIP replacement of signed installs.
+From 2.8, Updates > Install downloads the complete signed ZXP and verifies its
+hash/size against the RSA-signed feed. An external worker installs the full package,
+including META-INF signature metadata. Every installed file and the complete file
+list must match the signed package. The publisher verifies Adobe's signature before
+the feed is signed. No unsigned modifications to a signed release are introduced.
 
-Existing unsigned local installations can retain the ZIP install/reload flow.
-It verifies SHA-256 and backs up replaced client/host/CSXS files under
-%APPDATA%/Motion Dock/updates/backups. The legacy ZIP remains available in the feed
-so 2.6 updaters continue to work. The website's primary download is the signed ZXP.
+The worker validates paths, duplicate filenames, symlinks, size limits, bundle ID,
+version and the pinned release key. A per-install mutex prevents concurrent updates.
+It backs up the full managed installation and rolls back on write/verification errors.
+Backup location: %APPDATA%/Motion Dock/updates/backups. Reload panel completes the update.
+Real Windows file-lock failure, rollback and resulting Adobe signature are tested.
+
+The existing local computer was upgraded directly to 2.8 using the tested worker.
+Other computers on 2.7 need one final ZXP install to acquire the direct updater.
+Older unsigned installs can still use the ZIP feed path; future 2.8 updates prefer ZXP.
+The legacy ZIP remains in the feed for older clients. It must never be copied over
+a signed install using the old client/host/CSXS-only worker.
+
+For local development updates to an existing signed panel, sign a new version and
+use the complete signed-package worker. The old development file copier is guarded.
 
 Preferences, saved expressions and ROI Patch Manager records live outside the package.
 The public ZXP contains client, host, CSXS, user instructions, licences and its signature.
