@@ -2,25 +2,25 @@
   "release": {
     "schema": 1,
     "extensionId": "studio.artist.motiondock",
-    "version": "2.8.0",
-    "publishedAt": "2026-11-02T20:31:24.263Z",
-    "downloadUrl": "https://www.josephgmedia.com/downloads/motion-dock/Motion-Dock-2.8.0.zip",
-    "sha256": "a176961f0bb44f27915d4375a4bbeb6a185c7b12e08a5ff249f270dced191f59",
-    "size": 422506,
+    "version": "2.8.1",
+    "publishedAt": "2026-11-02T20:48:35.156Z",
+    "downloadUrl": "https://www.josephgmedia.com/downloads/motion-dock/Motion-Dock-2.8.1.zip",
+    "sha256": "99f708774aff4562cf186fd63a7ce5c394cad9bb2634d8f60172623f04c79ebd",
+    "size": 422514,
     "installer": {
-      "url": "https://www.josephgmedia.com/downloads/motion-dock/Motion-Dock-2.8.0.zxp",
-      "sha256": "b26385b00e9c775a747fc9dd4c967f7236bbe2f076bbea102a416a37f8bf46c2",
-      "size": 440368
+      "url": "https://www.josephgmedia.com/downloads/motion-dock/Motion-Dock-2.8.1.zxp",
+      "sha256": "91b6ef75e9ce73901d3d64f2c3495af02d82e7d52d5148be9cf4bbb590fcec37",
+      "size": 440501
     },
     "notes": [
-      "Install updates directly from Motion Dock.",
-      "Complete signed packages are preserved and verified during installation.",
-      "Automatic backups and rollback on installation failure."
+      "Corrected Adobe manifest schema ordering for installer compatibility.",
+      "Direct signed updates from the panel.",
+      "Release builds now validate against Adobe’s official manifest schema."
     ],
     "requires": {
       "platform": "windows",
       "afterEffects": "2026"
     }
   },
-  "signature": "YIqHM4U9vKHlrrRew9W+PK7H7VjC1JHA9mTHGh3IeAsOa+Pd3b2Bch41KP941y50EwSR30MIpPQNXuc+EHcVLHP42KA1G0plTLqP8LksVNGgTQ0R9d26DptUXnfapWAwIKzMP2GkmS5YLUM4qRfsL7TrvPEd9OYpLZH0nSSnxk/MRET/1UxJk4YJlI+9mNV52PLHmQo56D+1AW46XZ6eyuZtaASGbqvg5l9sbWahLqLCLbFHnauAcP/WWonUp+Vb30MdaT5mwDRoNmhhKQLBQZx783g97HZc9AS1p/XveabKv/6ya04IHUA2y0TIsDtiaYaCwDfExf3tuKfE9vESdwGcok0RBtMLCyWHBzdrjCPLMF1PdrcsiDgHO1k4BRwtGTxYvhh57g/JMASkT1YTZmObl/x1CY+9bJK0TfP9GD64rvbp3++iZ27lALzSLGfJ0eHMk7mYxN9dgaBRmF02OmQQFQGlLxsSWYkfNbwURICRON4xCxD91oL7E6/oWRF5"
+  "signature": "gkmDIwmyqJwgxLmCdqd6oJWBVPhZuhQllrR7YsMi55m/INU2JappGOBWwB6vyhhwuwtYcIgRmXQrkfMN+28VG47eCY/Jh9gZVv4M6xknxOgN5uC+/LPMwv89XJ+8MzmQtU6aRjdTaTiJVZw/B9YPPZcw4asf08nTUmWWK3+pHeNxTRj+rXRRSt5VY0icxJkAQU71URSKaJGZnYWuvyT6+LYY2X5vtvytf0XwOR21ivFULk+e7iRhJ0WRLvBEOI9ezngTAl7P2AwMgp+7lmjhJKByq3b/YpmEXPEY/C2lZwMfJdCFIZLTe+8utE/vIDujqab9bReRaMK2qIWuhg+vn1XJPfCXAsJK6nC81qZHpra5fMuZDFmy+BhHJL+bhCWVlVdUEPejAf/S6hKfaoQ4uZlMJWFJPFWljmFC0hX87PCZsDOyzInbecXLeDh2UF84L4XDcQpJKRkTtaPKcnWRaiUPWKBgoOaQRKJ3eBzc1TibpP5lljh+dSOaxgnmywjN"
 }

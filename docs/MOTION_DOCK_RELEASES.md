@@ -12,7 +12,8 @@ The extension source is in the Motion Dock Codex workspace, separately from this
 ## Publishing
 
 1. Finish and test the extension. Bump manifest, host hello version, UI and readme.
-2. Run work/sign-motiondock.cjs in its workspace. It uses Adobe ZXPSignCmd 4.1.3,
+2. Run work/sign-motiondock.cjs in its workspace. Signing and publishing both first
+   validate the manifest with Adobe’s official CEP 7 XML schema. It uses Adobe ZXPSignCmd 4.1.3,
    signs with the private Joseph G Media certificate and a DigiCert timestamp,
    and verifies the ZXP signature. Signing requires network access for timestamping.
 3. Run work/publish-motiondock.cjs with the website checkout path. It verifies
@@ -69,3 +70,19 @@ reference scripts were examined, so this is not a clean-room claim or legal clea
 
 Root Vite base and locally hosted fonts repair the old /assets/fonts 404s.
 The homepage retains its existing Monument styling. Plugins uses Anybody and Barlow.
+
+## Installer compatibility correction (2.8.1)
+
+The old manifest used Width before Height and MinSize before MaxSize. Adobe's
+official schema requires Height before Width, and Size then MaxSize then MinSize.
+2.8.1 corrects the order without changing panel dimensions or supported AE versions.
+The AE 26.x range [26.0,27.0) is valid and remains unchanged.
+
+Both signing and publishing now run work/validate-motiondock-manifest.ps1 against
+the official ExtensionManifest_v_7_0.xsd before emitting any release. A deliberate
+invalid-manifest regression check verifies that old ordering is rejected.
+
+The website now links to the current aescripts ZXP/UXP Installer instead of the
+ExManCmd-based installer at zxpinstaller.com. The exact warning on the user's home
+machine remains subject to retesting there; schema validation alone does not prove
+that a particular Adobe app-registration/installer detection issue is resolved.
